@@ -18,7 +18,6 @@
     "url": "https://github.com/ampproject/bento.dev/issues"
   },
   "homepage": "https://github.com/ampproject/bento.dev#readme",
-  "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",

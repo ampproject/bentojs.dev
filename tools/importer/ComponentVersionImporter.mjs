@@ -15,7 +15,7 @@
  */
 
 import validatorRulesProvider from '@ampproject/toolbox-validator-rules';
-import { GitHubImporter } from './GitHubImporter.js';
+import { GitHubImporter } from './GitHubImporter.mjs';
 
 class ComponentVersionImporter {
   constructor(githubImporter = new GitHubImporter()) {

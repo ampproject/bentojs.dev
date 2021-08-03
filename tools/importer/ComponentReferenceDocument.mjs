@@ -16,7 +16,7 @@
 
 import { dirname } from 'path';
 import { resolve } from 'url';
-import MarkdownDocument from './MarkdownDocument.js';
+import MarkdownDocument from './MarkdownDocument.mjs';
 
 const DEFAULT_VERSION = 0.1;
 const EXTENSION_TYPE_ELEMENT = 'element';

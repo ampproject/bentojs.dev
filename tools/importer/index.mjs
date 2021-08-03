@@ -18,12 +18,12 @@ const DEFAULT_VERSION = '0.1';
 const VERSION_PATTERN = /\d\.\d/;
 const LATEST_VERSION = 'latest';
 
-import { GitHubImporter, DEFAULT_REPOSITORY } from './GitHubImporter.js';
+import { GitHubImporter, DEFAULT_REPOSITORY } from './GitHubImporter.mjs';
 import path from 'path';
 import del from 'del';
 import validatorRules from '@ampproject/toolbox-validator-rules';
-import ComponentReferenceDocument from './componentReferenceDocument.js'
-import ComponentVersionImporter from './ComponentVersionImporter.js'
+import ComponentReferenceDocument from './componentReferenceDocument.mjs'
+import ComponentVersionImporter from './ComponentVersionImporter.mjs'
 
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
@@ -119,9 +119,9 @@ class ComponentReferenceImporter {
         return false;
       }
 
-      if (!['amp-accordion', 'amp-carousel'].includes(file.name)) {
-        return false;
-      }
+      // if (!['amp-accordion', 'amp-carousel'].includes(file.name)) {
+      //   return false;
+      // }
 
       if (file.name.endsWith('-impl') || file.name.endsWith('-polyfill')) {
         return false;

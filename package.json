@@ -1,0 +1,31 @@
+{
+  "name": "bento-dev",
+  "version": "1.0.0",
+  "description": "The home for AMP's standalone components: Bento",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
+  },
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
+  "author": "The AMP HTML Authors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ampproject/bento.dev/issues"
+  },
+  "homepage": "https://github.com/ampproject/bento.dev#readme",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "@ampproject/toolbox-validator-rules": "^2.8.0",
+    "del": "^2.2.2",
+    "octonode": "^0.10.2",
+    "p-queue": "^7.1.0",
+    "prettier": "^2.3.2"
+  }
+}

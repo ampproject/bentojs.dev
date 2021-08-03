@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "import": "node tools/importer/index.mjs",
     "develop": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "deploy": "firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",

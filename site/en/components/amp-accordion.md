@@ -8,27 +8,10 @@ teaser:
     interaction.
 experimental: true
 bento: true
-toc: true
 title: amp-accordion
-version: '1.0'
-versions:
-  - '0.1'
-  - '1.0'
-latest_version: '0.1'
 tags: components
 layout: layouts/component.njk
-layouts:
-  - container
-scripts:
-  - js: >-
-      <script async custom-element="amp-accordion"
-      src="https://cdn.ampproject.org/v0/amp-accordion-1.0.js"></script>
-    css: >-
-      <link rel="stylesheet"
-      href="https://cdn.ampproject.org/v0/amp-accordion-1.0.css">
-bentoPath: /documentation/components/amp-accordion-v1.0.html
 ---
-
 
 <!---
 Copyright 2021 The AMP HTML Authors. All Rights Reserved.
@@ -46,7 +29,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
+# amp-accordion
 
 Provides a way for viewers to glance at the content outline and jump to any section. This is helpful for mobile devices where even a couple of sentences into a section requires scrolling.
 
@@ -94,7 +77,7 @@ The example below contains an `amp-accordion` with three sections. The
 
 [example preview="top-frame" playground="true" imports="amp-accordion:1.0"]
 
-[sourcecode:html]
+```html
 <amp-accordion id="my-accordion"{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
     <h2>Section 1</h2>
@@ -111,7 +94,7 @@ The example below contains an `amp-accordion` with three sections. The
       height="256"></amp-img>
   </section>
 </amp-accordion>
-[/sourcecode]
+```
 
 [/example]
 
@@ -125,7 +108,7 @@ The example below demonstrates `amp-accordion` component in standalone use.
 
 [example preview="top-frame" playground="false"]
 
-[sourcecode:html]
+```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-accordion-1.0.css">
@@ -165,7 +148,7 @@ The example below demonstrates `amp-accordion` component in standalone use.
     document.querySelector('#button3').onclick = () => api.collapse('section3');
   })();
 </script>
-[/sourcecode]
+```
 
 [/example]
 
@@ -175,10 +158,10 @@ Bento enabled components in standalone use are highly interactive through their 
 
 The `amp-accordion` component API is accessible by including the following script tag in your document:
 
-[sourcecode:html]
+```html
 await customElements.whenDefined('amp-accordion');
 const api = await accordion.getApi();
-[/sourcecode]
+```
 
 ##### Actions
 
@@ -188,7 +171,7 @@ The `toggle` action switches the `expanded` and `collapsed` states of
 of the accordion. To specify a specific section, add the `section` argument and
 use its corresponding `id` as the value.
 
-[sourcecode:html]
+```html
 <amp-accordion id="myAccordion">
   <section id="section1">
     <h2>Section 1</h2>
@@ -216,14 +199,14 @@ use its corresponding `id` as the value.
     document.querySelector('#button2').onclick = () => api.toggle('section1');
   })();
 </script>
-[/sourcecode]
+```
 
 **expand()**
 The `expand` action expands the sections of the `amp-accordion`. If a section
 is already expanded, it stays expanded. When called with no arguments, it
 expands all sections of the accordion. To specify a section, add the `section` argument, and use its corresponding `id` as the value.
 
-[sourcecode:html]
+```html
 <button id="button1">Expand All Sections</button>
 <button id="button2">Expand Section 1</button>
 <script>
@@ -237,7 +220,7 @@ expands all sections of the accordion. To specify a section, add the `section` a
     document.querySelector('#button2').onclick = () => api.expand('section1');
   })();
 </script>
-[/sourcecode]
+```
 
 **collapse()**
 The `collapse` action collapses the sections of the `amp-accordion`. If a
@@ -245,7 +228,7 @@ section is already collapsed, it stays collapsed. When called with no arguments,
 it collapses all sections of the accordion. To specify a section, add the
 `section` argument, and use its corresponding `id` as the value.
 
-[sourcecode:html]
+```html
 <button id="button1">Collapse All Sections</button>
 <button id="button2">Collapse Section 1</button>
 <script>
@@ -259,7 +242,7 @@ it collapses all sections of the accordion. To specify a section, add the
     document.querySelector('#button2').onclick = () => api.collapse('section1');
   })();
 </script>
-[/sourcecode]
+```
 
 ##### Events
 
@@ -273,7 +256,7 @@ This event is triggered when an accordion section is collapsed and is dispatched
 
 In the example below, `section 1` listens for the `expand` event and expands `section 2` when it is expanded. `section 2` listens for the `collapse` event and collapses `section 1` when it is collapsed.
 
-[sourcecode:html]
+```html
 <amp-accordion id="eventsAccordion" animate='true'>
   <section id="section1">
     <h2>Section 1</h2>
@@ -299,15 +282,15 @@ In the example below, `section 1` listens for the `expand` event and expands `se
     section2.addEventListener('collapse', () => api.collapse('section1'));
   })();
 </script>
-[/sourcecode]
+```
 
 #### Layout and style
 
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
-[sourcecode:none]
+```
 <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-accordion-1.0.css">
-[/sourcecode]
+```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.
 
@@ -318,11 +301,11 @@ Fully valid AMP pages use the AMP layout system to infer sizing of elements to c
 Include the `animate` attribute in `<amp-accordion>` to add a "roll down"
 animation when the content is expanded and "roll up" animation when collapsed.
 
-This attribute can be configured to based on a [media query](https://github.com/ampproject/amphtml/blob/main/extensions/amp-accordion/./../../docs/spec/amp-html-responsive-attributes.md).
+This attribute can be configured to based on a [media query](./../../docs/spec/amp-html-responsive-attributes.md).
 
 [example preview="top-frame" playground="true" imports="amp-accordion:1.0"]
 
-[sourcecode:html]
+```html
 <amp-accordion animate>
   <section>
     <h2>Section 1</h2>
@@ -341,7 +324,7 @@ This attribute can be configured to based on a [media query](https://github.com/
     ></amp-img>
   </section>
 </amp-accordion>
-[/sourcecode]
+```
 
 [/example]
 
@@ -353,7 +336,7 @@ Use `amp-bind` to bind the `[expanded]` attribute to programmatically expand or 
 
 [example preview="top-frame" playground="true" imports="amp-accordion:1.0"]
 
-[sourcecode:html]
+```html
 <amp-accordion>
   <section
     [expanded]="sectionOne"
@@ -373,7 +356,7 @@ Use `amp-bind` to bind the `[expanded]` attribute to programmatically expand or 
 </amp-accordion>
 <button on="tap:AMP.setState({sectionOne: true})">Expand section 1</button>
 <button on="tap:AMP.setState({sectionOne: false})">Collapse section 1</button>
-[/sourcecode]
+```
 
 [/example]
 
@@ -383,7 +366,7 @@ Allow only one section to expand at a time by applying the `expand-single-sectio
 
 [example preview="top-frame" playground="true" imports="amp-accordion:1.0"]
 
-[sourcecode:html]
+```html
 <amp-accordion expand-single-section>
   <section>
     <h2>Section 1</h2>
@@ -402,7 +385,7 @@ Allow only one section to expand at a time by applying the `expand-single-sectio
     ></amp-img>
   </section>
 </amp-accordion>
-[/sourcecode]
+```
 
 [/example]
 
@@ -411,11 +394,11 @@ Allow only one section to expand at a time by applying the `expand-single-sectio
 The `amp-accordion` element selector styles an `amp-accordion` according to your
 specifications. The following example changes the background color to green:
 
-[sourcecode:css]
+```css
 amp-accordion {
   background-color: green;
 }
-[/sourcecode]
+```
 
 Keep the following points in mind when you style an amp-accordion:
 

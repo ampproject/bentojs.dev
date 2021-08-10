@@ -35,6 +35,7 @@
     "fast-glob": "^3.2.7",
     "gray-matter": "^4.0.3",
     "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "prettier": "^2.3.2"
   }
 }

@@ -1,0 +1,45 @@
+{
+  "extends": [
+		"google",
+		"prettier"
+	],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "max-len": [2, 100, {
+			"ignoreComments": true,
+			"ignoreRegExpLiterals": true,
+      "ignoreUrls": true,
+      "tabWidth": 2
+    }],
+    "no-implicit-coercion": [2, {
+      "boolean": false,
+      "number": true,
+      "string": true
+    }],
+    "no-unused-expressions": [2, {
+      "allowShortCircuit": true,
+      "allowTernary": false
+    }],
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "args": "after-used",
+      "argsIgnorePattern": "(^reject$|^_$)",
+      "varsIgnorePattern": "(^_$)"
+    }],
+    "prettier/prettier": 2,
+    "require-jsdoc": 0,
+    "valid-jsdoc": 0,
+    "prefer-arrow-callback": 1,
+    "no-var": 1
+  },
+  "env": {
+    "node": true,
+    "jasmine": true
+  }
+}

@@ -17,9 +17,14 @@
 const gulp = require('gulp');
 
 const importDocs = require('./importDocs.js');
+const eleventy = require('./eleventy.js');
 const lint = require('./lint.js');
+
+
 
 module.exports = {
   importDocs,
   lint,
+  build: gulp.series(eleventy.build),
+  develop: gulp.series(eleventy.develop)
 };

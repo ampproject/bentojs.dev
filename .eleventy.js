@@ -8,6 +8,8 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  eleventyConfig.addPassthroughCopy('assets');
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',

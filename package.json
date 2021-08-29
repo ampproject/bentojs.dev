@@ -5,18 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx gulp --tasks"
+    "start": "npx gulp --tasks",
+    "develop": "npx gulp"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
   },
-  "keywords": [
-    "AMP",
-    "Page",
-    "Experience",
-    "Bento"
-  ],
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {
@@ -27,6 +23,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
     "@ampproject/toolbox-validator-rules": "^2.8.0",
+    "eleventy-plugin-toc": "^1.1.0",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
@@ -36,6 +33,10 @@
     "gray-matter": "^4.0.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
-    "prettier": "^2.3.2"
+    "markdown-it-anchor": "^8.3.0",
+    "prettier": "^2.3.2",
+    "sass": "^1.38.2",
+    "csso": "^4.2.0",
+    "purgecss": "^4.0.3"
   }
 }

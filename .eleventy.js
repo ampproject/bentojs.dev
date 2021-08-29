@@ -6,9 +6,9 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.addPassthroughCopy('assets');
+  eleventyConfig.addWatchTarget('./dist/assets/css');
 
   return {
     markdownTemplateEngine: 'njk',

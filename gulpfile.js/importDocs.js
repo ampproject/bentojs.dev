@@ -23,6 +23,71 @@ const chalk = require('chalk');
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
 
+function _rewriteCalloutToTip(contents) {
+  const CALLOUT_PATTERN =
+    /{% call callout\('.*?', type='(.*?)'\) %}(.*?){% endcall %}/gs;
+  const AVAILABLE_CALLOUT_TYPES = {
+    'note': 'note',
+    'read': 'read-on',
+    'caution': 'important',
+    'success': 'success',
+  };
+
+  contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
+    return `{% tip '${AVAILABLE_CALLOUT_TYPES[type]}' %}${text}{% endtip %}`;
+  });
+
+  return contents;
+}
+
+function _escapeVariables(contents) {
+  // This expression matches a {% raw %}...{% endraw %} block
+  const JINJA2_RAW_BLOCK =
+    /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
+
+  // This expression matches source code blocks. fenced blocks are converted to this syntax
+  const SOURCECODE_BLOCK =
+    /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+
+  // we search for ALL code blocks, and at the same time for raw blocks
+  // to ensure we do not match something that belongs to different code blocks
+  // or we add raw tags to existing raw blocks
+  const MARKDOWN_BLOCK_PATTERN = new RegExp(
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    SOURCECODE_BLOCK.source +
+    '|' +
+    /`[^`]*`/.source,
+    'g'
+  );
+
+  // Inside code blocks we search for mustache expressions
+  // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
+  // TODO: Avoid the need to distinguish between mustache and jinja2
+  const MUSTACHE_PATTERN = new RegExp(
+    '(' +
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+    ')',
+    'g'
+  );
+
+  return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => {
+    // check for mustache tags only if we have no raw block
+    if (!block.startsWith('{')) {
+      block = block.replace(MUSTACHE_PATTERN, (part) => {
+        // again, only if it is a mustache block wrap it with raw
+        if (part.startsWith('{{')) {
+          part = '{% raw %}' + part + '{% endraw %}';
+        }
+        return part;
+      });
+    }
+    return block;
+  });
+}
+
 async function importComponents() {
   const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/*.md'));
   if (!filePaths.length) {
@@ -57,6 +122,9 @@ async function importComponents() {
         document.data.title = fileName;
         document.data.tags = 'components';
         document.data.layout = 'layouts/component.njk';
+
+        document.content = _rewriteCalloutToTip(document.content);
+        document.content = _escapeVariables(document.content);
 
         await fs.writeFile(
           path.join(COMPONENTS_DEST, `${fileName}.md`),

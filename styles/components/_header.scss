@@ -1,0 +1,10 @@
+.bd-header {
+  grid-column: 1 / -1;
+  padding: 16px;
+  box-shadow: 0 3px 15px 0 rgb(0 0 0 / 10%);
+
+  &-logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+}

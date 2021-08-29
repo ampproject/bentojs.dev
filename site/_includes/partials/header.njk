@@ -1,3 +1,8 @@
-<header>
-  <h1>bento.dev</h1>
+<header class="bd-header">
+  <a class="bd-header-logo" href="/">🍱.dev</a>
+  <div class="bd-header-navigation" aria-role="list">
+    {%- for mainPage in collections.main -%}
+      <a href="{{ mainPage.url }}">{{ mainPage.data.title }}</a>
+    {%- endfor -%}
+  </div>
 </header>

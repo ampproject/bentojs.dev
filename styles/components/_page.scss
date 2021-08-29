@@ -1,0 +1,14 @@
+.bd-page {
+  display: grid;
+  color: black;
+  grid-column: 2;
+  grid-template-columns: 12fr;
+
+  &.--component {
+    grid-template-columns: 2fr 8fr 2fr;
+  }
+
+  &-sidebar {
+    // grid-
+  }
+}

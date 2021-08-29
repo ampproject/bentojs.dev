@@ -1,1 +1,40 @@
 @import 'config';
+@import 'fonts';
+
+@import 'components/page';
+@import 'components/header';
+@import 'components/footer';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 240px;
+  color: black;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: 'Noto Sans', system;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+
+  @include media('tiny') {
+    font-size: 14px;
+  }
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto minmax(240px, 1680px) auto;
+  grid-gap: 16px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+
+  &:visited {
+    color: inherit;
+  }
+}

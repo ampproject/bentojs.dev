@@ -1,14 +1,7 @@
 ---
 title: Welcome
-layout: 'layouts/home.njk'
+layout: 'layouts/content.njk'
+tags: main
 ---
 
 Welcome to bento.dev.
-
-<h2>Explore all components</h2>
-
-<ul>
-{%- for component in collections.components -%}
-  <li><a href="{{ component.url }}">{{ component.data.title }} ({{ component.data.version }})</a></li>
-{%- endfor -%}
-</ul>

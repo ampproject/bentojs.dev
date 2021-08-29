@@ -1,3 +1,32 @@
+@import 'mixins';
+
+$breakpoints: (
+  '-tiny': (
+    max-width: 239px,
+  ),
+  'tiny': (
+    min-width: 240px,
+  ),
+  '-small': (
+    max-width: 319px,
+  ),
+  'small': (
+    min-width: 320px,
+  ),
+  '-medium': (
+    max-width: 767px,
+  ),
+  'medium': (
+    min-width: 768px,
+  ),
+  'large': (
+    min-width: 1024px,
+  ),
+  'max': (
+    min-width: 1440px,
+  ),
+) !default;
+
 :root {
   --color-bento: #d45a5a;
 }

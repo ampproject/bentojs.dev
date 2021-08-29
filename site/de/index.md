@@ -1,6 +1,7 @@
 ---
 title: Willkommen
-layout: 'layouts/home.njk'
+layout: 'layouts/content.njk'
+tags: main
 ---
 
 Willkommen auf bento.dev

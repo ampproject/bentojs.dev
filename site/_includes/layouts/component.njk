@@ -1,1 +1,20 @@
 {% extends "layouts/base.njk" %}
+{% block content %}
+  <main class="bd-page --component">
+    <div>
+      <ul>
+        {%- for component in collections.components -%}
+          <li>
+            <a href="{{ component.url }}">{{ component.data.title }} ({{ component.data.version }})</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="">
+      {{ content | safe }}
+    </div>
+    <aside>
+      {{ content | toc | safe }}
+    </aside>
+  </main>
+{% endblock %}

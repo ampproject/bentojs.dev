@@ -3,25 +3,18 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    {% if noindex -%}
-      <meta name="robots" content="noindex">
-    {%- endif %}
-    <title>{{ title }} | bento.dev</title>
-  </head>
-  <body>
-    {% block header %}
-      {% include 'partials/header.njk' %}
-    {% endblock %}
-    <main>
-      {% block content %}
-        <h1>{{ title | safe }}</h1>
-        <div>
-          {{ content | safe }}
-        </div>
-      {% endblock %}
-    </main>
-    {% block footer %}
-      {% include 'partials/footer.njk' %}
-    {% endblock %}
-  </body>
-</html>
+    <style>/* bento-dev.css */</style>
+  {% if noindex -%}
+    <meta name="robots" content="noindex">
+  {%- endif %}
+  <title>{{ title }} | bento.dev</title>
+</head>
+<body>
+  {% block header %}
+    {% include 'partials/header.njk' %}
+  {% endblock %}
+  {% block content %}{% endblock %}
+  {% block footer %}
+    {% include 'partials/footer.njk' %}
+  {% endblock %}
+</body></html>

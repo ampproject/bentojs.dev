@@ -1,4 +1,9 @@
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const toc = require('eleventy-plugin-toc');
+
 const noOpShortCode = require('./shortcodes/NoOp.js');
 const insertStyles = require('./transforms/insertStyles.js');
 
@@ -13,6 +18,16 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addWatchTarget('./dist/assets/css');
 
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
+
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt().use(markdownItAnchor)
+  )
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(toc);
+
+  eleventyConfig.addTransform('insert-styles', insertStyles);
+
   return {
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',

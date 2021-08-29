@@ -56,7 +56,7 @@ The `amp-date-countdown` provides countdown time data that you can render in you
 >
   <template type="amp-mustache">
     <p class="p1">
-      {{d}} days, {{h}} hours, {{m}} minutes and {{s}} seconds until
+      {% raw %}{{d}}{% endraw %} days, {% raw %}{{h}}{% endraw %} hours, {% raw %}{{m}}{% endraw %} minutes and {% raw %}{{s}}{% endraw %} seconds until
       <a href="https://en.wikipedia.org/wiki/Year_2038_problem">Y2K38</a>.
     </p>
   </template>
@@ -129,7 +129,7 @@ The example below demonstrates `amp-date-countdown` component in standalone use.
   height="50">
   <template type="amp-mustache">
     <p class="p1">
-      {{d}} {{days}}, {{h}} {{hours}}, {{m}} {{minutes}} and {{s}} {{seconds}} until
+      {% raw %}{{d}}{% endraw %} {% raw %}{{days}}{% endraw %}, {% raw %}{{h}}{% endraw %} {% raw %}{{hours}}{% endraw %}, {% raw %}{{m}}{% endraw %} {% raw %}{{minutes}}{% endraw %} and {% raw %}{{s}}{% endraw %} {% raw %}{{seconds}}{% endraw %} until
       <a href="https://en.wikipedia.org/wiki/Year_2038_problem">Y2K38</a>.
     </p>
   </template>
@@ -294,7 +294,7 @@ _Example: Demonstrating usage of timeout event_
   <template type="amp-mustache">
     <h1>Countdown Clock</h1>
     <div>
-      {{dd}} : {{hh)) : {{mm}} : {{ss}}
+      {% raw %}{{dd}}{% endraw %} : {% raw %}{{hh)) : {{mm}}{% endraw %} : {% raw %}{{ss}}{% endraw %}
     </div>
   </template>
 </amp-date-countdown>

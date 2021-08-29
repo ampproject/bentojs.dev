@@ -51,8 +51,8 @@ for rendering. Refer to the
 >
   <template type="amp-mustache">
     <div>
-      {{dayName}} {{day}} {{monthName}} {{year}}
-      {{hourTwoDigit}}:{{minuteTwoDigit}}:{{secondTwoDigit}}
+      {% raw %}{{dayName}}{% endraw %} {% raw %}{{day}}{% endraw %} {% raw %}{{monthName}}{% endraw %} {% raw %}{{year}}{% endraw %}
+      {% raw %}{{hourTwoDigit}}{% endraw %}:{% raw %}{{minuteTwoDigit}}{% endraw %}:{% raw %}{{secondTwoDigit}}{% endraw %}
     </div>
   </template>
 </amp-date-display>
@@ -116,8 +116,8 @@ The example below demonstrates `amp-date-display` component in standalone use.
 >
   <template type="amp-mustache">
     <div>
-      {{dayName}} {{day}} {{monthName}} {{year}}
-      {{hourTwoDigit}}:{{minuteTwoDigit}}:{{secondTwoDigit}}
+      {% raw %}{{dayName}}{% endraw %} {% raw %}{{day}}{% endraw %} {% raw %}{{monthName}}{% endraw %} {% raw %}{{year}}{% endraw %}
+      {% raw %}{{hourTwoDigit}}{% endraw %}:{% raw %}{{minuteTwoDigit}}{% endraw %}:{% raw %}{{secondTwoDigit}}{% endraw %}
     </div>
   </template>
 </amp-date-display>

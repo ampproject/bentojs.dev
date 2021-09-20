@@ -55,10 +55,10 @@ async function insertStyles(content, outputPath) {
 
   content = content.replace(
     '<style>/* bento-dev.css */</style>',
-    `<style>${minifiedCss}</style>`,
+    `<style>${minifiedCss}</style>`
   );
 
   return content;
-};
+}
 
 module.exports = insertStyles;

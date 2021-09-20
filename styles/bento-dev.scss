@@ -1,9 +1,10 @@
 @import 'config';
 @import 'fonts';
 
-@import 'components/page';
-@import 'components/header';
-@import 'components/footer';
+@import 'components/_page';
+@import 'components/_header';
+@import 'components/_footer';
+@import 'components/_stage';
 
 html,
 body {
@@ -14,6 +15,7 @@ body {
   background-color: var(--white);
   font-size: 16px;
   font-family: 'Inter', sans-serif;
+  font-weight: var(--normal);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +34,7 @@ body {
 
 a {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: var(--bold);
 
   &:visited {
     color: inherit;

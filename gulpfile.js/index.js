@@ -22,9 +22,12 @@ const lint = require('./lint.js');
 const sass = require('./sass.js');
 
 const build = gulp.series(sass, eleventy.build);
-const develop = gulp.series(sass, gulp.parallel(() => {
-  gulp.watch('./styles/bento-dev.scss', sass);
-}, eleventy.develop));
+const develop = gulp.series(
+  sass,
+  gulp.parallel(() => {
+    gulp.watch('./styles/bento-dev.scss', sass);
+  }, eleventy.develop)
+);
 
 module.exports = {
   importDocs,
@@ -32,5 +35,5 @@ module.exports = {
   sass,
   default: build,
   build,
-  develop
+  develop,
 };

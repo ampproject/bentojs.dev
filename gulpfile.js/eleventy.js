@@ -17,4 +17,4 @@ async function build() {
 module.exports = {
   develop,
   build,
-}
+};

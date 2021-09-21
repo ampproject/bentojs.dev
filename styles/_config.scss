@@ -28,5 +28,28 @@ $breakpoints: (
 ) !default;
 
 :root {
-  --color-bento: #d45a5a;
+  --white: #ffffff;
+  --black: #000000;
+  // primary
+  --burnt-sienna: #eb6f57;
+  --elephant-green: #13444b;
+  --light-sea-green: #269da3;
+  --naples-yellow: #f6d055;
+  // secondary
+  --pale-violet: #c895ff;
+  --pearl-aqua: #71cdbd;
+  --middle-purple: #e486be;
+  --crayola: #72d7ff;
+  --maastricht-blue: #002b39;
+  --independence: #4c5a63;
+  --pewter-blue: #8fa8b8;
+  --bright-gray: #ecf1f3;
+
+  --thin: 150;
+  --extra-light: 200;
+  --light: 380;
+  --normal: 400;
+  --medium: 500;
+  --semi-bold: 650;
+  --bold: 700;
 }

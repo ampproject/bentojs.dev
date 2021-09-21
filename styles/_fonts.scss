@@ -1,36 +1,19 @@
-/* noto-sans-regular - latin */
+/* inter-latin-variable – variable */
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
   font-display: optional;
-  src: local('Noto Sans'), local('NotoSans'),
-    url('/assets/fonts/noto-sans-v7-latin-regular.woff2') format('woff2');
+  font-named-instance: 'Regular';
+  src: url("/assets/fonts/inter-latin.var.woff2") format("woff2");
 }
-/* noto-sans-700 - latin */
+
+/* roboto-mono-variable - latin */
 @font-face {
-  font-family: 'Noto Sans';
+  font-family: 'Roboto Mono';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 100 900;
   font-display: optional;
-  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
-    url('/assets/fonts/noto-sans-v7-latin-700.woff2') format('woff2');
-}
-/* poppins-700 - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-display: optional;
-  src: local('Poppins Bold'), local('Poppins-Bold'),
-    url('/assets/fonts/poppins-v5-latin-700.woff2') format('woff2');
-}
-/* fira-mono-500 - latin */
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: optional;
-  src: local('Fira Mono'), local('FiraMono'),
-    url('/assets/fonts/fira-mono-v7-latin-500.woff2') format('woff2');
+  font-named-instance: 'Regular';
+  src: url("/assets/fonts/roboto-mono-latin.var.woff2") format("woff2");
 }

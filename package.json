@@ -39,6 +39,7 @@
     "gray-matter": "^4.0.3",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
+    "gulp-svgstore": "^8.0.0",
     "markdown-it-anchor": "^8.3.0",
     "prettier": "^2.3.2",
     "purgecss": "^4.0.3",

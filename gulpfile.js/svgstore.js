@@ -15,28 +15,12 @@
  */
 
 const gulp = require('gulp');
+const gulpSvgstore = require('gulp-svgstore');
 
-const importDocs = require('./importDocs.js');
-const eleventy = require('./eleventy.js');
-const lint = require('./lint.js');
-const sass = require('./sass.js');
-const svgstore = require('./svgstore.js');
-
-const build = gulp.series(sass, svgstore, eleventy.build);
-const develop = gulp.series(
-  sass,
-  svgstore,
-  gulp.parallel(() => {
-    gulp.watch('./styles/bento-dev.scss', sass);
-  }, eleventy.develop)
-);
-
-module.exports = {
-  importDocs,
-  lint,
-  sass,
-  svgstore,
-  default: build,
-  build,
-  develop,
+module.exports = async function svgstore(callback) {
+  return gulp
+    .src('./assets/**/*.svg')
+    .pipe(gulpSvgstore({inlineSvg: true}))
+    .pipe(gulp.dest('./dist/assets/'))
+    .on('done', callback);
 };

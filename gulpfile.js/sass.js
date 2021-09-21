@@ -24,6 +24,6 @@ module.exports = async function sass(callback) {
   return gulp
     .src(['./styles/bento-dev.scss'], {sourcemaps: !isProduction})
     .pipe(gulpSass().on('error', gulpSass.logError))
-    .pipe(gulp.dest('./dist/assets/css', {sourcemaps: !isProduction}))
+    .pipe(gulp.dest('./assets/css', {sourcemaps: !isProduction}))
     .on('done', callback);
 };

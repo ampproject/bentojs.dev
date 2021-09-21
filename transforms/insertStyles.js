@@ -26,7 +26,7 @@ async function insertStyles(content, outputPath) {
     return content;
   }
 
-  const css = await fs.readFile('./dist/assets/css/bento-dev.css', {
+  const css = await fs.readFile('./styles/bento-dev.css', {
     encoding: 'utf-8',
   });
 

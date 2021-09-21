@@ -14,7 +14,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addPassthroughCopy('assets');
-  eleventyConfig.addWatchTarget('./styles');
+  eleventyConfig.addWatchTarget('./assets/**/*.css');
 
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
 

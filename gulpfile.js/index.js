@@ -25,7 +25,7 @@ const build = gulp.series(sass, eleventy.build);
 const develop = gulp.series(
   sass,
   gulp.parallel(() => {
-    gulp.watch('./styles/bento-dev.scss', sass);
+    gulp.watch('./styles/**/*.scss', sass);
   }, eleventy.develop)
 );
 

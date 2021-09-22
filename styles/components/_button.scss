@@ -1,0 +1,25 @@
+.bd-button {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--bold);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: var(--maastricht-blue);
+  margin: 0 16px 0 0;
+  padding: 13px 31px 13px 31px;
+  border-radius: 8px;
+  background-color: var(--white);
+
+  &.--inverted {
+    color: var(--white);
+    border: solid 1px var(--white);
+    background-color: transparent;
+  }
+}

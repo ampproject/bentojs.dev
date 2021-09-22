@@ -1,4 +1,12 @@
 .bd-stage {
-  color: var(--black);
-  background-color: var(--burnt-sienna);
+  p {
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--extra-light);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.83px;
+  }
 }

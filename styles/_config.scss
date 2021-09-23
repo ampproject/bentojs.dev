@@ -52,4 +52,27 @@ $breakpoints: (
   --medium: 500;
   --semi-bold: 650;
   --bold: 700;
+
+  // Fonts
+  --font-sans: 'Inter', sans-serif;
+
+  // Font sizes
+  --font-size-16: 1rem; // 16px
+  --font-size-18: 1.125rem; // 18px
+  --font-size-21: 1.3125rem; // 21x
+  --font-size-26: 1.625rem; // 26px
+  --font-size-34: 2.125rem; // 34px
+  --font-size-48: 3rem; // 48px
+  --font-size-56: 3.5rem; // 56px
+  --font-size-80: 5rem; // 80px
+
+  // Line heights
+  --line-height-8: 8px;
+  --line-height-22: 22px;
+  --line-height-24: 24px;
+  --line-height-32: 32px;
+  --line-height-40: 40px;
+  --line-height-56: 56px;
+  --line-height-64: 64px;
+  --line-height-88: 88px;
 }

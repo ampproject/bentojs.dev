@@ -2,11 +2,20 @@
   p {
     color: var(--white);
     font-family: var(--font-sans);
-    font-size: var(--font-size-80);
+    font-size: var(--font-size-34);
     font-weight: var(--extra-light);
     font-stretch: normal;
     font-style: normal;
-    line-height: var(--line-height-88);
+    line-height: var(--line-height-40);
     letter-spacing: -0.83px;
+
+    @include media('medium') {
+      font-size: var(--font-size-80);
+      line-height: var(--line-height-88);
+    }
+  }
+
+  .bd-button {
+    margin-bottom: 24px;
   }
 }

@@ -5,6 +5,7 @@
 @import 'components/_header';
 @import 'components/_footer';
 @import 'components/_stage';
+@import 'components/_button';
 
 html,
 body {
@@ -12,18 +13,14 @@ body {
   margin: 0;
   min-width: 240px;
   color: var(--black);
-  background-color: var(--white);
+  background-color: var(--burnt-sienna);
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   font-weight: var(--normal);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
-
-  @include media('tiny') {
-    font-size: 14px;
-  }
 }
 
 body {

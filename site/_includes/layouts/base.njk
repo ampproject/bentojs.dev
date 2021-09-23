@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>/* bento-dev.css */</style>
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
+      <style>/* bento-dev.css */</style>
+  {% else %}
+    <link rel="stylesheet" href="/assets/css/bento-dev.css">
+  {% endif %}
   {% if noindex -%}
     <meta name="robots" content="noindex">
   {%- endif %}

@@ -13,9 +13,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
   eleventyConfig.setDataDeepMerge(true);
 
-
   eleventyConfig.addPassthroughCopy('assets');
-  eleventyConfig.addWatchTarget('./dist/assets/css');
+  eleventyConfig.addWatchTarget('./assets/**/*.css');
 
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
 

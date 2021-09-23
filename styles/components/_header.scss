@@ -8,6 +8,7 @@
   top: 0;
   z-index: 1001;
   box-shadow: 0 3px 15px 0 rgb(0 0 0 / 10%);
+  color: var(--independence);
 
   &-main {
     display: flex;
@@ -96,14 +97,16 @@
 
   &-burger {
     margin-left: 20px;
+    color: inherit;
 
     @include media('medium') {
       display: none;
     }
 
     &-icon {
-      height: 32px;
-      width: 32px;
+      height: 19px;
+      width: 26px;
+      fill: currentColor;
     }
   }
 }

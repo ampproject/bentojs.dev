@@ -37,3 +37,13 @@ a {
     color: inherit;
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+select {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}

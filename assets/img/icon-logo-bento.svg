@@ -1,0 +1,8 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(0 .132)" fill="none" fill-rule="evenodd">
+        <rect fill="#269DA3" transform="matrix(0 1 1 0 4 -4)" x="4" y="-4" width="22" height="30" rx="3"/>
+        <rect fill="#F6D055" transform="matrix(0 1 1 0 -4 4)" x="38" y="38" width="22" height="30" rx="3"/>
+        <rect fill="#EB6F57" transform="matrix(0 1 1 0 -30 30)" x="-4" y="30" width="38" height="30" rx="3"/>
+        <rect fill="#13444B" transform="matrix(0 1 1 0 30 -30)" x="30" y="4" width="38" height="30" rx="3"/>
+    </g>
+</svg>

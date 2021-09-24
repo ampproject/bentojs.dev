@@ -1,8 +1,33 @@
+<script>
+  function showMenu() {
+    const header = document.querySelector('.bd-header').classList.toggle('--mainmenuopen');
+  }
+</script>
+
 <header class="bd-header">
-  <a class="bd-header-logo" href="/">🍱.dev</a>
-  <div class="bd-header-navigation" aria-role="list">
-    {%- for mainPage in collections.main -%}
-      <a href="{{ mainPage.url }}">{{ mainPage.data.title }}</a>
-    {%- endfor -%}
+  <div class="bd-header-main">
+    <a class="bd-header-home" href="/">
+      <svg class="bd-header-home-logo">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+      </svg>
+      <span class="bd-header-home-title">Bento</span>
+    </a>
+    <nav class="bd-header-navigation" aria-role="list">
+      {%- for mainPage in collections.main -%}
+      <div class="bd-header-navigation-item">
+        <a class="bd-header-navigation-link bd-link" href="{{ mainPage.url }}">{{ mainPage.data.title }}</a>
+      </div>
+      {%- endfor -%}
+    </nav>
+
+    {%- include './language-selector.njk' -%}
+
+    <button class="bd-header-burger"
+        tabindex="0"
+        onclick="showMenu()">
+        <svg class="bd-header-burger-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-burger"></use>
+        </svg>
+    </button>
   </div>
 </header>

@@ -1,10 +1,112 @@
 .bd-header {
-  grid-column: 1 / -1;
-  padding: 16px;
+  grid-gap: 16px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(24,1fr);
+  grid-column: 1/-1;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
   box-shadow: 0 3px 15px 0 rgb(0 0 0 / 10%);
+  color: var(--independence);
 
-  &-logo {
-    font-weight: var(--bold);
-    font-size: 24px;
+  &-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 56px;
+    grid-column: 2/24;
+    margin: 0 auto;
+    width: 100%;
+
+    @include media('medium') {
+      height: 64px;
+    }
+  }
+
+  &-home {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    &-logo {
+      height: 32px;
+      max-width: 32px;
+      max-height: 32px;
+      margin-right: 16px;
+    }
+
+    &-title {
+      font-weight: var(--bold);
+      font-size: var(--font-size-26);
+      line-height: var(--line-height-64);
+      letter-spacing: -1px;
+      color: var(--maastricht-blue);
+    }
+  }
+
+  &-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 100%);
+    padding: 30px;
+    background: var(--white);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+
+    @include media('medium') {
+      position: relative;
+      top: 0;
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      height: 100%;
+      padding: 0 30px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .--mainmenuopen & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+
+      @include media('medium') {
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 0;
+        padding: 0 20px;
+      }
+    }
+
+    &-link {
+      background: none;
+      border: 0;
+    }
+  }
+
+  &-burger {
+    margin-left: 20px;
+    color: inherit;
+
+    @include media('medium') {
+      display: none;
+    }
+
+    &-icon {
+      height: 19px;
+      width: 26px;
+      fill: currentColor;
+    }
   }
 }

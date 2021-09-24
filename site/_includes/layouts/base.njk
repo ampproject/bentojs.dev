@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    {% if process.env.ELEVENTY_ENV === 'prod' %}
-      <style>/* bento-dev.css */</style>
+    <link rel="preload" href="/assets/fonts/inter-latin.var.woff2" as="font" crossorigin>
+    <link rel="preload" href="/assets/fonts/roboto-mono-latin.var.woff2" as="font" crossorigin>
+  {% if process.env.ELEVENTY_ENV === 'prod' %}
+    <style>/* bento-dev.css */</style>
   {% else %}
     <link rel="stylesheet" href="/assets/css/bento-dev.css">
   {% endif %}

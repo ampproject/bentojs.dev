@@ -6,6 +6,8 @@
 @import 'components/_footer';
 @import 'components/_stage';
 @import 'components/_button';
+@import 'components/_link';
+@import 'components/_language-selector';
 
 html,
 body {
@@ -14,7 +16,7 @@ body {
   min-width: 240px;
   color: var(--black);
   background-color: var(--burnt-sienna);
-  font-size: 16px;
+  font-size: var(--font-size-16);
   font-family: var(--font-sans);
   font-weight: var(--normal);
   overflow-x: hidden;
@@ -36,4 +38,23 @@ a {
   &:visited {
     color: inherit;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+select {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
+
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
 }

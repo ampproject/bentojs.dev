@@ -1,0 +1,29 @@
+.bd-link {
+  font-size: var(--font-size-16);
+  font-weight: var(--bold);
+  font-stretch: normal;
+  font-style: normal;
+  line-height: var(--line-height-32);
+  letter-spacing: normal;
+  color: inherit;
+  position: relative;
+
+  &:after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    background-color: var(--burnt-sienna);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1) 0s;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.bd-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  &__col-2 > &__column,
+  &__col-3 > &__column {
+    flex: 1 1 100%;
+  }
+
+  @include media('medium') {
+    flex-direction: row;
+
+    &__col-2 > &__column {
+      flex: 1 1 50%;
+    }
+
+    &__col-3 > &__column {
+      flex: 1 1 30%;
+    }
+  }
+
+  &__reverse {
+    flex-direction: column-reverse;
+
+    @include media('medium') {
+      flex-direction: row;
+    }
+  }
+}

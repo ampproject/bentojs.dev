@@ -8,6 +8,8 @@
 @import 'components/_button';
 @import 'components/_link';
 @import 'components/_language-selector';
+@import 'components/_row';
+@import 'components/_section';
 
 html,
 body {
@@ -56,5 +58,11 @@ button {
   border: none;
   box-shadow: none;
   cursor: pointer;
+  padding: 0;
+}
+
+h1,
+p {
+  margin: 0;
   padding: 0;
 }

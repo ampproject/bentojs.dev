@@ -1,0 +1,38 @@
+.bd-section {
+  .bd-title {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-34);
+    font-weight: var(--bold);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: var(--line-height-40);
+    letter-spacing: -0.5px;
+    color: var(--white);
+    margin-bottom: var(--spacing-24);
+
+    @include media('medium') {
+      font-size: var(--font-size-48);
+      line-height: var(--line-height-56);
+    }
+  }
+
+  .bd-content {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-16);
+    font-weight: 350;
+    color: var(--white);
+    line-height: var(--line-height-32);
+    margin-bottom: var(--spacing-24);
+
+    @include media('medium') {
+      font-size: var(--font-size-18);
+      line-height: var(--line-height-32);
+      margin-bottom: var(--spacing-50);
+    }
+  }
+
+  .bd-image {
+    height: 100%;
+    width: 100%;
+  }
+}

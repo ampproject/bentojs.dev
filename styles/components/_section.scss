@@ -1,5 +1,5 @@
 .bd-section {
-  .bd-title {
+  &__title {
     font-family: var(--font-sans);
     font-size: var(--font-size-34);
     font-weight: var(--bold);
@@ -16,7 +16,7 @@
     }
   }
 
-  .bd-content {
+  &__body {
     font-family: var(--font-sans);
     font-size: var(--font-size-16);
     font-weight: 350;
@@ -31,7 +31,7 @@
     }
   }
 
-  .bd-image {
+  &__image {
     height: 100%;
     width: 100%;
   }

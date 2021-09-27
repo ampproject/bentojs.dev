@@ -3,19 +3,25 @@
   display: flex;
   width: 100vw;
 
-  & > div {
+  &__container {
     display: flex;
     flex-direction: column;
     row-gap: 15rem;
-    width: 85%;
-    margin: auto;
 
-    @include media('medium') {
-      width: 80%;
+    & * {
+      width: 85%;
+      margin: auto;
+
+      @include media('medium') {
+        width: 80%;
+      }
     }
   }
 
-  .bd-divider {
+  &__divider {
+    margin-top: 240px;
+    border: 0;
+
     &:before {
       content: '';
       display: block;

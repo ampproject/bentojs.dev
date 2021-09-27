@@ -10,6 +10,7 @@
 @import 'components/_language-selector';
 @import 'components/_row';
 @import 'components/_section';
+@import 'components/_theme';
 
 html,
 body {
@@ -17,7 +18,7 @@ body {
   margin: 0;
   min-width: 240px;
   color: var(--black);
-  background-color: var(--burnt-sienna);
+  background-color: var(--maastricht-blue);
   font-size: var(--font-size-16);
   font-family: var(--font-sans);
   font-weight: var(--normal);
@@ -30,7 +31,6 @@ body {
 body {
   display: grid;
   grid-template-columns: auto minmax(240px, 1680px) auto;
-  grid-gap: 16px;
 }
 
 a {
@@ -62,7 +62,8 @@ button {
 }
 
 h1,
-p {
+p,
+hr {
   margin: 0;
   padding: 0;
 }

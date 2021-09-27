@@ -1,8 +1,6 @@
 .bd-row {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
 
   &__col-2 > &__column,
   &__col-3 > &__column {
@@ -21,7 +19,7 @@
     }
   }
 
-  &__reverse {
+  &--reverse {
     flex-direction: column-reverse;
 
     @include media('medium') {

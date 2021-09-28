@@ -36,11 +36,19 @@
     width: 100%;
   }
 
-  &.--spacer {
-    margin-top: 128px;
+  &.--spacer-64 {
+    margin-top: var(--spacing-48);
 
     @include media('medium') {
-      margin-top: 256px;
+      margin-top: var(--spacing-64);
+    }
+  }
+
+  &.--spacer {
+    margin-top: calc(var(--spacing-64) * 2);
+
+    @include media('medium') {
+      margin-top: calc(var(--spacing-64) * 4);
     }
   }
 }

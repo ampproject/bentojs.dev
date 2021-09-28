@@ -7,6 +7,16 @@
     flex: 1 1 100%;
   }
 
+  &__col-3 > &__column {
+    display: flex;
+    flex-wrap: wrap;
+
+    & * {
+      flex: 1 0 33%;
+      margin-bottom: var(--spacing-16);
+    }
+  }
+
   @include media('medium') {
     flex-direction: row;
 

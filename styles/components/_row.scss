@@ -11,11 +11,24 @@
     flex-direction: row;
 
     &__col-2 > &__column {
-      flex: 1 1 50%;
+      flex: 0 1 50%;
     }
 
     &__col-3 > &__column {
-      flex: 1 1 30%;
+      flex: 0 1 30%;
+
+      &.--vertical {
+        display: flex;
+        flex-direction: column;
+
+        & * {
+          margin-bottom: var(--spacing-24);
+        }
+      }
+
+      &.--grow {
+        flex-grow: 1;
+      }
     }
   }
 

@@ -7,7 +7,7 @@
     font-style: normal;
     line-height: var(--line-height-40);
     letter-spacing: -0.5px;
-    color: var(--white);
+    color: inherit;
     margin-bottom: var(--spacing-24);
 
     @include media('medium') {
@@ -20,7 +20,7 @@
     font-family: var(--font-sans);
     font-size: var(--font-size-16);
     font-weight: 350;
-    color: var(--white);
+    color: inherit;
     line-height: var(--line-height-32);
     margin-bottom: var(--spacing-24);
 
@@ -34,5 +34,13 @@
   &__image {
     height: 100%;
     width: 100%;
+  }
+
+  &.--spacer {
+    margin-top: 128px;
+
+    @include media('medium') {
+      margin-top: 256px;
+    }
   }
 }

@@ -1,4 +1,4 @@
-.bd-button {
+@mixin button {
   font-family: var(--font-sans);
   font-size: var(--font-size-16);
   font-weight: var(--bold);
@@ -11,15 +11,31 @@
   text-align: center;
   -webkit-appearance: none;
   cursor: pointer;
-  color: var(--maastricht-blue);
   margin: 0 16px 0 0;
   padding: 8px 31px 8px 31px;
   border-radius: 8px;
+}
+
+.bd-button {
+  @include button;
+  color: var(--maastricht-blue);
   background-color: var(--white);
 
   &.--inverted {
     color: var(--white);
     border: solid 1px var(--white);
     background-color: transparent;
+  }
+
+  &--light {
+    @include button;
+    background-color: var(--light-sea-green);
+    color: var(--white);
+
+    &.--inverted {
+      background-color: transparent;
+      color: var(--light-sea-green);
+      border: solid 2px var(--light-sea-green);
+    }
   }
 }

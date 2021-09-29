@@ -23,12 +23,11 @@ const sass = require('./sass.js');
 const svgstore = require('./svgstore.js');
 
 const build = gulp.series(sass, svgstore, eleventy.build);
+const watch = () => gulp.watch('./styles/**/*.scss', sass);
 const develop = gulp.series(
   sass,
   svgstore,
-  gulp.parallel(() => {
-    gulp.watch('./styles/**/*.scss', sass);
-  }, eleventy.develop)
+  gulp.parallel(watch, eleventy.develop)
 );
 
 module.exports = {

@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const execa = require('execa');
+
+const eslintPath = path.join(require.resolve('eslint'), '../../bin/eslint.js');
 
 module.exports = async function lint() {
   if (process.argv.includes('--fix')) {
-    await execa('eslint', ['**/*.js', '--fix']);
+    await execa('node', [eslintPath, '**/*.js', '--fix'], {cwd: '.'});
     return;
   }
 
-  await execa('eslint', ['**/*.js']);
+  await execa('node', [eslintPath, '**/*.js'], {cwd: '.'});
 };

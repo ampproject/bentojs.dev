@@ -8,14 +8,17 @@
 @import 'components/_button';
 @import 'components/_link';
 @import 'components/_language-selector';
+@import 'components/_row';
+@import 'components/_section';
+@import 'components/_theme';
 
 html,
 body {
   padding: 0;
   margin: 0;
   min-width: 240px;
-  color: var(--black);
-  background-color: var(--burnt-sienna);
+  color: var(--white);
+  background-color: var(--maastricht-blue);
   font-size: var(--font-size-16);
   font-family: var(--font-sans);
   font-weight: var(--normal);
@@ -28,7 +31,6 @@ body {
 body {
   display: grid;
   grid-template-columns: auto minmax(240px, 1680px) auto;
-  grid-gap: 16px;
 }
 
 a {
@@ -57,4 +59,15 @@ button {
   box-shadow: none;
   cursor: pointer;
   padding: 0;
+}
+
+h1,
+p,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+.--uppercase {
+  text-transform: uppercase;
 }

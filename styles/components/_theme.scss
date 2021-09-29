@@ -1,0 +1,11 @@
+.bd-theme {
+  &--dark {
+    background-color: var(--maastricht-blue);
+    color: var(--white);
+  }
+
+  &--light {
+    background-color: var(--white);
+    color: var(--maastricht-blue);
+  }
+}

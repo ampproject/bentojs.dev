@@ -8,10 +8,14 @@
     font-style: normal;
     line-height: var(--line-height-40);
     letter-spacing: -0.83px;
+    margin-bottom: var(--spacing-24);
+    margin-top: 290px;
 
     @include media('medium') {
       font-size: var(--font-size-80);
       line-height: var(--line-height-88);
+      margin-bottom: var(--spacing-64);
+      margin-top: 162px;
     }
   }
 

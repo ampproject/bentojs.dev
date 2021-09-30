@@ -6,6 +6,8 @@
   "scripts": {
     "build": "eleventy",
     "develop": "npx gulp develop",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js --fix",
     "serve": "eleventy --serve",
     "start": "npx gulp --tasks",
     "test": "echo \"Error: no test specified\" && exit 1"

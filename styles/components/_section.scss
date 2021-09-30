@@ -32,8 +32,13 @@
   }
 
   &__image {
-    height: 100%;
-    width: 100%;
+    width: 335px;
+    margin-bottom: var(--spacing-48);
+
+    @include media('medium') {
+      width: auto;
+      margin-right: 60px;
+    }
   }
 
   &.--spacer-64 {

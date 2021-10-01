@@ -13,7 +13,7 @@
 
     & button {
       flex: 1 1 45%;
-      margin-bottom: var(--spacing-16);
+      margin-bottom: var(--spacing-xs);
     }
   }
 
@@ -30,10 +30,10 @@
       &.--vertical {
         display: flex;
         flex-direction: column;
-        margin-top: var(--spacing-64);
+        margin-top: var(--spacing-xxl);
 
         & * {
-          margin-bottom: var(--spacing-24);
+          margin-bottom: var(--spacing-s);
           flex: 0;
         }
       }

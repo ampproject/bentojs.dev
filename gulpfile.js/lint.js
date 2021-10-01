@@ -18,9 +18,9 @@ const execa = require('execa');
 
 module.exports = async function lint() {
   if (process.argv.includes('--fix')) {
-    await execa('eslint', ['**/*.js', '--fix']);
+    await execa.command('npm run lint:fix');
     return;
   }
 
-  await execa('eslint', ['**/*.js']);
+  await execa.command('npm run lint');
 };

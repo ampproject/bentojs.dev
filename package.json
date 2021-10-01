@@ -4,9 +4,13 @@
   "description": "The home for AMP's standalone components: Bento",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "eleventy",
+    "develop": "npx gulp develop",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint **/*.js --fix",
+    "serve": "eleventy --serve",
     "start": "npx gulp --tasks",
-    "develop": "npx gulp develop"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

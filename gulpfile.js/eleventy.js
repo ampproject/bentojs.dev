@@ -1,14 +1,14 @@
 const execa = require('execa');
 
 async function develop() {
-  await execa.command('eleventy --serve', {
+  await execa.command('npm run serve', {
     stderr: 'inherit',
     stdout: 'inherit',
   });
 }
 
 async function build() {
-  await execa.command('eleventy', {
+  await execa.command('npm run build', {
     stderr: 'inherit',
     stdout: 'inherit',
   });

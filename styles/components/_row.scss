@@ -11,8 +11,8 @@
     display: flex;
     flex-wrap: wrap;
 
-    & * {
-      flex: 1 0 33%;
+    & button {
+      flex: 1 1 45%;
       margin-bottom: var(--spacing-16);
     }
   }
@@ -30,9 +30,11 @@
       &.--vertical {
         display: flex;
         flex-direction: column;
+        margin-top: var(--spacing-64);
 
         & * {
           margin-bottom: var(--spacing-24);
+          flex: 0;
         }
       }
 

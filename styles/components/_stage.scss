@@ -20,6 +20,10 @@
   }
 
   .bd-button {
-    margin-bottom: 24px;
+    margin: 0 0 var(--spacing-24) 0;
+
+    @include media('medium') {
+      margin: 0 var(--spacing-24) 0 0;
+    }
   }
 }

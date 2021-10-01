@@ -37,7 +37,7 @@
 
     @include media('medium') {
       width: auto;
-      margin-right: 60px;
+      margin-right: var(--spacing-60);
     }
   }
 

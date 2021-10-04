@@ -18,10 +18,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
 
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt().use(markdownItAnchor)
-  )
+  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 

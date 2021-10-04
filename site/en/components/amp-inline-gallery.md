@@ -172,8 +172,16 @@ The `amp-inline-gallery` component is used in combination with `amp-base-carouse
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-inline-gallery-1.0.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/amp-inline-gallery-1.0.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.css"
+/>
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.
@@ -187,7 +195,7 @@ amp-inline-gallery-pagination {
   height: 20px;
 }
 amp-inline-gallery-thumbnails {
-  aspect-ratio: 4/1
+  aspect-ratio: 4/1;
 }
 ```
 
@@ -237,10 +245,10 @@ The `<amp-inline-gallery-pagination>` element includes <a href="https://amp.dev/
 
 The `amp-inline-gallery` component can display thumbnail preview in addition to, or instead of, the pagination indicators. By default, no thumbnails are shown in the gallery. Keep in mind the following best practices when using thumbnails:
 
--   Avoid using both pagination indicators and thumbnails with less than eight slides. The indicator dots are redundant in smaller galleries.
--   When using both pagination indicators and thumbnails, inset the pagination indicators to overlap the slides. View the code sample below to see an example.
--   Use the `media` attribute to show pagination indicators on smaller mobile devices and thumbnails on larger screens.
--   Load lower resolution images at thumbnails by using `data-thumbnail-src` on your slide elements.
+- Avoid using both pagination indicators and thumbnails with less than eight slides. The indicator dots are redundant in smaller galleries.
+- When using both pagination indicators and thumbnails, inset the pagination indicators to overlap the slides. View the code sample below to see an example.
+- Use the `media` attribute to show pagination indicators on smaller mobile devices and thumbnails on larger screens.
+- Load lower resolution images at thumbnails by using `data-thumbnail-src` on your slide elements.
 
 The example below demonstrates a gallery with thumbnails visible at larger resolutions.
 
@@ -400,7 +408,7 @@ This element includes <a href="https://amp.dev/documentation/guides-and-tutorial
 
 Unlike `0.1`, the experimental `1.0` version of `amp-inline-gallery` includes the following changes:
 
--   `amp-inline-gallery-pagination` with `inset` attribute positions the element with an overwritable `bottom: 0`.
--   `amp-inline-gallery-thumbnails` takes `data-thumbnail-src` from slide elements (children of the `amp-base-carousel`) instead of `srcset`.
--   `amp-inline-gallery-thumbnails` takes `aspect-ratio` as expressed by `width / height` instead of two separate attributes, `aspect-ratio-width` and `aspect-ratio-height`.
--   `amp-inline-gallery-thumbnails` configuration for `loop` defaults to `"false"`.
+- `amp-inline-gallery-pagination` with `inset` attribute positions the element with an overwritable `bottom: 0`.
+- `amp-inline-gallery-thumbnails` takes `data-thumbnail-src` from slide elements (children of the `amp-base-carousel`) instead of `srcset`.
+- `amp-inline-gallery-thumbnails` takes `aspect-ratio` as expressed by `width / height` instead of two separate attributes, `aspect-ratio-width` and `aspect-ratio-height`.
+- `amp-inline-gallery-thumbnails` configuration for `loop` defaults to `"false"`.

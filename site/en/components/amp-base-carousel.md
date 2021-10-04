@@ -43,9 +43,7 @@ generally work without this, there may be a few bugs. You can let the carousel
 know that it should operate as `rtl` as follows:
 
 ```html
-<amp-base-carousel dir="rtl" …>
-  …
-</amp-base-carousel>
+<amp-base-carousel dir="rtl" …> … </amp-base-carousel>
 ```
 
 If the carousel is in a RTL context, and you want the carousel to operate as
@@ -176,9 +174,9 @@ useful when using `visible-count`.
 
 Either `"always"`, `"auto"`, or `"never"`, defaults to `"auto"`. This determines if and when prev/next navigational arrows are displayed. Note: When `outset-arrows` is `true`, the arrows are shown `"always"`.
 
--   `always`: Arrows are always displayed.
--   `auto`: Arrows are displayed when the carousel has most recently received interaction via mouse, and not displayed when the carousel has most recently received interaction via touch. On first load for touch devices, arrows are displayed until first interaction.
--   `never`: Arrows are never displayed.
+- `always`: Arrows are always displayed.
+- `auto`: Arrows are displayed when the carousel has most recently received interaction via mouse, and not displayed when the carousel has most recently received interaction via touch. On first load for touch devices, arrows are displayed until first interaction.
+- `never`: Arrows are never displayed.
 
 ##### slide
 

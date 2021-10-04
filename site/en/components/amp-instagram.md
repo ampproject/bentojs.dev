@@ -51,8 +51,16 @@ The example below demonstrates `amp-instagram` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-instagram-1.0.css">
-  <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-1.0.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.ampproject.org/v0/amp-instagram-1.0.css"
+  />
+  <script
+    async
+    custom-element="amp-instagram"
+    src="https://cdn.ampproject.org/v0/amp-instagram-1.0.js"
+  ></script>
   <style>
     amp-instagram {
       aspect-ratio: 1/2;
@@ -69,7 +77,11 @@ The example below demonstrates `amp-instagram` component in standalone use.
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-instagram-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/amp-instagram-1.0.css"
+/>
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.

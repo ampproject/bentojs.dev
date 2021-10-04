@@ -40,7 +40,8 @@ The `amp-date-countdown` provides countdown time data that you can render in you
 >
   <template type="amp-mustache">
     <p class="p1">
-      {% raw %}{{d}}{% endraw %} days, {% raw %}{{h}}{% endraw %} hours, {% raw %}{{m}}{% endraw %} minutes and {% raw %}{{s}}{% endraw %} seconds until
+      {% raw %}{{d}}{% endraw %} days, {% raw %}{{h}}{% endraw %} hours, {% raw
+      %}{{m}}{% endraw %} minutes and {% raw %}{{s}}{% endraw %} seconds until
       <a href="https://en.wikipedia.org/wiki/Year_2038_problem">Y2K38</a>.
     </p>
   </template>
@@ -97,9 +98,21 @@ The example below demonstrates `amp-date-countdown` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-date-countdown.css">
-  <script async custom-element="amp-date-countdown" src="https://cdn.ampproject.org/v0/amp-date-countdown-1.0.js"></script>
-  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.ampproject.org/v0/amp-date-countdown.css"
+  />
+  <script
+    async
+    custom-element="amp-date-countdown"
+    src="https://cdn.ampproject.org/v0/amp-date-countdown-1.0.js"
+  ></script>
+  <script
+    async
+    custom-template="amp-mustache"
+    src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  ></script>
   <style>
     amp-date-countdown {
       height: 50px;
@@ -110,10 +123,14 @@ The example below demonstrates `amp-date-countdown` component in standalone use.
   id="my-date-countdown"
   timestamp-seconds="2147483648"
   layout="fixed-height"
-  height="50">
+  height="50"
+>
   <template type="amp-mustache">
     <p class="p1">
-      {% raw %}{{d}}{% endraw %} {% raw %}{{days}}{% endraw %}, {% raw %}{{h}}{% endraw %} {% raw %}{{hours}}{% endraw %}, {% raw %}{{m}}{% endraw %} {% raw %}{{minutes}}{% endraw %} and {% raw %}{{s}}{% endraw %} {% raw %}{{seconds}}{% endraw %} until
+      {% raw %}{{d}}{% endraw %} {% raw %}{{days}}{% endraw %}, {% raw %}{{h}}{%
+      endraw %} {% raw %}{{hours}}{% endraw %}, {% raw %}{{m}}{% endraw %} {%
+      raw %}{{minutes}}{% endraw %} and {% raw %}{{s}}{% endraw %} {% raw
+      %}{{seconds}}{% endraw %} until
       <a href="https://en.wikipedia.org/wiki/Year_2038_problem">Y2K38</a>.
     </p>
   </template>
@@ -127,8 +144,10 @@ The example below demonstrates `amp-date-countdown` component in standalone use.
     const dateCountdown = document.querySelector('#my-date-countdown');
     await customElements.whenDefined('amp-date-countdown');
     // set up button actions
-    document.querySelector('#de-button').onclick = () => dateCountdown.setAttribute('locale', 'de');
-    document.querySelector('#en-button').onclick = () => dateCountdown.setAttribute('locale', 'en');
+    document.querySelector('#de-button').onclick = () =>
+      dateCountdown.setAttribute('locale', 'de');
+    document.querySelector('#en-button').onclick = () =>
+      dateCountdown.setAttribute('locale', 'en');
   })();
 </script>
 ```
@@ -140,7 +159,11 @@ The example below demonstrates `amp-date-countdown` component in standalone use.
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-date-countdown-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/amp-date-countdown-1.0.css"
+/>
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.
@@ -225,8 +248,8 @@ Allows the `amp-date-countdown` component to calculate the time difference based
 on the specified `biggest-unit` value. For example, assume there are `50 days 10 hours` left, if the `biggest-unit` is set to `hours`, the result displays
 `1210 hours` left.
 
--   Supported values: `days`, `hours`, `minutes`, `seconds`
--   Default: `days`
+- Supported values: `days`, `hours`, `minutes`, `seconds`
+- Default: `days`
 
 ### count-up (optional)
 
@@ -278,7 +301,8 @@ _Example: Demonstrating usage of timeout event_
   <template type="amp-mustache">
     <h1>Countdown Clock</h1>
     <div>
-      {% raw %}{{dd}}{% endraw %} : {% raw %}{{hh)) : {{mm}}{% endraw %} : {% raw %}{{ss}}{% endraw %}
+      {% raw %}{{dd}}{% endraw %} : {% raw %}{{hh)) : {{mm}}{% endraw %} : {%
+      raw %}{{ss}}{% endraw %}
     </div>
   </template>
 </amp-date-countdown>

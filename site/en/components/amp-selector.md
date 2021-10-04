@@ -19,14 +19,14 @@ layout: layouts/component.njk
 
 The AMP selector is a control that presents a list of options and lets the user choose one or many options; the contents of the options aren't just limited to text.
 
--   An `amp-selector` can contain any arbitrary HTML elements or AMP components (e.g., `amp-carousel`, `amp-img`, etc.).
--   An `amp-selector` cannot contain any nested `amp-selector` controls.
--   Selectable options can be set by adding the `option` attribute to the element and assigning a value to the attribute (e.g., `<li option="value"></li>`).
--   Disabled options can be set by adding the `disabled` attribute to the element (e.g., `<li option="d" disabled></li>`).
--   Preselected options can be set by adding the `selected` attribute to the element (e.g., `<li option="b" selected></li>`).
--   To allow for multiple selections, add the `multiple` attribute to the `amp-selector` element. By default, the `amp-selector` allows for one selection at a time.
--   To disable the entire `amp-selector`, add the `disabled` attribute to the `amp-selector` element.
--   When an `amp-selector` contains a `name` attribute and the `amp-selector` is inside a `form` tag, if a submit event occurs on the form, the `amp-selector`behaves like a radio-button/checkbox group and submits the selected values (the ones assigned to the option) against the name of the `amp-selector`.
+- An `amp-selector` can contain any arbitrary HTML elements or AMP components (e.g., `amp-carousel`, `amp-img`, etc.).
+- An `amp-selector` cannot contain any nested `amp-selector` controls.
+- Selectable options can be set by adding the `option` attribute to the element and assigning a value to the attribute (e.g., `<li option="value"></li>`).
+- Disabled options can be set by adding the `disabled` attribute to the element (e.g., `<li option="d" disabled></li>`).
+- Preselected options can be set by adding the `selected` attribute to the element (e.g., `<li option="b" selected></li>`).
+- To allow for multiple selections, add the `multiple` attribute to the `amp-selector` element. By default, the `amp-selector` allows for one selection at a time.
+- To disable the entire `amp-selector`, add the `disabled` attribute to the `amp-selector` element.
+- When an `amp-selector` contains a `name` attribute and the `amp-selector` is inside a `form` tag, if a submit event occurs on the form, the `amp-selector`behaves like a radio-button/checkbox group and submits the selected values (the ones assigned to the option) against the name of the `amp-selector`.
 
 Example:
 
@@ -103,8 +103,16 @@ The example below demonstrates `amp-selector` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-selector-1.0.css">
-  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-1.0.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.ampproject.org/v0/amp-selector-1.0.css"
+  />
+  <script
+    async
+    custom-element="amp-selector"
+    src="https://cdn.ampproject.org/v0/amp-selector-1.0.js"
+  ></script>
 </head>
 <amp-selector id="my-selector">
   <ul>
@@ -121,14 +129,16 @@ The example below demonstrates `amp-selector` component in standalone use.
 <button id="toggle-button">Toggle Option 3</button>
 <script>
   (async () => {
-    const selector = document.querySelector("#my-selector");
-    await customElements.whenDefined("amp-selector");
+    const selector = document.querySelector('#my-selector');
+    await customElements.whenDefined('amp-selector');
     const api = await selector.getApi();
 
     // set up button actions
-    document.querySelector("#select-down-button").onclick = () => api.selectBy(1);
-    document.querySelector("#select-up-button").onclick = () => api.selectBy(-1);
-    document.querySelector("#toggle-button").onclick = () => api.toggle("3");
+    document.querySelector('#select-down-button').onclick = () =>
+      api.selectBy(1);
+    document.querySelector('#select-up-button').onclick = () =>
+      api.selectBy(-1);
+    document.querySelector('#toggle-button').onclick = () => api.toggle('3');
   })();
 </script>
 ```
@@ -142,7 +152,7 @@ Bento enabled components in standalone use are highly interactive through their 
 The `amp-selector` component API is accessible by including the following script tag in your document:
 
 ```js
-await customElements.whenDefined("amp-selector");
+await customElements.whenDefined('amp-selector');
 const api = await selector.getApi();
 ```
 
@@ -162,8 +172,8 @@ api.selectBy(-2); // Select the option that is two previous in DOM sequence.
 Toggles the option with the given `optionValue` to be selected or deselected based on `opt_select`. If `opt_select` is not present, then the option will be selected if currently not selected, and deselected if currently selected.
 
 ```js
-api.toggle("a"); // Toggle the item with the attribute `option="a"`.
-api.toggle("1", true); // Select the item with the attribute `option="1"`.
+api.toggle('a'); // Toggle the item with the attribute `option="a"`.
+api.toggle('1', true); // Select the item with the attribute `option="1"`.
 ```
 
 ##### Events
@@ -185,7 +195,7 @@ Tapping disabled options does not trigger the `select` event.
 </ul>
 
 ```js
-selector.addEventListener("select", (e) => console.log(e.data.targetOption))
+selector.addEventListener('select', (e) => console.log(e.data.targetOption));
 ```
 
 #### Layout and style
@@ -193,7 +203,11 @@ selector.addEventListener("select", (e) => console.log(e.data.targetOption))
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-selector-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/amp-selector-1.0.css"
+/>
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.

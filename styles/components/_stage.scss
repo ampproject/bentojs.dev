@@ -8,18 +8,22 @@
     font-style: normal;
     line-height: var(--line-height-40);
     letter-spacing: -0.83px;
-    margin-bottom: var(--spacing-24);
+    margin-bottom: var(--spacing-s);
     margin-top: 290px;
 
     @include media('medium') {
       font-size: var(--font-size-80);
       line-height: var(--line-height-88);
-      margin-bottom: var(--spacing-64);
+      margin-bottom: var(--spacing-xxl);
       margin-top: 162px;
     }
   }
 
   .bd-button {
-    margin-bottom: 24px;
+    margin: 0 0 var(--spacing-s) 0;
+
+    @include media('medium') {
+      margin: 0 var(--spacing-s) 0 0;
+    }
   }
 }

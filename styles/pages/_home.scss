@@ -1,0 +1,42 @@
+.bd-demo {
+  &-container {
+    height: 700px;
+    width: 700px;
+    position: relative;
+    margin: var(--spacing-xl) 0 0 0;
+
+    @include media('medium') {
+      margin: 0 0 0 60px;
+    }
+  }
+
+  &__code,
+  &__image {
+    height: 50%;
+    width: 90%;
+    position: absolute;
+
+    @include media('medium') {
+      height: 70%;
+      width: 85%;
+    }
+  }
+
+  &__code {
+    pre {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    z-index: 2;
+    left: 10%;
+    top: 10%;
+
+    @include media('medium') {
+      left: 50%;
+      top: 25%;
+    }
+  }
+}

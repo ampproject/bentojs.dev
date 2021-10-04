@@ -23,7 +23,7 @@
 
 .bd-button {
   @include button;
-  color: var(--maastricht-blue);
+  color: var(--light-sea-green);
   background-color: var(--white);
 
   &.--inverted {

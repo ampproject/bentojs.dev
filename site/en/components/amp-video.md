@@ -21,10 +21,10 @@ The `amp-video` component loads the video resource specified by its `src` attrib
 
 The `amp-video` component accepts up to four unique types of HTML nodes as children:
 
-- `source` tags: Just like in the HTML `<video>` tag, you can add `<source>` tag children to specify different source media files to play.
-- `track` tags to enable subtitles in the video. If the track is hosted on a different origin than the document, you must add the `crossorigin` attribute to the `<amp-video>` tag. Whenever the video has narration or important audio information, make sure to include subtitles/captions for users who may not be able to hear it or have their sound turned off.
-- a placeholder for before the video starts
-- a fallback if the browser doesn’t support HTML5 video: One or zero immediate child nodes can have the `fallback` attribute. If present, this node and its children form the content that displays if HTML5 video is not supported on the user’s browser.
+-   `source` tags: Just like in the HTML `<video>` tag, you can add `<source>` tag children to specify different source media files to play.
+-   `track` tags to enable subtitles in the video. If the track is hosted on a different origin than the document, you must add the `crossorigin` attribute to the `<amp-video>` tag. Whenever the video has narration or important audio information, make sure to include subtitles/captions for users who may not be able to hear it or have their sound turned off.
+-   a placeholder for before the video starts
+-   a fallback if the browser doesn’t support HTML5 video: One or zero immediate child nodes can have the `fallback` attribute. If present, this node and its children form the content that displays if HTML5 video is not supported on the user’s browser.
 
 [example preview="inline" playground="true" imports="amp-video:1.0"]
 
@@ -55,19 +55,14 @@ Bento AMP allows you to use AMP components in non-AMP pages without needing to c
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/amp-video-1.0.css"
-  />
-  <script
-    async
-    custom-element="amp-video"
-    src="https://cdn.ampproject.org/v0/amp-video-1.0.js"
-  ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-video-1.0.css">
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-1.0.js"></script>
 </head>
 <body>
-  <amp-video style="aspect-ratio: 16/9" id="my-video">
+  <amp-video
+    style="aspect-ratio: 16/9"
+    id="my-video"
+  >
     <source src="my-video.webm" type="video/webm" />
     <source src="my-video.mp4" type="video/mp4" />
   </amp-video>
@@ -91,7 +86,7 @@ Bento AMP allows you to use AMP components in non-AMP pages without needing to c
         duration: videoHandle.duration,
         currentTime: videoHandle.currentTime,
         loop: videoHandle.loop,
-      });
+      })
     })();
   </script>
 </body>
@@ -245,9 +240,9 @@ The `muted` attribute is deprecated and no longer has any effect. The `autoplay`
 
 Annotates the video as having no audio. This has the following effects:
 
-- An equalizer icon will **not** be drawn when setting [`autoplay`](#autoplay).
+-   An equalizer icon will **not** be drawn when setting [`autoplay`](#autoplay).
 
-- An `<amp-story>` that includes this video will **not** draw an unnecessary mute button.
+-   An `<amp-story>` that includes this video will **not** draw an unnecessary mute button.
 
 ### rotate-to-fullscreen
 

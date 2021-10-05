@@ -66,16 +66,8 @@ The example below demonstrates `amp-fit-text` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/amp-fit-text-1.0.css"
-  />
-  <script
-    async
-    custom-element="amp-fit-text"
-    src="https://cdn.ampproject.org/v0/amp-fit-text-1.0.js"
-  ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-fit-text-1.0.css">
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-1.0.js"></script>
   <style>
     amp-fit-text {
       aspect-ratio: 4/3;
@@ -83,8 +75,8 @@ The example below demonstrates `amp-fit-text` component in standalone use.
   </style>
 </head>
 <amp-fit-text id="my-fit-text">
-  Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis
-  reprehendunt.
+  Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
+  inermis reprehendunt.
 </amp-fit-text>
 <div class="buttons" style="margin-top: 8px;">
   <button id="font-button">Change max-font-size</button>
@@ -97,10 +89,8 @@ The example below demonstrates `amp-fit-text` component in standalone use.
     await customElements.whenDefined('amp-fit-text');
 
     // set up button actions
-    document.querySelector('#font-button').onclick = () =>
-      fitText.setAttribute('max-font-size', '40');
-    document.querySelector('#content-button').onclick = () =>
-      (fitText.textContent = 'new content');
+    document.querySelector('#font-button').onclick = () => fitText.setAttribute('max-font-size', '40');
+    document.querySelector('#content-button').onclick = () => fitText.textContent = 'new content';
   })();
 </script>
 ```
@@ -112,11 +102,7 @@ The example below demonstrates `amp-fit-text` component in standalone use.
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.ampproject.org/v0/amp-fit-text-1.0.css"
-/>
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-fit-text-1.0.css">
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.

@@ -35,10 +35,8 @@ for rendering. Refer to the
 >
   <template type="amp-mustache">
     <div>
-      {% raw %}{{dayName}}{% endraw %} {% raw %}{{day}}{% endraw %} {% raw
-      %}{{monthName}}{% endraw %} {% raw %}{{year}}{% endraw %} {% raw
-      %}{{hourTwoDigit}}{% endraw %}:{% raw %}{{minuteTwoDigit}}{% endraw %}:{%
-      raw %}{{secondTwoDigit}}{% endraw %}
+      {% raw %}{{dayName}}{% endraw %} {% raw %}{{day}}{% endraw %} {% raw %}{{monthName}}{% endraw %} {% raw %}{{year}}{% endraw %}
+      {% raw %}{{hourTwoDigit}}{% endraw %}:{% raw %}{{minuteTwoDigit}}{% endraw %}:{% raw %}{{secondTwoDigit}}{% endraw %}
     </div>
   </template>
 </amp-date-display>

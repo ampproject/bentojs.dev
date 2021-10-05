@@ -61,16 +61,8 @@ The example below demonstrates `amp-stream-gallery` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.css"
-  />
-  <script
-    async
-    custom-element="amp-stream-gallery"
-    src="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.js"
-  ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.css">
+  <script async custom-element="amp-stream-gallery" src="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.js"></script>
   <style>
     amp-stream-gallery {
       aspect-ratio: 3/1;
@@ -80,30 +72,15 @@ The example below demonstrates `amp-stream-gallery` component in standalone use.
     }
     .red-gradient {
       background: brown;
-      background: linear-gradient(
-        90deg,
-        brown 50%,
-        lightsalmon 90%,
-        wheat 100%
-      );
+      background: linear-gradient(90deg, brown 50%, lightsalmon 90%, wheat 100%);
     }
     .blue-gradient {
       background: steelblue;
-      background: linear-gradient(
-        90deg,
-        steelblue 50%,
-        plum 90%,
-        lavender 100%
-      );
+      background: linear-gradient(90deg, steelblue 50%, plum 90%, lavender 100%);
     }
     .green-gradient {
       background: seagreen;
-      background: linear-gradient(
-        90deg,
-        seagreen 50%,
-        mediumturquoise 90%,
-        turquoise 100%
-      );
+      background: linear-gradient(90deg, seagreen 50%, mediumturquoise 90%, turquoise 100%);
     }
     .pink-gradient {
       background: pink;
@@ -111,48 +88,23 @@ The example below demonstrates `amp-stream-gallery` component in standalone use.
     }
     .yellow-gradient {
       background: gold;
-      background: linear-gradient(
-        90deg,
-        gold 50%,
-        goldenrod 90%,
-        darkgoldenrod 100%
-      );
+      background: linear-gradient(90deg, gold 50%, goldenrod 90%, darkgoldenrod 100%);
     }
     .orange-gradient {
       background: peru;
-      background: linear-gradient(
-        90deg,
-        peru 50%,
-        chocolate 90%,
-        saddlebrown 100%
-      );
+      background: linear-gradient(90deg, peru 50%, chocolate 90%, saddlebrown 100%);
     }
     .seafoam-gradient {
       background: darkseagreen;
-      background: linear-gradient(
-        90deg,
-        darkseagreen 50%,
-        lightseagreen 90%,
-        MediumAquaMarine 100%
-      );
+      background: linear-gradient(90deg, darkseagreen 50%, lightseagreen 90%, MediumAquaMarine 100%);
     }
     .purple-gradient {
       background: rebeccapurple;
-      background: linear-gradient(
-        90deg,
-        rebeccapurple 50%,
-        mediumpurple 90%,
-        mediumslateblue 100%
-      );
+      background: linear-gradient(90deg, rebeccapurple 50%, mediumpurple 90%, mediumslateblue 100%);
     }
     .cyan-gradient {
       background: darkcyan;
-      background: linear-gradient(
-        90deg,
-        darkcyan 50%,
-        lightcyan 90%,
-        white 100%
-      );
+      background: linear-gradient(90deg, darkcyan 50%, lightcyan 90%, white 100%);
     }
   </style>
 </head>
@@ -170,9 +122,9 @@ The example below demonstrates `amp-stream-gallery` component in standalone use.
   <div class="cyan-gradient"></div>
 </amp-stream-gallery>
 <div class="buttons" style="margin-top: 8px;">
-  <button id="prev-button">Go to previous page of slides</button>
-  <button id="next-button">Go to next page of slides</button>
-  <button id="go-to-button">Go to slide with green gradient</button>
+  <button id='prev-button'>Go to previous page of slides</button>
+  <button id='next-button'>Go to next page of slides</button>
+  <button id='go-to-button'>Go to slide with green gradient</button>
 </div>
 <script>
   (async () => {
@@ -239,7 +191,7 @@ This event is triggered when the index displayed by the carousel has changed.
 The new index is available via `event.data.index`.
 
 ```js
-carousel.addEventListener('slideChange', (e) => console.log(e.data.index));
+carousel.addEventListener('slideChange', (e) => console.log(e.data.index))
 ```
 
 #### Layout and style
@@ -247,11 +199,7 @@ carousel.addEventListener('slideChange', (e) => console.log(e.data.index));
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.css"
-/>
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-stream-gallery-1.0.css">
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.
@@ -266,7 +214,7 @@ amp-stream-gallery {
   width: 100%;
 }
 amp-stream-gallery > * {
-  aspect-ratio: 4/1;
+  aspect-ratio: 4/1
 }
 ```
 
@@ -303,9 +251,9 @@ options based on a [media query](./../../docs/spec/amp-html-responsive-attribute
 
 Either `"always"`, `"auto"`, or `"never"`, defaults to `"auto"`. This determines if and when prev/next navigational arrows are displayed. Note: When `outset-arrows` is `true`, the arrows are shown `"always"`.
 
-- `always`: Arrows are always displayed.
-- `auto`: Arrows are displayed when the carousel has most recently received interaction via mouse, and not displayed when the carousel has most recently received interaction via touch. On first load for touch devices, arrows are displayed until first interaction.
-- `never`: Arrows are never displayed.
+-   `always`: Arrows are always displayed.
+-   `auto`: Arrows are displayed when the carousel has most recently received interaction via mouse, and not displayed when the carousel has most recently received interaction via touch. On first load for touch devices, arrows are displayed until first interaction.
+-   `never`: Arrows are never displayed.
 
 #### extra-space
 
@@ -435,11 +383,11 @@ use the words "Previous" and "Next" instead of having them in the default
 location, you can use the following HTML:
 
 ```html
-<amp-stream-gallery id="carousel-1" …>
-  …
-  <div slot="next-arrow"></div>
-  <div slot="prev-arrow"></div>
-</amp-stream-gallery>
-<button on="tap:carousel-1.prev()">Previous</button>
-<button on="tap:carousel-1.next()">Next</button>
+  <amp-stream-gallery id="carousel-1" …>
+    …
+    <div slot="next-arrow"></div>
+    <div slot="prev-arrow"></div>
+  </amp-stream-gallery>
+  <button on="tap:carousel-1.prev()">Previous</button>
+  <button on="tap:carousel-1.next()">Next</button>
 ```

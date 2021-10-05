@@ -53,16 +53,8 @@ Bento AMP allows you to use AMP components in non-AMP pages without needing to c
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/amp-youtube-1.0.css"
-  />
-  <script
-    async
-    custom-element="amp-youtube"
-    src="https://cdn.ampproject.org/v0/amp-youtube-1.0.js"
-  ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-youtube-1.0.css">
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-1.0.js"></script>
 </head>
 <body>
   <amp-youtube
@@ -90,7 +82,7 @@ Bento AMP allows you to use AMP components in non-AMP pages without needing to c
         duration: videoHandle.duration,
         currentTime: videoHandle.currentTime,
         loop: videoHandle.loop,
-      });
+      })
     })();
   </script>
 </body>
@@ -252,8 +244,8 @@ Use the `autoplay` attribute instead of `data-param-autoplay` and the `loop` att
 
 Defines a `credentials` option as specified by the [Fetch API](https://fetch.spec.whatwg.org/).
 
-- Supported values: `omit`, `include`
-- Default: `include`
+-   Supported values: `omit`, `include`
+-   Default: `include`
 
 If you want to use the [YouTube player in privacy-enhanced mode](http://www.google.com/support/youtube/bin/answer.py?answer=141046), pass the value of `omit`.
 

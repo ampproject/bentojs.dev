@@ -54,16 +54,8 @@ The example below demonstrates `amp-timeago` component in standalone use.
 ```html
 <head>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/amp-timeago-1.0.css"
-  />
-  <script
-    async
-    custom-element="amp-timeago"
-    src="https://cdn.ampproject.org/v0/amp-timeago-1.0.js"
-  ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-timeago-1.0.css">
+  <script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-1.0.js"></script>
   <style>
     amp-timeago {
       height: 20px;
@@ -74,9 +66,9 @@ The example below demonstrates `amp-timeago` component in standalone use.
   Saturday 11 April 2017 00.37
 </amp-timeago>
 <div class="buttons" style="margin-top: 8px;">
-  <button id="ar-button">Change locale to Arabic</button>
-  <button id="en-button">Change locale to English</button>
-  <button id="now-button">Change time to now</button>
+  <button id='ar-button'>Change locale to Arabic</button>
+  <button id='en-button'>Change locale to English</button>
+  <button id='now-button'>Change time to now</button>
 </div>
 
 <script>
@@ -85,12 +77,9 @@ The example below demonstrates `amp-timeago` component in standalone use.
     await customElements.whenDefined('amp-timeago');
 
     // set up button actions
-    document.querySelector('#ar-button').onclick = () =>
-      timeago.setAttribute('locale', 'ar');
-    document.querySelector('#en-button').onclick = () =>
-      timeago.setAttribute('locale', 'en');
-    document.querySelector('#now-button').onclick = () =>
-      timeago.setAttribute('datetime', 'now');
+    document.querySelector('#ar-button').onclick = () => timeago.setAttribute('locale', 'ar');
+    document.querySelector('#en-button').onclick = () => timeago.setAttribute('locale', 'en');
+    document.querySelector('#now-button').onclick = () => timeago.setAttribute('datetime', 'now');
   })();
 </script>
 ```
@@ -102,11 +91,7 @@ The example below demonstrates `amp-timeago` component in standalone use.
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="https://cdn.ampproject.org/v0/amp-timeago-1.0.css"
-/>
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-timeago-1.0.css">
 ```
 
 Fully valid AMP pages use the AMP layout system to infer sizing of elements to create a page structure before downloading any remote resources. However, Bento use imports components into less controlled environments and AMP's layout system is inaccessible.
@@ -127,57 +112,57 @@ amp-timeago {
 
 The required `datetime` attribute sets the date and time. The value must be an [ISO datetime](https://www.w3.org/QA/Tips/iso-date).
 
-- Express time in UTC (Coordinated Universal Time): `2017-03-10T01:00:00Z`
-- Express in local time with a time zone offset: `2017-03-09T20:00:00-05:00`
+-   Express time in UTC (Coordinated Universal Time): `2017-03-10T01:00:00Z`
+-   Express in local time with a time zone offset: `2017-03-09T20:00:00-05:00`
 
 ### `locale` (optional)
 
 The local default is `en`. Add the `locale` attribute and specify one of the following values to chance the local.
 
-- `ar` (Arabic)
-- `be` (Belarusian)
-- `bg` (Bulgarian)
-- `bn-IN` (Bangla)
-- `ca` (Catalan)
-- `cs` (Czech)
-- `da` (Danish)
-- `de` (German)
-- `el` (Greek)
-- `en` (English)
-- `en-short` (English - short)
-- `es` (Spanish)
-- `eu` (Basque)
-- `fa` (Persian - Farsi)
-- `fi` (Finnish)
-- `fr` (French)
-- `gl` (Galician)
-- `he` (Hebrew)
-- `hi-IN` (Hindi)
-- `hu` (Hungarian)
-- `id-ID` (Malay)
-- `it` (Italian)
-- `ja` (Japanese)
-- `ka` (Georgian)
-- `ko` (Korean)
-- `ml` (Malayalam)
-- `my` (Burmese - Myanmar)
-- `nb-NO` (Norwegian Bokmål)
-- `nl` (Dutch)
-- `nn-NO` (Norwegian Nynorsk)
-- `pl` (Polish)
-- `pt-BR` (Portuguese)
-- `ro` (Romanian)
-- `ru` (Russian)
-- `sq` (Albanian)
-- `sr` (Serbian)
-- `sv` (Swedish)
-- `ta` (Tamil)
-- `th` (Thai)
-- `tr` (Turkish)
-- `uk` (Ukrainian)
-- `vi` (Vietnamese)
-- `zh-CN` (Chinese)
-- `zh-TW` (Taiwanese)
+-   `ar` (Arabic)
+-   `be` (Belarusian)
+-   `bg` (Bulgarian)
+-   `bn-IN` (Bangla)
+-   `ca` (Catalan)
+-   `cs` (Czech)
+-   `da` (Danish)
+-   `de` (German)
+-   `el` (Greek)
+-   `en` (English)
+-   `en-short` (English - short)
+-   `es` (Spanish)
+-   `eu` (Basque)
+-   `fa` (Persian - Farsi)
+-   `fi` (Finnish)
+-   `fr` (French)
+-   `gl` (Galician)
+-   `he` (Hebrew)
+-   `hi-IN` (Hindi)
+-   `hu` (Hungarian)
+-   `id-ID` (Malay)
+-   `it` (Italian)
+-   `ja` (Japanese)
+-   `ka` (Georgian)
+-   `ko` (Korean)
+-   `ml` (Malayalam)
+-   `my` (Burmese - Myanmar)
+-   `nb-NO` (Norwegian Bokmål)
+-   `nl` (Dutch)
+-   `nn-NO` (Norwegian Nynorsk)
+-   `pl` (Polish)
+-   `pt-BR` (Portuguese)
+-   `ro` (Romanian)
+-   `ru` (Russian)
+-   `sq` (Albanian)
+-   `sr` (Serbian)
+-   `sv` (Swedish)
+-   `ta` (Tamil)
+-   `th` (Thai)
+-   `tr` (Turkish)
+-   `uk` (Ukrainian)
+-   `vi` (Vietnamese)
+-   `zh-CN` (Chinese)
+-   `zh-TW` (Taiwanese)
 
 ### `cutoff`
 

@@ -88,8 +88,13 @@ function _escapeVariables(contents) {
   });
 }
 
+function _parseComponentName(content) {
+  const matches = /# (Bento .+)/gm.exec(content);
+  return matches[1];
+}
+
 async function importComponents() {
-  const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/*.md'));
+  const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/1.0/README.md'));
   if (!filePaths.length) {
     console.error(
       chalk.dim('[Import components]'),
@@ -100,26 +105,15 @@ async function importComponents() {
 
   const imports = [];
   for (const filePath of filePaths) {
-    const fileName = path.basename(filePath, '.md');
-    if (
-      !fileName.startsWith('amp-') ||
-      fileName.endsWith('-impl') ||
-      fileName.endsWith('-internal')
-    ) {
-      continue;
-    }
-
     imports.push(
       new Promise(async (resolve, reject) => {
         const file = await fs.readFile(filePath);
         const document = matter(file);
 
-        if (!document.data.bento) {
-          reject(new Error(`${fileName} is not a bento component`));
-          return;
-        }
+        const name = _parseComponentName(document.content);
+        const fileName = name.replace(/ /g, '-').toLowerCase();
 
-        document.data.title = fileName;
+        document.data.title = name;
         document.data.tags = 'components';
         document.data.layout = 'layouts/component.njk';
 
@@ -131,7 +125,7 @@ async function importComponents() {
           document.stringify()
         );
 
-        console.log(chalk.dim('[Import components]'), `Imported ${fileName}`);
+        console.log(chalk.dim('[Import components]'), `Imported ${name}`);
         resolve();
       })
     );

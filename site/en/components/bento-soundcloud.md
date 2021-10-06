@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-soundcloud>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-soundcloud
 ```
 
@@ -149,7 +149,7 @@ The examples below demonstrate use of the `<BentoSoundcloud>` as a functional co
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-soundcloud
 ```
 

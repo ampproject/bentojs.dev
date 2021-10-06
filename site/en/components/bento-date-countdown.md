@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-date-countdown>` web component
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-date-countdown
 ```
 
@@ -176,7 +176,7 @@ The examples below demonstrates use of the `<BentoDateCountdown>` as a functiona
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-date-countdown
 ```
 

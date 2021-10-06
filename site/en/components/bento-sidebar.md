@@ -23,7 +23,7 @@ The examples below demonstrate use of the `<bento-sidebar>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-sidebar
 ```
 
@@ -224,7 +224,7 @@ The examples below demonstrate use of the `<BentoSidebar>` as a functional compo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-sidebar
 ```
 

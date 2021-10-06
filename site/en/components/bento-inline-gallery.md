@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-inline-gallery>` web component
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-inline-gallery
 ```
 
@@ -126,7 +126,7 @@ The examples below demonstrates use of the `<BentoInlineGallery>` as a functiona
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-inline-gallery
 ```
 

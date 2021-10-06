@@ -24,7 +24,7 @@ The examples below demonstrate use of the `<bento-stream-gallery>` web component
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-stream-gallery
 ```
 
@@ -225,7 +225,7 @@ The examples below demonstrates use of the `<BentoStreamGallery>` as a functiona
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-stream-gallery
 ```
 

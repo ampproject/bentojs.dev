@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-twitter>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-twitter
 ```
 
@@ -145,7 +145,7 @@ The examples below demonstrate use of the `<BentoTwitter>` as a functional compo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-twitter
 ```
 

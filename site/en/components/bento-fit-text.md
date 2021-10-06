@@ -23,7 +23,7 @@ The examples below demonstrate use of the `<bento-fit-text>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-fit-text
 ```
 
@@ -154,7 +154,7 @@ The examples below demonstrate use of the `<BentoFitText>` as a functional compo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-fit-text
 ```
 

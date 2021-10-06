@@ -23,7 +23,7 @@ The examples below demonstrate use of the `<bento-social-share>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-social-share
 ```
 
@@ -339,7 +339,7 @@ The examples below demonstrate use of the `<BentoSocialShare>` as a functional c
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-social-share
 ```
 

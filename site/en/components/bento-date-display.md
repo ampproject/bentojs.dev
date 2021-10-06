@@ -26,7 +26,7 @@ The examples below demonstrate use of the `<bento-date-display>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-date-display
 ```
 
@@ -145,7 +145,7 @@ The examples below demonstrates use of the `<BentoDateDisplay>` as a functional 
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-date-display
 ```
 

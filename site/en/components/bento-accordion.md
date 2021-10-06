@@ -38,7 +38,7 @@ The examples below demonstrate use of the `<bento-accordion>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-accordion
 ```
 
@@ -394,7 +394,7 @@ The examples below demonstrates use of the `<BentoAccordion>` as a functional co
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-accordion
 ```
 

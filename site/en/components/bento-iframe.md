@@ -23,7 +23,7 @@ The examples below demonstrate use of the `<bento-iframe>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-iframe
 ```
 
@@ -153,7 +153,7 @@ The examples below demonstrates use of the `<BentoIframe>` as a functional compo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-iframe
 ```
 

@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-wordpress-embed>` web componen
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-wordpress-embed
 ```
 
@@ -115,7 +115,7 @@ The examples below demonstrate use of the `<BentoWordPressEmbed>` as a functiona
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-wordpress-embed
 ```
 

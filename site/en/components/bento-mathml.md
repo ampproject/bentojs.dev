@@ -21,7 +21,7 @@ The examples below demonstrate use of the `<bento-mathml>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-mathml
 ```
 
@@ -113,7 +113,7 @@ The examples below demonstrates use of the `<BentoMathml>` as a functional compo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-mathml
 ```
 

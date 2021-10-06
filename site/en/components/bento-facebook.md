@@ -25,7 +25,7 @@ You must include each Bento component's required CSS library before adding custo
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-facebook
 ```
 
@@ -304,7 +304,7 @@ The examples below demonstrate use of the `<BentoFacebook>` as a functional comp
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-facebook
 ```
 

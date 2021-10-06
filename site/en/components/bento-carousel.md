@@ -30,7 +30,7 @@ The examples below demonstrate use of the `<bento-base-carousel>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-base-carousel
 ```
 
@@ -394,7 +394,7 @@ The examples below demonstrate use of the `<BentoBaseCarousel>` as a functional 
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-base-carousel
 ```
 

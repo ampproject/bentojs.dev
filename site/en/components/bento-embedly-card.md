@@ -26,7 +26,7 @@ The examples below demonstrate use of the `<bento-embedly-card>` web component.
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-embedly-card
 ```
 
@@ -193,7 +193,7 @@ The examples below demonstrate use of the `<BentoEmbedlyCard>` as a functional c
 
 Install via npm:
 
-```sh
+```bash
 npm install @ampproject/bento-embedly-card
 ```
 

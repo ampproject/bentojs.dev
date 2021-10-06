@@ -7,5 +7,14 @@
   &--light {
     background-color: var(--white);
     color: var(--maastricht-blue);
+
+    .bd-section__body {
+      font-weight: var(--light);
+    }
+
+    .bd-section__body,
+    .bd-link {
+      color: var(--independence);
+    }
   }
 }

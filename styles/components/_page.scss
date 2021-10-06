@@ -10,10 +10,13 @@
   &__container {
     display: flex;
     flex-direction: column;
-    row-gap: 15rem;
     padding: 0 2rem;
 
     @include media('medium') {
+      padding: 0 3rem;
+    }
+
+    @include media('max') {
       padding: 0 10rem;
     }
   }

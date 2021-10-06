@@ -6,9 +6,15 @@ tags: main
 
 <div class="bd-page__container bd-theme--dark">
   <section class="bd-stage">
+    <svg class="bd-stage__bg-image">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-logo-bento"
+      ></use>
+    </svg>
     <p>
-      <b>Bento</b> is an easy to use component library that helps you achieve a
-      great page experience.
+      Bento is an easy to use component library that helps you achieve a great
+      page experience.
     </p>
     <button class="bd-button">Start learning</button>
     <button class="bd-button --inverted">Documentation</button>
@@ -32,7 +38,7 @@ tags: main
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
       </p>
-      <button class="bd-button">Get started with Bento</button>
+      <button class="bd-button">Check out the frameworks</button>
     </div>
   </section>
 
@@ -46,7 +52,7 @@ tags: main
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
       </p>
-      <button class="bd-button">Read more</button>
+      <button class="bd-button">Start learning</button>
     </div>
 
     <div class="bd-row__column">
@@ -62,10 +68,46 @@ tags: main
 <hr class="bd-page__divider" />
 
 <div class="bd-page__container bd-theme--light">
-  <div>
-    <section class="bd-section --spacer bd-row bd-row__col-2">
+  <section class="bd-section --spacer bd-row bd-row__col-2 bd-demo-bg">
+    <svg class="bd-demo-bg__image">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-logo-bento"
+      ></use>
+    </svg>
+    <div class="bd-row__column">
+      <h1 class="bd-section__title">Bento component demo</h1>
+      <p class="bd-section__body">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </p>
+      <div class="bd-link-wrapper">
+        <a class="bd-link" href="">➞ All components</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bd-section bd-row bd-row__col-3 --spacer-64">
+    {%- include '../_includes/partials/demo.njk' -%}
+  </section>
+
+  <section class="bd-latest-news">
+    <svg class="bd-latest-news__bg-image--left">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-logo-bento"
+      ></use>
+    </svg>
+    <svg class="bd-latest-news__bg-image--right">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-logo-bento"
+      ></use>
+    </svg>
+    <section class="bd-section bd-row bd-row__col-2">
       <div class="bd-row__column">
-        <h1 class="bd-section__title">Bento component demo</h1>
+        <h1 class="bd-section__title">Latest news</h1>
         <p class="bd-section__body">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -73,67 +115,46 @@ tags: main
           rebum.
         </p>
         <div class="bd-link-wrapper">
-          <a class="bd-link" href="">➞ All components</a>
+          <a class="bd-link" href="">➞ All news</a>
         </div>
       </div>
     </section>
 
-    <section class="bd-section bd-row bd-row__col-3 --spacer-64">
-      {%- include '../_includes/partials/demo.njk' -%}
-    </section>
-
-    <section class="bd-latest-news">
-      <section class="bd-section bd-row bd-row__col-2">
-        <div class="bd-row__column">
-          <h1 class="bd-section__title">Latest news</h1>
-          <p class="bd-section__body">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
-          </p>
-          <div class="bd-link-wrapper">
-            <a class="bd-link" href="">➞ All news</a>
-          </div>
-        </div>
-      </section>
-
-      <div class="bd-card-group">
-        <div class="bd-card--one bd-card--burnt-sienna">
-          <img
-            class="bd-card__image"
-            src="/assets/img/image-1-1-copy.webp"
-            alt="Better video performance"
-          />
-          <p class="bd-card__body">
-            Lorem ipsum dolor sit rest est in amet ner di moin
-          </p>
-          <p class="bd-card__footer">August 26, 2021</p>
-        </div>
-        <div class="bd-card--two bd-card--elephant-green">
-          <p class="bd-card__body">
-            Lorem ipsum dolor sit rest est in amet ner di moin
-          </p>
-          <p class="bd-card__footer">August 26, 2021</p>
-        </div>
-        <div class="bd-card--three bd-card--naples-yellow">
-          <p class="bd-card__body">
-            Lorem ipsum dolor sit rest est in amet ner di moin
-          </p>
-          <p class="bd-card__footer">August 26, 2021</p>
-        </div>
-        <div class="bd-card--four bd-card--light-sea-green">
-          <img
-            class="bd-card__image"
-            src="/assets/img/image-1-1-copy-2.webp"
-            alt="Web Stories"
-          />
-          <p class="bd-card__body">
-            Lorem ipsum dolor sit rest est in amet ner di moin
-          </p>
-          <p class="bd-card__footer">August 26, 2021</p>
-        </div>
+    <div class="bd-card-group">
+      <div class="bd-card--one bd-card--burnt-sienna">
+        <img
+          class="bd-card__image"
+          src="/assets/img/image-1-1-copy.webp"
+          alt="Better video performance"
+        />
+        <p class="bd-card__body">
+          Lorem ipsum dolor sit rest est in amet ner di moin
+        </p>
+        <p class="bd-card__footer">August 26, 2021</p>
       </div>
-    </section>
-  </div>
+      <div class="bd-card--two bd-card--elephant-green">
+        <p class="bd-card__body">
+          Lorem ipsum dolor sit rest est in amet ner di moin
+        </p>
+        <p class="bd-card__footer">August 26, 2021</p>
+      </div>
+      <div class="bd-card--three bd-card--naples-yellow">
+        <p class="bd-card__body">
+          Lorem ipsum dolor sit rest est in amet ner di moin
+        </p>
+        <p class="bd-card__footer">August 26, 2021</p>
+      </div>
+      <div class="bd-card--four bd-card--light-sea-green">
+        <img
+          class="bd-card__image"
+          src="/assets/img/image-1-1-copy-2.webp"
+          alt="Web Stories"
+        />
+        <p class="bd-card__body">
+          Lorem ipsum dolor sit rest est in amet ner di moin
+        </p>
+        <p class="bd-card__footer">August 26, 2021</p>
+      </div>
+    </div>
+  </section>
 </div>

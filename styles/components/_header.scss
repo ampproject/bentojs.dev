@@ -15,12 +15,13 @@
     align-items: center;
     flex-wrap: nowrap;
     height: 56px;
-    grid-column: 2/21;
+    grid-column: 2/16;
     margin: 0 auto;
     width: 100%;
 
     @include media('medium') {
       height: 64px;
+      grid-column: 2/21;
     }
   }
 

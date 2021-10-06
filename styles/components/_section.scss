@@ -1,4 +1,6 @@
 .bd-section {
+  z-index: 50;
+
   &__title {
     font-family: var(--font-sans);
     font-size: var(--font-size-34);

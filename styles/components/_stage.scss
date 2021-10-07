@@ -1,9 +1,27 @@
 .bd-stage {
+  z-index: 50;
+  position: relative;
+
+  &__bg-image {
+    position: absolute;
+    object-fit: contain;
+    z-index: -1;
+    right: -15%;
+    top: 8%;
+    transform: rotateY(180deg) rotate(130deg) scale(2);
+
+    @include media('medium') {
+      right: 0;
+      top: 45%;
+      transform: rotateY(180deg) rotate(30deg) scale(4.5);
+    }
+  }
+
   p {
     color: var(--white);
     font-family: var(--font-sans);
     font-size: var(--font-size-34);
-    font-weight: var(--extra-light);
+    font-weight: var(--thin);
     font-stretch: normal;
     font-style: normal;
     line-height: var(--line-height-40);
@@ -12,7 +30,7 @@
     margin-top: 290px;
 
     @include media('medium') {
-      font-size: var(--font-size-80);
+      font-size: var(--font-size-72);
       line-height: var(--line-height-88);
       margin-bottom: var(--spacing-xxl);
       margin-top: 162px;

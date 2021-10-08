@@ -43,4 +43,10 @@
       border: solid 2px var(--light-sea-green);
     }
   }
+
+  &--burnt-sienna {
+    @include button;
+    background-color: var(--burnt-sienna);
+    color: var(--white);
+  }
 }

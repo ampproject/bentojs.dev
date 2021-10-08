@@ -1,0 +1,233 @@
+.bd-page-get-started {
+  position: relative;
+  row-gap: 6rem;
+
+  @include media('medium') {
+    row-gap: 15rem;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.1;
+    left: -8%;
+    top: 56%;
+    transform: rotate(215deg) scale(2.5);
+
+    @include media('medium') {
+      left: 0;
+      top: 45%;
+      transform: rotate(215deg) scale(5);
+    }
+  }
+
+  p {
+    font-size: var(--font-size-16);
+    line-height: 2;
+    color: var(--independence);
+    font-weight: var(--light);
+
+    @include media('medium') {
+      font-size: var(--font-size-18);
+      line-height: 1.78;
+    }
+  }
+
+  .bd-stage {
+    &__bg-image {
+      transform: rotate(30deg) scale(2);
+
+      @include media('medium') {
+        transform: rotate(30deg) scale(4.5);
+      }
+    }
+
+    h1 {
+      font-weight: 280;
+      margin-bottom: var(--spacing-s);
+      width: auto;
+      line-height: 1.14;
+      letter-spacing: normal;
+
+      @include media('medium') {
+        font-weight: var(--extra-light);
+        width: 55%;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+      }
+    }
+
+    p {
+      width: auto;
+      @include media('medium') {
+        width: 55%;
+      }
+    }
+  }
+
+  .bd-steps {
+    h2 {
+      width: auto;
+      font-size: var(--font-size-21);
+      line-height: 1.14;
+      letter-spacing: normal;
+
+      @include media('medium') {
+        width: 50%;
+        font-size: var(--font-size-26);
+        line-height: 1.23;
+        letter-spacing: -0.2px;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      width: auto;
+      margin-top: var(--spacing-xl);
+      grid-template-rows: repeat(4, 1fr);
+      gap: var(--spacing-xl);
+
+      @include media('medium') {
+        margin-top: var(--spacing-xxl);
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5rem;
+      }
+
+      .bd-step {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: max-content;
+        column-gap: var(--spacing-xs);
+        grid-template-areas: 'image number' 'image description';
+
+        @include media('medium') {
+          column-gap: var(--spacing-m);
+        }
+
+        &__image {
+          grid-area: image;
+          width: 100px;
+          height: 100px;
+
+          @include media('medium') {
+            width: 150px;
+            height: 150px;
+          }
+        }
+
+        &__number {
+          grid-area: number;
+          font-size: var(--font-size-48);
+          font-weight: var(--bold);
+          line-height: 1.17;
+          letter-spacing: -1px;
+          color: var(--maastricht-blue);
+
+          @include media('medium') {
+            font-size: var(--font-size-56);
+            line-height: 1.14;
+          }
+        }
+
+        &__description {
+          grid-area: description;
+          font-weight: var(--bold);
+          line-height: 1.33;
+          color: var(--maastricht-blue);
+        }
+      }
+    }
+  }
+
+  .bd-section {
+    & .bd-row__column {
+      &:nth-of-type(1) {
+        flex: 1 0 33%;
+      }
+
+      &:nth-of-type(2) {
+        flex: 0 1 66%;
+      }
+    }
+
+    p ~ p {
+      margin-top: var(--spacing-xs);
+    }
+
+    strong {
+      display: block;
+      margin-top: var(--spacing-xs);
+      font-weight: var(--semi-bold);
+    }
+
+    .bd-react-sample,
+    .bd-web-component-sample {
+      margin-top: var(--spacing-xl);
+
+      @include media('medium') {
+        margin: 5rem;
+      }
+
+      h2 {
+        font-size: var(--font-size-18);
+        line-height: 1.33;
+
+        @include media('medium') {
+          font-size: var(--font-size-21);
+          line-height: 1.14;
+        }
+      }
+
+      &__code {
+        margin-top: var(--spacing-s);
+      }
+
+      .spacer-xxl {
+        margin-top: var(--spacing-xxl);
+      }
+    }
+
+    &.spacer {
+      margin-bottom: 608px;
+      @include media('medium') {
+        margin-bottom: 960px;
+      }
+    }
+  }
+
+  .bd-discover-more {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 480px;
+    bottom: 0;
+    left: 0;
+    background: #08777c;
+
+    &__container {
+      margin: auto;
+      width: 65%;
+
+      h1 {
+        color: var(--white);
+        font-weight: var(--semi-bold);
+        font-size: var(--font-size-34);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+        text-align: center;
+        @include media('medium') {
+          font-size: var(--font-size-56);
+          line-height: 1.14;
+          letter-spacing: -1px;
+        }
+      }
+
+      button {
+        display: table;
+        margin: var(--spacing-xl) auto;
+      }
+    }
+  }
+}

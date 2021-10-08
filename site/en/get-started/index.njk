@@ -1,0 +1,132 @@
+---
+title: Get started
+layout: 'layouts/content.njk'
+tags: main
+---
+
+<div class="bd-page-get-started bd-page__container bd-theme--light">
+  <section class="bd-stage">
+    <svg class="bd-stage__bg-image">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-logo-bento"
+      ></use>
+    </svg>
+    <h1>Getting started with Bento</h1>
+    <p>
+      Bento is a set of mix and matchable highly performant web components that
+      are easily customizable to meet your site functionality needs. Bento
+      components are well-tested, cross-browser compatible, and work in any
+      development environment. You can use one, some or all Bento components on
+      your site!
+    </p>
+  </section>
+
+  <section class="bd-steps">
+    <h2>
+      Start using Bento Components in your site by following these easy steps:
+    </h2>
+    <div class="bd-steps__grid">
+      <div class="bd-step">
+        <img class="bd-step__image" src="/assets/img/step-1.png" alt="Step 1" />
+        <h1 class="bd-step__number">1.</h1>
+        <p class="bd-step__description">
+          Identify which path fits your site’s environment, React or non-React.
+        </p>
+      </div>
+      <div class="bd-step">
+        <img class="bd-step__image" src="/assets/img/step-2.png" alt="Step 2" />
+        <h1 class="bd-step__number">2.</h1>
+        <p class="bd-step__description">
+          Choose a component that fits your needs and install or import it.
+        </p>
+      </div>
+      <div class="bd-step">
+        <img class="bd-step__image" src="/assets/img/step-3.png" alt="Step 3" />
+        <h1 class="bd-step__number">3.</h1>
+        <p class="bd-step__description">
+          Use the component’s API to customize functionality to meet your needs.
+        </p>
+      </div>
+      <div class="bd-step">
+        <img class="bd-step__image" src="/assets/img/step-4.png" alt="Step 4" />
+        <h1 class="bd-step__number">4.</h1>
+        <p class="bd-step__description">
+          Sit back, relax, and enjoy your out-of-the-box component!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bd-section bd-row bd-row__col-2">
+    <div class="bd-row__column">
+      <h1 class="bd-section__title">React</h1>
+      <div class="bd-section__body">
+        <p>
+          Bento components are fundamentally React functional components. They
+          are released in both Preact and React flavors, and in regular and
+          minified builds, so developers will have four options to choose for
+          the React development context which suits them best.
+        </p>
+        <p>
+          Install each Bento component as needed, via npm, then import it as
+          desired.
+        </p>
+        <p>
+          And that’s it! You can then refer to each component's documentation
+          for information on style, layout and functionality customization.
+        </p>
+      </div>
+      <button class="bd-button--burnt-sienna">All react components</button>
+    </div>
+
+    <div class="bd-row__column">
+      {%- include '../../_includes/partials/react-sample.njk' -%}
+    </div>
+  </section>
+
+  <svg class="bd-page-get-started__background">
+    <use
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="/assets/assets.svg#icon-logo-bento"
+    ></use>
+  </svg>
+
+  <section class="bd-section bd-row bd-row__col-2 spacer">
+    <div class="bd-row__column">
+      <h1 class="bd-section__title">Web Components</h1>
+      <div class="bd-section__body">
+        <p>
+          There are two options to integrate Bento components into an HTML
+          document:
+        </p>
+
+        <strong>1. Install and import the element using `npm`.</strong>
+
+        <strong>
+          2. Include the component `&lt;script&gt;` in the head of your
+          document.
+        </strong>
+
+        <p>
+          You must include each Bento component's required CSS library to
+          guarantee proper loading and before adding custom styles. Or use the
+          light-weight pre-upgrade styles available inline. See each component's
+          section on layout and style for further details.
+        </p>
+      </div>
+      <button class="bd-button--burnt-sienna">All react components</button>
+    </div>
+
+    <div class="bd-row__column">
+      {%- include '../../_includes/partials/web-component-sample.njk' -%}
+    </div>
+  </section>
+
+  <section class="bd-discover-more">
+    <div class="bd-discover-more__container">
+      <h1>Discover all available Bento components inside the documentation.</h1>
+      <button class="bd-button">Discover the documentation</button>
+    </div>
+  </section>
+</div>

@@ -17,7 +17,7 @@ The examples below demonstrate use of the `<bento-soundcloud>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -29,11 +29,11 @@ npm install @ampproject/bento-soundcloud
 import '@ampproject/bento-soundcloud';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -79,7 +79,7 @@ import '@ampproject/bento-soundcloud';
 </script>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -145,7 +145,7 @@ The examples below demonstrate use of the `<BentoSoundcloud>` as a functional co
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -166,7 +166,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 

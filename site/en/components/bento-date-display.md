@@ -22,7 +22,7 @@ The examples below demonstrate use of the `<bento-date-display>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -34,14 +34,14 @@ npm install @ampproject/bento-date-display
 import '@ampproject/bento-date-display';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains an `bento-date-display` with three sections. The
 `expanded` attribute on the third section expands it on page load.
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -62,7 +62,7 @@ The example below contains an `bento-date-display` with three sections. The
 </body>
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 
@@ -141,7 +141,7 @@ The examples below demonstrates use of the `<BentoDateDisplay>` as a functional 
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -168,7 +168,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 

@@ -17,7 +17,7 @@ The examples below demonstrate use of the `<bento-wordpress-embed>` web componen
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -29,11 +29,11 @@ npm install @ampproject/bento-wordpress-embed
 import '@ampproject/bento-wordpress-embed';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -66,7 +66,7 @@ import '@ampproject/bento-wordpress-embed';
 </script>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -111,7 +111,7 @@ The examples below demonstrate use of the `<BentoWordPressEmbed>` as a functiona
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -132,7 +132,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 

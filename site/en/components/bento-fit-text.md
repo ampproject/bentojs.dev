@@ -19,7 +19,7 @@ The examples below demonstrate use of the `<bento-fit-text>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -31,11 +31,11 @@ npm install @ampproject/bento-fit-text
 import '@ampproject/bento-fit-text';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -71,7 +71,7 @@ import '@ampproject/bento-fit-text';
 </script>
 ```
 
-[/example]
+{% endexample %}
 
 #### Overflowing content
 
@@ -80,7 +80,7 @@ If the content of the `bento-fit-text` overflows the available space, even with 
 
 In the following example, we specified a `min-font-size` of `40`, and added more content inside the `bento-fit-text` element. This causes the content to exceed the size of its fixed block parent, so the text is truncated to fit the container.
 
-[example preview="inline" playground="true" imports="bento-fit-text:1.0"]
+{% example %}
 
 ```html
 <div style="width: 300px; height: 300px; background: #005AF0; color: #FFF;">
@@ -92,7 +92,7 @@ In the following example, we specified a `min-font-size` of `40`, and added more
 </div>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -150,7 +150,7 @@ The examples below demonstrate use of the `<BentoFitText>` as a functional compo
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 

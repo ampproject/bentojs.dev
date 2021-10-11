@@ -17,7 +17,7 @@ The examples below demonstrate use of the `<bento-inline-gallery>` web component
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -29,13 +29,13 @@ npm install @ampproject/bento-inline-gallery
 import '@ampproject/bento-inline-gallery';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains a `bento-inline-gallery` consisting of three slides with thumbnails and a pagination indicator.
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -58,7 +58,7 @@ The example below contains a `bento-inline-gallery` consisting of three slides w
 </body>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -122,7 +122,7 @@ The examples below demonstrates use of the `<BentoInlineGallery>` as a functiona
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -149,7 +149,7 @@ function App() {
   }
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 

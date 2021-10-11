@@ -41,8 +41,7 @@ function _rewriteCalloutToTip(contents) {
 }
 
 function _rewriteExamples(contents) {
-  const EXAMPLE_PATTERN =
-    /\[example (.*?)\](.*?)\[\/example\]/gs;
+  const EXAMPLE_PATTERN = /\[example (.*?)\](.*?)\[\/example\]/gs;
 
   contents = contents.replace(EXAMPLE_PATTERN, (match, args, example) => {
     return `{% example %}${example}{% endexample %}`;
@@ -135,6 +134,7 @@ async function importComponents() {
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
+        document.content = _rewriteCodeFenceShToBash(document.content);
 
         await fs.writeFile(
           path.join(COMPONENTS_DEST, `${fileName}.md`),

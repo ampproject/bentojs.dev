@@ -64,10 +64,10 @@ function _escapeVariables(contents) {
   // or we add raw tags to existing raw blocks
   const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source +
-    '|' +
-    SOURCECODE_BLOCK.source +
-    '|' +
-    /`[^`]*`/.source,
+      '|' +
+      SOURCECODE_BLOCK.source +
+      '|' +
+      /`[^`]*`/.source,
     'g'
   );
 
@@ -76,10 +76,10 @@ function _escapeVariables(contents) {
   // TODO: Avoid the need to distinguish between mustache and jinja2
   const MUSTACHE_PATTERN = new RegExp(
     '(' +
-    JINJA2_RAW_BLOCK.source +
-    '|' +
-    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
-    ')',
+      JINJA2_RAW_BLOCK.source +
+      '|' +
+      /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+      ')',
     'g'
   );
 

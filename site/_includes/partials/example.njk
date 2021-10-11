@@ -1,0 +1,22 @@
+{# Caution, this file is exactly idented as it needs to be.
+Do not change formatting this would break rendering. #}
+
+<section class="bd-example">
+<header class="bd-example-toggle">
+{% if iframe %}
+<input type="radio" name="{{ id }}" value="code" checked>
+<label for="{{ id }}-code">Code</label>
+<input type="radio" name="{{ id }}" value="preview">
+<label for="{{ id }}-preview">Preview</label>
+{% endif %}
+</header>
+<div class="bd-example-code">
+{{ source|safe }}
+</div>
+
+{% if iframe %}
+<div class="bd-example-preview">
+<iframe src="/assets/iframes/{{ id }}.html"></iframe>
+</div>
+{% endif %}
+</section>

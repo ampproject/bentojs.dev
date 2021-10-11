@@ -99,6 +99,10 @@ function _escapeVariables(contents) {
   });
 }
 
+function _rewriteCodeFenceShToBash(contents) {
+  return contents.replace(/```sh/gm, '```bash');
+}
+
 function _parseComponentName(content) {
   const matches = /# (Bento .+)/gm.exec(content);
   return matches[1];

@@ -15,6 +15,7 @@
 @import 'components/_card';
 
 @import 'pages/_home';
+@import 'pages/_get-started';
 
 html,
 body {
@@ -66,6 +67,7 @@ button {
 }
 
 h1,
+h2,
 p,
 hr {
   margin: 0;

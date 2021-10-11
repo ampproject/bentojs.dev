@@ -16,8 +16,12 @@
       padding: 0 3rem;
     }
 
-    @include media('max') {
+    @include media('large') {
       padding: 0 10rem;
+    }
+
+    @include media('xxlarge') {
+      padding: 0 37rem;
     }
   }
 

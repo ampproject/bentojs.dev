@@ -22,8 +22,11 @@ $breakpoints: (
   'large': (
     min-width: 1024px,
   ),
-  'max': (
+  'xlarge': (
     min-width: 1440px,
+  ),
+  'xxlarge': (
+    min-width: 1920px,
   ),
 ) !default;
 

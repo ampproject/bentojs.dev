@@ -149,6 +149,10 @@
 
       &:nth-of-type(2) {
         flex: 0 1 66%;
+        width: 100%;
+        @include media('medium') {
+          width: 85%;
+        }
       }
     }
 
@@ -170,7 +174,7 @@
         margin: 5rem;
       }
 
-      h2 {
+      h3 {
         font-size: var(--font-size-18);
         line-height: 1.33;
 
@@ -210,7 +214,7 @@
       margin: auto;
       width: 65%;
 
-      h1 {
+      h2 {
         color: var(--white);
         font-weight: var(--semi-bold);
         font-size: var(--font-size-34);

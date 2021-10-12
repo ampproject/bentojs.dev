@@ -55,6 +55,9 @@ function exampleShortCode(nunjucksEngine) {
       const HTML_HEAD_PATTERN = /<head>(.*?)<\/head>/gms;
       html.head = HTML_HEAD_PATTERN.exec(html.all);
       html.head = html.head && html.head[1] ? html.head[1] : undefined;
+      if (!html.head) {
+        return {};
+      }
 
       const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
       html.body = HTML_BODY_PATTERN.exec(html.all);
@@ -62,12 +65,6 @@ function exampleShortCode(nunjucksEngine) {
 
       // If there is no body, take all of the HTML, but discard the head
       html.body = html.all.replace(HTML_HEAD_PATTERN, '');
-
-      // Check if there is dedicated CSS code that needs to be merged
-      // into the head
-      const CSS_CODE_PATTERN = /```css\n(.*?)\n```/gms;
-      html.css = CSS_CODE_PATTERN.exec(contents);
-      html.css = html.css && html.css[1] ? html.css[1] : undefined;
 
       return html;
     }
@@ -79,16 +76,15 @@ function exampleShortCode(nunjucksEngine) {
       const id = `${ctx.page.fileSlug}-${counter[ctx.page.fileSlug]}`;
 
       const html = this._parseContents(contents());
-      // Verify the parsed HTML includes a HTML snippet, otherwise
-      // do not generate an iframe
+
       let iframe;
-      if (html.all) {
+      if (html.head && html.body) {
         iframe = nunjucksEngine.render('site/_includes/layouts/example.njk', { id, html, title: ctx.title });
         examples.push({ id, iframe });
       }
 
       let widget = contents();
-      if (html.all) {
+      if (html.head && html.body) {
         widget = nunjucksEngine.render(
           'site/_includes/partials/example.njk',
           { id, source: contents(), iframe: !!iframe, title: ctx.title }

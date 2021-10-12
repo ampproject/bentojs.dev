@@ -143,14 +143,18 @@
 
   .bd-section {
     & .bd-row__column {
-      &:nth-of-type(1) {
-        flex: 1 0 33%;
+      @include media('medium') {
+        &:nth-of-type(1) {
+          flex: 1 0 33%;
+        }
+        &:nth-of-type(2) {
+          flex: 1 1 66%;
+          width: 66%;
+        }
       }
 
-      &:nth-of-type(2) {
-        flex: 0 1 66%;
-        width: 100%;
-        @include media('medium') {
+      @include media('large') {
+        &:nth-of-type(2) {
           width: 85%;
         }
       }

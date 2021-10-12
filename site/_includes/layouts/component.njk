@@ -1,20 +1,17 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <main class="bd-page --component">
-    <div>
-      <ul>
-        {%- for component in collections.components -%}
-          <li>
-            <a href="{{ component.url }}">{{ component.data.title }} ({{ component.data.version }})</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-    <div class="" style="width: 55%">
-      {{ content | safe }}
-    </div>
-    <aside>
-      {{ content | toc | safe }}
-    </aside>
-  </main>
+  <main class="bd-page bd-page__container bd-theme--light">
+    <div class="bd-page-component">
+      <div class="bd-page-component__sidebar">
+        {%- include '../partials/components/sidebar.njk' -%}
+      </div>
+      <div class="bd-page-component__main">
+        {{ content | safe }}
+      </div>
+      <aside class="bd-page-component__toc">
+        <h3>Table of contents</h3>
+        {{ content | toc | safe }}
+      </aside>
+    </main>
+  </div>
 {% endblock %}

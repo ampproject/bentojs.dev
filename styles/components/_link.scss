@@ -1,4 +1,4 @@
-.bd-link {
+@mixin link {
   font-size: var(--font-size-16);
   font-weight: var(--semi-bold);
   font-stretch: normal;
@@ -13,7 +13,7 @@
     height: 2px;
     width: 100%;
     position: absolute;
-    bottom: 3px;
+    bottom: -1px;
     left: 0;
     background-color: var(--burnt-sienna);
     transform: scaleX(0);
@@ -26,6 +26,10 @@
       transform: scaleX(1);
     }
   }
+}
+
+.bd-link {
+  @include link;
 }
 
 .bd-link-wrapper {

@@ -1,0 +1,64 @@
+@import '../components/link';
+
+.bd-page-component {
+  display: grid;
+  grid-template-columns: auto 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 80px;
+  column-gap: 4rem;
+
+  li {
+    list-style: none;
+  }
+
+  &__sidebar {
+    display: flex;
+
+    a {
+      font-size: 14px;
+    }
+
+    .vertical-divider {
+      width: 2px;
+      height: 200px;
+      border-radius: 2px;
+      margin-left: var(--spacing-xl);
+      background-color: var(--burnt-sienna);
+    }
+  }
+
+  &__toc {
+    h3 {
+      color: var(--maastricht-blue);
+      font-size: var(--font-size-18);
+      font-weight: bold;
+      line-height: 1.33;
+      margin-bottom: var(--spacing-s);
+    }
+
+    ol {
+      margin: 0;
+      &:first-child {
+        padding: 0;
+      }
+
+      a {
+        @include link;
+        font-size: 14px;
+        color: var(--independence);
+      }
+    }
+  }
+
+  &__main {
+    h1 {
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    h2,
+    p,
+    pre[class*='language-'] {
+      margin-bottom: var(--spacing-s);
+    }
+  }
+}

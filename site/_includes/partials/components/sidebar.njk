@@ -1,0 +1,10 @@
+<ul>
+  {%- for component in collections.components -%}
+  <li>
+    <a class="bd-link" href="{{ component.url }}"
+      >{{ component.data.title }} </a
+    >
+  </li>
+  {%- endfor -%}
+</ul>
+<div class="vertical-divider"></div>

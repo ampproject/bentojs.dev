@@ -1,64 +1,89 @@
 @import '../components/link';
 
-.bd-page-component {
-  display: grid;
-  grid-template-columns: auto 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  margin-top: 80px;
-  column-gap: 4rem;
+.bd-page-components {
+  width: 100vw;
 
-  li {
-    list-style: none;
-  }
-
-  &__sidebar {
+  .bd-page-components-container {
+    margin: var(--spacing-xxl) auto 0;
     display: flex;
+    flex-direction: column;
+    width: 90%;
 
-    a {
-      font-size: 14px;
+    @include media('medium') {
+      margin: 80px auto 0;
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 55%) 1fr;
+      width: 95%;
     }
 
-    .vertical-divider {
-      width: 2px;
-      height: 200px;
-      border-radius: 2px;
-      margin-left: var(--spacing-xl);
-      background-color: var(--burnt-sienna);
-    }
-  }
-
-  &__toc {
-    h3 {
-      color: var(--maastricht-blue);
-      font-size: var(--font-size-18);
-      font-weight: bold;
-      line-height: 1.33;
-      margin-bottom: var(--spacing-s);
+    @include media('xxlarge') {
+      width: 65%;
     }
 
-    ol {
-      margin: 0;
-      &:first-child {
-        padding: 0;
+    li {
+      list-style: none;
+    }
+
+    &__sidebar {
+      display: none;
+
+      @include media('medium') {
+        display: flex;
       }
 
       a {
-        @include link;
         font-size: 14px;
-        color: var(--independence);
+      }
+
+      .vertical-divider {
+        width: 2px;
+        height: 200px;
+        border-radius: 2px;
+        margin: 0 auto;
+        background-color: var(--burnt-sienna);
       }
     }
-  }
 
-  &__main {
-    h1 {
-      margin-bottom: var(--spacing-xxl);
+    &__toc {
+      display: none;
+
+      @include media('medium') {
+        display: block;
+      }
+
+      h3 {
+        color: var(--maastricht-blue);
+        font-size: var(--font-size-18);
+        font-weight: bold;
+        line-height: 1.33;
+        margin-bottom: var(--spacing-s);
+      }
+
+      ol {
+        margin: 0;
+        padding-inline-start: var(--spacing-s);
+        &:first-child {
+          padding: 0;
+        }
+
+        a {
+          @include link;
+          font-size: 14px;
+          color: var(--independence);
+        }
+      }
     }
 
-    h2,
-    p,
-    pre[class*='language-'] {
-      margin-bottom: var(--spacing-s);
+    &__main {
+      h1 {
+        margin-bottom: var(--spacing-xxl);
+      }
+
+      h2,
+      p,
+      pre[class*='language-'] {
+        margin-bottom: var(--spacing-s);
+      }
     }
   }
 }

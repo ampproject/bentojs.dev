@@ -1,14 +1,14 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <main class="bd-page bd-page__container bd-theme--light">
-    <div class="bd-page-component">
-      <div class="bd-page-component__sidebar">
+  <main class="bd-page-components bd-theme--light">
+    <div class="bd-page-components-container">
+      <div class="bd-page-components-container__sidebar">
         {%- include '../partials/components/sidebar.njk' -%}
       </div>
-      <div class="bd-page-component__main">
+      <div class="bd-page-components-container__main">
         {{ content | safe }}
       </div>
-      <aside class="bd-page-component__toc">
+      <aside class="bd-page-components-container__toc">
         <h3>Table of contents</h3>
         {{ content | toc | safe }}
       </aside>

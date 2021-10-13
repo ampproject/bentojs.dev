@@ -27,6 +27,18 @@
         display: flex;
       }
 
+      h2 {
+        font-weight: var(--bold);
+        font-size: var(--font-size-34);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+        margin-block-end: var(--spacing-xs);
+
+        &:not(:first-child) {
+          margin-block-start: var(--spacing-m);
+        }
+      }
+
       a {
         font-size: 14px;
       }
@@ -45,6 +57,7 @@
 
       @include media('medium') {
         display: block;
+        margin-inline-start: var(--spacing-m);
       }
 
       h3 {
@@ -71,17 +84,18 @@
     }
 
     &__main {
+      position: relative;
+
       .bd-page-components-background {
         position: absolute;
-        z-index: 1;
+        object-fit: contain;
         opacity: 0.1;
-        right: -15%;
-        top: 20%;
+        top: 0;
+        right: -25%;
         transform: rotate(160deg) rotateY(180deg) scale(1.6);
 
         @include media('medium') {
-          right: 10%;
-          top: 50%;
+          top: 1%;
           transform: rotate(160deg) rotateY(180deg) scale(4);
         }
       }

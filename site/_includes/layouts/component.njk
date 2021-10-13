@@ -1,20 +1,23 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <main class="bd-page --component">
-    <div>
-      <ul>
-        {%- for component in collections.components -%}
-          <li>
-            <a href="{{ component.url }}">{{ component.data.title }} ({{ component.data.version }})</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-    <div class="" style="width: 55%">
-      {{ content | safe }}
-    </div>
-    <aside>
-      {{ content | toc | safe }}
-    </aside>
-  </main>
+  <main class="bd-page-components bd-theme--light">
+    <div class="bd-page-components-container">
+      <div class="bd-page-components-container__sidebar">
+        {%- include '../partials/components/sidebar.njk' -%}
+      </div>
+      <div class="bd-page-components-container__main">
+        <svg class="bd-page-components-background">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="/assets/assets.svg#icon-logo-bento"
+          ></use>
+        </svg>
+        {{ content | safe }}
+      </div>
+      <aside class="bd-page-components-container__toc">
+        <h3>Table of contents</h3>
+        {{ content | toc | safe }}
+      </aside>
+    </main>
+  </div>
 {% endblock %}

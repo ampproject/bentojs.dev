@@ -3,10 +3,6 @@
   display: flex;
   flex-direction: column;
 
-  &.--component {
-    flex-direction: row;
-  }
-
   &__container {
     display: flex;
     flex-direction: column;
@@ -17,7 +13,7 @@
     }
 
     @include media('large') {
-      padding: 0 10rem;
+      padding: 0 8rem;
     }
 
     @include media('xxlarge') {

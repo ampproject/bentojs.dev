@@ -1,0 +1,119 @@
+@import '../components/link';
+
+.bd-page-components {
+  width: 100vw;
+
+  .bd-page-components-container {
+    margin: var(--spacing-xxl) auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    @include media('medium') {
+      margin: 80px auto 0;
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 55%) 1fr;
+      width: 95%;
+    }
+
+    @include media('xxlarge') {
+      width: 65%;
+    }
+
+    &__sidebar {
+      display: none;
+
+      @include media('medium') {
+        display: flex;
+      }
+
+      h2 {
+        font-weight: var(--bold);
+        font-size: var(--font-size-34);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+        margin-block-end: var(--spacing-xs);
+
+        &:not(:first-child) {
+          margin-block-start: var(--spacing-m);
+        }
+      }
+
+      a {
+        font-size: 14px;
+      }
+
+      .vertical-divider {
+        width: 2px;
+        height: 200px;
+        border-radius: 2px;
+        margin: 0 auto;
+        background-color: var(--burnt-sienna);
+      }
+    }
+
+    &__toc {
+      display: none;
+
+      @include media('medium') {
+        display: block;
+        margin-inline-start: var(--spacing-m);
+      }
+
+      h3 {
+        color: var(--maastricht-blue);
+        font-size: var(--font-size-18);
+        font-weight: bold;
+        line-height: 1.33;
+        margin-bottom: var(--spacing-s);
+      }
+
+      ol {
+        margin: 0;
+        padding-inline-start: var(--spacing-s);
+        &:first-child {
+          padding: 0;
+        }
+
+        a {
+          @include link;
+          font-size: 14px;
+          color: var(--independence);
+        }
+      }
+    }
+
+    &__main {
+      position: relative;
+
+      .bd-page-components-background {
+        position: absolute;
+        object-fit: contain;
+        opacity: 0.1;
+        top: 0;
+        right: -25%;
+        transform: rotate(160deg) rotateY(180deg) scale(1.6);
+
+        @include media('medium') {
+          top: 1%;
+          transform: rotate(160deg) rotateY(180deg) scale(4);
+        }
+      }
+
+      h1 {
+        margin-bottom: var(--spacing-xxl);
+      }
+
+      h2,
+      p,
+      pre[class*='language-'] {
+        margin-bottom: var(--spacing-s);
+      }
+
+      p,
+      a {
+        color: var(--independence);
+      }
+    }
+  }
+}

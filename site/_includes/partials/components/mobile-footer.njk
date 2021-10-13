@@ -1,0 +1,30 @@
+<div i class="bd-modals-container">
+  <div id="bd-components" class="bd-modal bd-modal--burnt-sienna">
+    <!-- <svg class="bd-modal__close">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-close"
+      ></use> -->
+    </svg>
+    {%- include './sidebar.njk' -%}
+  </div>
+  <div id="bd-toc" class="bd-modal bd-modal--light-sea-green">
+    <!-- <svg class="bd-modal__close">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-close"
+      ></use>
+    </svg> -->
+    <h3>Table of contents</h3>
+    {{ content | toc | safe }}
+  </div>
+</div>
+
+<div class="bd-button-group">
+  <button onclick="openModal('#bd-components')" class="bd-button--burnt-sienna">
+    All components
+  </button>
+  <button onclick="openModal('#bd-toc')" class="bd-button--light">
+    Table of contents
+  </button>
+</div>

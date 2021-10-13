@@ -12,8 +12,9 @@
     @include media('medium') {
       margin: 80px auto 0;
       display: grid;
-      grid-template-columns: 1fr minmax(auto, 55%) 1fr;
       width: 95%;
+      grid-template-columns: 1fr minmax(auto, 70%) 1fr;
+      column-gap: var(--spacing-m);
     }
 
     @include media('xxlarge') {
@@ -25,6 +26,11 @@
 
       @include media('medium') {
         display: flex;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
       }
 
       h2 {
@@ -57,7 +63,6 @@
 
       @include media('medium') {
         display: block;
-        margin-inline-start: var(--spacing-m);
       }
 
       h3 {
@@ -114,6 +119,28 @@
       a {
         color: var(--independence);
       }
+    }
+  }
+}
+
+.bd-components-footer {
+  grid-column: 1/-1;
+
+  &__mobile {
+    display: block;
+  }
+
+  &__default {
+    display: none;
+  }
+
+  @include media('medium') {
+    &__mobile {
+      display: none;
+    }
+
+    &__default {
+      display: block;
     }
   }
 }

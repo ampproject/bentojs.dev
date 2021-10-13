@@ -75,6 +75,11 @@ hr {
   padding: 0;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 .--uppercase {
   text-transform: uppercase;
 }

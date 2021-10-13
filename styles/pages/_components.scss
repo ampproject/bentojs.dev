@@ -20,10 +20,6 @@
       width: 65%;
     }
 
-    li {
-      list-style: none;
-    }
-
     &__sidebar {
       display: none;
 
@@ -75,6 +71,21 @@
     }
 
     &__main {
+      .bd-page-components-background {
+        position: absolute;
+        z-index: 1;
+        opacity: 0.1;
+        right: -15%;
+        top: 20%;
+        transform: rotate(160deg) rotateY(180deg) scale(1.6);
+
+        @include media('medium') {
+          right: 10%;
+          top: 50%;
+          transform: rotate(160deg) rotateY(180deg) scale(4);
+        }
+      }
+
       h1 {
         margin-bottom: var(--spacing-xxl);
       }
@@ -83,6 +94,11 @@
       p,
       pre[class*='language-'] {
         margin-bottom: var(--spacing-s);
+      }
+
+      p,
+      a {
+        color: var(--independence);
       }
     }
   }

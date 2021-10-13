@@ -39,6 +39,10 @@ pre[class*='language-'] {
   padding: 1em;
   margin: 0;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :not(pre) > code[class*='language-'],

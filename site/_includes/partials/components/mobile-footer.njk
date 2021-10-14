@@ -1,20 +1,20 @@
 <div i class="bd-modals-container">
   <div id="bd-components" class="bd-modal bd-modal--burnt-sienna">
-    <!-- <svg class="bd-modal__close">
-      <use
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xlink:href="/assets/assets.svg#icon-close"
-      ></use> -->
-    </svg>
-    {%- include './sidebar.njk' -%}
-  </div>
-  <div id="bd-toc" class="bd-modal bd-modal--light-sea-green">
-    <!-- <svg class="bd-modal__close">
+    <svg class="bd-modal__close" onclick="closeModals()">
       <use
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xlink:href="/assets/assets.svg#icon-close"
       ></use>
-    </svg> -->
+    </svg>
+    {%- include './sidebar.njk' -%}
+  </div>
+  <div id="bd-toc" class="bd-modal bd-modal--light-sea-green">
+    <svg class="bd-modal__close" onclick="closeModals()">
+      <use
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xlink:href="/assets/assets.svg#icon-close"
+      ></use>
+    </svg>
     <h3>Table of contents</h3>
     {{ content | toc | safe }}
   </div>

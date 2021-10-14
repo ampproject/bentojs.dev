@@ -8,6 +8,11 @@
 
     .bd-modal {
       &__close {
+        position: absolute;
+        right: -35%;
+        top: 0;
+        filter: brightness(0) invert(1);
+        transform: scale(0.5);
       }
 
       h2 {

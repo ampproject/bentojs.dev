@@ -20,7 +20,6 @@ const Prism = require('prismjs');
 const md = require('markdown-it')();
 
 const examples = [];
-const heads = {};
 let counter = {};
 
 function exampleShortCode(nunjucksEngine) {

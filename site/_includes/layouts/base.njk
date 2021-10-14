@@ -8,7 +8,7 @@
   {% if process.env.ELEVENTY_ENV === 'prod' %}
     <style>/* bento-dev.css */</style>
   {% else %}
-    <link rel="stylesheet" href="/assets/css/bento-dev.css">
+    <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
   {% endif %}
   {% if noindex -%}
     <meta name="robots" content="noindex">

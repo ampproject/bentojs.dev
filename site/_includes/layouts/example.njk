@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>bentojs.dev Example: {{ title }}</title>
+    <meta name="robots" content="noindex"> 
+    {{ html.head|safe }}
+    {% if html.css %}
+    <style>
+      {{ html.css|safe }}
+    </style>
+    {% endif %}
+  </head>
+  <body>
+    {{ html.body|safe }}
+  </body>
+</html>

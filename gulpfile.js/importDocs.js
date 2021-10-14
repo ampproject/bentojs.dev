@@ -40,6 +40,16 @@ function _rewriteCalloutToTip(contents) {
   return contents;
 }
 
+function _rewriteExamples(contents) {
+  const EXAMPLE_PATTERN = /\[example (.*?)\](.*?)\[\/example\]/gs;
+
+  contents = contents.replace(EXAMPLE_PATTERN, (match, args, example) => {
+    return `{% example %}${example}{% endexample %}`;
+  });
+
+  return contents;
+}
+
 function _escapeVariables(contents) {
   // This expression matches a {% raw %}...{% endraw %} block
   const JINJA2_RAW_BLOCK =
@@ -88,6 +98,10 @@ function _escapeVariables(contents) {
   });
 }
 
+function _rewriteCodeFenceShToBash(contents) {
+  return contents.replace(/```bash(\s.*?\s)```/gm, '```bash$1```');
+}
+
 function _parseComponentName(content) {
   const matches = /# (Bento .+)/gm.exec(content);
   return matches[1];
@@ -119,6 +133,8 @@ async function importComponents() {
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
+        document.content = _rewriteExamples(document.content);
+        document.content = _rewriteCodeFenceShToBash(document.content);
 
         await fs.writeFile(
           path.join(COMPONENTS_DEST, `${fileName}.md`),

@@ -19,7 +19,7 @@ The examples below demonstrate use of the `<bento-social-share>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -31,11 +31,11 @@ npm install @ampproject/bento-social-share
 import '@ampproject/bento-social-share';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -84,7 +84,7 @@ import '@ampproject/bento-social-share';
 </script>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -335,7 +335,7 @@ The examples below demonstrate use of the `<BentoSocialShare>` as a functional c
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -358,7 +358,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 

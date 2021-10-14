@@ -34,7 +34,7 @@ The examples below demonstrate use of the `<bento-accordion>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -46,14 +46,14 @@ npm install @ampproject/bento-accordion
 import '@ampproject/bento-accordion';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains an `bento-accordion` with three sections. The
 `expanded` attribute on the third section expands it on page load.
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -91,7 +91,7 @@ The example below contains an `bento-accordion` with three sections. The
 </body>
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 
@@ -292,7 +292,7 @@ animation when the content is expanded and "roll up" animation when collapsed.
 
 This attribute can be configured to based on a [media query](./../../../docs/spec/amp-html-responsive-attributes.md).
 
-[example preview="top-frame" playground="true" imports="bento-accordion:1.0"]
+{% example %}
 
 ```html
 <bento-accordion animate>
@@ -311,13 +311,13 @@ This attribute can be configured to based on a [media query](./../../../docs/spe
 </bento-accordion>
 ```
 
-[/example]
+{% endexample %}
 
 ##### expanded
 
 Apply the `expanded` attribute to a nested `<section>` to expand that section when the page loads.
 
-[example preview="top-frame" playground="true" imports="bento-accordion:1.0"]
+{% example %}
 
 ```html
 <bento-accordion>
@@ -336,13 +336,13 @@ Apply the `expanded` attribute to a nested `<section>` to expand that section wh
 </bento-accordion>
 ```
 
-[/example]
+{% endexample %}
 
 ##### expand-single-section
 
 Allow only one section to expand at a time by applying the `expand-single-section` attribute to the `<bento-accordion>` element. This means if a user taps on a collapsed `<section>`, it will expand and collapse other expanded `<section>`'s.
 
-[example preview="top-frame" playground="true" imports="bento-accordion:1.0"]
+{% example %}
 
 ```html
 <bento-accordion expand-single-section>
@@ -365,7 +365,7 @@ Allow only one section to expand at a time by applying the `expand-single-sectio
 </bento-accordion>
 ```
 
-[/example]
+{% endexample %}
 
 #### Styling
 
@@ -390,7 +390,7 @@ The examples below demonstrates use of the `<BentoAccordion>` as a functional co
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -425,7 +425,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 

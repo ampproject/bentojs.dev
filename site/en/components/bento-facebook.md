@@ -21,7 +21,7 @@ You must include each Bento component's required CSS library before adding custo
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -33,11 +33,11 @@ npm install @ampproject/bento-facebook
 import '@ampproject/bento-facebook';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -137,7 +137,7 @@ import '@ampproject/bento-facebook';
 </bento-facebook>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and Style
 
@@ -300,7 +300,7 @@ The examples below demonstrate use of the `<BentoFacebook>` as a functional comp
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -323,7 +323,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Props
 

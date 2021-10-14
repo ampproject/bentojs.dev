@@ -20,7 +20,7 @@ The examples below demonstrate use of the `<bento-stream-gallery>` web component
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -32,14 +32,14 @@ npm install @ampproject/bento-stream-gallery
 import '@ampproject/bento-stream-gallery';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains an `bento-stream-gallery` with three sections. The
 `expanded` attribute on the third section expands it on page load.
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -75,7 +75,7 @@ The example below contains an `bento-stream-gallery` with three sections. The
 </body>
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 
@@ -221,7 +221,7 @@ The examples below demonstrates use of the `<BentoStreamGallery>` as a functiona
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -249,7 +249,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 

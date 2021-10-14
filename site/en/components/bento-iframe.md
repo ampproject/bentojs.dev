@@ -19,7 +19,7 @@ The examples below demonstrate use of the `<bento-iframe>` web component.
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -31,11 +31,11 @@ npm install @ampproject/bento-iframe
 import '@ampproject/bento-iframe';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -73,7 +73,7 @@ import '@ampproject/bento-iframe';
 </script>
 ```
 
-[/example]
+{% endexample %}
 
 #### Layout and style
 
@@ -149,7 +149,7 @@ The examples below demonstrates use of the `<BentoIframe>` as a functional compo
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -173,7 +173,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Props
 

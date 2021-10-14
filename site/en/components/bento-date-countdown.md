@@ -17,7 +17,7 @@ The examples below demonstrate use of the `<bento-date-countdown>` web component
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -29,14 +29,14 @@ npm install @ampproject/bento-date-countdown
 import '@ampproject/bento-date-countdown';
 ```
 
-[/example]
+{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains an `bento-date-countdown` with three sections. The
 `expanded` attribute on the third section expands it on page load.
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 ```html
 <head>
@@ -61,7 +61,7 @@ The example below contains an `bento-date-countdown` with three sections. The
 </body>
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 
@@ -172,7 +172,7 @@ The examples below demonstrates use of the `<BentoDateCountdown>` as a functiona
 
 #### Example: Import via npm
 
-[example preview="top-frame" playground="false"]
+{% example %}
 
 Install via npm:
 
@@ -206,7 +206,7 @@ function App() {
 }
 ```
 
-[/example]
+{% endexample %}
 
 #### Interactivity and API usage
 

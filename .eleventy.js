@@ -5,9 +5,12 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
 const noOpShortCode = require('./shortcodes/NoOp.js');
+const { exampleShortCode, writeExamples } = require('./shortcodes/Example.js');
+
 const insertStyles = require('./transforms/insertStyles.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
+global.__basedir = __dirname;
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
@@ -16,18 +19,23 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addWatchTarget('./assets/**/*.css');
 
-  eleventyConfig.addPairedShortcode('tip', noOpShortCode);
-
-  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
+  eleventyConfig.setLibrary('md', markdownIt({
+    html: true
+  }).use(markdownItAnchor).disable('code'));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 
+  eleventyConfig.addPairedShortcode('tip', noOpShortCode);
+  eleventyConfig.addNunjucksTag('examples', exampleShortCode);
+
   eleventyConfig.addTransform('insert-styles', insertStyles);
 
+  eleventyConfig.on('afterBuild', writeExamples);
+
   return {
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
+    templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
     dir: {
       input: 'site',
       output: 'dist',

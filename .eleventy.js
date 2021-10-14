@@ -4,36 +4,14 @@ const markdownItAnchor = require('markdown-it-anchor');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
+const imageShortcode = require('./shortcodes/Image.js');
 const noOpShortCode = require('./shortcodes/NoOp.js');
 const {exampleShortCode, writeExamples} = require('./shortcodes/Example.js');
 
 const insertStyles = require('./transforms/insertStyles.js');
-const Image = require('@11ty/eleventy-img');
 
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;
-
-async function imageShortcode(src, alt, sizes = ['100vw']) {
-  const formats = src.endsWith('.png') ? ['png', 'avif'] : ['jpeg', 'avif'];
-
-  const metadata = await Image(src, {
-    urlPath: '/assets/img/',
-    outputDir: './dist/assets/img/',
-    widths: [100, 300, 600, null],
-    formats,
-  });
-
-  const imageAttributes = {
-    alt,
-    sizes,
-    loading: 'lazy',
-    decoding: 'async',
-  };
-
-  return Image.generateHTML(metadata, imageAttributes, {
-    whitespaceMode: 'inline',
-  });
-}
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setUseGitIgnore(false);
@@ -50,16 +28,19 @@ module.exports = (eleventyConfig) => {
       .use(markdownItAnchor)
       .disable('code')
   );
+
+  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 
+  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+  eleventyConfig.addJavaScriptFunction('image', imageShortcode);
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);
 
   eleventyConfig.addTransform('insert-styles', insertStyles);
 
   eleventyConfig.on('afterBuild', writeExamples);
-  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
   return {
     templateFormats: ['njk', 'md'],

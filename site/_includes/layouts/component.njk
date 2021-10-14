@@ -1,7 +1,11 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-<script>
+<script type="text/javascript">
   const MODAL_CLASS = '--open-modal';
+  const btnComponents = "#bd-button-components";
+  const btnToc = "#bd-button-toc";
+  const ICON_CLOSE_CLASS = ".bd-modal__close";
+
   function closeModals() {
     const modals = document.querySelectorAll('.bd-modal');
     Array.from(modals).forEach((el) => el.classList.remove(MODAL_CLASS));
@@ -14,12 +18,25 @@
     }
     modal.classList.toggle(MODAL_CLASS);
   }
+
+  window.onload = function () {
+    document.querySelector(btnComponents).addEventListener('click', function() {
+      openModal("#bd-components");
+    });
+    document.querySelector(btnToc).addEventListener('click', function() {
+      openModal("#bd-toc");
+    });
+    const icons = document.querySelectorAll(ICON_CLOSE_CLASS);
+    Array.from(icons).forEach((el) => el.addEventListener('click', function() {
+      closeModals();
+    }));
+  }
 </script>
 
 <main class="bd-page-components bd-theme--light">
   <div class="bd-page-components-container">
     <div class="bd-page-components-container__sidebar">
-      {%- include '../partials/components/sidebar.njk' -%}
+      {%- include 'partials/components/sidebar.njk' -%}
       <div class="vertical-divider"></div>
     </div>
     <div class="bd-page-components-container__main">
@@ -41,7 +58,8 @@
 {% block footer %}
 <div class="bd-components-footer">
   <div class="bd-components-footer__mobile">
-    {%- include '../partials/components/mobile-footer.njk' -%}
+    {%- include 'partials/components/mobile-footer.njk' -%}
+
   </div>
   <div class="bd-components-footer__default">
     {% include 'partials/footer.njk' %}

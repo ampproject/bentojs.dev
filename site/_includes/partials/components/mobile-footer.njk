@@ -1,15 +1,15 @@
-<div i class="bd-modals-container">
+<div class="bd-modals-container">
   <div id="bd-components" class="bd-modal bd-modal--burnt-sienna">
-    <svg class="bd-modal__close" onclick="closeModals()">
+    <svg class="bd-modal__close">
       <use
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xlink:href="/assets/assets.svg#icon-close"
       ></use>
     </svg>
-    {%- include './sidebar.njk' -%}
+    {%- include 'partials/components/sidebar.njk' -%}
   </div>
   <div id="bd-toc" class="bd-modal bd-modal--light-sea-green">
-    <svg class="bd-modal__close" onclick="closeModals()">
+    <svg class="bd-modal__close">
       <use
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xlink:href="/assets/assets.svg#icon-close"
@@ -21,10 +21,10 @@
 </div>
 
 <div class="bd-button-group">
-  <button onclick="openModal('#bd-components')" class="bd-button--burnt-sienna">
+  <button id="bd-button-components" class="bd-button--burnt-sienna">
     All components
   </button>
-  <button onclick="openModal('#bd-toc')" class="bd-button--light">
+  <button id="bd-button-toc" class="bd-button--light">
     Table of contents
   </button>
 </div>

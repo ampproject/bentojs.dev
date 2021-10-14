@@ -9,22 +9,27 @@
     flex-direction: column;
     width: 90%;
 
-    @include media('medium') {
+    @include media('large') {
       margin: 80px auto 0;
       display: grid;
       width: 95%;
-      grid-template-columns: 1fr minmax(auto, 70%) 1fr;
+      grid-template-columns: max-content minmax(50%, auto) max-content;
+      column-gap: var(--spacing-xs);
+    }
+
+    @include media('xlarge') {
+      grid-template-columns: max-content minmax(60%, auto) max-content;
       column-gap: var(--spacing-m);
     }
 
     @include media('xxlarge') {
-      width: 65%;
+      width: 1300px;
     }
 
     &__sidebar {
       display: none;
 
-      @include media('medium') {
+      @include media('large') {
         display: flex;
       }
 
@@ -61,7 +66,7 @@
     &__toc {
       display: none;
 
-      @include media('medium') {
+      @include media('large') {
         display: block;
       }
 
@@ -134,7 +139,7 @@
     display: none;
   }
 
-  @include media('medium') {
+  @include media('large') {
     &__mobile {
       display: none;
     }

@@ -4,3 +4,4 @@ temp
 .firebase
 /assets/css/bento-dev.css
 .DS_Store
+.vscode

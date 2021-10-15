@@ -52,6 +52,12 @@ a {
   box-sizing: border-box;
 }
 
+img {
+  content-visibility: auto; 
+  max-width: 100%; 
+  height: auto;
+}
+
 select {
   -webkit-appearance: none;
   background: transparent;

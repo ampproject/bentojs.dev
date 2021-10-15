@@ -99,7 +99,7 @@ function _escapeVariables(contents) {
 }
 
 function _rewriteCodeFenceShToBash(contents) {
-  return contents.replace(/```bash(\s.*?\s)```/gm, '```bash$1```');
+  return contents.replace(/```sh(\s.*?\s)```/gm, '```bash$1```');
 }
 
 function _parseComponentName(content) {

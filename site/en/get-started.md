@@ -13,7 +13,12 @@ i18n:
       - Sit back, relax, and enjoy your out-of-the-box component!
   react:
     headline: React
-    text: Bento components are fundamentally React functional components. They are released in both Preact and React flavors, and in regular and minified builds, so developers will have four options to choose for the React development context which suits them best.<br><br>Install each Bento component as needed, via npm, then import it as desired.<br><br>And that’s it! You can then refer to each component's documentation for information on style, layout and functionality customization.
+    text: |
+      Bento components are fundamentally React functional components. They are released in both Preact and React flavors, and in regular and minified builds, so developers will have four options to choose for the React development context which suits them best.
+
+      Install each Bento component as needed, via npm, then import it as desired.
+
+      And that’s it! You can then refer to each component's documentation for information on style, layout and functionality customization.
     all: All react components
   web_components:
     headline: Web Components

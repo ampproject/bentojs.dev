@@ -30,7 +30,6 @@ module.exports = (eleventyConfig) => {
       .disable('code')
   );
 
-  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 

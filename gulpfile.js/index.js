@@ -20,20 +20,23 @@ const importDocs = require('./importDocs.js');
 const eleventy = require('./eleventy.js');
 const lint = require('./lint.js');
 const sass = require('./sass.js');
+const app = require('./app.js');
 const svgstore = require('./svgstore.js');
 
-const build = gulp.series(sass, svgstore, eleventy.build);
-const watch = () => gulp.watch('./styles/**/*.scss', sass);
+const build = gulp.series(sass.build, app.build, svgstore, eleventy.build);
 const develop = gulp.series(
-  sass,
+  sass.build,
   svgstore,
-  gulp.parallel(watch, eleventy.develop)
+  gulp.parallel(
+    sass.watch,
+    app.watch,
+    eleventy.develop
+  )
 );
 
 module.exports = {
   importDocs,
   lint,
-  sass,
   svgstore,
   default: build,
   build,

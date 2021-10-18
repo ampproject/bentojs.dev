@@ -4,9 +4,9 @@ const markdownItAnchor = require('markdown-it-anchor');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
-const imageShortcode = require('./shortcodes/Image.js');
-const noOpShortCode = require('./shortcodes/NoOp.js');
-const {exampleShortCode, writeExamples} = require('./shortcodes/Example.js');
+const imageShortcode = require('site/_shortcodes/Image.js');
+const noOpShortCode = require('site/_shortcodes/NoOp.js');
+const { exampleShortCode, writeExamples } = require('site/_shortcodes/Example.js');
 
 const insertStyles = require('./transforms/insertStyles.js');
 

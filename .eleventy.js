@@ -6,7 +6,7 @@ const toc = require('eleventy-plugin-toc');
 
 const imageShortcode = require('./shortcodes/Image.js');
 const noOpShortCode = require('./shortcodes/NoOp.js');
-const {exampleShortCode, writeExamples} = require('./shortcodes/Example.js');
+const { exampleShortCode, writeExamples } = require('./shortcodes/Example.js');
 
 const insertStyles = require('./transforms/insertStyles.js');
 
@@ -29,7 +29,6 @@ module.exports = (eleventyConfig) => {
       .disable('code')
   );
 
-  eleventyConfig.setLibrary('md', markdownIt().use(markdownItAnchor));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 

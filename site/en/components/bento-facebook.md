@@ -1,14 +1,8 @@
 ---
-$category@: layout
-formats:
-  - websites
-teaser:
-  text: 'Displays a Facebook post, video, or comment.'
 title: Bento Facebook
 tags: components
 layout: layouts/component.njk
 ---
-
 # Bento Facebook
 
 ## Usage

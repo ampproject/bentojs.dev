@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="preload" href="/assets/fonts/inter-latin.var.woff2" as="font" crossorigin>
     <link rel="preload" href="/assets/fonts/roboto-mono-latin.var.woff2" as="font" crossorigin>
-  {% if process.env.ELEVENTY_ENV === 'prod' %}
-    <style>/* bento-dev.css */</style>
+    {% if process.env.ELEVENTY_ENV === 'prod' %}
+      <style>/* bento-dev.css */</style>
   {% else %}
     <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
   {% endif %}
   {% if noindex -%}
     <meta name="robots" content="noindex">
   {%- endif %}
-  <title>{{ title }} | bento.dev</title>
+  <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>
 </head>
 <body>
   {% block header %}

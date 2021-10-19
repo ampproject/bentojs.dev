@@ -19,6 +19,8 @@
 @import 'pages/_home';
 @import 'pages/_get-started';
 @import 'pages/_components';
+@import 'pages/_blog-overview';
+@import 'pages/_post';
 
 html,
 body {
@@ -38,7 +40,6 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: auto minmax(240px, 1680px) auto;
 }
 
 a {
@@ -55,8 +56,8 @@ a {
 }
 
 img {
-  content-visibility: auto; 
-  max-width: 100%; 
+  content-visibility: auto;
+  max-width: 100%;
   height: auto;
 }
 

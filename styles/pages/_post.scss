@@ -1,0 +1,229 @@
+.bd-page-blog-post {
+  position: relative;
+  width: 100vw;
+
+  &__background {
+    object-fit: contain;
+    opacity: 0.1;
+    position: absolute;
+    right: -10%;
+    top: 2%;
+    transform: rotate(160deg) rotateY(180deg) scale(1.6);
+
+    @include media('medium') {
+      right: 5%;
+      top: 25%;
+      transform: rotate(45deg) scale(4);
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include media('medium') {
+      margin: var(--spacing-xxl) auto 0;
+      width: 90%;
+    }
+
+    @include media('large') {
+      width: 85%;
+    }
+
+    @include media('xxlarge') {
+      width: 1300px;
+    }
+
+    & > *:not(figure:first-of-type) {
+      padding: 0 2rem;
+
+      @include media('large') {
+        padding: 0 5rem;
+      }
+
+      @include media('xxlarge') {
+        padding: 0 13rem;
+      }
+    }
+
+    figure {
+      margin-block: var(--spacing-xxl) var(--spacing-xxs);
+      margin-inline: 0;
+
+      &:first-of-type {
+        margin-block: var(--spacing-m) var(--spacing-xl);
+
+        @include media('large') {
+          margin-block: var(--spacing-xl) var(--spacing-xxl);
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .bd-link {
+      display: block;
+      font-size: 14px;
+      margin-block: var(--spacing-xs) var(--spacing-xxl);
+
+      @include media('large') {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: var(--font-size-16);
+      font-weight: var(--light);
+      line-height: 2;
+      color: var(--independence);
+    }
+
+    h1,
+    h4 {
+      color: var(--maastricht-blue);
+      font-weight: var(--bold);
+    }
+
+    h5,
+    h6 {
+      color: var(--independence);
+      margin: 0;
+    }
+
+    h1 {
+      font-size: var(--font-size-56);
+      line-height: 1.14;
+      letter-spacing: -1px;
+      margin-block-end: var(--spacing-xs);
+    }
+
+    h4 {
+      font-size: var(--font-size-34);
+      letter-spacing: -0.5px;
+      line-height: 1.18;
+      margin-block: var(--spacing-xl) var(--spacing-xs);
+
+      @include media('large') {
+        margin-block: var(--spacing-xxl) var(--spacing-m);
+      }
+    }
+
+    h5 {
+      font-size: 14px;
+      font-weight: var(--normal);
+      letter-spacing: 0.2px;
+      line-height: 1.71;
+    }
+
+    h5:last-of-type {
+      margin-block-start: var(--spacing-xl);
+
+      @include media('large') {
+        margin-block-start: var(--spacing-xxl);
+      }
+    }
+
+    h6 {
+      font-size: var(--font-size-16);
+      font-weight: var(--light);
+      line-height: 2;
+    }
+
+    .bd-navigation-container {
+      margin-block: calc(var(--spacing-xxl) * 1.5);
+
+      @include media('large') {
+        margin-block: calc(var(--spacing-xxl) * 2);
+      }
+
+      hr {
+        border: solid 2px var(--bright-gray);
+        margin-block-end: var(--spacing-xl);
+
+        @include media('large') {
+          margin-block-end: var(--spacing-xxl);
+        }
+      }
+
+      .bd-button-group {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: var(--spacing-l);
+
+        @include media('large') {
+          flex-direction: row;
+        }
+
+        .bd-button-overview {
+          order: 2;
+          width: 100%;
+
+          @include media('large') {
+            order: unset;
+            width: auto;
+          }
+        }
+
+        .bd-next-container button {
+          margin-inline: var(--spacing-xs) 0;
+        }
+
+        .bd-previous-container,
+        .bd-next-container {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          @include media('large') {
+            width: 40%;
+          }
+
+          h6 {
+            color: var(--maastricht-blue);
+            font-size: var(--font-size-18);
+            font-weight: var(--bold);
+            line-height: 1.33;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bd-banner-subscribe {
+  display: flex;
+  height: 480px;
+  background: #08777c;
+
+  &__container {
+    margin: auto;
+    width: 65%;
+
+    h2 {
+      color: var(--white);
+      font-weight: var(--semi-bold);
+      font-size: var(--font-size-34);
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+      text-align: center;
+
+      @include media('medium') {
+        font-size: var(--font-size-56);
+        line-height: 1.14;
+        letter-spacing: -1px;
+      }
+    }
+
+    button {
+      display: block;
+      margin: var(--spacing-xl) auto;
+    }
+  }
+}

@@ -30,7 +30,7 @@
   "homepage": "https://github.com/ampproject/bento.dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "0.12.1",
-    "@11ty/eleventy-img": "0.10.0",
+    "@11ty/eleventy-img": "1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "3.1.3",
     "@ampproject/toolbox-validator-rules": "2.8.0",
     "csso": "4.2.0",

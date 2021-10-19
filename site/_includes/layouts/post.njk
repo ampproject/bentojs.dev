@@ -10,7 +10,7 @@
   </svg>
   <div class="bd-page-blog-post-container">
     <div class="bd-link-wrapper">
-      <a class="bd-link" href="/en/blog">← Overview</a>
+      <a class="bd-link" href="/en/blog">← {{ 'i18n.post.overview' | i18n(locale) }}</a>
     </div>
     {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
     {%- include 'partials/blog/navigation-footer.njk' -%}
@@ -18,8 +18,8 @@
 </main>
 <section class="bd-banner-subscribe">
   <div class="bd-banner-subscribe__container">
-    <h2>Get the latest updates straight to your inbox with the Bento newsletter.</h2>
-    <button class="bd-button">Subscribe</button>
+    <h2>{{ 'i18n.post.subscribe.headline' | i18n(locale) }}</h2>
+    <button class="bd-button">{{ 'i18n.post.subscribe.cta' | i18n(locale) }}</button>
   </div>
 </section>
 {% endblock %}

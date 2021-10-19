@@ -4,6 +4,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
+const date = require('./shortcodes/Date.js');
 const imageShortcode = require('./shortcodes/Image.js');
 const noOpShortCode = require('./shortcodes/NoOp.js');
 const { exampleShortCode, writeExamples } = require('./shortcodes/Example.js');
@@ -40,6 +41,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);
 
+  eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('i18n', i18n);
   eleventyConfig.addFilter('md', md);
 

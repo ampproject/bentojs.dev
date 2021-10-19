@@ -15,11 +15,11 @@ tags: main
     {%- for post in collections.posts -%}
     <li>
       <h4>{{ post.data.title }}</h4>
-      <p class="bd-copy">{{ post.data.dateStr }}</p>
+      <p class="bd-copy">{{ post.data.date | date }}</p>
       {% image post.data.image, "" %}
-      <p class="bd-preview">{{ post.data.preview }}</p>
+      <p class="bd-excerpt">{{ post.data.excerpt }}</p>
       <div class="bd-link-wrapper">
-        <a class="bd-link" href="{{ post.url }}">➞ Read more</a>
+        <a class="bd-link" href="{{ post.url }}">➞ {{ i18n.read_more }}</a>
       </div>
     </li>
     {%- endfor -%}

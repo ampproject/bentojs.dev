@@ -16,12 +16,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
   },
-  "keywords": [
-    "AMP",
-    "Page",
-    "Experience",
-    "Bento"
-  ],
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {
@@ -49,6 +44,7 @@
     "markdown-it-anchor": "8.4.1",
     "prettier": "2.4.1",
     "purgecss": "4.0.3",
-    "sass": "1.43.2"
+    "sass": "1.43.2",
+    "dayjs": "1.10.7"
   }
 }

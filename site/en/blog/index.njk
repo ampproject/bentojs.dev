@@ -18,7 +18,9 @@ tags: main
       <p class="bd-copy">{{ post.data.dateStr }}</p>
       {% image post.data.image, "" %}
       <p class="bd-preview">{{ post.data.preview }}</p>
-      <a class="bd-link" href="{{ post.url }}">➞ Read more</a>
+      <div class="bd-link-wrapper">
+        <a class="bd-link" href="{{ post.url }}">➞ Read more</a>
+      </div>
     </li>
     {%- endfor -%}
   </ul>

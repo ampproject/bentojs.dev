@@ -9,7 +9,9 @@
     ></use>
   </svg>
   <div class="bd-page-blog-post-container">
-    <a class="bd-link" href="/en/blog">← Overview</a>
+    <div class="bd-link-wrapper">
+      <a class="bd-link" href="/en/blog">← Overview</a>
+    </div>
     {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
     {%- include 'partials/blog/navigation-footer.njk' -%}
   </div>

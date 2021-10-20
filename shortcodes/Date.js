@@ -1,9 +1,9 @@
-const dayjs = require('dayjs');
+const {DateTime} = require('luxon');
 
-const defaultFormat = 'MMMM DD, YYYY';
+const defaultFormat = DateTime.DATE_FULL;
 
 function dateFilter(date, format = defaultFormat) {
-  return dayjs(date).format(format);
+  return DateTime.fromJSDate(date).toLocaleString(format);
 }
 
 module.exports = dateFilter;

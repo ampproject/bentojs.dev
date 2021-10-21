@@ -1,0 +1,211 @@
+@import '../components/link';
+
+.bd-page-components-overview {
+  width: 100vw;
+
+  &-container {
+    margin: var(--spacing-xxl) auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    @include media('large') {
+      margin: 80px auto 0;
+      display: grid;
+      width: 95%;
+      grid-template-columns: max-content auto max-content;
+      column-gap: var(--spacing-m);
+    }
+
+    @include media('xlarge') {
+      grid-template-columns: 1fr 3fr 1fr;
+      column-gap: var(--spacing-xxl);
+    }
+
+    @include media('xxlarge') {
+      width: 1300px;
+    }
+
+    &__sidebar {
+      display: none;
+
+      @include media('large') {
+        display: flex;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        font-size: 14px;
+      }
+
+      .vertical-divider {
+        width: 2px;
+        height: 200px;
+        border-radius: 2px;
+        margin: 0 auto;
+        background-color: var(--burnt-sienna);
+      }
+    }
+
+    &__toc {
+      display: none;
+      z-index: 50;
+
+      @include media('large') {
+        display: block;
+      }
+
+      h3 {
+        color: var(--maastricht-blue);
+        font-size: var(--font-size-18);
+        font-weight: bold;
+        line-height: 1.33;
+        margin-bottom: var(--spacing-s);
+      }
+
+      ol {
+        margin: 0;
+        padding-inline-start: var(--spacing-s);
+        &:first-child {
+          padding: 0;
+        }
+
+        a {
+          @include link;
+          font-size: 14px;
+          color: var(--independence);
+        }
+      }
+    }
+
+    &__main {
+      position: relative;
+      z-index: 50;
+
+      .bd-page-components-overview-background {
+        position: absolute;
+        object-fit: contain;
+        opacity: 0.1;
+        top: 0;
+        right: -25%;
+        transform: rotate(160deg) rotateY(180deg) scale(1.6);
+        z-index: -1;
+
+        @include media('medium') {
+          top: 1%;
+          transform: rotate(160deg) rotateY(180deg) scale(4);
+        }
+      }
+
+      h1 {
+        font-weight: var(--bold);
+        font-size: var(--font-size-34);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+      }
+
+      h2 {
+        font-size: var(--font-size-26);
+        letter-spacing: -0.2px;
+        line-height: 1.23;
+        margin-block-start: var(--spacing-xl);
+      }
+    }
+  }
+}
+
+.bd-most-used {
+  h2 {
+    margin-block-end: var(--spacing-m);
+  }
+
+  .bd-card {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row: 1;
+    gap: var(--spacing-xs);
+
+    @include media('medium') {
+      grid-row: auto;
+    }
+
+    &-group {
+      display: grid;
+      grid-auto-columns: 80%;
+      gap: var(--spacing-m);
+      overflow-x: scroll;
+      scroll-snap-type: x proximity;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @include media('medium') {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+
+    &__title {
+      font-size: var(--font-size-18);
+      font-weight: var(--semi-bold);
+      line-height: 1.33;
+    }
+
+    &__body {
+      font-size: 14px;
+      line-height: 1.71;
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+.bd-components-list {
+  ul {
+    color: var(--independence);
+    margin: 0;
+    padding: 0;
+
+    li:not(:last-of-type) {
+      border-block-end: solid 2px var(--bright-gray);
+    }
+  }
+
+  h3 {
+    font-size: var(--font-size-18);
+    font-weight: var(--bold);
+    line-height: 1.33;
+    margin-block: var(--spacing-xl) var(--spacing-m);
+  }
+
+  h6 {
+    font-size: 14px;
+    font-weight: var(--bold);
+    letter-spacing: 0.2px;
+    line-height: 1.71;
+    margin-block: var(--spacing-xs) var(--spacing-xxs);
+  }
+
+  p {
+    margin-block-end: var(--spacing-xs);
+  }
+
+  @include media('large') {
+    li {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        width: 60%;
+      }
+
+      h6,
+      p {
+        margin-block: var(--spacing-xs);
+      }
+    }
+  }
+}

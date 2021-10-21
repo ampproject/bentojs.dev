@@ -1,0 +1,63 @@
+---
+title: Documentation
+tags: main
+---
+
+{% extends "layouts/base.njk" %}
+{% block content %}
+<main class="bd-page-components-overview bd-theme--light">
+  <div class="bd-page-components-overview-container">
+    <div class="bd-page-components-overview-container__sidebar">
+      {%- include 'partials/components/sidebar.njk' -%}
+      <div class="vertical-divider"></div>
+    </div>
+    <div class="bd-page-components-overview-container__main">
+      <svg class="bd-page-components-overview-background">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/assets/assets.svg#icon-logo-bento"
+        ></use>
+      </svg>
+      <h1>{{ i18n.components.headline }}</h1>
+      {%- include 'partials/components/most-used.njk' -%}
+      {%- include 'partials/components/components-list.njk' -%}
+    </div>
+    <aside class="bd-page-components-overview-container__toc">
+      <h3>Table of contents</h3>
+      <nav class="toc">
+        <ol>
+          <li>
+            <a href="#highlighted-components">Highlighted components</a>
+          </li>
+          <li>
+            <a href="#components">Components</a>
+            <ol>
+              <li>
+                <a href="#advertising-analytics">Advertising & Analytics</a>
+              </li>
+              <li>
+                <a href="#dynamic-content">Dynamic Content</a>
+              </li>
+              <li>
+                <a href="#layout">Layout</a>
+              </li>
+              <li>
+                <a href="#media">Media</a>
+              </li>
+              <li>
+                <a href="#presentation">Presentation</a>
+              </li>
+              <li>
+                <a href="#social">Social</a>
+              </li>
+              <li>
+                <a href="#social-layer">Social login</a>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</main>
+{% endblock %}

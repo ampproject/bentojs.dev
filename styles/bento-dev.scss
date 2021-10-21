@@ -14,11 +14,13 @@
 @import 'components/_theme';
 @import 'components/_code';
 @import 'components/_card';
+@import 'components/_card-image';
 @import 'components/_modal';
 
 @import 'pages/_home';
 @import 'pages/_get-started';
 @import 'pages/_components';
+@import 'pages/_documentation';
 
 html,
 body {
@@ -55,8 +57,8 @@ a {
 }
 
 img {
-  content-visibility: auto; 
-  max-width: 100%; 
+  content-visibility: auto;
+  max-width: 100%;
   height: auto;
 }
 

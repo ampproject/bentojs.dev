@@ -1,15 +1,8 @@
 <ul>
-  {% set scope = collections[0].components.data.title[6] %}
   {%- for component in collections.components -%}
-    {% set initial = component.data.title[6] %}
-    {% if scope != initial %}
-    {% set scope = initial %}
-    <h2>{{ scope | upper }}</h2>
-    {% endif %}
   <li>
-    <a class="bd-link" href="{{ component.url }}"
-      >{{ component.data.title }}
+    <a class="bd-link" href="{{ component.url }}">{{ component.data.title }}
     </a>
   </li>
-  {%- endfor -%}
+  {%- endfor -%}    
 </ul>

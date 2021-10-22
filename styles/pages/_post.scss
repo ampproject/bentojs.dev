@@ -118,7 +118,7 @@
       line-height: 1.71;
     }
 
-    h5:last-of-type {
+    .bd-posted-by {
       margin-block-start: var(--spacing-xl);
 
       @include media('large') {
@@ -221,8 +221,8 @@
       }
     }
 
-    button {
-      display: block;
+    .bd-button {
+      display: table;
       margin: var(--spacing-xl) auto;
     }
   }

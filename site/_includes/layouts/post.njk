@@ -10,16 +10,20 @@
   </svg>
   <div class="bd-page-blog-post-container">
     <div class="bd-link-wrapper">
-      <a class="bd-link" href="/en/blog">← {{ 'i18n.post.overview' | i18n(locale) }}</a>
+      <a class="bd-link" href="/en/blog">← {{ 'i18n.blog.overview' | i18n(locale) }}</a>
     </div>
+    <h1>{{ title }}</h1>
+    <h6>{{ author }}</h6>
+    <h6>{{ date | date }} · <strong>{{read_time}}min read</strong></h6>
     {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
+    <h5 class="bd-posted-by"><strong>Posted by</strong> {{ author }}</h5>
     {%- include 'partials/blog/navigation-footer.njk' -%}
   </div>
 </main>
 <section class="bd-banner-subscribe">
   <div class="bd-banner-subscribe__container">
-    <h2>{{ 'i18n.post.subscribe.headline' | i18n(locale) }}</h2>
-    <button class="bd-button">{{ 'i18n.post.subscribe.cta' | i18n(locale) }}</button>
+    <h2>{{ 'i18n.blog.subscribe.headline' | i18n(locale) }}</h2>
+    <a href="" class="bd-button">{{ 'i18n.blog.subscribe.cta' | i18n(locale) }}</a>
   </div>
 </section>
 {% endblock %}

@@ -4,13 +4,13 @@ const markdownItAnchor = require('markdown-it-anchor');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
-const date = require('./shortcodes/Date.js');
 const imageShortcode = require('./shortcodes/Image.js');
 const noOpShortCode = require('./shortcodes/NoOp.js');
 const { exampleShortCode, writeExamples } = require('./shortcodes/Example.js');
 
 const { i18n } = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
+const date = require('./site/_filters/date.js');
 
 const insertStyles = require('./transforms/insertStyles.js');
 

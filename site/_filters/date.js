@@ -1,8 +1,6 @@
 const {DateTime} = require('luxon');
 
-const defaultFormat = DateTime.DATE_FULL;
-
-function dateFilter(date, format = defaultFormat) {
+function dateFilter(date, format = DateTime.DATE_FULL) {
   return DateTime.fromJSDate(date).toLocaleString(format);
 }
 

@@ -26,6 +26,10 @@
   color: var(--light-sea-green);
   background-color: var(--white);
 
+  &:visited {
+    color: var(--light-sea-green);
+  }
+
   &.--inverted {
     color: var(--white);
     border: solid 1px var(--white);

@@ -19,7 +19,7 @@ tags: main
       {% image post.data.image, "" %}
       <p class="bd-excerpt">{{ post.data.excerpt }}</p>
       <div class="bd-link-wrapper">
-        <a class="bd-link" href="{{ post.url }}">➞ {{ i18n.read_more }}</a>
+        <a class="bd-link" href="{{ post.url }}">➞ {{ 'i18n.blog.read_more' | i18n(locale) }}</a>
       </div>
     </li>
     {%- endfor -%}

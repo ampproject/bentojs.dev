@@ -11,7 +11,7 @@ const { exampleShortCode, writeExamples } = require('./site/_shortcodes/Example.
 const { i18n } = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 
-const insertStyles = require('./_transforms/insertStyles.js');
+const insertStyles = require('./site/_transforms/insertStyles.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;

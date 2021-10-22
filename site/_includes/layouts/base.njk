@@ -13,7 +13,7 @@
   {% if noindex -%}
     <meta name="robots" content="noindex">
   {%- endif %}
-  <title>{{ title }} | bentojs.dev</title>
+  <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>
   {% block head %}{% endblock %}
 </head>
 <body>

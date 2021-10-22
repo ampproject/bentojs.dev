@@ -1,0 +1,72 @@
+---
+title: Welcome
+layout: 'layouts/content.njk'
+tags: main
+---
+
+<div class="bd-page__container bd-theme--dark">
+  <section class="bd-stage">
+    <svg class="bd-stage__bg-image">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+    </svg>
+    <h1>{{ i18n.stage.headline }}</h1>
+    <a class="bd-button" href="#">{{ i18n.stage.start_learning }}</a>
+    <a class="bd-button --inverted" href="#">{{ i18n.stage.documentation }}</a>
+  </section>
+  <section class="bd-section bd-row bd-row__col-2">
+    <div class="bd-row__column">
+      {% image "./assets/img/image-left.png", i18n.frameworks.image %}
+    </div>
+    <div class="bd-row__column">
+      <h2 class="bd-section__title">{{ i18n.frameworks.headline }}</h2>
+      <p class="bd-section__body">{{ i18n.frameworks.text }}</p>
+      <a class="bd-button" href="#">{{ i18n.frameworks.cta }}</a>
+    </div>
+  </section>
+  <section class="bd-section bd-row bd-row__col-2 bd-row--reverse">
+    <div class="bd-row__column">
+      <h2 class="bd-section__title">{{ i18n.why.headline }}</h2>
+      <p class="bd-section__body">{{ i18n.why.text }}</p>
+      <a class="bd-button" href="#">{{ i18n.why.cta }}</a>
+    </div>
+    <div class="bd-row__column">
+      {% image "./assets/img/image-right.png", i18n.why.image %}
+    </div>
+  </section>
+</div>
+<hr class="bd-page__divider"/>
+<div class="bd-page__container bd-theme--light">
+  <section class="bd-section --spacer bd-row bd-row__col-2 bd-demo-bg">
+    <svg class="bd-demo-bg__image">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+    </svg>
+    <div class="bd-row__column">
+      <h2 class="bd-section__title">{{ i18n.demo.headline }}</h2>
+      <p class="bd-section__body">{{ i18n.demo.text }}</p>
+      <div class="bd-link-wrapper">
+        <a class="bd-link" href="">➞ {{ i18n.demo.cta }}</a>
+      </div>
+    </div>
+  </section>
+  <section class="bd-section bd-row bd-row__col-3 --spacer-64">
+    {%- include 'partials/demo.njk' -%}
+  </section>
+  <section class="bd-latest-news">
+    <svg class="bd-latest-news__bg-image--left">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+    </svg>
+    <svg class="bd-latest-news__bg-image--right">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+    </svg>
+    <section class="bd-section bd-row bd-row__col-2">
+      <div class="bd-row__column">
+        <h2 class="bd-section__title">{{ i18n.news.headline }}</h2>
+        <p class="bd-section__body">{{ i18n.news.text }} </p>
+        <div class="bd-link-wrapper">
+          <a class="bd-link" href="">➞ {{ i18n.news.cta }}</a>
+        </div>
+      </div>
+    </section>
+    {% include 'partials/blog-posts.njk' %}
+  </section>
+</div>

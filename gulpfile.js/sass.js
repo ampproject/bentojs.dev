@@ -20,10 +20,17 @@ const gulpSass = require('gulp-sass')(require('sass'));
 // Flags wether we compress the output etc
 const isProduction = process.env.NODE_ENV === 'production';
 
-module.exports = async function sass(callback) {
+function build(callback) {
   return gulp
-    .src(['./styles/bento-dev.scss'], {sourcemaps: !isProduction})
+    .src(['./styles/bento-dev.scss'], { sourcemaps: !isProduction })
     .pipe(gulpSass().on('error', gulpSass.logError))
-    .pipe(gulp.dest('./assets/css', {sourcemaps: !isProduction}))
+    .pipe(gulp.dest('./assets/css', { sourcemaps: !isProduction }))
     .on('done', callback);
 };
+
+const watch = () => gulp.watch('./styles/**/*.scss', build);
+
+module.exports = {
+  build,
+  watch
+}

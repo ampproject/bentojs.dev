@@ -3,5 +3,6 @@ dist
 temp
 .firebase
 /assets/css/bento-dev.css
+/assets/js/
 .DS_Store
 .vscode

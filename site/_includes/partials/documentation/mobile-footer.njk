@@ -1,4 +1,4 @@
 {% extends "partials/mobile-footer.njk" %}
 {% block toc %}
-{{ content | toc | safe }}
+{%- include 'partials/documentation/toc.njk' -%}
 {% endblock %}

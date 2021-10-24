@@ -4,13 +4,13 @@
   width: 100vw;
 
   &-container {
-    margin: var(--spacing-xxl) auto 0;
+    margin: var(--spacing-xxl) auto;
     display: flex;
     flex-direction: column;
     width: 90%;
 
     @include media('large') {
-      margin: 80px auto 0;
+      margin: 80px auto;
       display: grid;
       width: 95%;
       grid-template-columns: max-content auto max-content;
@@ -206,6 +206,28 @@
       p {
         margin-block: var(--spacing-xs);
       }
+    }
+  }
+}
+
+.bd-components-overview-footer {
+  grid-column: 1/-1;
+
+  &__mobile {
+    display: block;
+  }
+
+  &__default {
+    display: none;
+  }
+
+  @include media('large') {
+    &__mobile {
+      display: none;
+    }
+
+    &__default {
+      display: block;
     }
   }
 }

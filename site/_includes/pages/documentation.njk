@@ -2,8 +2,10 @@
 title: Documentation
 tags: main
 ---
-
 {% extends "layouts/base.njk" %}
+{% block head %}
+  <script async src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+{% endblock %}
 {% block content %}
 <main class="bd-page-components-overview bd-theme--light">
   <div class="bd-page-components-overview-container">
@@ -23,41 +25,19 @@ tags: main
       {%- include 'partials/components/components-list.njk' -%}
     </div>
     <aside class="bd-page-components-overview-container__toc">
-      <h3>Table of contents</h3>
-      <nav class="toc">
-        <ol>
-          <li>
-            <a href="#highlighted-components">Highlighted components</a>
-          </li>
-          <li>
-            <a href="#components">Components</a>
-            <ol>
-              <li>
-                <a href="#advertising-analytics">Advertising & Analytics</a>
-              </li>
-              <li>
-                <a href="#dynamic-content">Dynamic Content</a>
-              </li>
-              <li>
-                <a href="#layout">Layout</a>
-              </li>
-              <li>
-                <a href="#media">Media</a>
-              </li>
-              <li>
-                <a href="#presentation">Presentation</a>
-              </li>
-              <li>
-                <a href="#social">Social</a>
-              </li>
-              <li>
-                <a href="#social-layer">Social login</a>
-              </li>
-            </ol>
-          </li>
-        </ol>
-      </nav>
+      <h3>{{ i18n.toc.title }}</h3>
+      {%- include 'partials/documentation/toc.njk' -%}
     </aside>
   </div>
 </main>
+{% endblock %}
+{% block footer %}
+  <div class="bd-components-overview-footer">
+    <div class="bd-components-overview-footer__mobile">
+      {%- include 'partials/documentation/mobile-footer.njk' -%}
+    </div>
+    <div class="bd-components-overview-footer__default">
+      {% include 'partials/footer.njk' %}
+    </div>
+  </div>
 {% endblock %}

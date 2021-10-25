@@ -1,0 +1,79 @@
+@mixin cardImage {
+  display: grid;
+  grid-template-rows: minmax(150px, auto) auto auto;
+  grid-template-areas: 'image' 'body' 'footer';
+  row-gap: var(--spacing-s);
+}
+
+.bd-card-image {
+  &-group {
+    display: grid;
+    margin-top: var(--spacing-xl);
+    grid-auto-columns: 80%;
+    grid-template-columns: unset;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media('medium') {
+      margin-top: -10rem;
+      grid-auto-columns: auto;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+  }
+
+  &__body {
+    grid-area: body;
+    font-size: 21px;
+    font-weight: var(--semi-bold);
+    line-height: 1.14;
+  }
+
+  &__footer {
+    grid-area: footer;
+    font-size: 14px;
+    font-weight: var(--light);
+    line-height: 1.71;
+    letter-spacing: 0.2px;
+  }
+
+  &--one,
+  &--two,
+  &--three,
+  &--four {
+    grid-row: 1;
+    @include cardImage;
+  }
+
+  @include media('medium') {
+    &--one {
+      grid-column: 1/3;
+      grid-row: 3/5;
+    }
+
+    &--two {
+      grid-column: 3;
+      grid-row: 2/4;
+    }
+
+    &--three {
+      grid-column: 4;
+      grid-row: 1/3;
+    }
+
+    &--four {
+      grid-column: 4/6;
+      grid-row: 3/6;
+    }
+  }
+}

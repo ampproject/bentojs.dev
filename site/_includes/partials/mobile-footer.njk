@@ -1,0 +1,32 @@
+<div class="bd-mobile-footer">
+  <div class="bd-modals-container">
+    <div id="bd-components" class="bd-modal bd-modal--burnt-sienna">
+      <svg class="bd-modal__close">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/assets/assets.svg#icon-close"
+        ></use>
+      </svg>
+      {%- include 'partials/components/sidebar.njk' -%}
+    </div>
+    <div id="bd-toc" class="bd-modal bd-modal--light-sea-green">
+      <svg class="bd-modal__close">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/assets/assets.svg#icon-close"
+        ></use>
+      </svg>
+      <h3>{{ 'i18n.misc.toc' | i18n(locale) }}</h3>
+      {% block toc %} {% endblock %}
+    </div>
+  </div>
+
+  <div class="bd-button-group">
+    <button id="bd-button-components" class="bd-button--burnt-sienna">
+      {{ 'i18n.misc.all_components' | i18n(locale) }}
+    </button>
+    <button id="bd-button-toc" class="bd-button--light">
+      {{ 'i18n.misc.toc' | i18n(locale) }}
+    </button>
+  </div>
+</div>

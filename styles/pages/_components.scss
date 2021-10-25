@@ -31,6 +31,7 @@
 
       @include media('large') {
         display: flex;
+        gap: var(--spacing-s);
       }
 
       ul {
@@ -65,6 +66,7 @@
 
     &__toc {
       display: none;
+      z-index: 50;
 
       @include media('large') {
         display: block;
@@ -95,6 +97,7 @@
 
     &__main {
       position: relative;
+      z-index: 50;
 
       .bd-page-components-background {
         position: absolute;
@@ -103,6 +106,7 @@
         top: 0;
         right: -25%;
         transform: rotate(160deg) rotateY(180deg) scale(1.6);
+        z-index: 1;
 
         @include media('medium') {
           top: 1%;

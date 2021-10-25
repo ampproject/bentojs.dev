@@ -1,0 +1,44 @@
+---
+title: Documentation
+tags: main
+---
+{% extends "layouts/base.njk" %}
+{% block head %}
+  <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
+  <script async src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+{% endblock %}
+{% block content %}
+<main class="bd-page-components-overview bd-theme--light">
+  <div class="bd-page-components-overview-container">
+    <div class="bd-page-components-overview-container__sidebar">
+      {%- include 'partials/components/sidebar.njk' -%}
+      <div class="vertical-divider"></div>
+    </div>
+    <div class="bd-page-components-overview-container__main">
+      <svg class="bd-page-components-overview-background">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/assets/assets.svg#icon-logo-bento"
+        ></use>
+      </svg>
+      <h1>{{ i18n.components.headline }}</h1>
+      {%- include 'partials/components/most-used.njk' -%}
+      {%- include 'partials/components/components-list.njk' -%}
+    </div>
+    <aside class="bd-page-components-overview-container__toc">
+      <h3>{{ i18n.toc.title }}</h3>
+      {%- include 'partials/documentation/toc.njk' -%}
+    </aside>
+  </div>
+</main>
+{% endblock %}
+{% block footer %}
+  <div class="bd-components-overview-footer">
+    <div class="bd-components-overview-footer__mobile">
+      {%- include 'partials/documentation/mobile-footer.njk' -%}
+    </div>
+    <div class="bd-components-overview-footer__default">
+      {% include 'partials/footer.njk' %}
+    </div>
+  </div>
+{% endblock %}

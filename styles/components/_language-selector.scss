@@ -5,7 +5,7 @@
   display: none;
   height: 100%;
 
-  @include media('medium') {
+  @include media('large') {
     display: flex;
   }
 

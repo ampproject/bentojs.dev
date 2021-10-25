@@ -1,0 +1,27 @@
+---
+title: Blog
+layout: 'layouts/content.njk'
+tags: main
+---
+
+<div class="bd-page-blog-overview bd-theme--dark">
+  <svg class="bd-page-blog-overview__background">
+    <use
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="/assets/assets.svg#icon-logo-bento"
+    ></use>
+  </svg>
+  <ul class="bd-page-blog-overview-container">
+    {%- for post in collections.posts -%}
+    <li>
+      <h4>{{ post.data.title }}</h4>
+      <p class="bd-copy">{{ post.data.date | date }}</p>
+      {% image post.data.image, "" %}
+      <p class="bd-excerpt">{{ post.data.excerpt }}</p>
+      <div class="bd-link-wrapper">
+        <a class="bd-link" href="{{ post.url }}">➞ {{ 'i18n.blog.read_more' | i18n(locale) }}</a>
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

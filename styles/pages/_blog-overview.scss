@@ -1,0 +1,101 @@
+.bd-page-blog-overview {
+  position: relative;
+  width: 100vw;
+
+  &__background {
+    object-fit: contain;
+    opacity: 0.1;
+    position: absolute;
+    right: -12%;
+    top: 7%;
+    transform: rotate(30deg) scale(2.5);
+
+    @include media('medium') {
+      right: 10%;
+      top: 13%;
+      transform: rotate(30deg) scale(5);
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    margin: calc(var(--spacing-xxl) * 1.5) auto;
+    padding: 0;
+    row-gap: calc(var(--spacing-xxl) * 1.5);
+    width: 90%;
+
+    @include media('medium') {
+      margin: calc(var(--spacing-xxl) * 2) auto;
+      row-gap: calc(var(--spacing-xxl) * 2);
+    }
+
+    @include media('large') {
+      width: 85%;
+    }
+
+    @include media('xxlarge') {
+      width: 1300px;
+    }
+
+    li > *:not(picture) {
+      padding: 0 2rem;
+
+      @include media('large') {
+        padding: 0 5rem;
+      }
+
+      @include media('xxlarge') {
+        padding: 0 13rem;
+      }
+    }
+
+    h4 {
+      font-size: var(--font-size-34);
+      font-weight: 650;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+      margin: 0;
+
+      @include media('large') {
+        font-size: var(--font-size-48);
+        line-height: 1.17;
+      }
+    }
+
+    .bd-copy {
+      font-size: 14px;
+      font-weight: var(--light);
+      letter-spacing: 0.2px;
+      line-height: 1.71;
+      margin-block: var(--spacing-xxs) var(--spacing-m);
+
+      @include media('large') {
+        font-size: var(--font-size-16);
+        font-weight: 350;
+        letter-spacing: normal;
+        line-height: 2;
+        margin-block-end: var(--spacing-l);
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .bd-excerpt {
+      font-size: 14px;
+      font-weight: var(--light);
+      letter-spacing: 0.2px;
+      line-height: 1.71;
+      margin-block: var(--spacing-m) var(--spacing-xs);
+
+      @include media('large') {
+        font-size: var(--font-size-16);
+        font-weight: 350;
+        line-height: 2;
+        margin-block: var(--spacing-l) var(--spacing-s);
+      }
+    }
+  }
+}

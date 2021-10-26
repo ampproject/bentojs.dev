@@ -6,8 +6,8 @@
   "scripts": {
     "build": "eleventy",
     "develop": "npx gulp develop",
-    "lint": "eslint ./*.js -c ./.eslintrc.json --ignore-pattern amphtml",
-    "lint:fix": "eslint **/*.js -c ./.eslintrc.json --ignore-pattern amphtml --fix",
+    "lint": "eslint ./app/**/*.js -c ./.eslintrc.json --ignore-pattern amphtml",
+    "lint:fix": "eslint ./app/**/*.js -c ./.eslintrc.json --fix --ignore-pattern amphtml",
     "serve": "eleventy --serve",
     "start": "npx gulp --tasks",
     "test": "echo \"Error: no test specified\" && exit 1"

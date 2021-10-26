@@ -1,5 +1,7 @@
 ---
 layout: pages/documentation.njk
+permalink: /documentation/index.html
+tags: main
 title: Documentation
 i18n:
   components:

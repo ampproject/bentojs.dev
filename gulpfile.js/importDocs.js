@@ -128,7 +128,6 @@ async function importComponents() {
         const fileName = name.replace(/ /g, '-').toLowerCase();
 
         document.data.title = name;
-        document.data.tags = 'components';
         document.data.layout = 'layouts/component.njk';
 
         document.content = _rewriteCalloutToTip(document.content);

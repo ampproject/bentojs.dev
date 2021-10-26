@@ -1,6 +1,5 @@
 ---
 title: Bento Timeago
-tags: components
 layout: layouts/component.njk
 ---
 # Bento Timeago

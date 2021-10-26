@@ -1,6 +1,5 @@
 ---
 title: Bento Social Share
-tags: components
 layout: layouts/component.njk
 ---
 # Bento Social Share

@@ -1,5 +1,6 @@
 ---
 layout: pages/get-started.njk
+permalink: /get-started/index.html
 i18n:
   stage:
     headline: Getting started with Bento

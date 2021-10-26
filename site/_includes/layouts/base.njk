@@ -14,6 +14,8 @@
     <meta name="robots" content="noindex">
   {%- endif %}
   <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>
+
+  <script src="{{ helpers.addHashQueryParam('/assets/js/all.js') }}" async></script>
   {% block head %}{% endblock %}
 </head>
 <body>

@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const esbuild = require('esbuild');
 
 const ENTRY_POINTS = [
-  'app/bundles/home.js',
+  'app/bundles/all.js',
   'app/bundles/documentation.js',
 ]
 

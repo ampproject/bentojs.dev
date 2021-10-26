@@ -1,6 +1,5 @@
 ---
 title: Bento WordPress Embed
-tags: components
 layout: layouts/component.njk
 ---
 # Bento WordPress Embed
@@ -37,7 +36,7 @@ import '@ampproject/bento-wordpress-embed';
 
 ```html
 <head>
-  <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
+  <script async src="https://cdn.ampproject.org/bento.js"></script>
   <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
   <style data-bento-boilerplate>
     bento-wordpress-embed {

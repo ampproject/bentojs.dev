@@ -1,6 +1,5 @@
 class Example {
   constructor($example) {
-    console.log('Example', $example);
     this.$example = $example;
     this.$button = {
       code: $example.querySelector('button.--code'),
@@ -19,8 +18,6 @@ class Example {
   }
 
   toggle(e, force) {
-    console.log('toggle!', force);
-
     e.preventDefault();
     this.$button.code.classList.toggle('--active', !force);
     this.$button.preview.classList.toggle('--active', force);

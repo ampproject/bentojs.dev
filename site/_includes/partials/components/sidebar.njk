@@ -1,10 +1,10 @@
-<bento-sidebar id="bd-components-sidebar" side="left">
+<div id="bd-components-sidebar" side="left">
   <ul>
     {%- for component in collections.components -%}
-    <li>
-      <a class="bd-link" href="{{ component.url }}">{{ component.data.title }}
-      </a>
-    </li>
+      <li>
+        <a class="bd-link" href="{{ component.url }}">{{ component.data.title }}
+        </a>
+      </li>
     {%- endfor -%}
   </ul>
-</bento-sidebar>
+</div>

@@ -4,6 +4,9 @@ layout: 'layouts/content.njk'
 tags: main
 ---
 
+{% block head %}
+  <script src="{{ helpers.addHashQueryParam('/assets/js/home.js') }}" async></script>
+{% endblock %}
 <div class="bd-page__container bd-theme--dark">
   <section class="bd-stage">
     <svg class="bd-stage__bg-image">
@@ -48,9 +51,7 @@ tags: main
       </div>
     </div>
   </section>
-  <section class="bd-section bd-row bd-row__col-3 --spacer-64">
-    {%- include 'partials/demo.njk' -%}
-  </section>
+  {%- include 'partials/demo/index.njk' -%}
   <section class="bd-latest-news">
     <svg class="bd-latest-news__bg-image--left">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>

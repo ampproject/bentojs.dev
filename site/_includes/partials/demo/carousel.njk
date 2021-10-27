@@ -1,0 +1,64 @@
+<head>
+  <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
+  <style data-bento-boilerplate>
+    bento-base-carousel {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"
+  ></script>
+  <style>
+    bento-base-carousel,
+    bento-base-carousel > div {
+      height: 100%;
+    }
+    .red-gradient {
+      background: brown;
+      background: linear-gradient(
+        90deg,
+        brown 50%,
+        lightsalmon 90%,
+        wheat 100%
+      );
+    }
+    .blue-gradient {
+      background: steelblue;
+      background: linear-gradient(
+        90deg,
+        steelblue 50%,
+        plum 90%,
+        lavender 100%
+      );
+    }
+    .green-gradient {
+      background: seagreen;
+      background: linear-gradient(
+        90deg,
+        seagreen 50%,
+        mediumturquoise 90%,
+        turquoise 100%
+      );
+    }
+  </style>
+</head>
+<bento-base-carousel id="my-carousel">
+  <div class="red-gradient"></div>
+  <div class="blue-gradient"></div>
+  <div class="green-gradient"></div>
+</bento-base-carousel>
+
+<script>
+  (async () => {
+    const carousel = document.querySelector('#my-carousel');
+    await customElements.whenDefined('bento-base-carousel');
+    const api = await carousel.getApi();
+
+    // programatically advance to next slide
+    api.next();
+  })();
+</script>

@@ -10,7 +10,7 @@
     line-height: var(--line-height-40);
     letter-spacing: -0.5px;
     color: inherit;
-    margin-bottom: var(--spacing-s);
+    margin-block-end: var(--spacing-s);
 
     @include media('medium') {
       font-size: var(--font-size-48);
@@ -24,18 +24,18 @@
     font-weight: 350;
     color: inherit;
     line-height: var(--line-height-32);
-    margin-bottom: var(--spacing-s);
+    margin-block-end: var(--spacing-s);
 
     @include media('medium') {
       font-size: var(--font-size-18);
       line-height: var(--line-height-32);
-      margin-bottom: 50px;
+      margin-block-end: var(--spacing-xl);
     }
   }
 
   &__image {
     width: 335px;
-    margin-bottom: var(--spacing-xl);
+    margin-block-end: var(--spacing-xl);
 
     @include media('medium') {
       width: auto;
@@ -44,18 +44,18 @@
   }
 
   &.--spacer-64 {
-    margin-top: var(--spacing-xl);
+    margin-block-start: var(--spacing-xl);
 
     @include media('medium') {
-      margin-top: var(--spacing-xxl);
+      margin-block-start: var(--spacing-xxl);
     }
   }
 
   &.--spacer {
-    margin-top: calc(var(--spacing-xxl) * 2);
+    margin-block-start: calc(var(--spacing-xxl) * 2);
 
     @include media('medium') {
-      margin-top: calc(var(--spacing-xxl) * 4);
+      margin-block-start: calc(var(--spacing-xxl) * 4);
     }
   }
 }

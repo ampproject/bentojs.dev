@@ -1,5 +1,5 @@
 <head>
-  <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
+  <script async src="https://cdn.ampproject.org/bento.js"></script>
   <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
   <style data-bento-boilerplate>
     bento-base-carousel {
@@ -8,41 +8,22 @@
       position: relative;
     }
   </style>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"
-  ></script>
+  <script async src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"></script>
   <style>
-    bento-base-carousel,
-    bento-base-carousel > div {
+    bento-base-carousel, bento-base-carousel > div {
       height: 100%;
     }
     .red-gradient {
       background: brown;
-      background: linear-gradient(
-        90deg,
-        brown 50%,
-        lightsalmon 90%,
-        wheat 100%
-      );
+      background: linear-gradient(90deg, brown 50%, lightsalmon 90%, wheat 100%);
     }
     .blue-gradient {
       background: steelblue;
-      background: linear-gradient(
-        90deg,
-        steelblue 50%,
-        plum 90%,
-        lavender 100%
-      );
+      background: linear-gradient(90deg, steelblue 50%, plum 90%, lavender 100%);
     }
     .green-gradient {
       background: seagreen;
-      background: linear-gradient(
-        90deg,
-        seagreen 50%,
-        mediumturquoise 90%,
-        turquoise 100%
-      );
+      background: linear-gradient(90deg, seagreen 50%, mediumturquoise 90%, turquoise 100%);
     }
   </style>
 </head>

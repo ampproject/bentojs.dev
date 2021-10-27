@@ -1,6 +1,6 @@
 import HomeDemo from '../components/HomeDemo';
 
-(() => {
+window.addEventListener('load', () => {
   new HomeDemo(
     document.getElementById('bd-button-carousel'),
     document.querySelectorAll('.bd-demo-carousel')
@@ -17,4 +17,4 @@ import HomeDemo from '../components/HomeDemo';
     document.getElementById('bd-button-social-share'),
     document.querySelectorAll('.bd-demo-social-share')
   );
-})();
+});

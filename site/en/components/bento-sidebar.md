@@ -1,6 +1,5 @@
 ---
 title: Bento Sidebar
-tags: components
 layout: layouts/component.njk
 ---
 # Bento Sidebar

@@ -1,6 +1,5 @@
 ---
 title: Bento Instagram
-tags: components
 layout: layouts/component.njk
 ---
 # Bento Instagram

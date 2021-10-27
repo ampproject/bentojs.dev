@@ -1,9 +1,3 @@
-<script>
-  function showMenu() {
-    const header = document.querySelector('.bd-header').classList.toggle('--mainmenuopen');
-  }
-</script>
-
 <header class="bd-header">
   <div class="bd-header-main">
     <a class="bd-header-home" href="/">
@@ -13,21 +7,24 @@
       <span class="bd-header-home-title">Bento</span>
     </a>
     <nav class="bd-header-navigation" aria-role="list">
-      {%- for mainPage in collections.main -%}
       <div class="bd-header-navigation-item">
-        <a class="bd-header-navigation-link bd-link" href="{{ mainPage.url }}">{{ mainPage.data.title }}</a>
+        <a class="bd-header-navigation-link bd-link" href="/">{{ 'i18n.nav.welcome' | i18n(locale) }}</a>
       </div>
-      {%- endfor -%}
+      <div class="bd-header-navigation-item">
+        <a class="bd-header-navigation-link bd-link" href="/get-started">{{ 'i18n.nav.get_started' | i18n(locale) }}</a>
+      </div>
+      <div class="bd-header-navigation-item">
+        <a class="bd-header-navigation-link bd-link" href="/documentation">{{ 'i18n.nav.documentation' | i18n(locale) }}</a>
+      </div>
+      <div class="bd-header-navigation-item">
+        <a class="bd-header-navigation-link bd-link" href="/blog">{{ 'i18n.nav.blog' | i18n(locale) }}</a>
+      </div>
     </nav>
-
-    {%- include './language-selector.njk' -%}
-
-    <button class="bd-header-burger"
-        tabindex="0"
-        onclick="showMenu()">
-        <svg class="bd-header-burger-icon">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-burger"></use>
-        </svg>
+    {# {%- include './language-selector.njk' -%} #}
+    <button class="bd-header-burger" tabindex="0">
+      <svg class="bd-header-burger-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-burger"></use>
+      </svg>
     </button>
   </div>
 </header>

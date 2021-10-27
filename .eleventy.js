@@ -14,6 +14,8 @@ const date = require('./site/_filters/date.js');
 
 const insertStyles = require('./site/_transforms/insertStyles.js');
 
+const components = require('./site/_collections/components.js');
+
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;
 
@@ -47,6 +49,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('md', md);
 
   eleventyConfig.addTransform('insert-styles', insertStyles);
+
+  eleventyConfig.addCollection('components', components);
 
   eleventyConfig.on('afterBuild', writeExamples);
 

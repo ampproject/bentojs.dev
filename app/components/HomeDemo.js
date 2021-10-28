@@ -1,47 +1,40 @@
 class HomeDemo {
-  constructor($button, $demo) {
-    this.$button = $button;
-    this.$currentDemo = $demo;
+  constructor($buttons, $code, $previewEl) {
+    this.$buttons = Array.from($buttons);
+    this.$code = Array.from($code);
+    this.$previewEl = $previewEl;
 
-    this.$sections = [
-      '.bd-demo-carousel',
-      '.bd-demo-accordion',
-      '.bd-demo-sidebar',
-      '.bd-demo-social-share',
-    ];
-
-    this.$button.addEventListener('click', this.toggleDemo.bind(this));
-    this.$buttons = document.querySelectorAll('.bd-demo-button-group button');
+    this.$buttons.map((btn) => {
+      btn.addEventListener('click', this.toggleDemo.bind(this));
+    });
   }
 
   toggleDemo(e) {
     e.preventDefault();
-    this.selectButton();
-    this.changePreview();
+    const button = e.target;
+    const previewId = button.getAttribute('aria-controls');
+    this.selectButton(button);
+    this.changePreview(previewId);
   }
 
-  selectButton() {
+  selectButton(button) {
     const invertedClass = '--inverted';
-    Array.from(this.$buttons).map((el) => {
-      el.classList.add(invertedClass);
+    this.$buttons.map((btn) => {
+      btn.classList.add(invertedClass);
     });
-    this.$button.classList.remove(invertedClass);
+    button.classList.remove(invertedClass);
   }
 
-  changePreview() {
+  changePreview(previewId) {
     const hideClass = '--hide';
+    const iframeSrc = `assets/iframes/homepage-examples/${previewId}.html`;
+    this.$previewEl.setAttribute('src', iframeSrc);
 
-    this.$sections.map((sec) => {
-      const codePreview = document.querySelectorAll(sec);
-
-      Array.from(codePreview).map((el) => {
-        el.classList.add(hideClass);
-      });
+    this.$code.map((code) => {
+      code.classList.add(hideClass);
     });
-
-    Array.from(this.$currentDemo).map((el) => {
-      el.classList.remove(hideClass);
-    });
+    const currentCode = document.getElementById(previewId);
+    currentCode.classList.remove(hideClass);
   }
 }
 

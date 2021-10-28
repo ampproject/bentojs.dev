@@ -3,9 +3,11 @@
   <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
   <style data-bento-boilerplate>
     bento-base-carousel {
-      display: block;
-      overflow: hidden;
-      position: relative;
+      position: static !important;
+    }
+    bento-base-carousel:not(.i-amphtml-built)
+      > :not([placeholder]):not([slot='i-amphtml-svc']) {
+      display: block !important;
     }
   </style>
   <script async src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"></script>

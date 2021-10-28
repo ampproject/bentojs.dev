@@ -1,0 +1,38 @@
+<section class="bd-demo">
+  <div class="bd-demo-button-group">
+    <button class="bd-button--light --uppercase --demo-trigger" aria-controls="bd-demo-carousel">carousel</button>
+    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-accordion">accordion</button>
+    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-sidebar">sidebar</button>
+    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-social-share">social share</button>
+  </div>
+
+  {% set examples = "assets/iframes/homepage-examples/" %}
+
+  <div class="bd-demo-code">
+    <div class="bd-demo-code__snippet">
+      <div id="bd-demo-carousel" class="bd-demo-code-sample">
+        {% highlight 'html' %}
+        {%- include examples + 'bd-demo-carousel.html' -%}
+        {% endhighlight %}
+      </div>
+      <div id="bd-demo-accordion" class="bd-demo-code-sample --hide">
+        {% highlight 'html' %}
+        {%- include examples + 'bd-demo-accordion.html' -%}
+        {% endhighlight %}
+      </div>
+      <div id="bd-demo-sidebar" class="bd-demo-code-sample --hide">
+        {% highlight 'html' %}
+        {%- include examples + 'bd-demo-sidebar.html' -%}
+        {% endhighlight %}
+      </div>
+      <div id="bd-demo-social-share" class="bd-demo-code-sample --hide">
+        {% highlight 'html' %}
+        {%- include examples + 'bd-demo-social-share.html' -%}
+        {% endhighlight %}
+      </div>
+    </div>
+    <div class="bd-demo-code__result">
+      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html"></iframe>
+    </div>
+  </div>
+</section>

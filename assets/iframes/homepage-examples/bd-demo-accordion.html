@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-accordion-1.0.css">
 </head>
 <body>
-  <bento-accordion id="my-accordion"{% if not format=='email'%} disable-session-states{% endif %}>
+  <bento-accordion id="my-accordion">
     <section>
       <h2>Section 1</h2>
       <p>Content in section 1.</p>
@@ -24,10 +24,8 @@
       await customElements.whenDefined('bento-accordion');
       const api = await accordion.getApi();
 
-      // programatically expand all sections
-      api.expand();
       // programatically collapse all sections
-      //api.collapse();
+      api.collapse();
     })();
   </script>
 </body>

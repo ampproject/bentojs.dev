@@ -85,11 +85,12 @@
       grid-row: 3 / span 6;
       z-index: 20;
 
-      & > div[class*='bd-demo-'] {
+      iframe {
         background-color: #fff;
         border: solid 10px var(--burnt-sienna);
         border-radius: 16px;
         height: 100%;
+        width: 100%;
       }
 
       @include media('large') {

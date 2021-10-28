@@ -27,8 +27,6 @@
     }
 
     &__sidebar {
-      display: none;
-
       @include media('large') {
         display: flex;
       }
@@ -52,13 +50,6 @@
     }
 
     &__toc {
-      display: none;
-      z-index: 50;
-
-      @include media('large') {
-        display: block;
-      }
-
       h3 {
         color: var(--maastricht-blue);
         font-size: var(--font-size-18);

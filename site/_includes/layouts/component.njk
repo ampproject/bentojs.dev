@@ -16,10 +16,13 @@
         </svg>
         {{ content | safe }}
       </div>
-      <aside class="bd-page-components-container__toc">
-        <h3>Table of contents</h3>
-        {{ content | toc | safe }}
-      </aside>
+      <bento-sidebar id="bd-toc" side="right">
+        <nav toolbar="(min-width: 767px)" toolbar-target="bd-toc-target">
+          <h3>Table of contents</h3>
+          {{ content | toc | safe }}
+        </nav>
+      </bento-sidebar>
+      <div class="bd-page-components-container__toc" id="bd-toc-target"></div>
     </div>
   </main>
 {% endblock %}

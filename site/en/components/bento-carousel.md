@@ -4,11 +4,11 @@ layout: layouts/component.njk
 ---
 # Bento Carousel
 
+The Bento Carousel component is a generic carousel for displaying multiple similar pieces of content along a horizontal or vertical axis.
+
 ## Usage
 
-A generic carousel for displaying multiple similar pieces of content along a horizontal or vertical axis. Use Bento Carousel as a web component [`<bento-base-carousel>`](#web-component), or a Preact/React functional component [`<BentoBaseCarousel>`](#preactreact-component).
-
-Each of the Bento Carousel component’s immediate children is considered an
+Each of the component’s immediate children is considered an
 item in the carousel. Each of these nodes may also have arbitrary children.
 
 The carousel consists of an arbitrary number of items, as well as optional
@@ -25,60 +25,56 @@ The examples below demonstrate use of the `<bento-base-carousel>` web component.
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-base-carousel
+npm install @bentoproject/base-carousel
 ```
 
 ```javascript
-import '@ampproject/bento-base-carousel';
+import {defineElement as defineBentoBaseCarousel} from '@bentoproject/base-carousel';
+defineBentoBaseCarousel();
 ```
-
-{% endexample %}
 
 #### Example: Include via `<script>`
 
-{% example %}
-
 ```html
 <head>
-  <script async src="https://cdn.ampproject.org/bento.js"></script>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
   <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-  <style data-bento-boilerplate>
+  <style>
     bento-base-carousel {
       display: block;
       overflow: hidden;
       position: relative;
     }
   </style>
-  <script async src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"></script>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"
+  ></script>
   <style>
-    bento-base-carousel, bento-base-carousel > div {
+    bento-base-carousel,
+    bento-base-carousel > div {
       aspect-ratio: 4/1;
     }
-    .red-gradient {
-      background: brown;
-      background: linear-gradient(90deg, brown 50%, lightsalmon 90%, wheat 100%);
+    .red {
+      background: darkred;
     }
-    .blue-gradient {
+    .blue {
       background: steelblue;
-      background: linear-gradient(90deg, steelblue 50%, plum 90%, lavender 100%);
     }
-    .green-gradient {
+    .green {
       background: seagreen;
-      background: linear-gradient(90deg, seagreen 50%, mediumturquoise 90%, turquoise 100%);
     }
   </style>
 </head>
 <bento-base-carousel id="my-carousel">
-  <div class="red-gradient"></div>
-  <div class="blue-gradient"></div>
-  <div class="green-gradient"></div>
+  <div class="red"></div>
+  <div class="blue"></div>
+  <div class="green"></div>
 </bento-base-carousel>
-<div class="buttons" style="margin-top: 8px;">
+<div class="buttons" style="margin-top: 8px">
   <button id="prev-button">Go to previous slide</button>
   <button id="next-button">Go to next slide</button>
   <button id="go-to-button">Go to slide with green gradient</button>
@@ -100,8 +96,6 @@ import '@ampproject/bento-base-carousel';
   })();
 </script>
 ```
-
-{% endexample %}
 
 #### Interactivity and API usage
 
@@ -149,7 +143,7 @@ This event is triggered when the index displayed by the carousel has changed.
 The new index is available via `event.data.index`.
 
 ```javascript
-carousel.addEventListener('slideChange', (e) => console.log(e.data.index))
+carousel.addEventListener('slideChange', (e) => console.log(e.data.index));
 ```
 
 #### Layout and style
@@ -157,13 +151,17 @@ carousel.addEventListener('slideChange', (e) => console.log(e.data.index))
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-base-carousel-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.css"
+/>
 ```
 
 Alternatively, you may also make the light-weight pre-upgrade styles available inline:
 
 ```html
-<style data-bento-boilerplate>
+<style>
   bento-base-carousel {
     display: block;
     overflow: hidden;
@@ -183,7 +181,7 @@ bento-base-carousel {
 }
 
 bento-base-carousel > * {
-  aspect-ratio: 4/1
+  aspect-ratio: 4/1;
 }
 ```
 
@@ -195,9 +193,7 @@ generally work without this, there may be a few bugs. You can let the carousel
 know that it should operate as `rtl` as follows:
 
 ```html
-<bento-base-carousel dir="rtl" …>
-  …
-</bento-base-carousel>
+<bento-base-carousel dir="rtl" …> … </bento-base-carousel>
 ```
 
 If the carousel is in a RTL context, and you want the carousel to operate as
@@ -389,18 +385,16 @@ The examples below demonstrate use of the `<BentoBaseCarousel>` as a functional 
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-base-carousel
+npm install @bentoproject/base-carousel
 ```
 
 ```javascript
 import React from 'react';
-import {BentoBaseCarousel} from '@ampproject/bento-base-carousel/react';
-import '@ampproject/bento-base-carousel/styles.css';
+import {BentoBaseCarousel} from '@bentoproject/base-carousel/react';
+import '@bentoproject/base-carousel/styles.css';
 
 function App() {
   return (
@@ -412,8 +406,6 @@ function App() {
   );
 }
 ```
-
-{% endexample %}
 
 #### Interactivity and API usage
 
@@ -484,7 +476,7 @@ This event is triggered when the index displayed by the carousel has changed.
 The `BentoBaseCarousel` component has a defined layout size type. To ensure the component renders correctly, be sure to apply a size to the component and its immediate children (slides) via a desired CSS layout (such as one defined with `height`, `width`, `aspect-ratio`, or other such properties). These can be applied inline:
 
 ```jsx
-<BentoBaseCarousel style={% raw %}{{width: '300px', height: '100px'}}{% endraw %}>
+<BentoBaseCarousel style={% raw %}{{width: 300, height: 100}}{% endraw %}>
   <img src="puppies.jpg" />
   <img src="kittens.jpg" />
   <img src="hamsters.jpg" />
@@ -508,7 +500,7 @@ Or via `className`:
 }
 
 .custom-styles > * {
-  aspect-ratio: 4/1
+  aspect-ratio: 4/1;
 }
 ```
 
@@ -520,9 +512,7 @@ generally work without this, there may be a few bugs. You can let the carousel
 know that it should operate as `rtl` as follows:
 
 ```jsx
-<BentoBaseCarousel dir="rtl" …>
-  …
-</BentoBaseCarousel>
+<BentoBaseCarousel dir="rtl">…</BentoBaseCarousel>
 ```
 
 If the carousel is in a RTL context, and you want the carousel to operate as
@@ -533,8 +523,8 @@ LTR, you can explicitly set the `dir="ltr"` on the carousel.
 Slides are automatically sized by the carousel when **not** specifying
 `mixedLengths`.
 
-```html
-<BentoBaseCarousel …>
+```jsx
+<BentoBaseCarousel>
   <img style={% raw %}{{height: '100%', width: '100%'}}{% endraw %} src="…" />
 </BentoBaseCarousel>
 ```
@@ -560,12 +550,8 @@ addition, when changing `visibleSlides`, you likely want to change
 ```jsx
 const count = window.matchMedia('(max-width: 600px)').matches ? 4 : 3;
 
-<BentoBaseCarousel
-  visibleCount={count}
-  advanceCount={count}
->
-  <img style={% raw %}{{height: '100%', width: '100%'}}{% endraw %} src="…" />
-  …
+<BentoBaseCarousel visibleCount={count} advanceCount={count}>
+  <img style={% raw %}{{height: '100%', width: '100%'}}{% endraw %} src="…" />…
 </BentoBaseCarousel>
 ```
 
@@ -689,16 +675,17 @@ Arrow buttons can be customized by passing in your own custom markup. For exampl
 
 ```jsx
 function CustomPrevButton(props) {
-  return <button {...props} className="carousel-prev" />
+  return <button {...props} className="carousel-prev" />;
 }
 
 function CustomNextButton(props) {
-  return <button {...props} className="carousel-prev" />
+  return <button {...props} className="carousel-prev" />;
 }
 
 <BentoBaseCarousel
   arrowPrevAs={CustomPrevButton}
-  arrowNextAs={CustomNextButton}>
+  arrowNextAs={CustomNextButton}
+>
   <div>first slide</div>
   // …
 </BentoBaseCarousel>

@@ -18,65 +18,62 @@ The examples below demonstrate use of the `<bento-lightbox-gallery>` web compone
 
 ### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-lightbox-gallery
+npm install @bentoproject/lightbox-gallery
 ```
 
 ```javascript
-import '@ampproject/bento-lightbox-gallery';
+import {defineElement as defineBentoLightboxGallery} from '@bentoproject/lightbox-gallery';
+defineBentoLightboxGallery();
 ```
-
-{% endexample %}
 
 ### Example: Import via `<script>`
 
-{% example %}
-
 ```html
 <head>
-    <script async src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style data-bento-boilerplate>
-      bento-lightbox-gallery[hidden] {
-        display: none !important;
-      }
-    </style>
-    <script async src="https://cdn.ampproject.org/v0/bento-lightbox-gallery-1.0.js"></script>
-  </head>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
+  <style>
+    bento-lightbox-gallery[hidden] {
+      display: none !important;
+    }
+  </style>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-lightbox-gallery-1.0.js"
+  ></script>
+</head>
 
-  <figure>
-     <img
-       id="my-img"
-       width="360"
-       height="240"
-       src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80"
-       lightbox
-     />
-     <figcaption>dog wearing yellow shirt.</figcaption>
-    </figure>
-  <div class="buttons" style="margin-top: 8px;">
-    <button id="change-img">
-      change image
-    </button>
-  </div>
+<figure>
+  <img
+    id="my-img"
+    width="360"
+    height="240"
+    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80"
+    lightbox
+  />
+  <figcaption>dog wearing yellow shirt.</figcaption>
+</figure>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-img">change image</button>
+</div>
 
-  <script>
-    (async () => {
-      const img = document.queryselector('#my-img');
-      await customelements.whendefined('img');
-      // set up button actions
-      document.queryselector('#change-img').onclick = () => {
-        img.setattribute('src', 'https://images.unsplash.com/photo-1603123853880-a92fafb7809f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80')
-      }
-    })();
-  </script>
+<script>
+  (async () => {
+    const img = document.queryselector('#my-img');
+    await customelements.whendefined('img');
+    // set up button actions
+    document.queryselector('#change-img').onclick = () => {
+      img.setattribute(
+        'src',
+        'https://images.unsplash.com/photo-1603123853880-a92fafb7809f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80'
+      );
+    };
+  })();
+</script>
 ```
-
-{% endexample %}
 
 ### Usage
 
@@ -108,7 +105,7 @@ value as its description, showing "toront's cn tower was ....".
     width="1600"
     height="900"
     alt="picture of cn tower."
-  >
+  />
   <figcaption class="image">
     toronto's cn tower was built in 1976 and was the tallest free-standing
     structure until 2007.
@@ -128,7 +125,7 @@ its description, showing "picture of cn tower".
   width="1600"
   height="900"
   alt="picture of cn tower"
->
+/>
 ```
 
 ### Interactivity and API usage
@@ -157,7 +154,11 @@ api.open();
 Each bento component has a small css library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-lightbox-gallery-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-lightbox-gallery-1.0.css"
+/>
 ```
 
 ## Preact/React Component
@@ -166,62 +167,53 @@ The preact/react version of the bentolightboxgallery functions differently than 
 
 ### Example: Import Via npm
 
-{% example %}
-
 ```bash
-npm install @ampproject/bento-lightbox-gallery
+npm install @bentoproject/lightbox-gallery
 ```
 
 ```javascript
 import React from 'react';
 import {
-  BentoLightboxGalleryProvider,,
+  BentoLightboxGalleryProvider,
   WithBentoLightboxGallery,
-} from '@ampproject/bento-lightbox-gallery/react';
+} from '@bentoproject/lightbox-gallery/react';
 
 function App() {
   return (
-      <BentoLightboxGalleryProvider>
-        <WithBentoLightboxGallery>
-          <img src="https://images.unsplash.com/photo-1562907550-096d3bf9b25c"/>
-        </WithBentoLightboxGallery>
-      </BentoLightboxGalleryProvider>
+    <BentoLightboxGalleryProvider>
+      <WithBentoLightboxGallery>
+        <img src="https://images.unsplash.com/photo-1562907550-096d3bf9b25c" />
+      </WithBentoLightboxGallery>
+    </BentoLightboxGalleryProvider>
   );
 }
-
 ```
-
-{% endexample %}
 
 #### Example Using BentoBaseCarousel
 
 `<BentoLightboxGallery>` can be used with a `<BentoBaseCarousel>` child in order to lightbox all of the carousel's children. As you navigate throught the carousel items in the lightbox, the original carousel slides are synchronised so that when the lightbox is closed, the user ends up on the same slide as they were originally on.
 
-{% example %}
-
 ```javascript
 import React from 'react';
-import {BentoBaseCarousel} from '../../../amp-base-carousel/1.0/component';
+import {BentoBaseCarousel} from '../../../bento-base-carousel/1.0/component';
 import {
-  BentoLightboxGalleryProvider,,
+  BentoLightboxGalleryProvider,
   WithBentoLightboxGallery,
-} from '@ampproject/bento-lightbox-gallery/react';
+} from '@bentoproject/lightbox-gallery/react';
 
 function App() {
   return (
-       <BentoLightboxGalleryProvider>
-        <BentoBaseCarousel lightbox style={% raw %}{{width: '240px', height: '160px'}}{% endraw %}>
-          <img
-            src="https://images.unsplash.com/photo-1562907550-096d3bf9b25c"
-            thumbnailSrc="https://images.unsplash.com/photo-1562907550-096d3bf9b25c"
-          />
-        </BentoBaseCarousel>
-      </BentoLightboxGalleryProvider>
+    <BentoLightboxGalleryProvider>
+      <BentoBaseCarousel lightbox style={% raw %}{{width: 240, height: 160}}{% endraw %}>
+        <img
+          src="https://images.unsplash.com/photo-1562907550-096d3bf9b25c"
+          thumbnailSrc="https://images.unsplash.com/photo-1562907550-096d3bf9b25c"
+        />
+      </BentoBaseCarousel>
+    </BentoLightboxGalleryProvider>
   );
 }
 ```
-
-{% endexample %}
 
 For further examples of how to use the BentoLightboxGallery please check the storybook example found in (Basic.js)[./storybook/Basic.js].
 

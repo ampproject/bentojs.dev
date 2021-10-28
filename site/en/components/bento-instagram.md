@@ -4,9 +4,9 @@ layout: layouts/component.njk
 ---
 # Bento Instagram
 
-## Usage
+The Bento Instagram component allows you embed an Instagram post.
 
-The Bento Instagram component allows you embed an Instagram post. It can be used as a web component [`<bento-instagram>`](#web-component), or as a Preact/React functional component [`<BentoInstagram>`](#preactreact-component).
+## Usage
 
 ### Web Component
 
@@ -16,28 +16,27 @@ The examples below demonstrate use of the `<bento-instagram>` web component.
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-instagram
+npm install @bentoproject/instagram
 ```
 
 ```javascript
-import '@ampproject/bento-instagram';
+import {defineElement as defineBentoInstagram} from '@bentoproject/instagram';
+defineBentoInstagram();
 ```
-
-{% endexample %}
 
 #### Example: Include via `<script>`
 
-{% example %}
-
 ```html
 <head>
-  <script async custom-element="bento-instagram" src="https://cdn.ampproject.org/v0/bento-instagram-1.0.js"></script>
-  <style data-bento-boilerplate>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-instagram-1.0.js"
+  ></script>
+  <style>
     bento-instagram {
       display: block;
       overflow: hidden;
@@ -45,39 +44,45 @@ import '@ampproject/bento-instagram';
     }
   </style>
 </head>
-<bento-instagram
-  id="my-instagram"
-  data-shortcode="CKXYAzuj7TE"
-  data-captioned>
-</bento-instagram>
-<button id="change-shortcode">Change shortcode</button>
-</div>
+<body>
+  <bento-instagram
+    id="my-instagram"
+    data-shortcode="CKXYAzuj7TE"
+    data-captioned
+  >
+  </bento-instagram>
+  <button id="change-shortcode">Change shortcode</button>
 
-<script>
-  (async () => {
-    const instagram = document.querySelector('#my-instagram');
-    await customElements.whenDefined('bento-instagram');
+  <script>
+    (async () => {
+      const instagram = document.querySelector('#my-instagram');
+      await customElements.whenDefined('bento-instagram');
 
-    // set up button actions
-    document.querySelector('#change-shortcode').onclick = () => instagram.dataset.shortcode = '1totVhIFXl';
-  })();
-</script>
+      // set up button actions
+      document.querySelector('#change-shortcode').onclick = () => {
+        instagram.dataset.shortcode = '1totVhIFXl';
+      };
+    })();
+  </script>
+</body>
 ```
-
-{% endexample %}
 
 #### Layout and style
 
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-instagram-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-instagram-1.0.css"
+/>
 ```
 
 Alternatively, you may also make the light-weight pre-upgrade styles available inline:
 
 ```html
-<style data-bento-boilerplate>
+<style>
   bento-instagram {
     display: block;
     overflow: hidden;
@@ -117,29 +122,20 @@ The examples below demonstrates use of the `<BentoInstagram>` as a functional co
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-instagram
+npm install @bentoproject/instagram
 ```
 
 ```javascript
 import React from 'react';
-import { BentoInstagram } from '@ampproject/bento-instagram/react';
-import '@ampproject/bento-instagram/styles.css';
+import {BentoInstagram} from '@bentoproject/instagram/react';
+import '@bentoproject/instagram/styles.css';
 function App() {
-  return (
-    <BentoInstagram
-      shortcode="CKXYAzuj7TE"
-      captioned
-    />
-  );
+  return <BentoInstagram shortcode="CKXYAzuj7TE" captioned />;
 }
 ```
-
-{% endexample %}
 
 #### Layout and style
 
@@ -148,15 +144,19 @@ function App() {
 The `BentoInstagram` component has a defined layout size type. To ensure the component renders correctly, be sure to apply a size to the component and its immediate children (slides) via a desired CSS layout (such as one defined with `height`, `width`, `aspect-ratio`, or other such properties). These can be applied inline:
 
 ```jsx
-<BentoInstagram style={% raw %}{{width: '300px', height: '200px'}}{% endraw %} shortcode="CKXYAzuj7TE">
-</BentoInstagram>
+<BentoInstagram
+  style={% raw %}{{width: 300, height: 200}}{% endraw %}
+  shortcode="CKXYAzuj7TE"
+></BentoInstagram>
 ```
 
 Or via `className`:
 
 ```jsx
-<BentoInstagram className='custom-styles' shortcode="CKXYAzuj7TE">
-</BentoInstagram>
+<BentoInstagram
+  className="custom-styles"
+  shortcode="CKXYAzuj7TE"
+></BentoInstagram>
 ```
 
 ```css

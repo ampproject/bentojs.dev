@@ -1,0 +1,49 @@
+.bd-example {
+  background: #002b39;
+  border-radius: 8px;
+
+  pre {
+    border-radius: 0;
+  }
+
+  &-toggle {
+    position: relative;
+    padding: 1em 1em 0 1em;
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    &-option {
+      padding: 4px var(--spacing-xs);
+      margin-right: 8px;
+      font-weight: normal;
+      font-family: var(--font-sans);
+      font-size: 0.9em;
+      color: #fff;
+      background-color: #4c5a63;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.--active {
+        background-color: var(--burnt-sienna);
+      }
+    }
+  }
+
+  &-preview {
+    padding: 1em;
+    margin-bottom: var(--spacing-s);
+
+    iframe {
+      background-color: #fff;
+      border: none;
+      width: 100%;
+      min-height: 400px;
+    }
+  }
+
+  .--hidden {
+    display: none;
+  }
+}

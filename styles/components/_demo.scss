@@ -17,7 +17,7 @@
     gap: var(--spacing-xxl);
   }
 
-  &-button-group {
+  bento-selector {
     display: grid;
     gap: var(--spacing-xs);
     grid-template-columns: 1fr 1fr;
@@ -42,6 +42,11 @@
         font-size: var(--font-size-16);
         padding: var(--spacing-xxs) var(--spacing-xs);
       }
+    }
+
+    & [option][selected] {
+      cursor: pointer;
+      outline: unset;
     }
   }
 

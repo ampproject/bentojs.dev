@@ -1,25 +1,26 @@
 class HomeDemo {
-  constructor($buttons, $code, $previewEl) {
-    this.$buttons = Array.from($buttons);
+  constructor($selector, $code, $previewEl) {
+    this.$selector = $selector;
     this.$code = Array.from($code);
     this.$previewEl = $previewEl;
 
-    this.$buttons.map((btn) => {
-      btn.addEventListener('click', this.toggleDemo.bind(this));
-    });
+    this.$selector.addEventListener('select', this.toggleDemo.bind(this));
   }
 
   toggleDemo(e) {
     e.preventDefault();
-    const button = e.target;
-    const previewId = button.getAttribute('aria-controls');
+    const previewId = e.data.targetOption;
+    const button = this.$selector.querySelector(
+      `button[option='${previewId}']`
+    );
     this.selectButton(button);
     this.changePreview(previewId);
   }
 
   selectButton(button) {
     const invertedClass = '--inverted';
-    this.$buttons.map((btn) => {
+    const buttons = Array.from(this.$selector.querySelectorAll('button'));
+    buttons.map((btn) => {
       btn.classList.add(invertedClass);
     });
     button.classList.remove(invertedClass);

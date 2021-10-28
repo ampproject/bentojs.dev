@@ -1,10 +1,10 @@
 <section class="bd-demo">
-  <div class="bd-demo-button-group">
-    <button class="bd-button--light --uppercase --demo-trigger" aria-controls="bd-demo-carousel">carousel</button>
-    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-accordion">accordion</button>
-    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-sidebar">sidebar</button>
-    <button class="bd-button--light --inverted --uppercase --demo-trigger" aria-controls="bd-demo-social-share">social share</button>
-  </div>
+  <bento-selector id="bd-demo-selector">
+    <button option="bd-demo-carousel" class="bd-button--light --uppercase">carousel</button>
+    <button option="bd-demo-accordion" class="bd-button--light --inverted --uppercase">accordion</button>
+    <button option="bd-demo-sidebar" class="bd-button--light --inverted --uppercase">sidebar</button>
+    <button option="bd-demo-social-share" class="bd-button--light --inverted --uppercase">social share</button>
+  </bento-selector>
 
   {% set examples = "assets/iframes/homepage-examples/" %}
 

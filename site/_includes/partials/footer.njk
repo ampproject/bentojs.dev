@@ -1,3 +1,54 @@
 <footer class="bd-footer">
-  <small>&copy; The AMPHTML Authors</small>
+  <div class="bd-footer-content">
+    <div class="bd-footer-content-column">
+      <h3>{{ 'i18n.footer.overview.title' | i18n(locale) }}</h3>
+      <ul>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="/">➞ {{ 'i18n.footer.overview.items.at_a_glance' | i18n(locale) }}</a>
+        </li>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="/blog">➞ {{ 'i18n.footer.overview.items.blog' | i18n(locale) }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="bd-footer-content-column">
+      <h3>{{ 'i18n.footer.docs.title' | i18n(locale) }}</h3>
+      <ul>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="/get-started">➞ {{ 'i18n.footer.docs.items.get_started' | i18n(locale) }}</a>
+        </li>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="/documentation">➞ {{ 'i18n.footer.docs.items.components' | i18n(locale) }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="bd-footer-content-column">
+      <h3>{{ 'i18n.footer.community.title' | i18n(locale) }}</h3>
+      <ul>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="https://github.com/ampproject/meta/blob/main/CODE_OF_CONDUCT.md" target="_blank">➞
+          {{ 'i18n.footer.community.items.code_of_conduct' | i18n(locale) }}</a>
+        </li>
+        <li class="bd-link-wrapper">
+          <a class="bd-link" href="https://github.com/ampproject/amphtml" target="_blank">➞
+          {{ 'i18n.footer.community.items.repository' | i18n(locale) }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="bd-footer-copyright">&copy; The AMPHTML Authors</div>
+    <ul class="bd-footer-legal">
+      <li class="bd-link-wrapper">
+        <a class="bd-link" href="https://terms-of-use.openjsf.org/" target="_blank">
+          {{ 'i18n.footer.legal.terms_of_use' | i18n(locale) }}</a>
+      </li>
+      <li class="bd-link-wrapper">
+        <a class="bd-link" href="https://privacy-policy.openjsf.org/" target="_blank">
+          {{ 'i18n.footer.legal.privacy_policy' | i18n(locale) }}</a>
+      </li>
+      <li class="bd-link-wrapper">
+        <a class="bd-link" href="https://www.linuxfoundation.org/cookies" target="_blank">
+          {{ 'i18n.footer.legal.cookies' | i18n(locale) }}</a>
+      </li>
+    </ul>
+  </div>
 </footer>

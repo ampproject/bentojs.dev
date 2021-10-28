@@ -3,7 +3,8 @@
   flex-direction: column;
 
   &__col-2 > &__column,
-  &__col-3 > &__column {
+  &__col-3 > &__column,
+  &__col-1-2 > &__column {
     flex: 1 1 100%;
   }
 
@@ -17,11 +18,12 @@
     }
   }
 
-  @include media('medium') {
+  @include media('large') {
     flex-direction: row;
 
     &__col-2 > &__column {
       flex: 0 1 50%;
+      max-width: 50%;
     }
 
     &__col-3 > &__column {
@@ -40,6 +42,17 @@
 
       &.--grow {
         flex-grow: 1;
+      }
+    }
+
+    &__col-1-2 &__column {
+      &:nth-of-type(1) {
+        flex: 1 0 33%;
+      }
+
+      &:nth-of-type(2) {
+        flex: 1 1 66%;
+        width: 60%;
       }
     }
   }

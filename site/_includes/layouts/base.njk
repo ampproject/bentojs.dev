@@ -17,6 +17,13 @@
 
   <script src="{{ helpers.addHashQueryParam('/assets/js/all.js') }}" async></script>
   {% block head %}{% endblock %}
+
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <meta property="og:title" content="{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}">
+  <meta property="og:url" content="{{ page.url }}">
+  <meta property="og:image" content="/assets/img/og.jpg">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="314">
 </head>
 <body>
   {% block header %}

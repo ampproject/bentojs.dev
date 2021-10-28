@@ -4,34 +4,23 @@
     bento-base-carousel {
       position: static !important;
     }
-    bento-base-carousel:not(.i-amphtml-built)
-      > :not([placeholder]):not([slot='i-amphtml-svc']) {
-      display: block !important;
-    }
   </style>
   <script async src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"></script>
   <style>
     bento-base-carousel, bento-base-carousel > div {
       height: 100%;
     }
-    .red-gradient {
-      background: brown;
-      background: linear-gradient(90deg, brown 50%, lightsalmon 90%, wheat 100%);
-    }
-    .blue-gradient {
-      background: steelblue;
-      background: linear-gradient(90deg, steelblue 50%, plum 90%, lavender 100%);
-    }
-    .green-gradient {
-      background: seagreen;
-      background: linear-gradient(90deg, seagreen 50%, mediumturquoise 90%, turquoise 100%);
+    img {
+      display: block !important;
+      content-visibility: visible !important;
+      height: 100%
     }
   </style>
 </head>
 <bento-base-carousel id="my-carousel">
-  <div class="red-gradient"></div>
-  <div class="blue-gradient"></div>
-  <div class="green-gradient"></div>
+  <img src="/assets/img/group-19.webp" />
+  <img src="/assets/img/group-19-copy.webp" />
+  <img src="/assets/img/group-19-copy-2.webp" />
 </bento-base-carousel>
 
 <script>

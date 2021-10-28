@@ -4,10 +4,8 @@ Do not change formatting this would break rendering. #}
 <section class="bd-example">
 <header class="bd-example-toggle">
 {% if iframe %}
-<input type="radio" name="{{ id }}" value="code" checked>
-<label for="{{ id }}-code">Code</label>
-<input type="radio" name="{{ id }}" value="preview">
-<label for="{{ id }}-preview">Preview</label>
+<button class="bd-example-toggle-option --active --code">Code</button>
+<button class="bd-example-toggle-option --preview">Preview</button>
 {% endif %}
 </header>
 <div class="bd-example-code">
@@ -15,7 +13,7 @@ Do not change formatting this would break rendering. #}
 </div>
 
 {% if iframe %}
-<div class="bd-example-preview">
+<div class="bd-example-preview --hidden">
 <iframe src="/assets/iframes/{{ id }}.html"></iframe>
 </div>
 {% endif %}

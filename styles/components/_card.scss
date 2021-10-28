@@ -1,6 +1,7 @@
 @mixin card {
   padding: 24px;
   border-radius: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0, 43, 57, 0.15);
 }
 
 .bd-card {

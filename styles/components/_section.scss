@@ -33,16 +33,6 @@
     }
   }
 
-  &__image {
-    width: 335px;
-    margin-block-end: var(--spacing-xl);
-
-    @include media('medium') {
-      width: auto;
-      margin-right: 60px;
-    }
-  }
-
   &.--spacer-64 {
     margin-block-start: var(--spacing-xl);
 
@@ -52,7 +42,7 @@
   }
 
   &.--spacer {
-    margin-block-start: calc(var(--spacing-xxl) * 2);
+    margin-block-start: calc(var(--spacing-xxl) * 1.5);
 
     @include media('medium') {
       margin-block-start: calc(var(--spacing-xxl) * 4);

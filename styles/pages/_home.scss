@@ -5,9 +5,33 @@
   object-fit: contain;
   opacity: 0.1;
 }
-
 .bd-page__container.bd-theme--dark {
-  row-gap: 15rem;
+  row-gap: calc(var(--spacing-xxl) * 1.5);
+
+  @include media('medium') {
+    row-gap: calc(var(--spacing-xxl) * 3.125);
+  }
+}
+
+.bd-stage .bd-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: var(--spacing-s);
+
+  @include media('medium') {
+    flex-direction: row;
+  }
+}
+
+.bd-frameworks,
+.bd-why-bento {
+  gap: var(--spacing-xl);
+}
+
+.bd-frameworks {
+  width: 70%;
+  margin-inline-start: auto;
 }
 
 .bd-demo {

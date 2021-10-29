@@ -20,8 +20,8 @@ community:
   items:
     code_of_conduct:
       en: Code of conduct
-    repository:
-      en: Repository
+    discussions:
+      en: Feedback & Support
 legal:
   terms_of_use:
     en: Terms of use

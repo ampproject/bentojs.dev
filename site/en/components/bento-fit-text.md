@@ -10,6 +10,8 @@ The Bento Fit Text component allows you to manage the size and fit of text withi
 
 ### Web Component
 
+{% componentImport 'bento-fit-text' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-fit-text>` web component.

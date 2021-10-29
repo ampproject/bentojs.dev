@@ -25,6 +25,8 @@ on mobile devices.
 
 ### Web Component
 
+{% componentImport 'bento-accordion' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-accordion>` web component.

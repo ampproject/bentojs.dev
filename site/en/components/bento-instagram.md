@@ -10,6 +10,8 @@ The Bento Instagram component allows you embed an Instagram post.
 
 ### Web Component
 
+{% componentImport 'bento-instagram' %}
+
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-instagram>` web component.

@@ -10,6 +10,8 @@ The Bento Inline Gallery component uses a Bento Carousel component to display sl
 
 ### Web Component
 
+{% componentImport 'bento-inline-gallery' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-inline-gallery>` web component.

@@ -10,6 +10,8 @@ The Bento Timeago component can count up to, or away from, a specified date and 
 
 ### Web Component
 
+{% componentImport 'bento-timeago' %}
+
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-timeago>` web component.

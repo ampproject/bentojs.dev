@@ -10,6 +10,8 @@ The Bento Selector is a control that presents a list of options and lets the use
 
 ### Web Component
 
+{% componentImport 'bento-selector' %}
+
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style)
 
 #### Example: Import via npm

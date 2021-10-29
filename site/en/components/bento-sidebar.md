@@ -12,6 +12,8 @@ Use Bento Sidebar as a web component [`<bento-sidebar>`](#web-component), or a P
 
 ### Web Component
 
+{% componentImport 'bento-sidebar' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-sidebar>` web component.

@@ -12,6 +12,8 @@ Use Bento Lightbox Gallery as a web component [`<bento-lightbox-gallery>`](#web-
 
 ## Web Component
 
+{% componentImport 'bento-lightbox-gallery' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. As a web component
 
 The examples below demonstrate use of the `<bento-lightbox-gallery>` web component.

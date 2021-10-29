@@ -10,6 +10,8 @@ Renders a MathML formula in an iframe.
 
 ### Web Component
 
+{% componentImport 'bento-mathml' %}
+
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-mathml>` web component.

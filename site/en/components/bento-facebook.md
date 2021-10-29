@@ -10,6 +10,8 @@ The Bento Facebook component allows you to embed a Facebook post, a Facebook vid
 
 ### Web Component
 
+{% componentImport 'bento-facebook' %}
+
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
 #### Example: Import via npm

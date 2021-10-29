@@ -50,6 +50,31 @@ function _rewriteExamples(contents) {
   return contents;
 }
 
+function _injectImportSection(contents, component) {
+  const WEB_COMPONENT_HEADING = /#+ Web Component\s*$/gm;
+
+  let matchesCount = 0;
+  contents = contents.replace(WEB_COMPONENT_HEADING, (match) => {
+    matchesCount++;
+    if (matchesCount > 1) {
+      console.log(
+        chalk.red('[ERROR]'),
+        `Found too many web components headings for ${component}`
+      );
+      return match;
+    }
+    return `${match}\n{% componentImport '${component}' %}\n`;
+  });
+  if (matchesCount === 0) {
+    console.log(
+      chalk.yellow('[WARNING]'),
+      `No web components heading for ${component}`
+    );
+  }
+
+  return contents;
+}
+
 function _escapeVariables(contents) {
   // This expression matches a {% raw %}...{% endraw %} block
   const JINJA2_RAW_BLOCK =
@@ -124,15 +149,16 @@ async function importComponents() {
         const file = await fs.readFile(filePath);
         const document = matter(file);
 
-        const name = _parseComponentName(document.content);
-        const fileName = name.replace(/ /g, '-').toLowerCase();
+        const componentName = _parseComponentName(document.content);
+        const fileName = componentName.replace(/ /g, '-').toLowerCase();
 
-        document.data.title = name;
+        document.data.title = componentName;
         document.data.layout = 'layouts/component.njk';
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
+        document.content = _injectImportSection(document.content, fileName);
         document.content = _rewriteCodeFenceShToBash(document.content);
 
         await fs.writeFile(
@@ -140,7 +166,10 @@ async function importComponents() {
           document.stringify()
         );
 
-        console.log(chalk.dim('[Import components]'), `Imported ${name}`);
+        console.log(
+          chalk.dim('[Import components]'),
+          `Imported ${componentName}`
+        );
         resolve();
       })
     );

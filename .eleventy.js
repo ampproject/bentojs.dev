@@ -5,10 +5,14 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
 const imageShortcode = require('./site/_shortcodes/Image.js');
+const componentImportShortcode = require('./site/_shortcodes/ComponentImport.js');
 const noOpShortCode = require('./site/_shortcodes/NoOp.js');
-const { exampleShortCode, writeExamples } = require('./site/_shortcodes/Example.js');
+const {
+  exampleShortCode,
+  writeExamples,
+} = require('./site/_shortcodes/Example.js');
 
-const { i18n } = require('./site/_filters/i18n');
+const {i18n} = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
@@ -43,6 +47,10 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addJavaScriptFunction('image', imageShortcode);
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);
+  eleventyConfig.addNunjucksAsyncShortcode(
+    'componentImport',
+    componentImportShortcode
+  );
 
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('i18n', i18n);

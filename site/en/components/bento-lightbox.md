@@ -10,6 +10,8 @@ The Bento Lightbox component displays elements in a full-viewport "lightbox" mod
 
 ### Web Component
 
+{% componentImport 'bento-lightbox' %}
+
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
 The examples below demonstrate use of the `<bento-lightbox>` web component.

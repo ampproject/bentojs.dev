@@ -11,6 +11,8 @@ The Bento Date Countdown component displays a countdown sequence to a specified 
 <!--
 ### Web Component
 
+{% componentImport 'bento-date-countdown' %}
+
 TODO(https://go.amp.dev/issue/36619): Restore this section. We don't include it because we don't support <template> in Bento Web Components yet.
 
 An older version of this file contains the removed section, though it's incorrect:

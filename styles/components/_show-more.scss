@@ -1,0 +1,41 @@
+.bd-show-more {
+  background-color: var(--bright-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  z-index: 2;
+
+  pre {
+    border-radius: 0;
+  }
+
+  &-toggle {
+    position: relative;
+    padding: 1em 1em 0 1em;
+
+    &-option {
+      padding: 4px var(--spacing-xs);
+      margin-right: 8px;
+      font-weight: normal;
+      font-family: var(--font-sans);
+      font-size: 0.9em;
+      color: #fff;
+      background-color: #4c5a63;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.--active {
+        background-color: var(--burnt-sienna);
+      }
+    }
+  }
+
+  .bd-button {
+    color: white;
+    background-color: var(--burnt-sienna);
+  }
+
+  .--hidden {
+    display: none;
+  }
+}

@@ -149,16 +149,22 @@ async function importComponents() {
         const file = await fs.readFile(filePath);
         const document = matter(file);
 
-        const componentName = _parseComponentName(document.content);
-        const fileName = componentName.replace(/ /g, '-').toLowerCase();
+        const title = _parseComponentName(document.content);
+        const componentName = path
+          .basename(path.dirname(path.dirname(filePath)))
+          .replace('amp-', 'bento-');
+        const fileName = title.replace(/ /g, '-').toLowerCase();
 
-        document.data.title = componentName;
+        document.data.title = title;
         document.data.layout = 'layouts/component.njk';
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
-        document.content = _injectImportSection(document.content, fileName);
+        document.content = _injectImportSection(
+          document.content,
+          componentName
+        );
         document.content = _rewriteCodeFenceShToBash(document.content);
 
         await fs.writeFile(
@@ -166,10 +172,7 @@ async function importComponents() {
           document.stringify()
         );
 
-        console.log(
-          chalk.dim('[Import components]'),
-          `Imported ${componentName}`
-        );
+        console.log(chalk.dim('[Import components]'), `Imported ${title}`);
         resolve();
       })
     );

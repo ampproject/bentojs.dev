@@ -19,7 +19,7 @@ arrow buttons.
 
 ### Web Component
 
-{% componentImport 'bento-carousel' %}
+{% componentImport 'bento-base-carousel' %}
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 

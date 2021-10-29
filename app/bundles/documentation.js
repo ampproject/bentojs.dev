@@ -1,5 +1,6 @@
 import DocumentationSidebar from '../components/DocumentationSidebar';
 import Example from '../components/Example';
+import ShowMore from '../components/ShowMore';
 
 window.addEventListener('load', () => {
   new DocumentationSidebar(
@@ -11,7 +12,10 @@ window.addEventListener('load', () => {
     document.getElementById('bd-button-toc')
   );
 
-  for ($example of document.querySelectorAll('.bd-example')) {
-    new Example($example);
+  for (const example of document.querySelectorAll('.bd-example')) {
+    new Example(example);
+  }
+  for (const componentImport of document.querySelectorAll('.bd-show-more')) {
+    new ShowMore(componentImport);
   }
 });

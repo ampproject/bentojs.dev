@@ -24,21 +24,21 @@ layout: 'layouts/content.njk'
       <a class="bd-button" href="/documentation">{{ i18n.frameworks.cta }}</a>
     </div>
   </section>
-  <section class="bd-section bd-row bd-row__col-2 bd-row--reverse bd-why-bento">
+  <section class="bd-section bd-row bd-row__col-2 bd-why-bento">
+    <div class="bd-row__column">
+      {% image "./assets/img/image-right.png", i18n.why.image %}
+    </div>
     <div class="bd-row__column">
       <h2 class="bd-section__title">{{ i18n.why.headline }}</h2>
       <p class="bd-section__body">{{ i18n.why.text }}</p>
       <a class="bd-button" href="/get-started">{{ i18n.why.cta }}</a>
     </div>
-    <div class="bd-row__column">
-      {% image "./assets/img/image-right.png", i18n.why.image %}
-    </div>
   </section>
 </div>
 <hr class="bd-page__divider"/>
 <div class="bd-page__container bd-theme--light">
-  <section class="bd-section --spacer bd-row bd-row__col-2 bd-demo-bg">
-    <svg class="bd-demo-bg__image">
+  <section class="bd-section bd-row bd-row__col-2 bd-demo-intro">
+    <svg class="bd-demo-intro__image">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
     </svg>
     <div class="bd-row__column">

@@ -10,17 +10,21 @@
     bento-base-carousel, bento-base-carousel > div {
       height: 100%;
     }
-    img {
+    picture {
       display: block !important;
       content-visibility: visible !important;
       height: 100%
     }
+    picture img {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <bento-base-carousel id="my-carousel">
-  <img src="/assets/img/group-19.webp" />
-  <img src="/assets/img/group-19-copy.webp" />
-  <img src="/assets/img/group-19-copy-2.webp" />
+  {% image "./assets/img/group-19.webp", "" %}
+  {% image "./assets/img/group-19-copy.webp", "" %}
+  {% image "./assets/img/group-19-copy-2.webp", "" %}
 </bento-base-carousel>
 
 <script>

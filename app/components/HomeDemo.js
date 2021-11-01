@@ -28,7 +28,7 @@ class HomeDemo {
 
   changePreview(previewId) {
     const hideClass = '--hide';
-    const iframeSrc = `assets/iframes/homepage-examples/${previewId}.html`;
+    const iframeSrc = `iframes/homepage-examples/${previewId}/index.html`;
     this.$previewEl.setAttribute('src', iframeSrc);
 
     this.$code.map((code) => {

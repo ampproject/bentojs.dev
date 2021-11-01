@@ -35,7 +35,7 @@
 
   .bd-stage {
     &__bg-image {
-      transform: rotate(30deg) scale(2);
+      transform: rotate(30deg) scale(2.2);
 
       @include media('medium') {
         right: -25%;

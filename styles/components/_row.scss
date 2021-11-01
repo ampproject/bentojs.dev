@@ -56,12 +56,4 @@
       }
     }
   }
-
-  &--reverse {
-    flex-direction: column-reverse;
-
-    @include media('medium') {
-      flex-direction: row;
-    }
-  }
 }

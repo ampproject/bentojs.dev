@@ -1,0 +1,10 @@
+<bento-sidebar id="bd-toc" side="right">
+  <nav
+    class="bd-sidebar__contents bd-sidebar__contents--toc"
+    toolbar="(min-width: 1024px)"
+    toolbar-target="bd-toc-target">
+    <h3>Table of contents</h3>
+    {{ content | toc | safe }}
+  </nav>
+</bento-sidebar>
+<div class="bd-sidebar__target" id="bd-toc-target"></div>

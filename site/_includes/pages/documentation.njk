@@ -9,10 +9,7 @@ title: Documentation
 {% block content %}
 <main class="bd-page-components-overview bd-theme--light">
   <div class="bd-page-components-overview-container">
-    <div class="bd-page-components-overview-container__sidebar">
-      {%- include 'partials/components/sidebar.njk' -%}
-      <div class="vertical-divider"></div>
-    </div>
+    {%- include 'partials/components/list.njk' -%}
     <div class="bd-page-components-overview-container__main">
       <svg class="bd-page-components-overview-background">
         <use
@@ -24,20 +21,20 @@ title: Documentation
       {%- include 'partials/components/most-used.njk' -%}
       {%- include 'partials/components/components-list.njk' -%}
     </div>
-    <aside class="bd-page-components-overview-container__toc">
-      <h3>{{ i18n.toc.title }}</h3>
-      {%- include 'partials/documentation/toc.njk' -%}
-    </aside>
+    <bento-sidebar id="bd-toc" side="right">
+      <nav
+        class="bd-sidebar__contents bd-sidebar__contents--toc"
+        toolbar="(min-width: 1024px)"
+        toolbar-target="bd-toc-target">
+          <h3>{{ i18n.toc.title }}</h3>
+          {%- include 'partials/documentation/toc.njk' -%}
+      </nav>
+    </bento-sidebar>
+    <div class="bd-sidebar__target" id="bd-toc-target"></div>
   </div>
 </main>
 {% endblock %}
 {% block footer %}
-  <div class="bd-components-overview-footer">
-    <div class="bd-components-overview-footer__mobile">
-      {%- include 'partials/documentation/mobile-footer.njk' -%}
-    </div>
-    <div class="bd-components-overview-footer__default">
-      {% include 'partials/footer.njk' %}
-    </div>
-  </div>
+  {%- include 'partials/components/sidebar-controls.njk' -%}
+  {% include 'partials/footer.njk' %}
 {% endblock %}

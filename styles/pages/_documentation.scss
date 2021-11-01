@@ -200,25 +200,3 @@
     }
   }
 }
-
-.bd-components-overview-footer {
-  grid-column: 1/-1;
-
-  &__mobile {
-    display: block;
-  }
-
-  &__default {
-    display: none;
-  }
-
-  @include media('large') {
-    &__mobile {
-      display: none;
-    }
-
-    &__default {
-      display: block;
-    }
-  }
-}

@@ -9,7 +9,6 @@ class DocumentationSidebar {
   async init() {
     await customElements.whenDefined('bento-sidebar');
     const api = await this.$sidebar.getApi();
-
     this.$button.addEventListener('click', () => {
       api.toggle();
     });

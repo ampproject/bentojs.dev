@@ -4,9 +4,9 @@ layout: layouts/component.njk
 ---
 # Bento Inline Gallery
 
-## Usage
-
 The Bento Inline Gallery component uses a Bento Carousel component to display slides, with optional pagination dots and thumbnails. Both components must be properly installed for the environment (Web Component vs Preact).
+
+## Usage
 
 ### Web Component
 
@@ -16,71 +16,76 @@ The examples below demonstrate use of the `<bento-inline-gallery>` web component
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-inline-gallery
+npm install @bentoproject/inline-gallery
 ```
 
 ```javascript
-import '@ampproject/bento-inline-gallery';
+import {defineElement as defineBentoInlineGallery} from '@bentoproject/inline-gallery';
+defineBentoInlineGallery();
 ```
-
-{% endexample %}
 
 #### Example: Include via `<script>`
 
 The example below contains a `bento-inline-gallery` consisting of three slides with thumbnails and a pagination indicator.
 
-{% example %}
-
 ```html
 <head>
-  <script async src="https://cdn.ampproject.org/bento.js"></script>
-  <script async src="https://cdn.ampproject.org/v0/bento-inline-gallery-1.0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-inline-gallery-1.0.css">
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-inline-gallery-1.0.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.ampproject.org/v0/bento-inline-gallery-1.0.css"
+  />
 </head>
 <body>
-
   <bento-inline-gallery id="inline-gallery">
-    <bento-inline-gallery-thumbnails aspect-ratio="1.5" loop></bento-inline-gallery-thumbnails>
+    <bento-inline-gallery-thumbnails
+      aspect-ratio="1.5"
+      loop
+    ></bento-inline-gallery-thumbnails>
     <bento-base-carousel snap-align="center" visible-count="1.2" loop>
-      <img src="server.com/static/inline-examples/images/image1.jpg">
-      <img src="server.com/static/inline-examples/images/image2.jpg">
-      <img src="server.com/static/inline-examples/images/image3.jpg">
+      <img src="server.com/static/inline-examples/images/image1.jpg" />
+      <img src="server.com/static/inline-examples/images/image2.jpg" />
+      <img src="server.com/static/inline-examples/images/image3.jpg" />
     </bento-base-carousel>
     <bento-inline-gallery-pagination inset></bento-inline-gallery-pagination>
   </bento-inline-gallery>
-
 </body>
 ```
-
-{% endexample %}
 
 #### Layout and style
 
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/amp-inline-gallery-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-inline-gallery-1.0.css"
+/>
 ```
 
 Alternatively, you may also make the light-weight pre-upgrade styles available inline:
 
 ```html
-<style data-bento-boilerplate>
-  amp-inline-gallery,
-  amp-inline-gallery-pagination,
-  amp-inline-gallery-thumbnails {
+<style>
+  bento-inline-gallery,
+  bento-inline-gallery-pagination,
+  bento-inline-gallery-thumbnails {
     display: block;
   }
-  amp-inline-gallery {
+  bento-inline-gallery {
     contain: layout;
   }
-  amp-inline-gallery-pagination,
-  amp-inline-gallery-thumbnails {
+  bento-inline-gallery-pagination,
+  bento-inline-gallery-thumbnails {
     overflow: hidden;
     position: relative;
   }
@@ -121,34 +126,31 @@ The examples below demonstrates use of the `<BentoInlineGallery>` as a functiona
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-inline-gallery
+npm install @bentoproject/inline-gallery
 ```
 
 ```javascript
 import React from 'react';
-import { BentoInlineGallery } from '@ampproject/bento-inline-gallery/react';
-import '@ampproject/bento-inline-gallery/styles.css';
+import {BentoInlineGallery} from '@bentoproject/inline-gallery/react';
+import '@bentoproject/inline-gallery/styles.css';
 
 function App() {
   return (
     <BentoInlineGallery id="inline-gallery">
-      <BentoInlineGalleryThumbnails aspect-ratio="1.5" loop></BentoInlineGalleryThumbnails>
+      <BentoInlineGalleryThumbnails aspect-ratio="1.5" loop />
       <BentoBaseCarousel snap-align="center" visible-count="1.2" loop>
-        <img src="server.com/static/inline-examples/images/image1.jpg">
-        <img src="server.com/static/inline-examples/images/image2.jpg">
-        <img src="server.com/static/inline-examples/images/image3.jpg">
+        <img src="server.com/static/inline-examples/images/image1.jpg" />
+        <img src="server.com/static/inline-examples/images/image2.jpg" />
+        <img src="server.com/static/inline-examples/images/image3.jpg" />
       </BentoBaseCarousel>
-      <BentoInlineGallery-pagination inset></BentoInlineGallery-pagination>
+      <BentoInlineGalleryPagination inset />
     </BentoInlineGallery>
-  }
+  );
+}
 ```
-
-{% endexample %}
 
 #### Layout and style
 
@@ -157,17 +159,13 @@ function App() {
 The `BentoInlineGallery` component has a defined layout size type. To ensure the component renders correctly, be sure to apply a size to the component and its immediate children via a desired CSS layout (such as one defined with `width`). These can be applied inline:
 
 ```jsx
-<BentoInlineGallery style={% raw %}{{width: '300px'}}{% endraw %}>
-  ...
-</BentoInlineGallery>
+<BentoInlineGallery style={% raw %}{{width: 300}}{% endraw %}>...</BentoInlineGallery>
 ```
 
 Or via `className`:
 
 ```jsx
-<BentoInlineGallery className='custom-styles'>
-  ...
-</BentoInlineGallery>
+<BentoInlineGallery className="custom-styles">...</BentoInlineGallery>
 ```
 
 ```css

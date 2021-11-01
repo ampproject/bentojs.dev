@@ -6,12 +6,24 @@
     position: absolute;
     object-fit: contain;
     z-index: -1;
-    right: -15%;
-    top: 8%;
-    transform: rotateY(180deg) rotate(130deg) scale(2);
+    right: -25%;
+    top: 10%;
+    transform: rotateY(180deg) rotate(120deg) scale(2);
 
     @include media('medium') {
-      right: 0;
+      right: -15%;
+      top: 35%;
+      transform: rotateY(180deg) rotate(30deg) scale(3.2);
+    }
+
+    @include media('large') {
+      right: -5%;
+      top: 30%;
+      transform: rotateY(180deg) rotate(30deg) scale(3);
+    }
+
+    @include media('xlarge') {
+      right: 3%;
       top: 45%;
       transform: rotateY(180deg) rotate(30deg) scale(4.5);
     }
@@ -21,27 +33,28 @@
     color: inherit;
     font-family: var(--font-sans);
     font-size: var(--font-size-34);
-    font-weight: var(--thin);
-    font-stretch: normal;
-    font-style: normal;
-    line-height: var(--line-height-40);
-    letter-spacing: -0.83px;
-    margin-bottom: var(--spacing-s);
-    margin-top: 290px;
+    font-weight: 250;
+    letter-spacing: -0.5px;
+    line-height: 1.18;
+    margin-block: calc(var(--spacing-l) * 7.25) var(--spacing-s);
 
     @include media('medium') {
-      font-size: var(--font-size-72);
-      line-height: var(--line-height-88);
-      margin-bottom: var(--spacing-xxl);
-      margin-top: 162px;
+      font-size: var(--font-size-56);
+      font-weight: var(--thin);
+      letter-spacing: -1px;
+      line-height: 1.14;
+      margin-block: calc(var(--spacing-l) * 4.25) var(--spacing-xxl);
     }
-  }
 
-  .bd-button {
-    margin: 0 0 var(--spacing-s) 0;
+    @include media('large') {
+      margin-block-start: calc(var(--spacing-l) * 4.05);
+      width: 75%;
+    }
 
-    @include media('medium') {
-      margin: 0 var(--spacing-s) 0 0;
+    @include media('xlarge') {
+      font-size: var(--font-size-72);
+      letter-spacing: -1.5px;
+      line-height: 1.11;
     }
   }
 }

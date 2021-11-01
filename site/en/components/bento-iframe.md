@@ -4,11 +4,9 @@ layout: layouts/component.njk
 ---
 # Bento Iframe
 
-## Usage
-
 Displays an iframe.
 
-Use Bento Iframe as a web component [`<bento-iframe>`](#web-component), or a Preact/React functional component [`<BentoIframe>`](#preactreact-component).
+## Usage
 
 ### Web Component
 
@@ -18,29 +16,32 @@ The examples below demonstrate use of the `<bento-iframe>` web component.
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-iframe
+npm install @bentoproject/iframe
 ```
 
 ```javascript
-import '@ampproject/bento-iframe';
+import {defineElement as defineBentoIframe} from '@bentoproject/iframe';
+defineBentoIframe();
 ```
-
-{% endexample %}
 
 #### Example: Include via `<script>`
 
-{% example %}
-
 ```html
 <head>
-  <script async custom-element="bento-iframe" src="https://cdn.ampproject.org/v0/bento-iframe-1.0.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-iframe-1.0.css">
-  <style data-bento-boilerplate>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-iframe-1.0.js"
+  ></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.ampproject.org/v0/bento-iframe-1.0.css"
+  />
+  <style>
     bento-iframe {
       display: block;
       overflow: hidden;
@@ -51,12 +52,11 @@ import '@ampproject/bento-iframe';
 <bento-iframe
   id="my-iframe"
   src="https://en.wikipedia.org/wiki/Bento"
-  style="width: 800px; height: 600px">
+  style="width: 800px; height: 600px"
+>
 </bento-iframe>
 
-<button id="change-source">
-  Change source
-</button>
+<button id="change-source">Change source</button>
 
 <script>
   (async () => {
@@ -65,26 +65,28 @@ import '@ampproject/bento-iframe';
 
     // Reload iframe with new src
     document.querySelector('#change-source').onclick = () => {
-      iframeEl.setAttribute('src', 'https://example.com')
-    }
+      iframeEl.setAttribute('src', 'https://example.com');
+    };
   })();
 </script>
 ```
-
-{% endexample %}
 
 #### Layout and style
 
 Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-iframe-1.0.css">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-iframe-1.0.css"
+/>
 ```
 
 Alternatively, you may also make the light-weight pre-upgrade styles available inline:
 
 ```html
-<style data-bento-boilerplate>
+<style>
   bento-iframe {
     display: block;
     overflow: hidden;
@@ -147,18 +149,16 @@ The examples below demonstrates use of the `<BentoIframe>` as a functional compo
 
 #### Example: Import via npm
 
-{% example %}
-
 Install via npm:
 
 ```bash
-npm install @ampproject/bento-iframe
+npm install @bentoproject/iframe
 ```
 
 ```javascript
 import React from 'react';
-import { BentoIframe } from '@ampproject/bento-iframe/react';
-import '@ampproject/bento-iframe/styles.css';
+import {BentoIframe} from '@bentoproject/iframe/react';
+import '@bentoproject/iframe/styles.css';
 
 function App() {
   return (
@@ -170,8 +170,6 @@ function App() {
   );
 }
 ```
-
-{% endexample %}
 
 #### Props
 

@@ -1,0 +1,41 @@
+---
+title: Bento Sidebar Test
+---
+<html>
+  <head>
+    <title>Bento Sidebar Test</title>
+    <script async src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+  </head>
+  <body>
+    <bento-sidebar id="sidebar1" side="right">
+      <nav toolbar="(min-width: 767px)" toolbar-target="target-element">
+        <ul>
+          <li>Nav item 1</li>
+          <li>Nav item 2</li>
+          <li>Nav item 3</li>
+          <li>Nav item 4</li>
+          <li>Nav item 5</li>
+          <li>Nav item 6</li>
+        </ul>
+      </nav>
+    </bento-sidebar>
+    <div id="target-element"></div>
+
+    <button id="toggle">Toggle</button>
+
+    <script>
+      (async () => {
+        await customElements.whenDefined('bento-sidebar');
+
+
+        const sidebar = document.getElementById('sidebar1');
+        const api = await sidebar.getApi();
+
+        const toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', () => {
+          api.toggle()
+        });
+      })();
+    </script>
+  </body>
+</html>

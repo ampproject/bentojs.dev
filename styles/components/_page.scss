@@ -6,23 +6,27 @@
   &__container {
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
+    padding-inline: calc(var(--spacing-xs) * 1.25);
 
     @include media('medium') {
-      padding: 0 3rem;
+      padding-inline: var(--spacing-l);
     }
 
     @include media('large') {
-      padding: 0 8rem;
+      padding-inline: calc(var(--spacing-xl) * 1.1);
+    }
+
+    @include media('xlarge') {
+      padding-inline: calc(var(--spacing-xxl) * 1.18);
     }
 
     @include media('xxlarge') {
-      padding: 0 37rem;
+      padding-inline: 25vw;
     }
   }
 
   &__divider {
-    margin-top: 240px;
+    margin-block-start: calc(var(--spacing-xxl) * 1.5);
     border: 0;
 
     &:before {

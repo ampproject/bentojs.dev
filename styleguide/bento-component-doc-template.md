@@ -1,8 +1,3 @@
----
-title: Bento Component
-layout: layouts/component.njk
----
-
 **Changelog**
 - Changed headline hierarchy. The smallest headline is now an h5 instead of a bold body text.
 - Restructured the "Props"-Section by using tables.
@@ -24,46 +19,28 @@ layout: layouts/component.njk
 
 # Bento Component 
 
-## Overview
 A brief description of the component and why you should use it. 
 
 [comment]: # (Add hero example here)
 
-## Usage
 Explain the general usage of the component.
 -   If you want to use bulletlists, the list should have at least 3 entries. Otherwise please do not use lists.
 -   Please avoid nested bulletlists as far as possible.
 -   Please be careful with manual breaks.
 
-[comment]: # (Add anchor link-component here)
+[comment]: # (Auto generated anchor link-component here)
 
 ## Web Component
-Example text: You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-#### Example: Import via npm
+[comment]: # (Information on how to import components will be auto generated)
 
-{% example %}
-
-```bash
-npm install @ampproject/bento-component
-```
-
-```javascript
-import '@ampproject/bento-component';
-```
-
-{% endexample %}
-
-#### Example: Include via `<script>`
+### Example: Include via `<script>`
 Example text: The example below contains an `bento-accordion` with three sections. The `expanded` attribute on the third section expands it on page load.
 
 {% example %}
 
 ```html
-Example
-<head>
-  <script async src="https://cdn.ampproject.org/example.js"></script>
-</head>
+// Add working example here
 ```
 
 {% endexample %}
@@ -186,7 +163,7 @@ Example text: Include the `animate` attribute in `<bento-accordion>` to add a "r
 ## Preact/React Component
 The examples below demonstrates use of the `<BentoAccordion>` as a functional component usable with the Preact or React libraries.
 
-#### Example: Import via npm
+### Example: Import via npm
 
 {% example %}
 
@@ -215,7 +192,7 @@ Example code
 
 {% endexample %}
 
-#### Interactivity and API usage
+### Interactivity and API usage
 Example text: Bento components are highly interactive through their API. The `BentoAccordion` component API is accessible by passing a `ref`:
 
 ```html

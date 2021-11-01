@@ -1,4 +1,4 @@
-import { html, render } from "lit";
+import { html, render } from "lit-html";
 import { defineElement as defineBentoAccordion } from "@bentoproject/accordion";
 
 const template = ({ names }) => html`
@@ -6,15 +6,15 @@ const template = ({ names }) => html`
     ${names.map((name) => html`
       <section>
         <h1>${name}</h1>
-        <div>Content for ${name}</div>
+        <div>Hello ${name}</div>
       </section>`
     )}
   </bento-accordion>
 `;
 
 async function getData() {
-  // Fetch some remote data.
-  // For this example, we will return some dummy data
+  // Fetch some remote data. For this example, we will return some
+  // dummy data wrapped in a promise.
   return Promise.resolve({names: ['Alice', 'Bob', 'Charlie', 'David']});
 }
 

@@ -13,6 +13,11 @@
     margin-block-end: var(--spacing-s);
 
     @include media('medium') {
+      font-size: var(--font-size-34);
+      line-height: var(--line-height-40);
+    }
+
+    @include media('large') {
       font-size: var(--font-size-48);
       line-height: var(--line-height-56);
     }
@@ -30,32 +35,6 @@
       font-size: var(--font-size-18);
       line-height: var(--line-height-32);
       margin-block-end: var(--spacing-xl);
-    }
-  }
-
-  &__image {
-    width: 335px;
-    margin-block-end: var(--spacing-xl);
-
-    @include media('medium') {
-      width: auto;
-      margin-right: 60px;
-    }
-  }
-
-  &.--spacer-64 {
-    margin-block-start: var(--spacing-xl);
-
-    @include media('medium') {
-      margin-block-start: var(--spacing-xxl);
-    }
-  }
-
-  &.--spacer {
-    margin-block-start: calc(var(--spacing-xxl) * 2);
-
-    @include media('medium') {
-      margin-block-start: calc(var(--spacing-xxl) * 4);
     }
   }
 }

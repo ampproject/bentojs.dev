@@ -21,4 +21,5 @@ function addHashQueryParam(path) {
 
 module.exports = {
   addHashQueryParam,
+  environment: process.env.ELEVENTY_ENV || 'development',
 };

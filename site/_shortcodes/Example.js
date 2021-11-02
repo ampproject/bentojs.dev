@@ -23,7 +23,7 @@ const examples = [];
 let counter = {};
 
 function exampleShortCode(nunjucksEngine) {
-  return new function () {
+  return new (function () {
     this.tags = ['example'];
 
     this.parse = function (parser, nodes, lexer) {
@@ -41,7 +41,7 @@ function exampleShortCode(nunjucksEngine) {
     this._parseContents = function (contents) {
       const HTML_CODE_PATTERN = /```html\n(.*?)\n```/gms;
       const html = {
-        all: HTML_CODE_PATTERN.exec(contents)
+        all: HTML_CODE_PATTERN.exec(contents),
       };
       html.all = html.all && html.all[1] ? html.all[1] : undefined;
 
@@ -66,7 +66,7 @@ function exampleShortCode(nunjucksEngine) {
       html.body = html.all.replace(HTML_HEAD_PATTERN, '');
 
       return html;
-    }
+    };
 
     this.run = function (context, contents, callback) {
       // Build a reusable ID for file names and radio buttons
@@ -78,34 +78,48 @@ function exampleShortCode(nunjucksEngine) {
 
       let iframe;
       if (html.head && html.body) {
-        iframe = nunjucksEngine.render('site/_includes/layouts/example.njk', { id, html, title: ctx.title });
-        examples.push({ id, iframe });
+        iframe = nunjucksEngine.render('site/_includes/layouts/example.njk', {
+          id,
+          html,
+          title: ctx.title,
+        });
+        examples.push({id, iframe});
       }
 
       let widget = contents();
       if (html.head && html.body) {
-        widget = nunjucksEngine.render(
-          'site/_includes/partials/example.njk',
-          { id, source: contents(), iframe: !!iframe, title: ctx.title }
-        );
+        widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
+          id,
+          source: contents(),
+          iframe: !!iframe,
+          title: ctx.title,
+        });
       }
 
       callback(null, nunjucksEngine.runtime.markSafe(widget));
-    }
-  };
+    };
+  })();
 }
 
 async function writeExamples() {
   console.log('Writing examples ...');
-  await Promise.all(examples.map((example) => {
-    return fs.writeFile(path.join(`${global.__basedir}/dist/assets/iframes`, `${example.id}.html`), example.iframe);
-  })).then(() => {
+  await Promise.all(
+    examples.map((example) => {
+      return fs.writeFile(
+        path.join(
+          `${global.__basedir}/dist/assets/iframes`,
+          `${example.id}.html`
+        ),
+        example.iframe
+      );
+    })
+  ).then(() => {
     counter = {};
     console.log('Wrote examples!');
-  })
+  });
 }
 
 module.exports = {
   exampleShortCode,
-  writeExamples
+  writeExamples,
 };

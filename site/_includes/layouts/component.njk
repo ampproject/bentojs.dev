@@ -6,30 +6,18 @@
 {% block content %}
   <main class="bd-page-components bd-theme--light">
     <div class="bd-page-components-container">
-      <div class="bd-page-components-container__sidebar">
-        {%- include 'partials/components/sidebar.njk' -%}
-        <div class="vertical-divider"></div>
-      </div>
+      {%- include 'partials/components/list.njk' -%}
       <div class="bd-page-components-container__main">
         <svg class="bd-page-components-background">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
         </svg>
         {{ content | safe }}
       </div>
-      <aside class="bd-page-components-container__toc">
-        <h3>Table of contents</h3>
-        {{ content | toc | safe }}
-      </aside>
+      {%- include 'partials/components/toc.njk' -%}
     </div>
   </main>
 {% endblock %}
 {% block footer %}
-  <div class="bd-components-footer">
-    <div class="bd-components-footer__mobile">
-      {%- include 'partials/components/mobile-footer.njk' -%}
-    </div>
-    <div class="bd-components-footer__default">
-      {% include 'partials/footer.njk' %}
-    </div>
-  </div>
+  {%- include 'partials/components/sidebar-controls.njk' -%}
+  {% include 'partials/footer.njk' %}
 {% endblock %}

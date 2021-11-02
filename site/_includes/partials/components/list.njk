@@ -1,0 +1,16 @@
+<bento-sidebar id="bd-components" side="left">
+  <nav toolbar="(min-width: 1024px)" toolbar-target="bd-components-target">
+    <div class="bd-sidebar__contents bd-sidebar__contents--components">
+      <ul>
+        {%- for component in collections.components -%}
+          <li>
+            <a class="bd-link" href="{{ component.url }}">{{ component.data.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="vertical-divider"></div>
+  </nav>
+</bento-sidebar>
+<div class="bd-sidebar__target" id="bd-components-target"></div>

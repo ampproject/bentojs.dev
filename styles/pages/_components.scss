@@ -37,7 +37,7 @@
         top: 0;
         right: -25%;
         transform: rotate(160deg) rotateY(180deg) scale(1.6);
-        z-index: 1;
+        z-index: -1;
 
         @include media('medium') {
           top: 1%;

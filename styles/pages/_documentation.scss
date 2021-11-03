@@ -1,5 +1,3 @@
-@import '../components/link';
-
 .bd-page-components-overview {
   width: 100vw;
 
@@ -18,59 +16,12 @@
     }
 
     @include media('xlarge') {
-      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 5fr 1fr;
       column-gap: var(--spacing-xxl);
     }
 
     @include media('xxlarge') {
       width: 1300px;
-    }
-
-    &__sidebar {
-      @include media('large') {
-        display: flex;
-      }
-
-      ul {
-        padding: 0;
-        margin: 0;
-      }
-
-      a {
-        font-size: 14px;
-      }
-
-      .vertical-divider {
-        width: 2px;
-        height: 200px;
-        border-radius: 2px;
-        margin: 0 auto;
-        background-color: var(--burnt-sienna);
-      }
-    }
-
-    &__toc {
-      h3 {
-        color: var(--maastricht-blue);
-        font-size: var(--font-size-18);
-        font-weight: bold;
-        line-height: 1.33;
-        margin-bottom: var(--spacing-s);
-      }
-
-      ol {
-        margin: 0;
-        padding-inline-start: var(--spacing-s);
-        &:first-child {
-          padding: 0;
-        }
-
-        a {
-          @include link;
-          font-size: 14px;
-          color: var(--independence);
-        }
-      }
     }
 
     &__main {
@@ -116,18 +67,21 @@
 
   .bd-card {
     display: grid;
-    grid-template-rows: auto auto;
-    grid-row: 1;
     gap: var(--spacing-xs);
+    grid-row: 1;
+    grid-template-rows: auto auto;
+    height: 90%;
 
     @include media('medium') {
       grid-row: auto;
+      height: auto;
     }
 
     &-group {
       display: grid;
       grid-auto-columns: 80%;
       gap: var(--spacing-m);
+      min-height: 250px;
       overflow-x: scroll;
       scroll-snap-type: x proximity;
       &::-webkit-scrollbar {
@@ -137,6 +91,11 @@
       @include media('medium') {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        overflow: visible;
+      }
+
+      @include media('xlarge') {
+        grid-template-columns: minmax(auto, 350px) minmax(auto, 350px);
       }
     }
 

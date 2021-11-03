@@ -95,6 +95,10 @@
       background: none;
       border: 0;
     }
+
+    a:after {
+      bottom: 0;
+    }
   }
 
   &-burger {

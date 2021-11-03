@@ -6,33 +6,33 @@
     <button option="bd-demo-social-share" class="bd-button--light --inverted --uppercase">social share</button>
   </bento-selector>
 
-  {% set examples = "../../iframes/homepage-examples/" %}
+  {% set examples = "assets/iframes/homepage-examples/" %}
 
   <div class="bd-demo-code">
     <div class="bd-demo-code__snippet">
       <div id="bd-demo-carousel" class="bd-demo-code-sample">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-carousel.njk' -%}
+        {%- include examples + 'bd-demo-carousel.html' -%}
         {% endhighlight %}
       </div>
       <div id="bd-demo-accordion" class="bd-demo-code-sample --hide">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-accordion.njk' -%}
+        {%- include examples + 'bd-demo-accordion.html' -%}
         {% endhighlight %}
       </div>
       <div id="bd-demo-sidebar" class="bd-demo-code-sample --hide">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-sidebar.njk' -%}
+        {%- include examples + 'bd-demo-sidebar.html' -%}
         {% endhighlight %}
       </div>
       <div id="bd-demo-social-share" class="bd-demo-code-sample --hide">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-social-share.njk' -%}
+        {%- include examples + 'bd-demo-social-share.html' -%}
         {% endhighlight %}
       </div>
     </div>
     <div class="bd-demo-code__result">
-      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel/index.html"></iframe>
+      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html"></iframe>
     </div>
   </div>
 </section>

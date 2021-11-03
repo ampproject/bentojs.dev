@@ -1,30 +1,32 @@
 <head>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
   <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-  <style data-bento-boilerplate>
+  <style>
     bento-base-carousel {
-      position: static !important;
+      display: block;
+      overflow: hidden;
+      position: relative;
     }
   </style>
   <script async src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"></script>
   <style>
-    bento-base-carousel, bento-base-carousel > div {
+    body {
+      margin: 0;
+    }
+    bento-base-carousel,
+    bento-base-carousel > div {
       height: 100%;
     }
-    picture {
-      display: block !important;
-      content-visibility: visible !important;
-      height: 100%
-    }
-    picture img {
+    img {
       width: 100%;
       height: 100%;
     }
   </style>
 </head>
 <bento-base-carousel id="my-carousel">
-  {% image "./assets/img/group-19.webp", "" %}
-  {% image "./assets/img/group-19-copy.webp", "" %}
-  {% image "./assets/img/group-19-copy-2.webp", "" %}
+  <img src="/assets/img/group-19.webp"/>
+  <img src="/assets/img/group-19-copy.webp"/>
+  <img src="/assets/img/group-19-copy-2.webp"/>
 </bento-base-carousel>
 
 <script>

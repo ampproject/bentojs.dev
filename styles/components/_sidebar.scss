@@ -1,0 +1,64 @@
+.bd-sidebar {
+  &__contents {
+    padding: var(--spacing-s);
+
+    @include media('large') {
+      padding-top: 0;
+    }
+
+    &--components {
+      ul {
+        padding: 0;
+        margin: 0;
+      }
+
+      h2 {
+        font-weight: var(--bold);
+        font-size: var(--font-size-34);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+        margin-block-end: var(--spacing-xs);
+
+        &:not(:first-child) {
+          margin-block-start: var(--spacing-m);
+        }
+      }
+
+      a {
+        font-size: 14px;
+      }
+
+      .vertical-divider {
+        width: 2px;
+        height: 200px;
+        border-radius: 2px;
+        margin: 0 auto;
+        background-color: var(--burnt-sienna);
+      }
+    }
+
+    &--toc {
+      h3 {
+        color: var(--maastricht-blue);
+        font-size: var(--font-size-18);
+        font-weight: bold;
+        line-height: 1.33;
+        margin-bottom: var(--spacing-s);
+      }
+
+      ol {
+        margin: 0;
+        padding-inline-start: var(--spacing-s);
+        &:first-child {
+          padding: 0;
+        }
+
+        a {
+          @include link;
+          font-size: 14px;
+          color: var(--independence);
+        }
+      }
+    }
+  }
+}

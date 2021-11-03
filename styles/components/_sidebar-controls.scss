@@ -1,0 +1,25 @@
+.bd-sidebar-controls {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+
+  @include media('large') {
+    display: none;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+
+    button {
+      font-size: 14px;
+      margin: 0;
+      border-radius: 0;
+      transition: none;
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+}

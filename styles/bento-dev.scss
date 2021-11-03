@@ -1,29 +1,30 @@
 @import 'config';
 @import 'fonts';
 
-@import 'components/_button';
-@import 'components/_card-image';
-@import 'components/_card';
-@import 'components/_code';
-@import 'components/_demo';
-@import 'components/_example';
-@import 'components/_footer';
-@import 'components/_header';
-@import 'components/_language-selector';
-@import 'components/_link';
-@import 'components/_mobile-footer';
-@import 'components/_modal';
 @import 'components/_page';
+@import 'components/_header';
+@import 'components/_footer';
+@import 'components/_stage';
+@import 'components/_button';
+@import 'components/_link';
+@import 'components/_language-selector';
 @import 'components/_row';
 @import 'components/_section';
-@import 'components/_stage';
 @import 'components/_theme';
+@import 'components/_code';
+@import 'components/_card';
+@import 'components/_card-image';
+@import 'components/_modal';
+@import 'components/_example';
+@import 'components/_sidebar-controls';
+@import 'components/_sidebar';
+@import 'components/_demo';
 
-@import 'pages/_blog-overview';
+@import 'pages/_home';
+@import 'pages/_get-started';
 @import 'pages/_components';
 @import 'pages/_documentation';
-@import 'pages/_get-started';
-@import 'pages/_home';
+@import 'pages/_blog-overview';
 @import 'pages/_post';
 
 html,

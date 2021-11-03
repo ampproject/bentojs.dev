@@ -59,7 +59,7 @@ const walk = (dir) => {
 };
 
 // Scan the _data/i18n directory and create a nested i18n data object
-const data = { i18n: walk(path.join(__dirname, '..', '_data', 'i18n')) };
+const data = {i18n: walk(path.join(__dirname, '..', '_data', 'i18n'))};
 
 /**
  * Looks for the i18n string that matches the path and locale.
@@ -88,4 +88,4 @@ function getLocaleFromPath(path) {
   return path ? path.split('/')[1] : DEFAULT_LOCALE;
 }
 
-module.exports = { i18n, getLocaleFromPath };
+module.exports = {i18n, getLocaleFromPath};

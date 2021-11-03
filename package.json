@@ -4,7 +4,7 @@
   "description": "The home for AMP's standalone components: Bento",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
+    "build": "ELEVENTY_ENV=prod eleventy",
     "develop": "npx gulp develop",
     "lint": "eslint ./app/**/*.js -c ./.eslintrc.json --ignore-pattern amphtml",
     "lint:fix": "eslint ./app/**/*.js -c ./.eslintrc.json --fix --ignore-pattern amphtml",
@@ -16,12 +16,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
   },
-  "keywords": [
-    "AMP",
-    "Page",
-    "Experience",
-    "Bento"
-  ],
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {

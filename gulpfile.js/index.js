@@ -26,6 +26,7 @@ const svgstore = require('./svgstore.js');
 const build = gulp.series(sass.build, app.build, svgstore, eleventy.build);
 const develop = gulp.series(
   sass.build,
+  app.build,
   svgstore,
   gulp.parallel(
     sass.watch,

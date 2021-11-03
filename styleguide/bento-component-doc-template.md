@@ -1,8 +1,3 @@
----
-title: Bento Component
-layout: layouts/component.njk
----
-
 **Changelog**
 - Changed headline hierarchy. The smallest headline is now an h5 instead of a bold body text.
 - Restructured the "Props"-Section by using tables.
@@ -24,12 +19,10 @@ layout: layouts/component.njk
 
 # Bento Component 
 
-## Overview
 A brief description of the component and why you should use it. 
 
 [comment]: # (Add hero example here)
 
-## Usage
 Explain the general usage of the component.
 -   If you want to use bulletlists, the list should have at least 3 entries. Otherwise please do not use lists.
 -   Please avoid nested bulletlists as far as possible.

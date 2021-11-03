@@ -47,10 +47,13 @@
   margin-block-start: calc(var(--spacing-xxl) * 1.5);
   margin-inline-end: auto;
   position: relative;
-  width: 70%;
 
   @include media('medium') {
     margin-block-start: calc(var(--spacing-xxl) * 3.125);
+
+    .bd-row__column {
+      width: 70%;
+    }
   }
 
   &__image {
@@ -72,6 +75,10 @@
 
   @include media('medium') {
     margin-block: calc(var(--spacing-xxl) * 3.125);
+
+    .bd-row__column {
+      width: 70%;
+    }
   }
 
   &__bg-image {

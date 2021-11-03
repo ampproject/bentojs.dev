@@ -1,0 +1,106 @@
+.bd-demo {
+  display: grid;
+  gap: var(--spacing-xxl);
+  grid-template-rows: max-content 4fr;
+  margin-block-start: var(--spacing-xl);
+  position: relative;
+  z-index: 50;
+
+  @include media('large') {
+    gap: var(--spacing-m);
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+
+  @include media('xlarge') {
+    gap: var(--spacing-xxl);
+  }
+
+  bento-selector {
+    display: grid;
+    gap: var(--spacing-xs);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    width: auto;
+
+    @include media('large') {
+      grid-template-rows: repeat(4, max-content);
+      grid-template-columns: 1fr;
+      margin-block-start: var(--spacing-xxl);
+      gap: var(--spacing-s);
+    }
+
+    button {
+      margin: 0;
+      font-size: 14px;
+      padding: 4px;
+    }
+
+    @include media('xlarge') {
+      button {
+        font-size: var(--font-size-16);
+        padding: var(--spacing-xxs) var(--spacing-xs);
+      }
+    }
+
+    & [option][selected] {
+      cursor: pointer;
+      outline: unset;
+    }
+  }
+
+  &-code {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    height: var(--demo-grid-dimension);
+    width: var(--demo-grid-dimension);
+    --demo-grid-dimension: 80vw;
+
+    @include media('medium') {
+      --demo-grid-dimension: 672px;
+    }
+
+    @include media('large') {
+      --demo-grid-dimension: 455px;
+      width: calc(var(--demo-grid-dimension) / 7 * 9);
+    }
+
+    @include media('xlarge') {
+      --demo-grid-dimension: 602px;
+    }
+
+    .--hide {
+      display: none;
+    }
+
+    &__snippet {
+      grid-column: 1 / span 6;
+      grid-row: 1 / span 6;
+      z-index: 10;
+
+      pre {
+        height: calc(var(--demo-grid-dimension) / 7 * 6);
+      }
+    }
+
+    &__result {
+      grid-column: 2 / span 6;
+      grid-row: 3 / span 6;
+      z-index: 20;
+
+      iframe {
+        background-color: #fff;
+        border: solid 10px var(--burnt-sienna);
+        border-radius: 16px;
+        height: 100%;
+        width: 100%;
+      }
+
+      @include media('large') {
+        grid-column: 3 / span 6;
+      }
+    }
+  }
+}

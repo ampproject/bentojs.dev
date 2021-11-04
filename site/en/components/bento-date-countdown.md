@@ -1,6 +1,10 @@
 ---
+id: bento-date-countdown
 title: Bento Date Countdown
 layout: layouts/component.njk
+description: >-
+  The Bento Date Countdown component displays a countdown sequence to a
+  specified date.
 ---
 # Bento Date Countdown
 

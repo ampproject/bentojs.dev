@@ -1,6 +1,10 @@
 ---
+id: bento-sidebar
 title: Bento Sidebar
 layout: layouts/component.njk
+description: >-
+  The Bento Sidebar provides a way to display meta content intended for
+  temporary access such as navigation, links, buttons, menus.
 ---
 # Bento Sidebar
 

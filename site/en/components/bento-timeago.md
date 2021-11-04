@@ -1,6 +1,10 @@
 ---
+id: bento-timeago
 title: Bento Timeago
 layout: layouts/component.njk
+description: >-
+  The Bento Timeago component can count up to, or away from, a specified date
+  and time.
 ---
 # Bento Timeago
 

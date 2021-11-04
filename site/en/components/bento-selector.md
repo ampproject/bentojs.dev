@@ -1,6 +1,11 @@
 ---
+id: bento-selector
 title: Bento Selector
 layout: layouts/component.njk
+description: >-
+  The Bento Selector is a control that presents a list of options and lets the
+  user choose one or many options; the contents of the options aren't just
+  limited to text.
 ---
 # Bento Selector
 

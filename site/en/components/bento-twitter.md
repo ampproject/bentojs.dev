@@ -1,6 +1,8 @@
 ---
+id: bento-twitter
 title: Bento Twitter
 layout: layouts/component.njk
+description: The Bento Twitter component allows you to embed a Tweet or Moment.
 ---
 # Bento Twitter
 

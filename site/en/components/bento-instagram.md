@@ -1,6 +1,8 @@
 ---
+id: bento-instagram
 title: Bento Instagram
 layout: layouts/component.njk
+description: The Bento Instagram component allows you embed an Instagram post.
 ---
 # Bento Instagram
 

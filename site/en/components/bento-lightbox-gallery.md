@@ -1,6 +1,10 @@
 ---
+id: bento-lightbox-gallery
 title: Bento Lightbox Gallery
 layout: layouts/component.njk
+description: >-
+  The Bento Lightbox Gallery component provides a &quot;lightbox&quot;
+  experience for other components (e.g., HTML images, Bento carousel).
 ---
 # Bento Lightbox Gallery
 

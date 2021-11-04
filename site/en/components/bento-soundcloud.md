@@ -1,6 +1,8 @@
 ---
+id: bento-soundcloud
 title: Bento Soundcloud
 layout: layouts/component.njk
+description: The Bento Soundcloud component allows you to embed a Soundcloud clip.
 ---
 # Bento Soundcloud
 

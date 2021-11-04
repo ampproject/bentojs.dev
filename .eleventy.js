@@ -6,15 +6,19 @@ const toc = require('eleventy-plugin-toc');
 
 const imageShortcode = require('./site/_shortcodes/Image.js');
 const noOpShortCode = require('./site/_shortcodes/NoOp.js');
-const { exampleShortCode, writeExamples } = require('./site/_shortcodes/Example.js');
+const {
+  exampleShortCode,
+  writeExamples,
+} = require('./site/_shortcodes/Example.js');
 
-const { i18n } = require('./site/_filters/i18n');
+const {i18n} = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
 const insertStyles = require('./site/_transforms/insertStyles.js');
 
 const components = require('./site/_collections/components.js');
+const componentCategories = require('./site/_collections/componentCategories.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;
@@ -51,6 +55,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addTransform('insert-styles', insertStyles);
 
   eleventyConfig.addCollection('components', components);
+  eleventyConfig.addCollection('componentCategories', componentCategories);
 
   eleventyConfig.on('afterBuild', writeExamples);
 

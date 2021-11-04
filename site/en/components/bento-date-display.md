@@ -1,6 +1,10 @@
 ---
+id: bento-date-display
 title: Bento Date Display
 layout: layouts/component.njk
+description: >-
+  The Bento Date Display component displays time data that you can render in
+  your page.
 ---
 # Bento Date Display
 

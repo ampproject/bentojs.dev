@@ -1,6 +1,10 @@
 ---
+id: bento-social-share
 title: Bento Social Share
 layout: layouts/component.njk
+description: >-
+  The Bento Social Share component displays a social share button for social
+  platforms.
 ---
 # Bento Social Share
 

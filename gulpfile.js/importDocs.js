@@ -19,10 +19,34 @@ const path = require('path');
 const fg = require('fast-glob');
 const matter = require('gray-matter');
 const chalk = require('chalk');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const {split} = require('sentence-splitter');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
 const IGNORED_COMPONENTS = new Set(['bento-iframe']);
+const md = markdownIt({
+  html: true,
+})
+  .use(markdownItAnchor)
+  .disable('code');
+
+const extractDescription = (string) => {
+  const tokens = md.parse(string, {});
+  let inParagraph = false;
+  for (const token of tokens) {
+    if (token.type === 'paragraph_open') {
+      inParagraph = true;
+    } else if (inParagraph && token.type === 'inline') {
+      const desc = md.renderInline(token.content);
+      const sentences = split(desc);
+      const firstSentence = sentences[0].raw;
+      return firstSentence;
+    }
+  }
+  return '';
+};
 
 function _rewriteCalloutToTip(contents) {
   const CALLOUT_PATTERN =
@@ -123,12 +147,13 @@ async function importComponents() {
     imports.push(
       new Promise(async (resolve, reject) => {
         const componentName = path
-           .basename(path.dirname(path.dirname(filePath)))
-           .replace('amp-', 'bento-');
+          .basename(path.dirname(path.dirname(filePath)))
+          .replace('amp-', 'bento-');
         if (IGNORED_COMPONENTS.has(componentName)) {
           console.log(
             chalk.dim('[Import components]'),
-            chalk.bold.yellow(`Ignoring ${componentName}`))
+            chalk.bold.yellow(`Ignoring ${componentName}`)
+          );
           return resolve();
         }
         const file = await fs.readFile(filePath);
@@ -137,8 +162,10 @@ async function importComponents() {
         const name = _parseComponentName(document.content);
         const fileName = name.replace(/ /g, '-').toLowerCase();
 
+        document.data.id = componentName;
         document.data.title = name;
         document.data.layout = 'layouts/component.njk';
+        document.data.description = extractDescription(document.content);
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);

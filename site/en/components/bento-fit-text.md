@@ -1,6 +1,10 @@
 ---
+id: bento-fit-text
 title: Bento Fit Text
 layout: layouts/component.njk
+description: >-
+  The Bento Fit Text component allows you to manage the size and fit of text
+  within a specified area.
 ---
 # Bento Fit Text
 

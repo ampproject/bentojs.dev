@@ -23,7 +23,7 @@ We welcome contributions to bento.dev.
 To get started with contributing to bento.dev, you first need to [fork the repository](https://help.github.com/en/articles/fork-a-repo). Once you've done that you can clone the repository:
 
 ```sh
-$ git clone --recurse-submodules https://github.com/YOUR-USERNAME/bento.dev
+$ git clone --recurse-submodules git@github.com:YOUR-USERNAME/bento.dev.git
 ```
 
 ... and then install the dependencies via NPM:

@@ -22,6 +22,7 @@ const chalk = require('chalk');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
+const IGNORED_COMPONENTS = new Set(['bento-iframe']);
 
 function _rewriteCalloutToTip(contents) {
   const CALLOUT_PATTERN =
@@ -121,6 +122,15 @@ async function importComponents() {
   for (const filePath of filePaths) {
     imports.push(
       new Promise(async (resolve, reject) => {
+        const componentName = path
+           .basename(path.dirname(path.dirname(filePath)))
+           .replace('amp-', 'bento-');
+        if (IGNORED_COMPONENTS.has(componentName)) {
+          console.log(
+            chalk.dim('[Import components]'),
+            chalk.bold.yellow(`Ignoring ${componentName}`))
+          return resolve();
+        }
         const file = await fs.readFile(filePath);
         const document = matter(file);
 

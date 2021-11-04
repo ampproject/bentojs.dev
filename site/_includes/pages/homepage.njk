@@ -6,7 +6,6 @@ layout: 'layouts/content.njk'
 {% block head %}
   <script src="{{ helpers.addHashQueryParam('/assets/js/home.js') }}" async></script>
   <script async src="https://cdn.ampproject.org/v0/bento-selector-1.0.js"></script>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
 {% endblock %}
 <div class="bd-page__container bd-theme--dark">
   <section class="bd-stage">
@@ -26,7 +25,7 @@ layout: 'layouts/content.njk'
     <div class="bd-row__column">
       <h2 class="bd-section__title">{{ i18n.frameworks.headline }}</h2>
       <p class="bd-section__body">{{ i18n.frameworks.text }}</p>
-      <a class="bd-button" href="/documentation">{{ i18n.frameworks.cta }}</a>
+      <a class="bd-button" href="https://github.com/ampproject/bento.dev/tree/main/examples/">{{ i18n.frameworks.cta }}</a>
     </div>
   </section>
   <section class="bd-section bd-row bd-row__col-2 bd-why-bento">
@@ -48,7 +47,6 @@ layout: 'layouts/content.njk'
     </svg>
     <div class="bd-row__column">
       <h2 class="bd-section__title">{{ i18n.demo.headline }}</h2>
-      <p class="bd-section__body">{{ i18n.demo.text }}</p>
       <div class="bd-link-wrapper">
         <a class="bd-link" href="/documentation">➞ {{ i18n.demo.cta }}</a>
       </div>

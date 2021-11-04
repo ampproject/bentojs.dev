@@ -12,7 +12,7 @@ i18n:
     media-social: Social & Media
   components:
     headline: Components Catalogue
-    most_used: Most used components
+    highlights: Highlights
     all: All components
   advertising_analytics: Advertising & Analytics
   dynamic_content: Dynamic Content

@@ -19,6 +19,7 @@ const insertStyles = require('./site/_transforms/insertStyles.js');
 
 const components = require('./site/_collections/components.js');
 const componentCategories = require('./site/_collections/componentCategories.js');
+const highlights = require('./site/_collections/highlights.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;
@@ -56,6 +57,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addCollection('components', components);
   eleventyConfig.addCollection('componentCategories', componentCategories);
+  eleventyConfig.addCollection('highlights', highlights);
 
   eleventyConfig.on('afterBuild', writeExamples);
 

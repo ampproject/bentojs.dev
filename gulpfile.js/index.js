@@ -28,11 +28,7 @@ const develop = gulp.series(
   sass.build,
   app.build,
   svgstore,
-  gulp.parallel(
-    sass.watch,
-    app.watch,
-    eleventy.develop
-  )
+  gulp.parallel(sass.watch, app.watch, eleventy.develop)
 );
 
 module.exports = {

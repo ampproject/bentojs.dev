@@ -1,7 +1,6 @@
 <section class="bd-components-list">
-  <h2 id="components">{{ i18n.components.all }}</h1>
  {%- for category in collections.componentCategories -%}
-      <h2 id="{{ category.id }}">{{ i18n.categories[category.id] }}</h1>
+      <h3 id="{{ category.id }}">{{ i18n.categories[category.id] }}</h3>
       <ul>
       {%- for component in category.components -%}
           <li>

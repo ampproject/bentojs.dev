@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "ELEVENTY_ENV=prod eleventy",
+    "clean": "rimraf dist",
     "develop": "npx gulp develop",
+    "deploy:production": "run-s clean build publish:production",
+    "deploy:staging": "run-s clean build publish:staging",
     "lint": "eslint ./app/**/*.js -c ./.eslintrc.json --ignore-pattern amphtml",
     "lint:fix": "eslint ./app/**/*.js -c ./.eslintrc.json --fix --ignore-pattern amphtml",
+    "publish:production": "firebase deploy",
+    "publish:staging": "firebase hosting:channel:deploy staging",
     "serve": "eleventy --serve",
     "start": "npx gulp --tasks",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -43,8 +48,10 @@
     "gulp-svgstore": "8.0.0",
     "lodash.get": "4.4.2",
     "markdown-it-anchor": "8.4.1",
+    "npm-run-all": "4.1.5",
     "prettier": "2.4.1",
     "purgecss": "4.0.3",
+    "rimraf": "2.7.1",
     "sass": "1.43.4"
   }
 }

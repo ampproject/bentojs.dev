@@ -13,7 +13,7 @@ i18n:
     text: Bento components are packaged as React or Preact components for seamless integration with those frameworks, but they're also provided as Web Components, so that they can be used anywhere else.
     cta: Check out framework examples
   why:
-    headline: Use Bento for a good page experience
+    headline: Great page experience with Bento 
     text: Offering users a great experience is important and Bento components are designed from the ground up with page experience in mind. For example, all Bento components avoid user frustration by minimizing content shifts by design. 
     cta: Start learning
     image: Bento features

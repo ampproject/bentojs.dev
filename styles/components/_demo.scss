@@ -44,10 +44,14 @@
       }
     }
 
-    & [option][selected] {
+    & [option]:not([selected]) {
       cursor: pointer;
       outline: unset;
+      background-color: transparent;
+      color: var(--light-sea-green);
+      border: solid 2px var(--light-sea-green);
     }
+
   }
 
   &-code {
@@ -71,10 +75,6 @@
       --demo-grid-dimension: 602px;
     }
 
-    .--hide {
-      display: none;
-    }
-
     &__snippet {
       grid-column: 1 / span 6;
       grid-row: 1 / span 6;
@@ -82,6 +82,13 @@
 
       pre {
         height: calc(var(--demo-grid-dimension) / 7 * 6);
+      }
+
+      .bd-demo-code-sample {
+        display: none;
+      }
+      .bd-demo-code-sample[option][selected] {
+        display: block;
       }
     }
 

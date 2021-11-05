@@ -1,0 +1,26 @@
+  <bento-accordion id="my-accordion">
+    <section id="section1">
+      <h2>Section 1</h2>
+      <p>Content in section 1.</p>
+    </section>
+    <section expanded>
+      <h2>Section 2</h2>
+      <div>Content in section 2.</div>
+    </section>
+    <section>
+      <h2>Section 3</h2>
+      <div>Content in section 3.</div>
+    </section>
+  </bento-accordion>
+  <button id="button1">
+    Toggle Section 1
+  </button>
+  <script>
+    (async () => {
+      await customElements.whenDefined('bento-accordion');
+      const api = await accordion.getApi();
+      const accordion = document.querySelector('#my-accordion');
+      document.querySelector('#button1').onclick = () => api.toggle('section1');
+    })();
+  </script>
+</body>

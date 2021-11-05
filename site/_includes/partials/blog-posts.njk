@@ -2,9 +2,7 @@
 {% set indizes = cycler('one', 'two', 'three', 'four') %}
 <div class="bd-card-image-group" role="list">
   {% for post in collections.posts %}
-    <div
-      class="bd-card-image bd-card-image--one bd-card-image--{{ indizes.next() }} bd-card--{{ colors.next() }}"
-      role="listitem">
+    <a class="bd-card-image bd-card-image--one bd-card-image--{{ indizes.next() }} bd-card--{{ colors.next() }}" href="{{ post.url }}" role="listitem">
       {% if post.data.image %}
         {% image post.data.image, post.data.title %}
       {% endif %}
@@ -12,6 +10,6 @@
         {{ post.data.title }}
       </p>
       <p class="bd-card-image__footer">{{ post.data.date | date }}</p>
-    </div>
+    </a>
   {% endfor %}
 </div>

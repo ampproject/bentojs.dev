@@ -1,6 +1,10 @@
 ---
+id: bento-facebook
 title: Bento Facebook
 layout: layouts/component.njk
+description: >-
+  The Bento Facebook component allows you to embed a Facebook post, a Facebook
+  video, or a comment on a Facebook post.
 ---
 # Bento Facebook
 

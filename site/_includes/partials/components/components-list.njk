@@ -1,33 +1,14 @@
 <section class="bd-components-list">
-  <h2 id="components">{{ i18n.components.all }}</h1>
-  <h3 id="advertising-analytics">{{ i18n.advertising_analytics }}</h2>
-  <ul>
-    <li>
-      <h6>bento-analytics</h6>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-    </li>
-    <li>
-      <h6>bento-cell-tracking</h6>
-      <p>Monitors the orientation of an element within the viewport as a user scrolls, and dispatches events …</p>
-    </li>
-    <li>
-      <h6>bento-google-document</h6>
-      <p>Monitors the orientation of an element within the viewport as a user scrolls.</p>
-    </li>
-  </ul>
-  <h3 id="dynamic-content">{{ i18n.dynamic_content }}</h2>
-  <ul>
-    <li>
-      <h6>bento-analytics</h6>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-    </li>
-    <li>
-      <h6>bento-cell-tracking</h6>
-      <p>Monitors the orientation of an element within the viewport as a user scrolls, and dispatches events …</p>
-    </li>
-    <li>
-      <h6>bento-google-document</h6>
-      <p>Monitors the orientation of an element within the viewport as a user scrolls.</p>
-    </li>
-  </ul>
+ {%- for category in collections.componentCategories -%}
+      <h3 id="{{ category.id }}">{{ i18n.categories[category.id] }}</h3>
+      <ul>
+      {%- for component in category.components -%}
+          <li>
+            <h6><a class="bd-link" href="{{ component.url }}">{{ component.data.title }}</a></h6>
+            <p>{{ component.data.description | safe }}</p>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+ {%- endfor -%}
 </section>

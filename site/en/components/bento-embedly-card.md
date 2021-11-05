@@ -1,6 +1,13 @@
 ---
+id: bento-embedly-card
 title: Bento Embedly Card
 layout: layouts/component.njk
+description: >-
+  The Bento Embedly Card component provides you with responsive and shareable
+  embeds to drive the reach of your websites,
+
+  blog posts, and articles from any URL using <a
+  href="http://docs.embed.ly/docs/cards">Embedly cards</a>.
 ---
 # Bento Embedly Card
 

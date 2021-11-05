@@ -1,6 +1,10 @@
 ---
+id: bento-accordion
 title: Bento Accordion
 layout: layouts/component.njk
+description: |-
+  The Bento Accordion component allows you to display collapsible and expandable
+  content sections.
 ---
 # Bento Accordion
 

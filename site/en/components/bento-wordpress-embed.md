@@ -1,6 +1,11 @@
 ---
+id: bento-wordpress-embed
 title: Bento WordPress Embed
 layout: layouts/component.njk
+description: >-
+  An iframe displaying the <a
+  href="https://make.wordpress.org/core/2015/10/28/new-embeds-feature-in-wordpress-4-4/">excerpt</a>
+  of a WordPress post or page.
 ---
 # Bento WordPress Embed
 

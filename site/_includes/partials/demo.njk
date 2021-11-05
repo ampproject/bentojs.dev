@@ -1,9 +1,9 @@
 <section class="bd-demo">
-  <bento-selector id="bd-demo-selector" aria-label="Demo selector button group">
-    <button option="bd-demo-carousel" class="bd-button--light --uppercase" aria-label="Button demo carousel">carousel</button>
-    <button option="bd-demo-accordion" class="bd-button--light --inverted --uppercase" aria-label="Buttom demo accordion">accordion</button>
-    <button option="bd-demo-sidebar" class="bd-button--light --inverted --uppercase" aria-label="Button demo sidebar">sidebar</button>
-    <button option="bd-demo-social-share" class="bd-button--light --inverted --uppercase" aria-label="Button demo social share">social share</button>
+  <bento-selector id="bd-demo-selector" aria-label="Select a Bento Demo">
+    <button option="bd-demo-carousel" class="bd-button--light --uppercase" aria-label="show carousel demo">carousel</button>
+    <button option="bd-demo-accordion" class="bd-button--light --inverted --uppercase" aria-label="show accordion demo">accordion</button>
+    <button option="bd-demo-sidebar" class="bd-button--light --inverted --uppercase" aria-label="show sidebar demo">sidebar</button>
+    <button option="bd-demo-social-share" class="bd-button--light --inverted --uppercase" aria-label="show social share demo">social share</button>
   </bento-selector>
 
   {% set examples = "assets/iframes/homepage-examples/" %}
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="bd-demo-code__result">
-      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html" aria-label="Demo preview"></iframe>
+      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html" title="Bento carousel demo preview"></iframe>
     </div>
   </div>
 </section>

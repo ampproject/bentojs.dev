@@ -8,7 +8,7 @@ async function develop() {
 }
 
 async function build() {
-  await execa.command('npm run build', {
+  await execa.command('npm run build:eleventy', {
     stderr: 'inherit',
     stdout: 'inherit',
   });

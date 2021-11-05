@@ -4,7 +4,8 @@
   "description": "The home for AMP's standalone components: Bento",
   "main": "index.js",
   "scripts": {
-    "build": "ELEVENTY_ENV=prod eleventy",
+    "build": "gulp build",
+    "build:eleventy": "ELEVENTY_ENV=prod eleventy",
     "clean": "rimraf dist",
     "develop": "npx gulp develop",
     "deploy:production": "run-s clean build publish:production",

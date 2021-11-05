@@ -1,15 +1,20 @@
 <div class="bd-navigation-container">
-  <hr />
-
+  <hr/>
   <div class="bd-button-group">
-    <div class="bd-previous-container">
-      <button class="bd-button">←</button>
-      <h6>{{ 'i18n.blog.previous' | i18n(locale) }}: Project lorem ipsum dolor sit amet eres …</h6>
-    </div>
-    <button class="bd-button bd-button-overview">{{ 'i18n.blog.overview' | i18n(locale) }}</button>
-    <div class="bd-next-container">
-      <h6>{{ 'i18n.blog.next' | i18n(locale) }}: Project lorem ipsum dolor sit amet eres est</h6>
-      <button class="bd-button">→</button>
-    </div>
+    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {% if previousPost %}
+      <a class="bd-previous-container" href="{{ previousPost.url }}">
+        <div class="bd-button">←</div>
+        <h6>{{ 'i18n.blog.previous' | i18n(locale) }}: {{ previousPost.data.title }}</h6>
+      </a>
+    {% endif %}
+    <a class="bd-button bd-button-overview" href="/blog">{{ 'i18n.blog.overview' | i18n(locale) }}</a>
+    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {% if nextPost %}
+      <a class="bd-next-container" href="{{ nextPost.url }}">
+        <h6>{{ 'i18n.blog.next' | i18n(locale) }}: {{ nextPost.data.title }}</h6>
+        <div class="bd-button">→</div>
+      </a>
+    {% endif %}
   </div>
 </div>

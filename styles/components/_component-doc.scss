@@ -39,10 +39,10 @@
   }
 
   h1 {
-    margin-block: var(--spacing-xs) var(--spacing-xl);
+    margin-block-end: var(--spacing-xl);
 
     @include media('medium') {
-      margin-block: var(--spacing-xxl);
+      margin-block-end: var(--spacing-xxl);
     }
   }
 

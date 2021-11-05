@@ -1,18 +1,16 @@
-@import '../components/link';
-
 .bd-page-components {
   width: 100vw;
 
   .bd-page-components-container {
-    margin: var(--spacing-xxl) auto 0;
+    margin: var(--spacing-xxl) auto;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 92%;
 
     @include media('large') {
-      margin: 80px auto 0;
+      margin-block: calc(var(--spacing-xxl) * 1.25);
       display: grid;
-      width: 95%;
+      grid-template-areas: 'sidebar main toc';
       grid-template-columns: max-content minmax(50%, auto) max-content;
       column-gap: var(--spacing-xs);
     }
@@ -26,7 +24,18 @@
       width: 1300px;
     }
 
+    #bd-components-target {
+      grid-area: sidebar;
+    }
+
+    #bd-toc-target {
+      grid-area: toc;
+      z-index: 50;
+    }
+
     &__main {
+      @include component-doc;
+      grid-area: main;
       position: relative;
       z-index: 50;
 
@@ -37,27 +46,12 @@
         top: 0;
         right: -25%;
         transform: rotate(160deg) rotateY(180deg) scale(1.6);
-        z-index: 1;
+        z-index: -1;
 
         @include media('medium') {
           top: 1%;
           transform: rotate(160deg) rotateY(180deg) scale(4);
         }
-      }
-
-      h1 {
-        margin-bottom: var(--spacing-xxl);
-      }
-
-      h2,
-      p,
-      pre[class*='language-'] {
-        margin-bottom: var(--spacing-s);
-      }
-
-      p,
-      a {
-        color: var(--independence);
       }
     }
   }

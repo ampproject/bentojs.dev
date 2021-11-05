@@ -1,0 +1,33 @@
+.bd-page-components pre {
+  position: relative;
+
+  .bd-copy {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px 4px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    svg {
+      height: 24px;
+      width: 24px;
+      max-height: 24px;
+      max-width: 24px;
+      color: white;
+    }
+
+  }
+  &.--success .bd-copy-icon-default {
+    display: none;
+  }
+  .bd-copy-icon-success {
+    display: none;
+  }
+  &.--success .bd-copy-icon-success {
+    display: block;
+  }
+}

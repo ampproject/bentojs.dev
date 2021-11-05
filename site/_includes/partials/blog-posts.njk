@@ -1,28 +1,15 @@
-<div class="bd-card-image-group">
-  <div class="bd-card-image bd-card-image--one bd-card--burnt-sienna">
-    {% image "./assets/img/image-1-1-copy.webp", "Better video performance" %}
-    <p class="bd-card-image__body">
-      Lorem ipsum dolor sit rest est in amet ner di moin
-    </p>
-    <p class="bd-card-image__footer">August 26, 2021</p>
-  </div>
-  <div class="bd-card-image bd-card-image--two bd-card--elephant-green">
-    <p class="bd-card-image__body">
-      Lorem ipsum dolor sit rest est in amet ner di moin
-    </p>
-    <p class="bd-card-image__footer">August 26, 2021</p>
-  </div>
-  <div class="bd-card-image bd-card-image--three bd-card--naples-yellow">
-    <p class="bd-card-image__body">
-      Lorem ipsum dolor sit rest est in amet ner di moin
-    </p>
-    <p class="bd-card-image__footer">August 26, 2021</p>
-  </div>
-  <div class="bd-card-image bd-card-image--four bd-card--light-sea-green">
-    {% image "./assets/img/image-1-1-copy-2.webp", "Web Stories" %}
-    <p class="bd-card-image__body">
-      Lorem ipsum dolor sit rest est in amet ner di moin
-    </p>
-    <p class="bd-card-image__footer">August 26, 2021</p>
-  </div>
+{% set colors = cycler('burnt-sienna', 'elephant-green', 'naples-yellow', 'light-sea-green') %}
+{% set indizes = cycler('one', 'two', 'three', 'four') %}
+<div class="bd-card-image-group" role="list">
+  {% for post in collections.posts %}
+    <a class="bd-card-image bd-card-image--one bd-card-image--{{ indizes.next() }} bd-card--{{ colors.next() }}" href="{{ post.url }}" role="listitem">
+      {% if post.data.image %}
+        {% image post.data.image, post.data.title %}
+      {% endif %}
+      <p class="bd-card-image__body">
+        {{ post.data.title }}
+      </p>
+      <p class="bd-card-image__footer">{{ post.data.date | date }}</p>
+    </a>
+  {% endfor %}
 </div>

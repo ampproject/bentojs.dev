@@ -3,14 +3,10 @@
     padding: var(--spacing-s);
 
     @include media('large') {
-      padding-top: 0;
+      padding: 0;
     }
 
     &--components {
-      @include scrollbar;
-      overflow: auto;
-      position: sticky;
-
       ul {
         padding: 0;
         margin: 0;

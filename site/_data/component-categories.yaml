@@ -1,0 +1,26 @@
+embeds:
+  - bento-embedly-card
+  - bento-mathml
+  - bento-wordpress-embed
+date-time:
+  - bento-date-countdown
+  - bento-date-display
+  - bento-timeago
+interactivity:
+  - bento-accordion
+  - bento-carousel
+  - bento-inline-gallery
+  - bento-lightbox
+  - bento-lightbox-gallery
+  - bento-selector
+  - bento-sidebar
+  - bento-stream-gallery
+layout:
+  - bento-fit-text
+media-social:
+  - bento-facebook
+  - bento-instagram
+  - bento-jwplayer
+  - bento-social-share
+  - bento-soundcloud
+  - bento-twitter

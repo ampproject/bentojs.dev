@@ -1,13 +1,13 @@
 <html>
   <body>
     <script type="module">
-      import { html, render } from "https://unpkg.com/lit-html@2.0.1/lit-html.js";
-      import { defineElement as defineBentoAccordion } from "https://unpkg.com/@bentoproject/accordion?module"
+      import {html, render} from 'https://unpkg.com/lit-html@2.0.1/lit-html.js';
+      import {defineElement as defineBentoAccordion} from 'https://unpkg.com/@bentoproject/accordion?module';
 
-      const template = ({ names }) => html`
+      const template = ({names}) => html`
         <bento-accordion animate>
-          ${names.map((name) => html`
-            <section>
+          ${names.map(
+            (name) => html` <section>
               <h1>${name}</h1>
               <div>Hello ${name}</div>
             </section>`

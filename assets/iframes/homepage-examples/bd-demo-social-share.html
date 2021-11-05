@@ -10,19 +10,21 @@
       height: 44px;
     }
   </style>
-   <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script async src="https://cdn.ampproject.org/v0/bento-twitter-1.0.js"></script>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-twitter-1.0.js"
+  ></script>
 </head>
 
-<bento-social-share id="my-share"
+<bento-social-share
+  id="my-share"
   type="twitter"
   aria-label="Share on Twitter"
 ></bento-social-share>
 
-<div class="buttons" style="margin-top: 8px;">
-  <button id="change-share">
-    Change share button
-  </button>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-share">Change share button</button>
 </div>
 
 <script>
@@ -32,8 +34,8 @@
 
     // set up button actions
     document.querySelector('#change-share').onclick = () => {
-      twitter.setAttribute('type', 'linkedin')
-      twitter.setAttribute('aria-label', 'Share on LinkedIn')
-    }
+      twitter.setAttribute('type', 'linkedin');
+      twitter.setAttribute('aria-label', 'Share on LinkedIn');
+    };
   })();
 </script>

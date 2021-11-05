@@ -135,12 +135,14 @@
       font-size: var(--font-size-18);
       font-weight: var(--semi-bold);
       line-height: 1.33;
+      color: inherit;
     }
 
     &__body {
       font-size: 14px;
       line-height: 1.71;
       letter-spacing: 0.2px;
+      color: inherit;
     }
   }
 }

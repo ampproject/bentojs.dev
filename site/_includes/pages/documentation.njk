@@ -4,8 +4,11 @@ title: Documentation
 {% extends "layouts/base.njk" %}
 {% block head %}
   <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script async src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+  <script type="module" src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.mjs"></script>
+  <script async type="nomodule"  src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+  <style>
+  bento-sidebar[hidden]{display:none!important}bento-sidebar{color:#000;background-color:#efefef;height:100vh;top:0;max-height:100vh!important;max-width:80vw;min-width:45px!important;outline:none;z-index:2147483647}bento-sidebar::part(c),bento-sidebar::part(sidebar),bento-sidebar::part(wrapper){color:inherit;background-color:inherit;height:inherit;top:inherit;max-height:inherit;max-width:inherit;min-width:inherit;outline:inherit;z-index:inherit;width:inherit;padding:inherit;border:inherit}bento-sidebar{visibility:hidden!important;position:fixed!important}bento-sidebar::part(c){visibility:visible!important}
+  </style>
 {% endblock %}
 {% block content %}
 <main class="bd-page-components-overview bd-theme--light">
@@ -22,16 +25,6 @@ title: Documentation
       {%- include 'partials/components/most-used.njk' -%}
       {%- include 'partials/components/components-list.njk' -%}
     </div>
-    <bento-sidebar id="bd-toc" side="right">
-      <nav
-        class="bd-sidebar__contents bd-sidebar__contents--toc"
-        toolbar="(min-width: 1024px)"
-        toolbar-target="bd-toc-target">
-          <h3>{{ i18n.toc.title }}</h3>
-          {%- include 'partials/documentation/toc.njk' -%}
-      </nav>
-    </bento-sidebar>
-    <div class="bd-sidebar__target" id="bd-toc-target"></div>
   </div>
 </main>
 {% endblock %}

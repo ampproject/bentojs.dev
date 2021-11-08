@@ -245,10 +245,7 @@
     }
 
     &.spacer {
-      margin-bottom: 608px;
-      @include media('medium') {
-        margin-bottom: 960px;
-      }
+      margin-block-end: 660px;
     }
   }
 
@@ -289,10 +286,16 @@
         line-height: 1.18;
         letter-spacing: -0.5px;
         text-align: center;
+
         @include media('medium') {
           font-size: var(--font-size-56);
           line-height: 1.14;
           letter-spacing: -1px;
+        }
+
+        @include media('xxlarge') {
+          margin: auto;
+          width: 60%;
         }
       }
 

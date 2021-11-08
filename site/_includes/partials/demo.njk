@@ -1,38 +1,39 @@
 <section class="bd-demo">
   <bento-selector id="bd-demo-selector" aria-label="Select a Bento Demo">
-    <button option="bd-demo-carousel" class="bd-button--light --uppercase" aria-label="show carousel demo">carousel</button>
-    <button option="bd-demo-accordion" class="bd-button--light --inverted --uppercase" aria-label="show accordion demo">accordion</button>
-    <button option="bd-demo-sidebar" class="bd-button--light --inverted --uppercase" aria-label="show sidebar demo">sidebar</button>
-    <button option="bd-demo-social-share" class="bd-button--light --inverted --uppercase" aria-label="show social share demo">social share</button>
+    <button option="bd-demo-carousel" selected class="bd-button--light --uppercase" aria-label="show carousel demo">carousel</button>
+    <button option="bd-demo-accordion" class="bd-button--light --uppercase" aria-label="show accordion demo">accordion</button>
+    <button option="bd-demo-sidebar" class="bd-button--light --uppercase" aria-label="show sidebar demo">sidebar</button>
+    <button option="bd-demo-social-share" class="bd-button--light --uppercase" aria-label="show social share demo">social share</button>
   </bento-selector>
 
   {% set examples = "assets/iframes/homepage-examples/" %}
 
   <div class="bd-demo-code">
-    <div class="bd-demo-code__snippet">
-      <div id="bd-demo-carousel" class="bd-demo-code-sample">
+    <bento-selector id="bd-demo-source-selector" class="bd-demo-code__snippet">
+      <div option="bd-demo-carousel" class="bd-demo-code-sample" selected>
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-carousel.html' -%}
+        {%- include examples + 'bd-demo-carousel.source.html' -%}
         {% endhighlight %}
       </div>
-      <div id="bd-demo-accordion" class="bd-demo-code-sample --hide">
+      <div option="bd-demo-accordion" class="bd-demo-code-sample">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-accordion.html' -%}
+        {%- include examples + 'bd-demo-accordion.source.html' -%}
         {% endhighlight %}
       </div>
-      <div id="bd-demo-sidebar" class="bd-demo-code-sample --hide">
+      <div option="bd-demo-sidebar" class="bd-demo-code-sample">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-sidebar.html' -%}
+        {%- include examples + 'bd-demo-sidebar.source.html' -%}
         {% endhighlight %}
       </div>
-      <div id="bd-demo-social-share" class="bd-demo-code-sample --hide">
+      <div option="bd-demo-social-share" class="bd-demo-code-sample">
         {% highlight 'html' %}
-        {%- include examples + 'bd-demo-social-share.html' -%}
+        {%- include examples + 'bd-demo-social-share.source.html' -%}
         {% endhighlight %}
       </div>
-    </div>
+    </bento-selector>
+
     <div class="bd-demo-code__result">
-      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html" title="Bento carousel demo preview"></iframe>
+      <iframe id="bd-demo-iframe" src="{{examples}}bd-demo-carousel.html" title="Bento carousel demo preview" loading="lazy"></iframe>
     </div>
   </div>
 </section>

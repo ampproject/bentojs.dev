@@ -1,0 +1,16 @@
+<bento-base-carousel id="my-carousel">
+  <img src="/assets/img/group-1.webp" />
+  <img src="/assets/img/group-2.webp" />
+  <img src="/assets/img/group-3.webp" />
+</bento-base-carousel>
+
+<script>
+  (async () => {
+    const carousel = document.querySelector('#my-carousel');
+    await customElements.whenDefined('bento-base-carousel');
+    const api = await carousel.getApi();
+
+    // programatically advance to next slide
+    api.next();
+  })();
+</script>

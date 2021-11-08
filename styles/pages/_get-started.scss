@@ -254,6 +254,11 @@
 
   .bd-browser-support {
     gap: var(--spacing-xxl);
+    flex-direction: column-reverse;
+
+    @include media('large') {
+      flex-direction: row;
+    }
 
     strong {
       display: initial;
@@ -262,16 +267,6 @@
 
   .bd-contribute {
     gap: var(--spacing-xxl);
-
-    .bd-row__column:first-child {
-      order: 1;
-    }
-
-    @include media('large') {
-      .bd-row__column:first-child {
-        order: initial;
-      }
-    }
   }
 
   .bd-discover-more {

@@ -21,6 +21,8 @@ const components = require('./site/_collections/components.js');
 const componentCategories = require('./site/_collections/componentCategories.js');
 const highlights = require('./site/_collections/highlights.js');
 
+const notFound = require('./site/_config/404.js');
+
 const isProduction = process.env.NODE_ENV === 'production';
 global.__basedir = __dirname;
 
@@ -60,6 +62,8 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('highlights', highlights);
 
   eleventyConfig.on('afterBuild', writeExamples);
+
+  eleventyConfig.setBrowserSyncConfig(notFound);
 
   return {
     templateFormats: ['njk', 'md'],

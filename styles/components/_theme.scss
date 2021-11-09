@@ -6,7 +6,12 @@
 
   &--light {
     background-color: var(--white);
-    color: var(--maastricht-blue);
+
+    h1,
+    h2,
+    h3 {
+      color: var(--maastricht-blue);
+    }
 
     .bd-section__body {
       font-weight: var(--light);

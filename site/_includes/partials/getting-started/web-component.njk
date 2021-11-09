@@ -1,5 +1,5 @@
 <div class="bd-web-component-sample">
-<h3>Install example `bento-fit-text` via npm</h3>
+<h3>Install `bento-fit-text` via npm</h3>
 
 <div class="bd-web-component-sample__code">
 {% highlight 'html' %}
@@ -13,15 +13,16 @@ import '@ampproject/bento-fit-text';
 {% endhighlight %}
 </div>
 
-<h3 class="spacer-xxl">Included example `bento-fit-text`via script tag</h3>
+<h3 class="spacer-xxl">Use `bento-fit-text`via CDN</h3>
 
 <div class="bd-web-component-sample__code">
 {% highlight 'html' %}
 <head>
   <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
-  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
   <script async custom-element="bento-fit-text" src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"></script>
-  <style data-bento-boilerplate>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element.  -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-fit-text-1.0.css" />-->
+  <style>
     bento-fit-text {
       display: block;
       overflow: hidden;
@@ -33,21 +34,6 @@ import '@ampproject/bento-fit-text';
   Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
   inermis reprehendunt.
 </bento-fit-text>
-<div class="buttons" style="margin-top: 8px;">
-  <button id="font-button">Change max-font -size</button>
-  <button id="content-button">Change content</button>
-</div>
-
-<script>
-  (async () => {
-    const fitText = document.querySelector('#my-fit-text');
-    await customElements.whenDefined('bento-fit-text');
-
-    // set up button actions
-    document.querySelector('#font-button').onclick = () => fitText.setAttribute('max-font-size', '40');
-    document.querySelector('#content-button').onclick = () => fitText.textContent = 'new content';
-  })();
-</script>
 {% endhighlight %}
 </div>
 </div>

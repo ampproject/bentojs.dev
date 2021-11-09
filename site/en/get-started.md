@@ -33,8 +33,6 @@ i18n:
     headline: Browser Support
     text: |
       Bento components support the latest two versions of most major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the web view version of these respective browsers.
-
-      **Important&#58;** If you’re targeting browser versions <2017, please make sure to include the custom element polyfill&#58;
   contribute:
     headline: Contribute to Bento
     text: Need a component but don’t see it listed? Come across a bug you know how to fix? Great news! Bento is open source under the AMP Project, and we couldn’t do it without our amazing community. Join us and start contributing today!

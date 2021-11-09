@@ -4,20 +4,13 @@ permalink: /documentation/index.html
 tags: main
 title: Documentation
 i18n:
+  guides: Guides
+  highlighted_components: Highlight Components
+  all_components: All Components
   categories:
     date-time: Date & Time
     embeds: Embeds
     interactivity: Interactivity
     layout: Layout
     media-social: Social & Media
-  components:
-    headline: Components Catalogue
-    highlights: Highlights
-    all: All components
-  advertising_analytics: Advertising & Analytics
-  dynamic_content: Dynamic Content
-  toc:
-    title: Table of contents
-    highlighted: Highlighted components
-    components: Components
 ---

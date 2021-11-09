@@ -11,7 +11,7 @@ const {
   writeExamples,
 } = require('./site/_shortcodes/Example.js');
 
-const {i18n} = require('./site/_filters/i18n');
+const { i18n } = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
@@ -20,6 +20,7 @@ const insertStyles = require('./site/_transforms/insertStyles.js');
 const components = require('./site/_collections/components.js');
 const componentCategories = require('./site/_collections/componentCategories.js');
 const highlights = require('./site/_collections/highlights.js');
+const guides = require('./site/_collections/guides.js');
 
 const notFound = require('./site/_config/404.js');
 
@@ -60,6 +61,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('components', components);
   eleventyConfig.addCollection('componentCategories', componentCategories);
   eleventyConfig.addCollection('highlights', highlights);
+  eleventyConfig.addCollection('guides', guides);
 
   eleventyConfig.on('afterBuild', writeExamples);
 

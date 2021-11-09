@@ -10,14 +10,19 @@
     gap: var(--spacing-m);
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr;
-    width: 100%;
+    margin-inline: auto;
+    width: max-content;
   }
 
   @include media('xlarge') {
     gap: var(--spacing-xxl);
   }
 
-  bento-selector {
+  bento-selector [option][selected] {
+    outline: unset;
+  }
+
+  #bd-demo-selector {
     display: grid;
     gap: var(--spacing-xs);
     grid-template-columns: 1fr 1fr;
@@ -47,11 +52,10 @@
     & [option]:not([selected]) {
       cursor: pointer;
       outline: unset;
-      background-color: transparent;
+      background-color: var(--white);
       color: var(--light-sea-green);
       border: solid 2px var(--light-sea-green);
     }
-
   }
 
   &-code {

@@ -102,7 +102,6 @@
   }
 
   &-burger {
-    margin-left: 20px;
     color: inherit;
 
     @include media('large') {
@@ -113,6 +112,7 @@
       height: 19px;
       width: 26px;
       fill: currentColor;
+      transform: scale(1.6);
     }
   }
 }

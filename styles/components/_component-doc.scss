@@ -6,7 +6,11 @@
   font-weight: var(--medium);
   letter-spacing: 0.2px;
   line-height: 2;
-  padding: 2px 8px;
+  padding: 0 2px;
+
+  @include media('medium') {
+    padding: 2px 8px;
+  }
 }
 
 @mixin component-doc {
@@ -46,7 +50,11 @@
     }
   }
 
-  h2 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-block: var(--spacing-xl) var(--spacing-xs);
 
     @include media('medium') {
@@ -54,17 +62,6 @@
     }
   }
 
-  h3 {
-    margin-block: var(--spacing-xl) var(--spacing-s);
-
-    @include media('medium') {
-      margin-block: var(--spacing-xxl) var(--spacing-s);
-    }
-  }
-
-  h4,
-  h5,
-  h6,
   p,
   pre[class*='language-'] {
     margin-block: var(--spacing-s);
@@ -135,6 +132,10 @@
 
     &:visited {
       color: inherit;
+    }
+
+    &:hover {
+      color: var(--burnt-sienna);
     }
   }
 

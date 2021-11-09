@@ -95,6 +95,11 @@
     grid-template-rows: auto auto;
     height: 90%;
 
+    &:hover {
+      transform: translateY(-0.125em);
+      box-shadow: 0 25px 20px -15px rgba(0, 43, 57, 0.15);
+    }
+
     @include media('medium') {
       grid-row: auto;
       height: auto;
@@ -140,6 +145,7 @@
 
     &__body {
       font-size: 14px;
+      font-weight: var(--normal);
       line-height: 1.71;
       letter-spacing: 0.2px;
       color: inherit;
@@ -162,11 +168,11 @@
     font-size: var(--font-size-18);
     font-weight: var(--bold);
     line-height: 1.33;
-    margin-block: var(--spacing-xl) var(--spacing-m);
+    margin-block: var(--spacing-xl) var(--spacing-s);
 
     @include media('xlarge') {
       font-size: var(--font-size-21);
-      margin-block: var(--spacing-xxl) var(--spacing-xl);
+      margin-block: var(--spacing-xxl) var(--spacing-l);
     }
   }
 

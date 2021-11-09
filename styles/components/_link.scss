@@ -18,7 +18,7 @@
     background-color: var(--burnt-sienna);
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1) 0s;
+    transition: transform 0.25s cubic-bezier(0.86, 0, 0.07, 1) 0s;
   }
 
   &:hover {

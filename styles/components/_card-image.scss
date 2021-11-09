@@ -13,6 +13,7 @@
   @include cardImage;
 
   picture {
+    align-self: baseline;
     grid-area: image;
 
     img {

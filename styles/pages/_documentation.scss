@@ -77,7 +77,7 @@
   }
 }
 
-.bd-most-used {
+.bd-cards {
   margin-block: var(--spacing-xxl);
 
   h2 {
@@ -124,7 +124,6 @@
 
       @include media('medium') {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
         left: unset;
         overflow: visible;
         padding-inline: unset;

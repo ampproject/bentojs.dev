@@ -5,26 +5,28 @@
 }
 
 .bd-card {
+  @include card;
+
+  &--white {
+    background-color: var(--white);
+  }
+
   &--elephant-green {
-    @include card;
     background-color: var(--elephant-green);
     color: var(--white);
   }
 
   &--burnt-sienna {
-    @include card;
     background-color: var(--burnt-sienna);
     color: var(--white);
   }
 
   &--naples-yellow {
-    @include card;
     background-color: var(--naples-yellow);
     color: var(--maastricht-blue);
   }
 
   &--light-sea-green {
-    @include card;
     background-color: var(--light-sea-green);
     color: var(--white);
   }

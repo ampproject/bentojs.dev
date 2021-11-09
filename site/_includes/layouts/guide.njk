@@ -1,7 +1,3 @@
----
-title: Documentation
-description: Guides and tutorials on how to use Bento Components in practice.
----
 {% extends "layouts/base.njk" %}
 {% block head %}
   <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
@@ -12,37 +8,20 @@ description: Guides and tutorials on how to use Bento Components in practice.
   </style>
 {% endblock %}
 {% block content %}
-<main class="bd-page-components-overview bd-theme--light">
-  <div class="bd-page-components-overview-container">
-    {%- include 'partials/components/list.njk' -%}
-    <div class="bd-page-components-overview-container__main">
-      <svg class="bd-page-components-overview-background">
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="/assets/assets.svg#icon-logo-bento"
-        ></use>
-      </svg>
-      <h1>{{ title }}</h1>
+  <main class="bd-page-components bd-theme--light">
+    <div class="bd-page-components-container">
+      {%- include 'partials/components/list.njk' -%}
+      <div class="bd-page-components-container__main">
+        <svg class="bd-page-components-background">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <h1>{{ title }}</h1>
 
-      <section class="bd-cards">
-        <h2 id="guides">{{ i18n.guides }}</h2>
-
-        {% set cardGroup = {pages: collections.guides, color: false} %}
-        {% include 'partials/card-group.njk' %}
-      </section>
-
-      <section class="bd-cards">
-        <h2 id="highlights">{{ i18n.highlighted_components }}</h2>
-
-        {% set cardGroup = {pages: collections.highlights, color: true} %}
-        {% include 'partials/card-group.njk' %}
-      </section>
-
-      <h2 id="all">{{ i18n.all_components }}</h2>
-      {%- include 'partials/components/components-list.njk' -%}
+        {{ content | safe }}
+      </div>
+      {%- include 'partials/components/toc.njk' -%}
     </div>
-  </div>
-</main>
+  </main>
 {% endblock %}
 {% block footer %}
   {%- include 'partials/components/sidebar-controls.njk' -%}

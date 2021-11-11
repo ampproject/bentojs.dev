@@ -29,7 +29,7 @@ defineBentoFacebook();
 
 ##### Embed a Facebook Post
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -91,11 +91,11 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ##### Embed a Facebook Video
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -158,11 +158,11 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ##### Embed a Facebook Page
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -225,11 +225,11 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ##### Embed a Facebook Like Button
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -275,11 +275,11 @@ defineBentoFacebook();
     </bento-facebook>
   </body>
 </html>
-```
+```{% endexample %}
 
 ##### Embed a Facebook Comment Section
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -325,7 +325,7 @@ defineBentoFacebook();
     </bento-facebook>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and Style
 
@@ -645,3 +645,5 @@ default, the Facebook page plugin shows the timeline activity.
 #### title (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"Facebook"`.
+
+

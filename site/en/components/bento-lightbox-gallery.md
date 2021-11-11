@@ -27,7 +27,7 @@ defineBentoLightboxGallery();
 
 ### Example: Import via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -66,7 +66,7 @@ defineBentoLightboxGallery();
     </figure>
   </body>
 </html>
-```
+```{% endexample %}
 
 To use `bento-liightbox-gallery`, ensure the required script is included in your `<head>` section,
 then add the `lightbox` attribute on an `<img>` or `<bento-carousel>` element.
@@ -257,3 +257,5 @@ A boolean prop which defaults to true which lets the child image activate the li
 #### onClick
 
 A prop which takes a functhion which is executed when the image is clicked.
+
+

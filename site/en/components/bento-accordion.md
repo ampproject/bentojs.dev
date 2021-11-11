@@ -37,7 +37,7 @@ defineBentoAccordion();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ defineBentoAccordion();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Interactivity and API usage
 
@@ -685,3 +685,5 @@ BentoAccordionHeader does not yet support any custom props
 This component supports the [common props](../../../docs/spec/bento-common-props.md) for React and Preact components.
 
 BentoAccordionContent does not yet support any custom props
+
+

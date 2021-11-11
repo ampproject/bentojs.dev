@@ -28,7 +28,7 @@ defineBentoWordpressEmbed();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -83,7 +83,7 @@ defineBentoWordpressEmbed();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -181,3 +181,5 @@ Or via `className`:
 #### url (required)
 
 The URL of the post to embed.
+
+

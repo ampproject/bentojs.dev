@@ -30,7 +30,7 @@ defineBentoBaseCarousel();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -106,7 +106,7 @@ defineBentoBaseCarousel();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Interactivity and API usage
 
@@ -705,3 +705,5 @@ function CustomNextButton(props) {
   // …
 </BentoBaseCarousel>
 ```
+
+

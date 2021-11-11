@@ -25,7 +25,7 @@ defineBentoSelector();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ defineBentoSelector();
     </bento-selector>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Usage notes
 
@@ -328,3 +328,5 @@ The `onChange` prop gives you two key options:
   </BentoSelectorOption>
 </BentoSelector>
 ```
+
+

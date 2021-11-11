@@ -25,7 +25,7 @@ defineBentoTimeago();
 
 ### Example: Import via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ defineBentoTimeago();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -270,3 +270,5 @@ Add the `cutoff` prop to display the date specified in the `datetime` prop after
 #### `placeholder`
 
 Add the `placeholder` props to display the fallback text. The calculated timestamp will replace the placeholder text once ready.
+
+

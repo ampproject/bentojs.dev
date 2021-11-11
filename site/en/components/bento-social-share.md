@@ -27,7 +27,7 @@ defineBentoSocialShare();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -92,7 +92,7 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -600,3 +600,5 @@ All `param` properties are passed as URL parameters and passed to the share endp
 #### aria-label
 
 The description of the button for accessibility. A recommended label is "Share on \<type>".
+
+

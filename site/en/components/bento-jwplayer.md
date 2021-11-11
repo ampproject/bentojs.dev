@@ -25,7 +25,7 @@ defineBentoJwplayer();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -76,7 +76,7 @@ defineBentoJwplayer();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Interactivity and API usage
 
@@ -368,3 +368,5 @@ Or via `className`:
     For more details, see <a href="https://amp.dev/documentation/components/amp-video-docking">documentation on the docking extension itself.</a></td>
   </tr>
 </table>
+
+

@@ -85,7 +85,6 @@
     gap: var(--spacing-xs);
     grid-row: 1;
     grid-template-rows: min-content auto;
-    height: 90%;
 
     @include media('medium') {
       grid-row: auto;
@@ -99,7 +98,7 @@
       grid-auto-columns: 80%;
       left: calc(var(--spacer-inline) * -1);
       overflow-x: scroll;
-      padding-inline: var(--spacer-inline);
+      padding: var(--spacing-l) var(--spacer-inline);
       position: relative;
       scroll-snap-type: x proximity;
       width: 103vw;
@@ -112,7 +111,7 @@
         grid-template-columns: 1fr 1fr;
         left: unset;
         overflow: visible;
-        padding-inline: unset;
+        padding: unset;
         width: 100%;
       }
 

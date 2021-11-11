@@ -4,7 +4,6 @@
   grid-row: 1;
   grid-template-areas: 'image' 'body' 'footer';
   grid-template-rows: minmax(auto, 180px) min-content min-content;
-  height: 95%;
   row-gap: var(--spacing-s);
   max-width: 400px;
 }
@@ -87,11 +86,11 @@
     --spacer-inline: calc(var(--spacing-xs) * 1.25);
     display: grid;
     gap: calc(var(--spacing-xs) * 1.25);
-    grid-auto-columns: 20vmax;
+    grid-auto-columns: 49vmax;
     left: calc(var(--spacer-inline) * -1);
     margin-block-start: var(--spacing-xl);
     overflow-x: scroll;
-    padding-inline: var(--spacer-inline);
+    padding: var(--spacing-l) var(--spacer-inline);
     position: relative;
     scroll-snap-type: x proximity;
     width: 102vw;
@@ -112,7 +111,7 @@
       left: unset;
       margin-block-start: -10rem;
       overflow: visible;
-      padding-inline: unset;
+      padding: unset;
       width: 100%;
     }
 

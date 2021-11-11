@@ -30,7 +30,7 @@ defineBentoStreamGallery();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ defineBentoStreamGallery();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Interactivity and API usage
 
@@ -413,3 +413,5 @@ carousel.
 
 Either `true` or `false`, defaults to `true`. Determines whether or not the
 carousel should snap on slides when scrolling.
+
+

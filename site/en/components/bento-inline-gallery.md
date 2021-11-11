@@ -27,7 +27,7 @@ defineBentoInlineGallery();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -97,7 +97,7 @@ defineBentoInlineGallery();
     </bento-inline-gallery>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -234,3 +234,5 @@ Number: ratio of width to height that slides should be displayed in.
 Default: `false`
 
 Boolean attribute indicating whether thumbnails should loop.
+
+

@@ -25,7 +25,7 @@ defineBentoInstagram();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -78,7 +78,7 @@ defineBentoInstagram();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -186,3 +186,5 @@ The instagram shortcode is found in every instagram photo URL. For example, in h
 #### `captioned`
 
 Include the Instagram caption. `bento-instagram` will attempt to resize to the correct height including the caption.
+
+

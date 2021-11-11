@@ -25,7 +25,7 @@ defineBentoLightbox();
 
 ### Example: Import via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ defineBentoLightbox();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Interactivity and API usage
 
@@ -246,3 +246,5 @@ A prop which takes a function which is executed after the lightbox is opened.
 #### onAfterClose
 
 A prop which takes a function which is executed after the lightbox is closed.
+
+

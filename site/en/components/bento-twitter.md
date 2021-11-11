@@ -27,7 +27,7 @@ defineBentoTwitters();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ defineBentoTwitters();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -240,3 +240,5 @@ return (
     <td>Define a <code>title</code> for the component iframe. The default is <code>Twitter</code>.</td>
   </tr>
 </table>
+
+

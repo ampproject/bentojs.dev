@@ -25,7 +25,7 @@ defineBentoMathml();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ defineBentoMathml();
     </p>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -191,3 +191,5 @@ If specified, the component renders inline (`inline-block` in CSS).
 #### `title` (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"MathML formula"`.
+
+

@@ -31,7 +31,7 @@ defineBentoEmbedlyCard();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -105,7 +105,7 @@ defineBentoEmbedlyCard();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Layout and style
 
@@ -309,3 +309,5 @@ main card container.
 #### title (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"Embedly card"`.
+
+

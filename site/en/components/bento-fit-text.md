@@ -29,7 +29,7 @@ defineBentoFitText();
 
 ### Example: Include via `<script>`
 
-<!--% example %-->
+{% example %}
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ defineBentoFitText();
     </script>
   </body>
 </html>
-```
+```{% endexample %}
 
 ### Overflowing content
 
@@ -220,3 +220,5 @@ Specifies the minimum font size in pixels as an integer that the `bento-fit-text
 #### `maxFontSize`
 
 Specifies the maximum font size in pixels as an integer that the `bento-fit-text` can use.
+
+

@@ -10,18 +10,10 @@
     @include media('large') {
       margin: 80px auto;
       display: grid;
-      grid-template-areas: 'sidebar main toc';
-      grid-template-columns: max-content auto max-content;
-      column-gap: var(--spacing-m);
-    }
-
-    @include media('xlarge') {
-      grid-template-columns: 1fr 4fr 1fr;
-      column-gap: var(--spacing-xxl);
-    }
-
-    @include media('xxlarge') {
-      width: 1300px;
+      grid-template-areas: 'sidebar main';
+      grid-template-columns: max-content auto;
+      column-gap: calc(var(--spacing-xxl) * 2);
+      max-width: 1100px;
     }
 
     #bd-components-target {

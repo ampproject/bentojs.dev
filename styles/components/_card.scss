@@ -1,7 +1,14 @@
 @mixin card {
   padding: 24px;
   border-radius: 16px;
-  box-shadow: 0 8px 16px 0 rgba(0, 43, 57, 0.15);
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 60px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 .bd-card {
@@ -9,6 +16,7 @@
 
   &--white {
     background-color: var(--white);
+    color: var(--independence);
   }
 
   &--elephant-green {

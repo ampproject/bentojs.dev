@@ -52,13 +52,20 @@
 
   h2,
   h3,
-  h4,
-  h5,
-  h6 {
+  h4 {
     margin-block: var(--spacing-xl) var(--spacing-xs);
 
     @include media('medium') {
       margin-block: var(--spacing-xxl) var(--spacing-s);
+    }
+  }
+
+  h5,
+  h6 {
+    margin-block: var(--spacing-l) var(--spacing-xs);
+
+    @include media('medium') {
+      margin-block: var(--spacing-xl) var(--spacing-s);
     }
   }
 
@@ -166,13 +173,19 @@
 
     td {
       display: block;
+      line-height: 24px;
     }
 
     tr {
       border-bottom: solid 2px var(--bright-gray);
 
+      &:last-child {
+        border: 0;
+      }
+
       td:first-child {
         font-weight: var(--semi-bold);
+        vertical-align: top;
       }
 
       @include media('medium') {
@@ -205,6 +218,10 @@
       }
     }
 
+    ul {
+      font-size: 14px;
+    }
+
     code {
       @include code;
       font-size: 14px;
@@ -228,5 +245,6 @@
   hr {
     border: 0;
     border-bottom: solid 2px var(--bright-gray);
+    margin-block: calc(var(--spacing-xxl) * 2);
   }
 }

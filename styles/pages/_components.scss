@@ -11,17 +11,13 @@
       margin-block: calc(var(--spacing-xxl) * 1.25);
       display: grid;
       grid-template-areas: 'sidebar main toc';
-      grid-template-columns: max-content minmax(50%, auto) max-content;
-      column-gap: var(--spacing-xs);
+      grid-template-columns: minmax(max-content, auto) minmax(50%, auto) max-content;
+      column-gap: var(--spacing-xxl);
     }
 
     @include media('xlarge') {
-      grid-template-columns: max-content minmax(60%, auto) max-content;
-      column-gap: var(--spacing-m);
-    }
-
-    @include media('xxlarge') {
-      width: 1300px;
+      max-width: 1300px;
+      column-gap: calc(var(--spacing-xxl) * 2);
     }
 
     #bd-components-target {
@@ -38,6 +34,10 @@
       grid-area: main;
       position: relative;
       z-index: 50;
+
+      @include media('large') {
+        max-width: 650px;
+      }
 
       .bd-page-components-background {
         position: absolute;

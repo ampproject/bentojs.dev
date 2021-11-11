@@ -87,14 +87,14 @@
     --spacer-inline: calc(var(--spacing-xs) * 1.25);
     display: grid;
     gap: calc(var(--spacing-xs) * 1.25);
-    grid-auto-columns: 49vmax;
+    grid-auto-columns: 20vmax;
     left: calc(var(--spacer-inline) * -1);
     margin-block-start: var(--spacing-xl);
     overflow-x: scroll;
     padding-inline: var(--spacer-inline);
     position: relative;
     scroll-snap-type: x proximity;
-    width: 101vw;
+    width: 102vw;
 
     &::-webkit-scrollbar {
       display: none;

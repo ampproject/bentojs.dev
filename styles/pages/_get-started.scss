@@ -1,9 +1,11 @@
 .bd-page-get-started {
+  $spacing-small: calc(var(--spacing-xxl) * 1.5);
+  $spacing-big: calc(var(--spacing-xxl) * 3.125);
   position: relative;
-  row-gap: 6rem;
+  row-gap: $spacing-small;
 
   @include media('medium') {
-    row-gap: 15rem;
+    row-gap: $spacing-big;
   }
 
   &__background {
@@ -54,7 +56,6 @@
 
     h1 {
       font-weight: 280;
-      margin-bottom: var(--spacing-s);
       width: auto;
       line-height: 1.14;
       letter-spacing: normal;
@@ -195,12 +196,12 @@
 
   .bd-section {
     p ~ p {
-      margin-top: var(--spacing-xs);
+      margin-block-start: var(--spacing-xs);
     }
 
     strong {
       display: block;
-      margin-top: var(--spacing-xs);
+      margin-block-start: var(--spacing-xs);
       font-weight: var(--semi-bold);
     }
 
@@ -224,11 +225,11 @@
       }
 
       &__code {
-        margin-top: var(--spacing-s);
+        margin-block-start: var(--spacing-s);
       }
 
       .spacer-xxl {
-        margin-top: var(--spacing-xxl);
+        margin-block-start: var(--spacing-xxl);
       }
     }
 
@@ -242,10 +243,6 @@
         margin-block-start: calc(var(--spacing-xxl) * 2);
         margin-inline-start: var(--spacing-xxl);
       }
-    }
-
-    &.spacer {
-      margin-block-end: 660px;
     }
   }
 
@@ -264,45 +261,42 @@
 
   .bd-contribute {
     gap: var(--spacing-xxl);
+    margin-block-end: $spacing-big;
   }
+}
 
-  .bd-discover-more {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 480px;
-    bottom: 0;
-    left: 0;
-    background: #08777c;
+.bd-discover-more {
+  display: flex;
+  padding-block: 11ch;
+  background: #08777c;
 
-    &__container {
-      margin: auto;
-      width: 65%;
+  &__container {
+    margin: auto;
+    width: 65%;
 
-      h2 {
-        color: var(--white);
-        font-weight: var(--semi-bold);
-        font-size: var(--font-size-34);
-        line-height: 1.18;
-        letter-spacing: -0.5px;
-        text-align: center;
+    h2 {
+      color: var(--white);
+      font-weight: var(--semi-bold);
+      font-size: var(--font-size-34);
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+      text-align: center;
 
-        @include media('medium') {
-          font-size: var(--font-size-56);
-          line-height: 1.14;
-          letter-spacing: -1px;
-        }
-
-        @include media('xxlarge') {
-          margin: auto;
-          width: 60%;
-        }
+      @include media('medium') {
+        font-size: var(--font-size-56);
+        line-height: 1.14;
+        letter-spacing: -1px;
       }
 
-      a {
-        display: table;
-        margin: var(--spacing-xl) auto 0;
+      @include media('xxlarge') {
+        margin: auto;
+        width: 60%;
       }
+    }
+
+    a {
+      display: table;
+      margin: var(--spacing-xl) auto 0;
     }
   }
 }

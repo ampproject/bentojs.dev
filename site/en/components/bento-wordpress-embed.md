@@ -1,6 +1,7 @@
 ---
 id: bento-wordpress-embed
 title: Bento WordPress Embed
+short_title: WordPress Embed
 layout: layouts/component.njk
 description: >-
   An iframe displaying the <a

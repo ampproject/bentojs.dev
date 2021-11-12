@@ -1,6 +1,7 @@
 ---
 id: bento-jwplayer
 title: Bento Jwplayer
+short_title: Jwplayer
 layout: layouts/component.njk
 description: Displays a cloud-hosted JW Player in an iframe.
 ---

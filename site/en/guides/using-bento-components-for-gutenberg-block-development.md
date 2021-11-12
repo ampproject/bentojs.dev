@@ -31,7 +31,7 @@ After that, you can then go to your WordPress admin and activate the newly creat
 
 The result is a simple block that can already be inserted in the block editor:
 
-{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-1.webp", "Block Editor" %}
+{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-1.png", "Block Editor" %}
 
 ## Creating the Edit component
 
@@ -110,7 +110,7 @@ We’re also going to add the following CSS to the `src/style.scss` file to set 
 
 The result is a fully functional carousel in the block editor, without any style interference from other components or plugins:
 
-{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-2.webp", "Carousel inside Gutenberg" %}
+{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-2.png", "Carousel inside Gutenberg" %}
 
 Of course ideally the images would be editable by the user and stored as attributes. You can learn more about that in the [Block Editor handbook](https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/).
 
@@ -146,7 +146,7 @@ const goToPreviousSlide = () => ref.current.prev();
 
 That’s it! The result will look like this:
 
-{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-3.webp", "Carousel with controls" %}
+{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-3.png", "Carousel with controls" %}
 
 With the Edit component handled, let’s change our focus to the blocks’ `save` function, which is responsible for generating the frontend output. This is where we’re going to use the `<bento-base-carousel>` web component.
 
@@ -326,7 +326,7 @@ After that, we can run `npm run start` again to build our script.
 
 That’s it! The result will look like this:
 
-{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-1.webp", "Finished carousel" %}
+{% image "./assets/img/guides/using-bento-components-for-gutenberg-block-development/image-4.png", "Finished carousel" %}
 
 ## Summary
 

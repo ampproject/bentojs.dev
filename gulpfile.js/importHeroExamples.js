@@ -45,21 +45,23 @@ async function importHeroExamples() {
           return;
         }
 
-        componentName = componentName[1];
+        componentName = componentName[1].replace('amp-', 'bento-');
 
         const exampleDest = path.join(EXAMPLES_DEST, componentName);
         await fs.mkdir(exampleDest, { recursive: true });
 
-        const fileDest = path.join(exampleDest, filePath.split(`/example/`)[1]);
-        console.log(fileDest)
-        asyncOps.push(fs.copyFile(filePath, fileDest));
+        const fileSrc = filePath.split(`/example/`)[1];
+        const fileDest = path.join(exampleDest, fileSrc);
+        asyncOps.push(fs.copyFile(filePath, fileDest).then(() => {
+          console.log(chalk.dim('[Import hero examples]'), `Imported ${componentName}: ${fileSrc}`);
+        }));
 
         resolve();
       })
     );
   }
 
-  await Promise.allSettled(asyncOps);
+  await Promise.all(asyncOps);
   console.log(chalk.dim('[Import hero examples]'), chalk.green.bold('Done.'));
 }
 

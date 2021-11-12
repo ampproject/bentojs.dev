@@ -83,15 +83,15 @@ function exampleShortCode(nunjucksEngine) {
           html,
           title: ctx.title,
         });
-        examples.push({id, iframe});
+        examples.push({ id, iframe });
       }
 
       let widget = contents();
       if (html.head && html.body) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
           id,
-          source: contents(),
-          iframe: !!iframe,
+          source: widget,
+          iframe: iframe ? `/assets/iframes/${id}.html` : false,
           title: ctx.title,
         });
       }

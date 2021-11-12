@@ -6,11 +6,15 @@ description: 'Embeds a <a href="https://soundcloud.com">Soundcloud</a> clip.'
 ---
 # Bento Soundcloud
 
+{% heroexample 'bento-soundcloud' %}
+
 Embeds a [Soundcloud](https://soundcloud.com) clip.
 
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
+
+The examples below demonstrate use of the `<bento-soundcloud>` web component.
 
 ### Example: Import via npm
 
@@ -25,68 +29,50 @@ defineBentoSoundcloud();
 
 ### Example: Include via `<script>`
 
-{% example %}
-
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-soundcloud {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-soundcloud-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-soundcloud-1.0.js"
-    ></script>
-    <style>
-      bento-soundcloud {
-        aspect-ratio: 1;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-soundcloud
-      id="my-track"
-      data-trackid="243169232"
-      data-visual="true"
-    ></bento-soundcloud>
-    <div class="buttons" style="margin-top: 8px">
-      <button id="change-track">Change track</button>
-    </div>
+<head>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
+  <style>
+    bento-soundcloud {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-soundcloud-1.0.js"
+  ></script>
+  <style>
+    bento-soundcloud {
+      aspect-ratio: 1;
+    }
+  </style>
+</head>
+<bento-soundcloud
+  id="my-track"
+  data-trackid="243169232"
+  data-visual="true"
+></bento-soundcloud>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-track">Change track</button>
+</div>
 
-    <script>
-      (async () => {
-        const soundcloud = document.querySelector('#my-track');
-        await customElements.whenDefined('bento-soundcloud');
+<script>
+  (async () => {
+    const soundcloud = document.querySelector('#my-track');
+    await customElements.whenDefined('bento-soundcloud');
 
-        // set up button actions
-        document.querySelector('#change-track').onclick = () => {
-          soundcloud.setAttribute('data-trackid', '243169232');
-          soundcloud.setAttribute('data-color', 'ff5500');
-          soundcloud.removeAttribute('data-visual');
-        };
-      })();
-    </script>
-  </body>
-</html>
-```{% endexample %}
+    // set up button actions
+    document.querySelector('#change-track').onclick = () => {
+      soundcloud.setAttribute('data-trackid', '243169232');
+      soundcloud.setAttribute('data-color', 'ff5500');
+      soundcloud.removeAttribute('data-visual');
+    };
+  })();
+</script>
+```
 
 ### Layout and style
 
@@ -153,6 +139,8 @@ The value for this attribute is the ID of a playlist, an integer.</td>
 ---
 
 ## Preact/React Component
+
+The examples below demonstrate use of the `<BentoSoundcloud>` as a functional component usable with the Preact or React libraries.
 
 ### Example: Import via npm
 
@@ -227,5 +215,4 @@ The value for this attribute is the ID of a playlist, an integer.</td>
     <td>This attribute is a custom color override for the "Classic" mode. The attribute is ignored in "Visual" mode. Specify a hexadecimal color value, without the leading # (e.g., <code>data-color="e540ff"</code>).</td>
   </tr>
 </table>
-
 

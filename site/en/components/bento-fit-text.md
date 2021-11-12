@@ -8,6 +8,8 @@ description: >-
 ---
 # Bento Fit Text
 
+{% heroexample 'bento-fit-text' %}
+
 Determines the best font size to fit all of a given text content within the available space.
 
 The expected content for Bento Fit Text is text or other inline content, but it can also contain non-inline content.
@@ -15,6 +17,8 @@ The expected content for Bento Fit Text is text or other inline content, but it 
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
+
+The examples below demonstrate use of the `<bento-fit-text>` web component.
 
 ### Example: Import via npm
 
@@ -29,62 +33,40 @@ defineBentoFitText();
 
 ### Example: Include via `<script>`
 
-{% example %}
-
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"
-    ></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-fit-text {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-fit-text id="my-fit-text">
-      Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
-      inermis reprehendunt.
-    </bento-fit-text>
-    <div class="buttons" style="margin-top: 8px">
-      <button id="font-button">Change max-font-size</button>
-      <button id="content-button">Change content</button>
-    </div>
+<head>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
+  <style>
+    bento-fit-text {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+</head>
+<bento-fit-text id="my-fit-text">
+  Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque inermis
+  reprehendunt.
+</bento-fit-text>
+<div class="buttons" style="margin-top: 8px">
+  <button id="font-button">Change max-font-size</button>
+  <button id="content-button">Change content</button>
+</div>
 
-    <script>
-      (async () => {
-        const fitText = document.querySelector('#my-fit-text');
-        await customElements.whenDefined('bento-fit-text');
+<script>
+  (async () => {
+    const fitText = document.querySelector('#my-fit-text');
+    await customElements.whenDefined('bento-fit-text');
 
-        // set up button actions
-        document.querySelector('#font-button').onclick = () =>
-          fitText.setAttribute('max-font-size', '40');
-        document.querySelector('#content-button').onclick = () =>
-          (fitText.textContent = 'new content');
-      })();
-    </script>
-  </body>
-</html>
-```{% endexample %}
+    // set up button actions
+    document.querySelector('#font-button').onclick = () =>
+      fitText.setAttribute('max-font-size', '40');
+    document.querySelector('#content-button').onclick = () =>
+      (fitText.textContent = 'new content');
+  })();
+</script>
+```
 
 ### Overflowing content
 
@@ -161,6 +143,8 @@ Specifies the maximum font size in pixels as an integer that the `bento-fit-text
 
 ## Preact/React Component
 
+The examples below demonstrate use of the `<BentoFitText>` as a functional component usable with the Preact or React libraries.
+
 ### Example: Import via npm
 
 ```bash
@@ -220,5 +204,4 @@ Specifies the minimum font size in pixels as an integer that the `bento-fit-text
 #### `maxFontSize`
 
 Specifies the maximum font size in pixels as an integer that the `bento-fit-text` can use.
-
 

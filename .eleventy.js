@@ -10,6 +10,7 @@ const {
   exampleShortCode,
   writeExamples,
 } = require('./site/_shortcodes/Example.js');
+const { heroExampleShortcode } = require('./site/_shortcodes/HeroExample.js');
 
 const { i18n } = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
@@ -51,6 +52,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addJavaScriptFunction('image', imageShortcode);
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);
+  eleventyConfig.addNunjucksTag('heroexample', heroExampleShortcode);
 
   eleventyConfig.addFilter('date', date);
   eleventyConfig.addFilter('i18n', i18n);

@@ -6,13 +6,15 @@ description: Displays time data that you can render in your page.
 ---
 # Bento Date Display
 
+{% heroexample 'bento-date-display' %}
+
 Displays time data that you can render in your page. By providing specific [attributes](#attributes) in the Bento Date Display tag, the Bento Date Display extension returns a list of time parameters, which you can pass to [an amp-mustache template](../../amp-mustache/amp-mustache.md) for rendering. Refer to the [list below for each returned time parameter](#returned-time-parameters).
 
+<!--
 ## Web Component
 
-We don't support the web component version of `bento-date-display` since `<template>` support is still being designed. This effort can be tracked in this [issue](https://go.amp.dev/issue/36619).
+TODO(https://go.amp.dev/issue/36619): Restore this section. We don't include it because we don't support <template> in Bento Web Components yet.
 
-<!--
 An older version of this file contains the removed section, though it's incorrect:
 
 https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c10e8/extensions/amp-date-display/1.0/README.md
@@ -21,6 +23,8 @@ https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c1
 ---
 
 ## Preact/React Component
+
+The examples below demonstrates use of the `<BentoDateDisplay>` as a functional component usable with the Preact or React libraries.
 
 ### Example: Import via npm
 
@@ -140,5 +144,4 @@ This table lists the format you can specify in your Mustache template:
 | timeZoneNameShort | Internationalized timezone, abbreviated, like `PST`           |
 | year              | 0, 1, 2, ..., 1999, 2000, 2001, etc.                          |
 | yearTwoDigit      | 00, 01, 02, ..., 17, 18, 19, ..., 98, 99                      |
-
 

@@ -8,6 +8,8 @@ description: >-
 ---
 # Bento Facebook
 
+{% heroexample 'bento-facebook' %}
+
 Embeds a [Facebook](https://facebook.com) post, a Facebook video, or a comment on a Facebook post.
 
 ## Web Component
@@ -27,305 +29,119 @@ defineBentoFacebook();
 
 ### Example: Include via `<script>`
 
-##### Embed a Facebook Post
-
-{% example %}
-
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
-    ></script>
-    <style>
-      bento-facebook {
-        width: 375px;
-        height: 472px;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-facebook
-      id="facebook-post"
-      data-href="https://www.facebook.com/ParksCanada/posts/1712989015384373"
-    >
-    </bento-facebook>
-    <div class="buttons" style="margin-top: 8px">
-      <button id="change-facebook-post">Change Facebook post</button>
-    </div>
+<head>
+  <script src="https://cdn.ampproject.org/bento.js"></script>
+  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
+  <style>
+    bento-facebook {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+  <script
+    async
+    src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
+  ></script>
+  <style>
+    bento-facebook {
+      width: 375px;
+      height: 472px;
+    }
+  </style>
+</head>
 
-    <script>
-      (async () => {
-        const facebookPost = document.querySelector('#facebook-post');
-        await customElements.whenDefined('bento-facebook');
-        // set up button actions
-        document.querySelector('#change-facebook-post').onclick = () => {
-          facebookPost.setAttribute(
-            'data-href',
-            'https://www.facebook.com/NASA/photos/a.67899501771/10159193669016772/'
-          );
-        };
-      })();
-    </script>
-  </body>
-</html>
-```{% endexample %}
+<!-- Facebook Post -->
+<bento-facebook
+  id="facebook-post"
+  data-href="https://www.facebook.com/ParksCanada/posts/1712989015384373"
+>
+</bento-facebook>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-facebook-post">Change Facebook post</button>
+</div>
 
-##### Embed a Facebook Video
+<script>
+  (async () => {
+    const facebookPost = document.querySelector('#facebook-post');
+    await customElements.whenDefined('bento-facebook');
+    // set up button actions
+    document.querySelector('#change-facebook-post').onclick = () => {
+      facebookPost.setAttribute(
+        'data-href',
+        'https://www.facebook.com/NASA/photos/a.67899501771/10159193669016772/'
+      );
+    };
+  })();
+</script>
 
-{% example %}
+<!-- Facebook Video-->
+<bento-facebook
+  id="facebook-video"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
+</bento-facebook>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-facebook-video">Change Facebook video</button>
+</div>
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
-    ></script>
-    <style>
-      bento-facebook {
-        width: 375px;
-        height: 472px;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-facebook
-      id="facebook-video"
-      data-embed-as="video"
-      data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
-    >
-    </bento-facebook>
-    <div class="buttons" style="margin-top: 8px">
-      <button id="change-facebook-video">Change Facebook video</button>
-    </div>
+<script>
+  (async () => {
+    const facebookVideo = document.querySelector('#facebook-video');
+    await customElements.whenDefined('bento-facebook');
+    // set up button actions
+    document.querySelector('#change-facebook-video').onclick = () => {
+      facebookVideo.setAttribute(
+        'data-href',
+        'https://www.facebook.com/NASA/videos/846648316199961/'
+      );
+    };
+  })();
+</script>
 
-    <script>
-      (async () => {
-        const facebookVideo = document.querySelector('#facebook-video');
-        await customElements.whenDefined('bento-facebook');
-        // set up button actions
-        document.querySelector('#change-facebook-video').onclick = () => {
-          facebookVideo.setAttribute(
-            'data-href',
-            'https://www.facebook.com/NASA/videos/846648316199961/'
-          );
-        };
-      })();
-    </script>
-  </body>
-</html>
-```{% endexample %}
+<!-- Facebook Page-->
+<bento-facebook
+  id="facebook-video"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
+</bento-facebook>
+<div class="buttons" style="margin-top: 8px">
+  <button id="change-facebook-video">Change Facebook video</button>
+</div>
 
-##### Embed a Facebook Page
+<script>
+  (async () => {
+    const facebookVideo = document.querySelector('#facebook-video');
+    await customElements.whenDefined('bento-facebook');
+    // set up button actions
+    document.querySelector('#change-facebook-video').onclick = () => {
+      facebookVideo.setAttribute(
+        'data-href',
+        'https://www.facebook.com/NASA/videos/846648316199961/'
+      );
+    };
+  })();
+</script>
 
-{% example %}
+<!-- Facebook Like-->
+<bento-facebook
+  id="facebook-video"
+  data-embed-as="like"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
+</bento-facebook>
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
-    ></script>
-    <style>
-      bento-facebook {
-        width: 375px;
-        height: 472px;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-facebook
-      id="facebook-video"
-      data-embed-as="video"
-      data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
-    >
-    </bento-facebook>
-    <div class="buttons" style="margin-top: 8px">
-      <button id="change-facebook-video">Change Facebook video</button>
-    </div>
-
-    <script>
-      (async () => {
-        const facebookVideo = document.querySelector('#facebook-video');
-        await customElements.whenDefined('bento-facebook');
-        // set up button actions
-        document.querySelector('#change-facebook-video').onclick = () => {
-          facebookVideo.setAttribute(
-            'data-href',
-            'https://www.facebook.com/NASA/videos/846648316199961/'
-          );
-        };
-      })();
-    </script>
-  </body>
-</html>
-```{% endexample %}
-
-##### Embed a Facebook Like Button
-
-{% example %}
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
-    ></script>
-    <style>
-      bento-facebook {
-        width: 375px;
-        height: 472px;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-facebook
-      id="facebook-video"
-      data-embed-as="like"
-      data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
-    >
-    </bento-facebook>
-  </body>
-</html>
-```{% endexample %}
-
-##### Embed a Facebook Comment Section
-
-{% example %}
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/bento.mjs"
-    ></script>
-    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
-    <script
-      type="module"
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs"
-    ></script>
-    <script
-      nomodule
-      async
-      src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js"
-    ></script>
-    <style>
-      bento-facebook {
-        width: 375px;
-        height: 472px;
-      }
-    </style>
-  </head>
-  <body>
-    <bento-facebook
-      id="facebook-comments"
-      data-embed-as="comments"
-      data-href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185"
-    >
-    </bento-facebook>
-  </body>
-</html>
-```{% endexample %}
+<!-- Facebook Comments-->
+<bento-facebook
+  id="facebook-comments"
+  data-embed-as="comments"
+  data-href="https://www.facebook.com/zuck/posts/10102735452532991?comment_id=1070233703036185"
+>
+</bento-facebook>
+```
 
 ### Layout and Style
 
@@ -490,6 +306,8 @@ Define a `title` attribute for the component to propagate to the underlying `<if
 
 ## Preact/React Component
 
+The examples below demonstrate use of the `<BentoFacebook>` as a functional component usable with the Preact or React libraries.
+
 ### Example: Import via npm
 
 ```bash
@@ -645,5 +463,4 @@ default, the Facebook page plugin shows the timeline activity.
 #### title (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"Facebook"`.
-
 

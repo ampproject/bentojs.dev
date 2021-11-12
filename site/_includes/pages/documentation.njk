@@ -27,14 +27,14 @@ description: Guides and tutorials on how to use Bento Components in practice.
       <section class="bd-cards">
         <h2 id="guides">{{ i18n.guides }}</h2>
 
-        {% set cardGroup = {pages: collections.guides, color: false} %}
+        {% set cardGroup = {pages: collections.guides, color: true} %}
         {% include 'partials/card-group.njk' %}
       </section>
 
       <section class="bd-cards">
         <h2 id="highlights">{{ i18n.highlighted_components }}</h2>
 
-        {% set cardGroup = {pages: collections.highlights, color: true} %}
+        {% set cardGroup = {pages: collections.highlights, color: false} %}
         {% include 'partials/card-group.njk' %}
       </section>
 

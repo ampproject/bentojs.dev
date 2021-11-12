@@ -84,13 +84,7 @@
     display: grid;
     gap: var(--spacing-xs);
     grid-row: 1;
-    grid-template-rows: auto auto;
-    height: 90%;
-
-    &:hover {
-      transform: translateY(-0.125em);
-      box-shadow: 0 25px 20px -15px rgba(0, 43, 57, 0.15);
-    }
+    grid-template-rows: min-content auto;
 
     @include media('medium') {
       grid-row: auto;
@@ -103,9 +97,8 @@
       gap: var(--spacing-m);
       grid-auto-columns: 80%;
       left: calc(var(--spacer-inline) * -1);
-      min-height: 250px;
       overflow-x: scroll;
-      padding-inline: var(--spacer-inline);
+      padding: var(--spacing-l) var(--spacer-inline);
       position: relative;
       scroll-snap-type: x proximity;
       width: 103vw;
@@ -118,7 +111,7 @@
         grid-template-columns: 1fr 1fr;
         left: unset;
         overflow: visible;
-        padding-inline: unset;
+        padding: unset;
         width: 100%;
       }
 
@@ -129,9 +122,13 @@
 
     &__title {
       font-size: var(--font-size-18);
-      font-weight: var(--semi-bold);
-      line-height: 1.33;
+      font-weight: var(--bold);
+      line-height: 1.14;
       color: inherit;
+
+      @include media('medium') {
+        font-size: var(--font-size-21);
+      }
     }
 
     &__body {
@@ -140,6 +137,12 @@
       line-height: 1.71;
       letter-spacing: 0.2px;
       color: inherit;
+    }
+
+    &--white {
+      .bd-card__title {
+        color: var(--maastricht-blue);
+      }
     }
   }
 }

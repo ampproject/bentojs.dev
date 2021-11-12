@@ -17,6 +17,7 @@
 const gulp = require('gulp');
 
 const importDocs = require('./importDocs.js');
+const importHeroExamples = require('./importHeroExamples.js');
 const eleventy = require('./eleventy.js');
 const lint = require('./lint.js');
 const sass = require('./sass.js');
@@ -33,6 +34,7 @@ const develop = gulp.series(
 
 module.exports = {
   importDocs,
+  importHeroExamples,
   lint,
   svgstore,
   default: build,

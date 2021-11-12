@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Stream Gallery
 
+{% heroexample 'bento-stream-gallery' %}
+
 The Bento Stream Gallery is for displaying multiple similar pieces of content at a time along a horizontal axis.
 
 It is a specialization of Bento Base Carousel and uses [ResizeObservers](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) to adjust dynamically adjust the size and number of displayed slides displayed based on the width of the container. To implement a more customized UX, see [`<bento-base-carousel>`](../../amp-base-carousel/1.0/README.md).
@@ -397,5 +399,4 @@ Either `start` or `center`. When start aligning, the start of a slide (e.g. the 
 ##### `snap`
 
 Either `true` or `false`, defaults to `true`. Determines whether or not the carousel should snap on slides when scrolling.
-
 

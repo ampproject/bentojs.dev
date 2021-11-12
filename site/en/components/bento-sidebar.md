@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Sidebar
 
+{% heroexample 'bento-sidebar' %}
+
 Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. The sidebar can be revealed by a button tap while the main content remains visually underneath.
 
 ## Web Component
@@ -324,5 +326,4 @@ For this reason, we recommend that affordances to open the sidebar are not place
 #### side
 
 Indicates what side of the page the sidebar should open from, either `left` or `right`. If a `side` is not specified, the `side` value will be inherited from the `body` tag's `dir` attribute (`ltr` => `left` , `rtl` => `right`); if no `dir` exists, the `side` defaults to `left`.
-
 

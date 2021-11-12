@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Fit Text
 
+{% heroexample 'bento-fit-text' %}
+
 Determines the best font size to fit all of a given text content within the available space.
 
 The expected content for Bento Fit Text is text or other inline content, but it can also contain non-inline content.
@@ -216,5 +218,4 @@ Specifies the minimum font size in pixels as an integer that the `bento-fit-text
 #### `maxFontSize`
 
 Specifies the maximum font size in pixels as an integer that the `bento-fit-text` can use.
-
 

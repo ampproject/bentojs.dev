@@ -7,6 +7,8 @@ description: Displays any content in a full-viewport &quot;lightbox&quot; modal.
 ---
 # Bento Lightbox
 
+{% heroexample 'bento-lightbox' %}
+
 Displays any content in a full-viewport "lightbox" modal.
 
 ## Web Component
@@ -244,5 +246,4 @@ A prop which takes a function which is executed after the lightbox is opened.
 #### onAfterClose
 
 A prop which takes a function which is executed after the lightbox is closed.
-
 

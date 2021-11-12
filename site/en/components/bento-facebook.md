@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Facebook
 
+{% heroexample 'bento-facebook' %}
+
 Embeds a [Facebook](https://facebook.com) post, a Facebook video, or a comment on a Facebook post.
 
 ## Web Component
@@ -580,5 +582,4 @@ Specifies the tabs to render (i.e., `timeline`, `events`, `messages`). Use a com
 #### title (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"Facebook"`.
-
 

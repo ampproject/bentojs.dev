@@ -7,6 +7,8 @@ description: Renders a MathML formula in an iframe.
 ---
 # Bento MathML
 
+{% heroexample 'bento-mathml' %}
+
 Renders a MathML formula in an iframe.
 
 ## Web Component
@@ -192,5 +194,4 @@ If specified, the component renders inline (`inline-block` in CSS).
 #### `title` (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"MathML formula"`.
-
 

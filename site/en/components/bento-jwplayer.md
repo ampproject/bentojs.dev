@@ -7,6 +7,8 @@ description: Displays a cloud-hosted JW Player in an iframe.
 ---
 # Bento Jwplayer
 
+{% heroexample 'bento-jwplayer' %}
+
 Displays a cloud-hosted JW Player in an iframe.
 
 ## Web Component
@@ -369,5 +371,4 @@ Or via `className`:
     For more details, see <a href="https://amp.dev/documentation/components/amp-video-docking">documentation on the docking extension itself.</a></td>
   </tr>
 </table>
-
 

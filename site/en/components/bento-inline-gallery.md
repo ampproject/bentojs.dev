@@ -7,6 +7,8 @@ description: 'Displays slides, with optional pagination dots and thumbnails.'
 ---
 # Bento Inline Gallery
 
+{% heroexample 'bento-inline-gallery' %}
+
 Displays slides, with optional pagination dots and thumbnails.
 
 Its implementation uses a [Bento Base Carousel](https://www.npmjs.com/package/@bentoproject/base-carousel). Both components must be properly installed for the environment (Web Component vs Preact).
@@ -235,5 +237,4 @@ Number: ratio of width to height that slides should be displayed in.
 Default: `false`
 
 Boolean attribute indicating whether thumbnails should loop.
-
 

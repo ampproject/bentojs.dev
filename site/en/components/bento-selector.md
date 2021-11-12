@@ -7,6 +7,8 @@ description: An input that presents any type of content as list of options.
 ---
 # Bento Selector
 
+{% heroexample 'bento-selector' %}
+
 An input that presents any type of content as list of options. The contents of the options aren't just limited to text. It can be configured to allow the user to select only one, or multiple options.
 
 ## Web Component
@@ -324,5 +326,4 @@ This event is triggered when a selector option is selected or deselected. The `o
   </BentoSelectorOption>
 </BentoSelector>
 ```
-
 

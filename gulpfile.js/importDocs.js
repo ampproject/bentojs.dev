@@ -21,7 +21,7 @@ const matter = require('gray-matter');
 const chalk = require('chalk');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const {split} = require('sentence-splitter');
+const { split } = require('sentence-splitter');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
@@ -32,7 +32,13 @@ const md = markdownIt({
   .use(markdownItAnchor)
   .disable('code');
 
-const _rewriteExamples = (string) => {
+function _injectHeroExamples(content, componentName) {
+  return content.replace(/# Bento .+/, (match) => {
+    return `${match}\n\n{% heroexample '${componentName}' %}`;
+  });
+}
+
+function _rewriteExamples(string) {
   const lines = string.split('\n');
   let result = '';
   let startExample = false;
@@ -56,7 +62,7 @@ const _rewriteExamples = (string) => {
   return result;
 };
 
-const extractDescription = (string) => {
+function _extractDescription(string) {
   const tokens = md.parse(string, {});
   let inParagraph = false;
   for (const token of tokens) {
@@ -103,10 +109,10 @@ function _escapeVariables(contents) {
   // or we add raw tags to existing raw blocks
   const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source +
-      '|' +
-      SOURCECODE_BLOCK.source +
-      '|' +
-      /`[^`]*`/.source,
+    '|' +
+    SOURCECODE_BLOCK.source +
+    '|' +
+    /`[^`]*`/.source,
     'g'
   );
 
@@ -115,10 +121,10 @@ function _escapeVariables(contents) {
   // TODO: Avoid the need to distinguish between mustache and jinja2
   const MUSTACHE_PATTERN = new RegExp(
     '(' +
-      JINJA2_RAW_BLOCK.source +
-      '|' +
-      /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
-      ')',
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+    ')',
     'g'
   );
 
@@ -174,22 +180,21 @@ async function importComponents() {
         const document = matter(file);
 
         const name = _parseComponentName(document.content);
-        const fileName = name.replace(/ /g, '-').toLowerCase();
 
         document.data.id = componentName;
         document.data.title = name;
         document.data.short_title = name.replace('Bento ', '');
         document.data.layout = 'layouts/component.njk';
-        document.data.description = extractDescription(document.content);
+        document.data.description = _extractDescription(document.content);
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
-        document.content = _rewriteExamples(document.content);
         document.content = _rewriteCodeFenceShToBash(document.content);
+        document.content = _injectHeroExamples(document.content, componentName);
 
         await fs.writeFile(
-          path.join(COMPONENTS_DEST, `${fileName}.md`),
+          path.join(COMPONENTS_DEST, `${componentName}.md`),
           document.stringify()
         );
 

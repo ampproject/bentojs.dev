@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Embedly Card
 
+{% heroexample 'bento-embedly-card' %}
+
 Provides responsive and shareable embeds using [Embedly cards](http://docs.embed.ly/docs/cards)
 
 Cards are the easiest way to leverage Embedly. For any media, cards provide a responsive embed with built-in embed analytics.
@@ -292,5 +294,4 @@ Allows settings the `dark` theme which changes the background color of the main 
 #### title (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"Embedly card"`.
-
 

@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Twitter
 
+{% heroexample 'bento-twitter' %}
+
 Embeds [Twitter](https://twitter.com) content like a Tweet or a Moment.
 
 ## Web Component
@@ -239,5 +241,4 @@ function MyComponent() {
     <td>Define a <code>title</code> for the component iframe. The default is <code>Twitter</code>.</td>
   </tr>
 </table>
-
 

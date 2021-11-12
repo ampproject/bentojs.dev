@@ -7,6 +7,8 @@ description: 'Counts up to, or away from, a specified date and time.'
 ---
 # Bento Timeago
 
+{% heroexample 'bento-timeago' %}
+
 Counts up to, or away from, a specified date and time. It replaces the text node with a timestamp in natural language, such as `in 30 years` or `3 hours ago`.
 
 ## Web Component
@@ -269,5 +271,4 @@ Add the `cutoff` prop to display the date specified in the `datetime` prop after
 #### `placeholder`
 
 Add the `placeholder` props to display the fallback text. The calculated timestamp will replace the placeholder text once ready.
-
 

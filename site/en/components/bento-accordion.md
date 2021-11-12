@@ -7,6 +7,8 @@ description: Displays content sections that can be collapsed and expanded.
 ---
 # Bento Accordion
 
+{% heroexample 'bento-accordion' %}
+
 Displays content sections that can be collapsed and expanded. This component provides a way for viewers to glance at the content outline and jump to any section. Effective use reduces scrolling needs on mobile devices.
 
 -   A Bento Accordion accepts one or more `<section>` elements as its direct children.
@@ -665,5 +667,4 @@ BentoAccordionHeader does not yet support any custom props
 This component supports the [common props](../../../docs/spec/bento-common-props.md) for React and Preact components.
 
 BentoAccordionContent does not yet support any custom props
-
 

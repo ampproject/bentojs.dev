@@ -7,6 +7,8 @@ description: 'Embeds a <a href="https://soundcloud.com">Soundcloud</a> clip.'
 ---
 # Bento Soundcloud
 
+{% heroexample 'bento-soundcloud' %}
+
 Embeds a [Soundcloud](https://soundcloud.com) clip.
 
 ## Web Component
@@ -228,5 +230,4 @@ The value for this attribute is the ID of a playlist, an integer.</td>
     <td>This attribute is a custom color override for the "Classic" mode. The attribute is ignored in "Visual" mode. Specify a hexadecimal color value, without the leading # (e.g., <code>data-color="e540ff"</code>).</td>
   </tr>
 </table>
-
 

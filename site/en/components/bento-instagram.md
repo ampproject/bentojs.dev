@@ -7,6 +7,8 @@ description: Embeds an Instagram post.
 ---
 # Bento Instagram
 
+{% heroexample 'bento-instagram' %}
+
 Embeds an Instagram post.
 
 ## Web Component
@@ -187,5 +189,4 @@ The instagram shortcode is found in every instagram photo URL. For example, in h
 #### `captioned`
 
 Include the Instagram caption. `bento-instagram` will attempt to resize to the correct height including the caption.
-
 

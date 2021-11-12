@@ -7,6 +7,8 @@ description: Displays a countdown sequence to a specified date.
 ---
 # Bento Date Countdown
 
+{% heroexample 'bento-date-countdown' %}
+
 Displays a countdown sequence to a specified date. Refer to the [returned time parameters section](#returned-time-parameters) for information on the available time parameters.
 
 ## Web Component
@@ -156,5 +158,4 @@ This table provides examples of formatted values specified in a Mustache templat
 | {d} {days} {h} {hours} {m} {minutes}            | 20 days 5 hours 10 minutes           | -                      |
 | {h} {hours} {m} {minutes}                       | 240 hours 10 minutes                 | `biggest-unit='hours'` |
 | {d} {days} {h} {hours} {m} {minutes}            | 50 天 5 小时 10 分钟                 | `locale='zh-cn'`       |
-
 

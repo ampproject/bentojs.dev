@@ -7,6 +7,8 @@ description: Provides a modal &quot;lightbox&quot; experience for images.
 ---
 # Bento Lightbox Gallery
 
+{% heroexample 'bento-lightbox-gallery' %}
+
 Provides a modal "lightbox" experience for images.
 
 When the user interacts with the element, a modal expands to fill the viewport until it is closed by the user.
@@ -253,5 +255,4 @@ A boolean prop which defaults to true which lets the child image activate the li
 #### onClick
 
 A prop which takes a functhion which is executed when the image is clicked.
-
 

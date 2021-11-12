@@ -7,6 +7,8 @@ description: Displays time data that you can render in your page.
 ---
 # Bento Date Display
 
+{% heroexample 'bento-date-display' %}
+
 Displays time data that you can render in your page. By providing specific [attributes](#attributes) in the Bento Date Display tag, the Bento Date Display extension returns a list of time parameters, which you can pass to [an amp-mustache template](../../amp-mustache/amp-mustache.md) for rendering. Refer to the [list below for each returned time parameter](#returned-time-parameters).
 
 ## Web Component
@@ -140,5 +142,4 @@ This table lists the format you can specify in your Mustache template:
 | timeZoneNameShort | Internationalized timezone, abbreviated, like `PST`           |
 | year              | 0, 1, 2, ..., 1999, 2000, 2001, etc.                          |
 | yearTwoDigit      | 00, 01, 02, ..., 17, 18, 19, ..., 98, 99                      |
-
 

@@ -4,8 +4,12 @@ const fg = require('fast-glob');
 const chalk = require('chalk');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
-const EXAMPLES_DEST = path.resolve(__dirname, '..', 'assets/iframes/hero-examples');
-const PATH_COMPONENT_NAME_PATTERN = /amphtml\/extensions\/(.*?)\//gm
+const EXAMPLES_DEST = path.resolve(
+  __dirname,
+  '..',
+  'assets/iframes/hero-examples'
+);
+const PATH_COMPONENT_NAME_PATTERN = /amphtml\/extensions\/(.*?)\//m;
 
 async function importHeroExamples() {
   const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/1.0/example/**/*'));
@@ -23,6 +27,7 @@ async function importHeroExamples() {
       new Promise(async (resolve, reject) => {
         let componentName = PATH_COMPONENT_NAME_PATTERN.exec(filePath);
         if (!componentName || !componentName[1]) {
+          console.log('invalid', filePath, componentName);
           chalk.bold.yellow('Unknown component path pattern:', filePath);
           resolve();
           return;
@@ -31,13 +36,18 @@ async function importHeroExamples() {
         componentName = componentName[1].replace('amp-', 'bento-');
 
         const exampleDest = path.join(EXAMPLES_DEST, componentName);
-        await fs.mkdir(exampleDest, { recursive: true });
+        await fs.mkdir(exampleDest, {recursive: true});
 
         const fileSrc = filePath.split(`/example/`)[1];
         const fileDest = path.join(exampleDest, fileSrc);
-        asyncOps.push(fs.copyFile(filePath, fileDest).then(() => {
-          console.log(chalk.dim('[Import hero examples]'), `Imported ${componentName}: ${fileSrc}`);
-        }));
+        asyncOps.push(
+          fs.copyFile(filePath, fileDest).then(() => {
+            console.log(
+              chalk.dim('[Import hero examples]'),
+              `Imported ${componentName}: ${fileSrc}`
+            );
+          })
+        );
 
         resolve();
       })

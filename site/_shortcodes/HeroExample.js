@@ -17,16 +17,20 @@
 const fs = require('fs/promises');
 const path = require('path');
 
-const EXAMPLES_SRC = path.resolve(__dirname, '../..', 'assets/iframes/hero-examples');
+const EXAMPLES_SRC = path.resolve(
+  __dirname,
+  '../..',
+  'assets/iframes/hero-examples'
+);
 
 function heroExampleShortcode(nunjucksEngine) {
   return new (function () {
     this.tags = ['heroexample'];
 
     this.parse = function (parser, nodes, lexer) {
-      let tok = parser.nextToken();
+      const tok = parser.nextToken();
 
-      let args = parser.parseSignature(null, true);
+      const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
 
       return new nodes.CallExtensionAsync(this, 'run', args);
@@ -34,7 +38,9 @@ function heroExampleShortcode(nunjucksEngine) {
 
     this._loadExample = async function (componentName) {
       try {
-        const html = await fs.readFile(path.join(EXAMPLES_SRC, componentName, 'index.html'));
+        const html = await fs.readFile(
+          path.join(EXAMPLES_SRC, componentName, 'index.html')
+        );
 
         const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
         let body = HTML_BODY_PATTERN.exec(html);
@@ -54,6 +60,7 @@ function heroExampleShortcode(nunjucksEngine) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
           id: `${componentName}-hero`,
           source: exampleBody,
+          hero: true,
           iframe: `/assets/iframes/hero-examples/${componentName}/`,
         });
       }

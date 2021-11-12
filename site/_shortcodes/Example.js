@@ -27,12 +27,12 @@ function exampleShortCode(nunjucksEngine) {
     this.tags = ['example'];
 
     this.parse = function (parser, nodes, lexer) {
-      let tok = parser.nextToken();
+      const tok = parser.nextToken();
 
-      let args = parser.parseSignature(null, true);
+      const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
 
-      let body = parser.parseUntilBlocks('endexample');
+      const body = parser.parseUntilBlocks('endexample');
       parser.advanceAfterBlockEnd();
 
       return new nodes.CallExtensionAsync(this, 'run', args, [body]);
@@ -83,7 +83,7 @@ function exampleShortCode(nunjucksEngine) {
           html,
           title: ctx.title,
         });
-        examples.push({ id, iframe });
+        examples.push({id, iframe});
       }
 
       let widget = contents();
@@ -91,6 +91,7 @@ function exampleShortCode(nunjucksEngine) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
           id,
           source: widget,
+          hero: false,
           iframe: iframe ? `/assets/iframes/${id}.html` : false,
           title: ctx.title,
         });

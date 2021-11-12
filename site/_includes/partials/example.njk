@@ -4,16 +4,16 @@ Do not change formatting this would break rendering. #}
 <section class="bd-example">
 <header class="bd-example-toggle">
 {% if iframe -%}
-<button class="bd-example-toggle-option --active --code">Code</button>
-<button class="bd-example-toggle-option --preview">Preview</button>
+<button class="bd-example-toggle-option {% if not hero %}--active {% endif %}--code">Code</button>
+<button class="bd-example-toggle-option {% if hero %}--active {% endif %}--preview">Preview</button>
 {% endif -%}
 </header>
-<div class="bd-example-code">
+<div class="bd-example-code{% if hero %} --hidden{% endif %}">
 {{ source|safe }}
 </div>
 
 {% if iframe %}
-<div class="bd-example-preview --hidden">
+<div class="bd-example-preview{% if not hero %} --hidden{% endif %}">
 <iframe src="{{ iframe }}"></iframe>
 </div>
 {% endif %}

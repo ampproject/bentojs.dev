@@ -1,6 +1,7 @@
 ---
 id: bento-embedly-card
 title: Bento Embedly Card
+short_title: Embedly Card
 layout: layouts/component.njk
 description: >-
   Provides responsive and shareable embeds using <a

@@ -1,6 +1,7 @@
 ---
 id: bento-twitter
 title: Bento Twitter
+short_title: Twitter
 layout: layouts/component.njk
 description: >-
   Embeds <a href="https://twitter.com">Twitter</a> content like a Tweet or a

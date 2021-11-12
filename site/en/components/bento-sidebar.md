@@ -1,6 +1,7 @@
 ---
 id: bento-sidebar
 title: Bento Sidebar
+short_title: Sidebar
 layout: layouts/component.njk
 description: >-
   Provides a way to display meta content intended for temporary access such as

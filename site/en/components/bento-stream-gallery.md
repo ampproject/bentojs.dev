@@ -1,6 +1,7 @@
 ---
 id: bento-stream-gallery
 title: Bento Stream Gallery
+short_title: Stream Gallery
 layout: layouts/component.njk
 description: >-
   The Bento Stream Gallery is for displaying multiple similar pieces of content

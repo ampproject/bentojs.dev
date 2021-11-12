@@ -1,6 +1,7 @@
 ---
 id: bento-facebook
 title: Bento Facebook
+short_title: Facebook
 layout: layouts/component.njk
 description: >-
   Embeds a <a href="https://facebook.com">Facebook</a> post, a Facebook video,

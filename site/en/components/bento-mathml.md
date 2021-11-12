@@ -1,6 +1,7 @@
 ---
 id: bento-mathml
 title: Bento MathML
+short_title: MathML
 layout: layouts/component.njk
 description: Renders a MathML formula in an iframe.
 ---

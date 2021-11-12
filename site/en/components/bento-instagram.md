@@ -1,6 +1,7 @@
 ---
 id: bento-instagram
 title: Bento Instagram
+short_title: Instagram
 layout: layouts/component.njk
 description: Embeds an Instagram post.
 ---

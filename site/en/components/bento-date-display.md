@@ -1,6 +1,7 @@
 ---
 id: bento-date-display
 title: Bento Date Display
+short_title: Date Display
 layout: layouts/component.njk
 description: Displays time data that you can render in your page.
 ---

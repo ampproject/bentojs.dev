@@ -1,6 +1,7 @@
 ---
 id: bento-lightbox
 title: Bento Lightbox
+short_title: Lightbox
 layout: layouts/component.njk
 description: Displays any content in a full-viewport &quot;lightbox&quot; modal.
 ---

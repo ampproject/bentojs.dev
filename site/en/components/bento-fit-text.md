@@ -1,6 +1,7 @@
 ---
 id: bento-fit-text
 title: Bento Fit Text
+short_title: Fit Text
 layout: layouts/component.njk
 description: >-
   Determines the best font size to fit all of a given text content within the

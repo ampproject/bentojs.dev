@@ -1,6 +1,7 @@
 ---
 id: bento-timeago
 title: Bento Timeago
+short_title: Timeago
 layout: layouts/component.njk
 description: 'Counts up to, or away from, a specified date and time.'
 ---

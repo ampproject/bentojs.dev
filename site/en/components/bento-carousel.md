@@ -1,6 +1,7 @@
 ---
 id: bento-base-carousel
 title: Bento Carousel
+short_title: Carousel
 layout: layouts/component.njk
 description: >-
   A generic carousel for displaying multiple similar pieces of content along a

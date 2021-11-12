@@ -24,6 +24,7 @@ const sass = require('./sass.js');
 const app = require('./app.js');
 const svgstore = require('./svgstore.js');
 
+const importAll = gulp.parallel(importHeroExamples, importDocs);
 const build = gulp.series(sass.build, app.build, svgstore, eleventy.build);
 const develop = gulp.series(
   sass.build,
@@ -33,6 +34,7 @@ const develop = gulp.series(
 );
 
 module.exports = {
+  import: importAll,
   importDocs,
   importHeroExamples,
   lint,

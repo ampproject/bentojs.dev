@@ -11,11 +11,11 @@ description: Displays a countdown sequence to a specified date.
 
 Displays a countdown sequence to a specified date. Refer to the [returned time parameters section](#returned-time-parameters) for information on the available time parameters.
 
-<!--
 ## Web Component
 
-TODO(https://go.amp.dev/issue/36619): Restore this section. We don't include it because we don't support <template> in Bento Web Components yet.
+We don't support the web component version of `bento-date-countdown` since `<template>` support is still being designed. This effort can be tracked in this [issue](https://go.amp.dev/issue/36619).
 
+<!--
 An older version of this file contains the removed section, though it's incorrect:
 
 https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c10e8/extensions/amp-date-countdown/1.0/README.md
@@ -24,8 +24,6 @@ https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c1
 ---
 
 ## Preact/React Component
-
-The examples below demonstrates use of the `<BentoDateCountdown>` as a functional component usable with the Preact or React libraries.
 
 ### Example: Import via npm
 
@@ -99,7 +97,8 @@ Optional callback that should render a template. The callback will be provided a
 By default, the Bento Date Countdown component will display the [`localeString` form of the Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for the given locale and localeOption. See the [Returned Time Parameters section](#returned-time-parameters) for more details on how each property will be displayed.
 
 ```typescript
-(dateParams: DateParams) => JSXInternal.Element
+function render(dateParams: DateParams): JSXInternal.Element;
+
 interface DateParams {
   day: number;
   dayName: string;
@@ -127,7 +126,7 @@ interface DateParams {
 }
 ```
 
-### Returned Time Parameters
+## Returned Time Parameters
 
 This table lists the format you can specify in your Mustache template:
 
@@ -146,7 +145,7 @@ This table lists the format you can specify in your Mustache template:
 | minutes | internationalization string for minute or minutes |
 | seconds | internationalization string for second or seconds |
 
-#### Samples of formatted values
+### Samples of formatted values
 
 This table provides examples of formatted values specified in a Mustache template, and a sample of what the output:
 

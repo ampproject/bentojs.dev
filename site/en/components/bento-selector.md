@@ -1,6 +1,7 @@
 ---
 id: bento-selector
 title: Bento Selector
+short_title: Selector
 layout: layouts/component.njk
 description: An input that presents any type of content as list of options.
 ---
@@ -27,35 +28,50 @@ defineBentoSelector();
 
 ### Example: Include via `<script>`
 
+{% example %}
+
 ```html
-<head>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-  <style>
-    bento-selector {
-      display: block;
-    }
-  </style>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-selector-1.0.js"
-  ></script>
-</head>
-<body>
-  <bento-selector class="sample-selector">
-    <ul>
-      <li option="1">Option 1</li>
-      <li option="2">Option 2</li>
-      <li option="3">Option 3</li>
-      <li option="4">Option 4</li>
-    </ul>
-  </bento-selector>
-</body>
-```
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-selector-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-selector-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-selector-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-selector class="sample-selector">
+      <ul>
+        <li option="1">Option 1</li>
+        <li option="2">Option 2</li>
+        <li option="3">Option 3</li>
+        <li option="4">Option 4</li>
+      </ul>
+    </bento-selector>
+  </body>
+</html>
+```{% endexample %}
 
 ### Usage notes
 
--   A `bento-selector` can contain any arbitrary HTML elements or AMP components (e.g., `bento-carousel`, etc.).
+-   A `bento-selector` can contain any arbitrary HTML elements or Bento components (e.g., `bento-carousel`, etc.).
 -   A `bento-selector` cannot contain any nested `bento-selector` controls.
 -   Selectable options can be set by adding the `option` attribute to the element and assigning a value to the attribute (e.g., `<li option="value"></li>`).
 -   Disabled options can be set by adding the `disabled` attribute to the element (e.g., `<li option="d" disabled></li>`).
@@ -138,9 +154,7 @@ The `bento-selector` API allows you to register and respond to the following eve
 
 #### select
 
-This event is triggered when the user selects an option.
-Multi-selectors and single-selectors fire this when selecting or unselecting options.
-Tapping disabled options does not trigger the `select` event.
+This event is triggered when the user selects an option. Multi-selectors and single-selectors fire this when selecting or unselecting options. Tapping disabled options does not trigger the `select` event.
 
 <ul>
   <li>
@@ -157,8 +171,6 @@ selector.addEventListener('select', (e) => console.log(e.data.targetOption));
 ---
 
 ## Preact/React Component
-
-The examples below demonstrate use of the `<BentoSelector>` as a functional component usable with the Preact or React libraries.
 
 ### Example: Import via npm
 
@@ -192,8 +204,7 @@ function App() {
 
 The `BentoSelector` component can be styled with standard CSS.
 
-The `width` and `height` of the `BentoSelector` may both be set in order to adjust the default size of the component.
-To ensure the component renders how you want it to, be sure to apply a size to the component. These can be applied inline:
+The `width` and `height` of the `BentoSelector` may both be set in order to adjust the default size of the component. To ensure the component renders how you want it to, be sure to apply a size to the component. These can be applied inline:
 
 ```jsx
 <BentoSelector style={% raw %}{{width: 100, height: 400}}{% endraw %}>
@@ -296,8 +307,7 @@ ref.current.toggle('2', true); // Select the item with the attribute `option="2"
 
 #### onChange
 
-This event is triggered when a selector option is selected or deselected.
-The `onChange` prop gives you two key options:
+This event is triggered when a selector option is selected or deselected. The `onChange` prop gives you two key options:
 
 -   `option` which returns the value of the `option` prop of the `BentoSelectorOption` which was selected or deselected.
 -   `value` which returns an array of which `BentoSelectorOptions` are currently selected in the order they were selected.

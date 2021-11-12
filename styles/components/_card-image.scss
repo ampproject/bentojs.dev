@@ -1,9 +1,9 @@
 @mixin cardImage {
-  align-items: end;
+  align-items: baseline;
   display: grid;
   grid-row: 1;
   grid-template-areas: 'image' 'body' 'footer';
-  grid-template-rows: minmax(auto, 180px) min-content min-content;
+  grid-template-rows: minmax(auto, 180px) auto min-content;
   row-gap: var(--spacing-s);
   max-width: 400px;
 }
@@ -79,6 +79,13 @@
     &--four {
       grid-column: 7 / span 4;
       grid-row: 4 / span 3;
+    }
+
+    &--two,
+    &--three {
+      picture {
+        display: none;
+      }
     }
   }
 

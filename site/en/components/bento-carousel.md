@@ -9,6 +9,8 @@ description: >-
 ---
 # Bento Carousel
 
+{% heroexample 'bento-base-carousel' %}
+
 A generic carousel for displaying multiple similar pieces of content along a horizontal or vertical axis. Each of the component’s immediate children is considered an item in the carousel. Each of these nodes may also have arbitrary children. The carousel consists of an arbitrary number of items, as well as optional navigational arrows to go forward or backwards a single item. The carousel advances between items if the user swipes or uses the customizable arrow buttons.
 
 ## Web Component
@@ -627,5 +629,4 @@ function CustomNextButton(props) {
   // …
 </BentoBaseCarousel>
 ```
-
 

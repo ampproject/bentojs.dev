@@ -164,6 +164,7 @@ async function importComponents() {
         const document = matter(file);
 
         const name = _parseComponentName(document.content);
+        const fileName = name.replace(/ /g, '-').toLowerCase();
 
         document.data.id = componentName;
         document.data.title = name;

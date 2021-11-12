@@ -1,33 +1,20 @@
-<nav class="toc">
+<bento-sidebar id="bd-toc" side="right">
+  <nav
+    class="bd-sidebar__contents bd-sidebar__contents--toc"
+    toolbar="(min-width: 1024px)"
+    toolbar-target="bd-toc-target">
+    <h3>Table of contents</h3>
   <ol>
     <li>
-      <a href="#highlighted-components">{{ i18n.toc.highlighted }}</a>
+      <a href="#guides">{{ i18n.guides }}</a>
     </li>
     <li>
-      <a href="#components">{{ i18n.toc.components }}</a>
-      <ol>
-        <li>
-          <a href="#advertising-analytics">{{ i18n.toc.advertising_analytics }}</a>
-        </li>
-        <li>
-          <a href="#dynamic-content">{{ i18n.toc.dynamic }}</a>
-        </li>
-        <li>
-          <a href="#layout">{{ i18n.toc.layout }}</a>
-        </li>
-        <li>
-          <a href="#media">{{ i18n.toc.media }}</a>
-        </li>
-        <li>
-          <a href="#presentation">{{ i18n.toc.presentation }}</a>
-        </li>
-        <li>
-          <a href="#social">{{ i18n.toc.social }}</a>
-        </li>
-        <li>
-          <a href="#social-layer">{{ i18n.toc.social_login }}</a>
-        </li>
-      </ol>
+      <a href="#highlights">{{ i18n.highlighted_components }}</a>
+    </li>
+    <li>
+      <a href="#all">{{ i18n.all_components }}</a>
     </li>
   </ol>
-</nav>
+  </nav>
+</bento-sidebar>
+<div class="bd-sidebar__target" id="bd-toc-target"></div>

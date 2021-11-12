@@ -5,7 +5,7 @@ tags: main
 title: Documentation
 i18n:
   guides: Guides
-  highlighted_components: Highlight Components
+  highlighted_components: Component highlights
   all_components: All Components
   categories:
     date-time: Date & Time

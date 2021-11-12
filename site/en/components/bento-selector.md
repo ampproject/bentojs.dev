@@ -37,12 +37,6 @@ defineBentoSelector();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-selector {
-        display: block;
-      }
-    </style>
     <script
       type="module"
       async
@@ -53,6 +47,11 @@ defineBentoSelector();
       async
       src="https://cdn.ampproject.org/v0/bento-selector-1.0.js"
     ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-selector-1.0.css"
+    />
   </head>
   <body>
     <bento-selector class="sample-selector">
@@ -152,9 +151,7 @@ The `bento-selector` API allows you to register and respond to the following eve
 
 #### select
 
-This event is triggered when the user selects an option.
-Multi-selectors and single-selectors fire this when selecting or unselecting options.
-Tapping disabled options does not trigger the `select` event.
+This event is triggered when the user selects an option. Multi-selectors and single-selectors fire this when selecting or unselecting options. Tapping disabled options does not trigger the `select` event.
 
 <ul>
   <li>
@@ -204,8 +201,7 @@ function App() {
 
 The `BentoSelector` component can be styled with standard CSS.
 
-The `width` and `height` of the `BentoSelector` may both be set in order to adjust the default size of the component.
-To ensure the component renders how you want it to, be sure to apply a size to the component. These can be applied inline:
+The `width` and `height` of the `BentoSelector` may both be set in order to adjust the default size of the component. To ensure the component renders how you want it to, be sure to apply a size to the component. These can be applied inline:
 
 ```jsx
 <BentoSelector style={% raw %}{{width: 100, height: 400}}{% endraw %}>
@@ -308,8 +304,7 @@ ref.current.toggle('2', true); // Select the item with the attribute `option="2"
 
 #### onChange
 
-This event is triggered when a selector option is selected or deselected.
-The `onChange` prop gives you two key options:
+This event is triggered when a selector option is selected or deselected. The `onChange` prop gives you two key options:
 
 -   `option` which returns the value of the `option` prop of the `BentoSelectorOption` which was selected or deselected.
 -   `value` which returns an array of which `BentoSelectorOptions` are currently selected in the order they were selected.

@@ -12,8 +12,6 @@ Renders a MathML formula in an iframe.
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-The examples below demonstrate use of the `<bento-mathml>` web component.
-
 ### Example: Import via npm
 
 ```bash
@@ -27,66 +25,54 @@ defineBentoMathml();
 
 ### Example: Include via `<script>`
 
-The example below contains an `bento-mathml` with three sections. The
-`expanded` attribute on the third section expands it on page load.
+{% example %}
 
 ```html
-<head>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-mathml-1.0.js"
-  ></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/bento-mathml-1.0.css"
-  />
-</head>
-<body>
-  <h2>The Quadratic Formula</h2>
-  <bento-mathml
-    style="height: 40px"
-    data-formula="\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]"
-  ></bento-mathml>
-
-  <h2>Cauchy's Integral Formula</h2>
-  <bento-mathml
-    style="height: 41px"
-    data-formula="\[f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz\]"
-  ></bento-mathml>
-
-  <h2>Double angle formula for Cosines</h2>
-  <bento-mathml
-    style="height: 19px"
-    data-formula="\[cos(θ+φ)=\cos(θ)\cos(φ)−\sin(θ)\sin(φ)\]"
-  ></bento-mathml>
-
-  <h2>Inline formula</h2>
-  <p>
-    This is an example of a formula of
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-mathml-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-mathml-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-mathml-1.0.css"
+    />
+  </head>
+  <body>
+    <h2>The Quadratic Formula</h2>
     <bento-mathml
-      style="height: 11px; width: 8px"
-      inline
-      data-formula="`x`"
-    ></bento-mathml
-    >,
-    <bento-mathml
-      style="height: 40px; width: 147px"
-      inline
+      style="height: 40px;"
       data-formula="\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]"
     ></bento-mathml>
-    placed inline in the middle of a block of text.
-    <bento-mathml
-      style="height: 19px; width: 72px"
-      inline
-      data-formula="\( \cos(θ+φ) \)"
-    ></bento-mathml>
-    This shows how the formula will fit inside a block of text and can be styled
-    with CSS.
-  </p>
-</body>
-```
+
+    <h2>Inline formula</h2>
+    <p>
+      This is an example of a formula,
+      <bento-mathml
+        style="height: 40px; width: 147px"
+        inline
+        data-formula="\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]"
+      ></bento-mathml>
+      placed inline in the middle of a block of text.
+    </p>
+  </body>
+</html>
+```{% endexample %}
 
 ### Layout and style
 
@@ -134,8 +120,6 @@ You may use the `bento-mathml` element selector to style the accordion freely.
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoMathml>` as a functional component usable with the Preact or React libraries.
-
 ### Example: Import via npm
 
 ```bash
@@ -156,40 +140,15 @@ function App() {
         formula="\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]"
       ></BentoMathml>
 
-      <h2>Cauchy's Integral Formula</h2>
-      <BentoMathml
-        style={% raw %}{{height: 41}}{% endraw %}
-        formula="\[f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz\]"
-      ></BentoMathml>
-
-      <h2>Double angle formula for Cosines</h2>
-      <BentoMathml
-        style={% raw %}{{height: 19}}{% endraw %}
-        formula="\[cos(θ+φ)=\cos(θ)\cos(φ)−\sin(θ)\sin(φ)\]"
-      ></BentoMathml>
-
       <h2>Inline formula</h2>
       <p>
-        This is an example of a formula of{' '}
-        <BentoMathml
-          style={% raw %}{{height: 11, width: 8}}{% endraw %}
-          inline
-          formula="`x`"
-        ></BentoMathml>
-        ,{' '}
+        This is an example of a formula,{' '}
         <BentoMathml
           style={% raw %}{{height: 40, width: 147}}{% endraw %}
           inline
           formula="\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]"
-        ></BentoMathml>{' '}
-        placed inline in the middle of a block of text.{' '}
-        <BentoMathml
-          style={% raw %}{{height: 19, width: 72}}{% endraw %}
-          inline
-          formula="\( \cos(θ+φ) \)"
-        ></BentoMathml>{' '}
-        This shows how the formula will fit inside a block of text and can be
-        styled with CSS.
+        ></BentoMathml>
+        , placed inline in the middle of a block of text. This shows how the formula will fit inside a block of text and can be styled with CSS.
       </p>
     </>
   );
@@ -214,7 +173,6 @@ Or via `className`:
 
 ```css
 .custom-styles {
-  background-color: red;
   height: 40px;
   width: 147px;
 }
@@ -233,3 +191,5 @@ If specified, the component renders inline (`inline-block` in CSS).
 #### `title` (optional)
 
 Define a `title` attribute for the component to propagate to the underlying `<iframe>` element. The default value is `"MathML formula"`.
+
+

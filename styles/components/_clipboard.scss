@@ -2,6 +2,7 @@
   position: relative;
 
   .bd-copy {
+    opacity: 0;
     height: 32px;
     width: 32px;
     position: absolute;
@@ -11,6 +12,7 @@
     padding: 0;
     display: flex;
     justify-content: center;
+    background: var(--maastricht-blue);
 
     svg {
       height: 24px;
@@ -20,6 +22,9 @@
       color: white;
     }
 
+  }
+  &:hover .bd-copy {
+    opacity: 1;
   }
   &.--success .bd-copy-icon-default {
     display: none;

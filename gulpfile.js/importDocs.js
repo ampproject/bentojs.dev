@@ -32,6 +32,30 @@ const md = markdownIt({
   .use(markdownItAnchor)
   .disable('code');
 
+const _rewriteExamples = (string) => {
+  const lines = string.split('\n');
+  let result = '';
+  let startExample = false;
+  let endExample = false;
+  for (let line of lines) {
+    if (line.match(/<!--%\s+example\s+%--/)) {
+      line = '{% example %}';
+      startExample = true;
+      endExample = false;
+    } else if (line.trim().startsWith('```')) {
+      if (startExample) {
+        startExample = false;
+        endExample = true;
+      } else if (endExample) {
+        line += '{% endexample %}';
+        endExample = false;
+      }
+    }
+    result += line + '\n';
+  }
+  return result;
+};
+
 const extractDescription = (string) => {
   const tokens = md.parse(string, {});
   let inParagraph = false;
@@ -60,16 +84,6 @@ function _rewriteCalloutToTip(contents) {
 
   contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
     return `{% tip '${AVAILABLE_CALLOUT_TYPES[type]}' %}${text}{% endtip %}`;
-  });
-
-  return contents;
-}
-
-function _rewriteExamples(contents) {
-  const EXAMPLE_PATTERN = /\[example (.*?)\](.*?)\[\/example\]/gs;
-
-  contents = contents.replace(EXAMPLE_PATTERN, (match, args, example) => {
-    return `{% example %}${example}{% endexample %}`;
   });
 
   return contents;
@@ -169,6 +183,7 @@ async function importComponents() {
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
+        document.content = _rewriteExamples(document.content);
         document.content = _rewriteExamples(document.content);
         document.content = _rewriteCodeFenceShToBash(document.content);
 

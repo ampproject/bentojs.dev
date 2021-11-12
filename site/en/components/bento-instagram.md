@@ -12,8 +12,6 @@ Embeds an Instagram post.
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
-The examples below demonstrate use of the `<bento-instagram>` web component.
-
 ### Example: Import via npm
 
 ```bash
@@ -27,44 +25,60 @@ defineBentoInstagram();
 
 ### Example: Include via `<script>`
 
+{% example %}
+
 ```html
-<head>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-instagram-1.0.js"
-  ></script>
-  <style>
-    bento-instagram {
-      display: block;
-      overflow: hidden;
-      position: relative;
-    }
-  </style>
-</head>
-<body>
-  <bento-instagram
-    id="my-instagram"
-    data-shortcode="CKXYAzuj7TE"
-    data-captioned
-    style="height: 800px; width: 400px;"
-  >
-  </bento-instagram>
-  <button id="change-shortcode">Change shortcode</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-instagram-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-instagram-1.0.js"
+    ></script>
+    <style>
+      bento-instagram {
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <bento-instagram
+      id="my-instagram"
+      data-shortcode="CKXYAzuj7TE"
+      data-captioned
+      style="height: 800px; width: 400px"
+    >
+    </bento-instagram>
+    <button id="change-shortcode">Change shortcode</button>
 
-  <script>
-    (async () => {
-      const instagram = document.querySelector('#my-instagram');
-      await customElements.whenDefined('bento-instagram');
+    <script>
+      (async () => {
+        const instagram = document.querySelector('#my-instagram');
+        await customElements.whenDefined('bento-instagram');
 
-      // set up button actions
-      document.querySelector('#change-shortcode').onclick = () => {
-        instagram.dataset.shortcode = '1totVhIFXl';
-      };
-    })();
-  </script>
-</body>
-```
+        // set up button actions
+        document.querySelector('#change-shortcode').onclick = () => {
+          instagram.dataset.shortcode = '1totVhIFXl';
+        };
+      })();
+    </script>
+  </body>
+</html>
+```{% endexample %}
 
 ### Layout and style
 
@@ -119,8 +133,6 @@ You may use the `bento-instagram` element selector to style the component.
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoInstagram>` as a functional component usable with the Preact or React libraries.
-
 ### Example: Import via npm
 
 ```bash
@@ -174,3 +186,5 @@ The instagram shortcode is found in every instagram photo URL. For example, in h
 #### `captioned`
 
 Include the Instagram caption. `bento-instagram` will attempt to resize to the correct height including the caption.
+
+

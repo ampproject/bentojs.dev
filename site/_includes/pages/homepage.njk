@@ -12,68 +12,74 @@ description: Bento is an easy to use component library that helps you achieve a 
 bento-selector{display:block}bento-selector [option]{cursor:pointer}bento-selector[multiple] [option][selected]{cursor:pointer;outline:1px solid rgba(0,0,0,0.7)}bento-selector [disabled][option],bento-selector[disabled] [option],bento-selector[disabled] [selected],bento-selector [selected][disabled]{cursor:auto;opacity:0.4}bento-selector [option][selected]{cursor:auto;outline:1px solid rgba(0,0,0,0.7)}
   </style>
 {% endblock %}
-<div class="bd-page__container bd-theme--dark">
-  <section class="bd-stage">
-    <svg class="bd-stage__bg-image">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
-    </svg>
-    <h1>{{ i18n.stage.headline }}</h1>
-    <div class="bd-button-group">
-      <a class="bd-button" href="/get-started">{{ i18n.stage.start_learning }}</a>
-      <a class="bd-button --inverted" href="/documentation">{{ i18n.stage.documentation }}</a>
-    </div>
-  </section>
-  <section class="bd-section bd-row bd-row__col-2 bd-frameworks">
-    <div class="bd-row__column">
-      {% image "./assets/img/image-left.png", i18n.frameworks.image %}
-    </div>
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.frameworks.headline }}</h2>
-      <p class="bd-section__body">{{ i18n.frameworks.text }}</p>
-      <a class="bd-button" href="https://github.com/ampproject/bento.dev/tree/main/examples/">{{ i18n.frameworks.cta }}</a>
-    </div>
-  </section>
-  <section class="bd-section bd-row bd-row__col-2 bd-why-bento">
-    <div class="bd-row__column">
-      {% image "./assets/img/image-right.png", i18n.why.image %}
-    </div>
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.why.headline }}</h2>
-      <p class="bd-section__body">{{ i18n.why.text }}</p>
-      <a class="bd-button" href="/get-started">{{ i18n.why.cta }}</a>
-    </div>
-  </section>
-</div>
-<hr class="bd-page__divider"/>
-<div class="bd-page__container bd-theme--light">
-  <section class="bd-section bd-row bd-row__col-2 bd-demo-intro">
-    <svg class="bd-demo-intro__image">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
-    </svg>
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.demo.headline }}</h2>
-      <div class="bd-link-wrapper">
-        <a class="bd-link" href="/documentation">➞ {{ i18n.demo.cta }}</a>
-      </div>
-    </div>
-  </section>
-  {%- include 'partials/demo.njk' -%}
-  <section class="bd-latest-news">
-    <svg class="bd-latest-news__bg-image--left">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
-    </svg>
-    <svg class="bd-latest-news__bg-image--right">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
-    </svg>
-    <section class="bd-section bd-row bd-row__col-2">
-      <div class="bd-row__column">
-        <h2 class="bd-section__title">{{ i18n.news.headline }}</h2>
-        <p class="bd-section__body">{{ i18n.news.text }} </p>
-        <div class="bd-link-wrapper">
-          <a class="bd-link" href="/blog">➞ {{ i18n.news.cta }}</a>
+<div class="bd-page-home">
+  <div class="bd-theme--dark">
+    <div class="bd-page__container">
+      <section class="bd-stage">
+        <svg class="bd-stage__bg-image">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <h1>{{ i18n.stage.headline }}</h1>
+        <div class="bd-button-group">
+          <a class="bd-button" href="/get-started">{{ i18n.stage.start_learning }}</a>
+          <a class="bd-button --inverted" href="/documentation">{{ i18n.stage.documentation }}</a>
         </div>
-      </div>
-    </section>
-    {% include 'partials/blog-posts.njk' %}
-  </section>
+      </section>
+      <section class="bd-section bd-row bd-row__col-2 bd-frameworks">
+        <div class="bd-row__column">
+          {% image "./assets/img/image-left.png", i18n.frameworks.image %}
+        </div>
+        <div class="bd-row__column">
+          <h2 class="bd-section__title">{{ i18n.frameworks.headline }}</h2>
+          <p class="bd-section__body">{{ i18n.frameworks.text }}</p>
+          <a class="bd-button" href="https://github.com/ampproject/bento.dev/tree/main/examples/">{{ i18n.frameworks.cta }}</a>
+        </div>
+      </section>
+      <section class="bd-section bd-row bd-row__col-2 bd-why-bento">
+        <div class="bd-row__column">
+          {% image "./assets/img/image-right.png", i18n.why.image %}
+        </div>
+        <div class="bd-row__column">
+          <h2 class="bd-section__title">{{ i18n.why.headline }}</h2>
+          <p class="bd-section__body">{{ i18n.why.text }}</p>
+          <a class="bd-button" href="/get-started">{{ i18n.why.cta }}</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <hr class="bd-page__divider"/>
+  <div class="bd-theme--light">
+    <div class="bd-page__container">
+      <section class="bd-section bd-row bd-row__col-2 bd-demo-intro">
+        <svg class="bd-demo-intro__image">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <div class="bd-row__column">
+          <h2 class="bd-section__title">{{ i18n.demo.headline }}</h2>
+          <div class="bd-link-wrapper">
+            <a class="bd-link" href="/documentation">➞ {{ i18n.demo.cta }}</a>
+          </div>
+        </div>
+      </section>
+      {%- include 'partials/demo.njk' -%}
+      <section class="bd-latest-news">
+        <svg class="bd-latest-news__bg-image--left">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <svg class="bd-latest-news__bg-image--right">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <section class="bd-section bd-row bd-row__col-2">
+          <div class="bd-row__column">
+            <h2 class="bd-section__title">{{ i18n.news.headline }}</h2>
+            <p class="bd-section__body">{{ i18n.news.text }} </p>
+            <div class="bd-link-wrapper">
+              <a class="bd-link" href="/blog">➞ {{ i18n.news.cta }}</a>
+            </div>
+          </div>
+        </section>
+        {% include 'partials/blog-posts.njk' %}
+      </section>
+    </div>
+  </div>
 </div>

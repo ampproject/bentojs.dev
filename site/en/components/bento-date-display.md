@@ -22,8 +22,6 @@ https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c1
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoDateDisplay>` as a functional component usable with the Preact or React libraries.
-
 ### Example: Import via npm
 
 ```bash
@@ -142,3 +140,5 @@ This table lists the format you can specify in your Mustache template:
 | timeZoneNameShort | Internationalized timezone, abbreviated, like `PST`           |
 | year              | 0, 1, 2, ..., 1999, 2000, 2001, etc.                          |
 | yearTwoDigit      | 00, 01, 02, ..., 17, 18, 19, ..., 98, 99                      |
+
+

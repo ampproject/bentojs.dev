@@ -21,7 +21,7 @@ If you have a paid plan, use the `<bento-embedly-key>` or `<BentoEmbedlyContext.
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/embedly-card
@@ -197,7 +197,7 @@ Define a `title` attribute for the component to propagate to the underlying `<if
 
 ## Preact/React Component
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/embedly-card

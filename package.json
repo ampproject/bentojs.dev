@@ -8,7 +8,7 @@
     "build:eleventy": "ELEVENTY_ENV=prod eleventy",
     "clean": "rimraf dist",
     "develop": "npx gulp develop",
-    "import": "npx gulp import",
+    "import": "npx gulp importAll",
     "deploy:production": "run-s clean import build publish:production",
     "deploy:staging": "run-s clean import build publish:staging",
     "lint": "eslint ./app/**/*.js -c ./.eslintrc.json --ignore-pattern amphtml",

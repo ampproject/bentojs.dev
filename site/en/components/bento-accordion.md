@@ -23,7 +23,7 @@ Displays content sections that can be collapsed and expanded. This component pro
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/accordion
@@ -423,7 +423,7 @@ Keep the following points in mind when you style an amp-accordion:
 
 ## Preact/React Component
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/accordion

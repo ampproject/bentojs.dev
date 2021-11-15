@@ -57,6 +57,12 @@
     }
   }
 
+  .bd-why-bento {
+    @include media('large') {
+      flex-direction: row-reverse;
+    }
+  }
+
   .bd-demo-intro {
     position: relative;
     width: 100%;

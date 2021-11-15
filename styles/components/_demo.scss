@@ -8,9 +8,9 @@
 
   @include media('large') {
     gap: var(--spacing-m);
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1.5fr 4fr;
     grid-template-rows: 1fr;
-    margin-inline: auto;
+    margin-inline-end: auto;
     width: max-content;
   }
 

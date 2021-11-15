@@ -14,7 +14,7 @@ class HomeDemo {
   async toggleDemo(event) {
     const previewId = event.data.targetOption;
 
-    (await this.sourceSelector.getApi()).toggle(previewId);
+    (await this.sourceSelector.getApi()).toggle(previewId, true);
     this.preview.setAttribute(
       'src',
       `assets/iframes/homepage-examples/${previewId}.html`

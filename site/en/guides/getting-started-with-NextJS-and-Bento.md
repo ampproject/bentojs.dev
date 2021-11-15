@@ -11,13 +11,13 @@ This guide is to help get developers started with Next.js and Bento.  All Bento 
 
 For a more complete guide to getting started with Next.js; see the [get started guide](https://nextjs.org/docs/getting-started) at nextjs.org. The first step is to create a new Next.js app via:
 
-```sh
+```bash
 npx create-next-app@latest
 ```
 
 Using the `npx` command to execute `creat-next-app` is the quickest way to scaffold a working app. Follow the CLI, it'll prompt you to name your project. By default it uses `my-app`. Once you `cd` into your app's directory you can start a local development environment.
 
-```sh
+```bash
 `npm run dev`
 ```
 
@@ -27,7 +27,7 @@ Go to `http://localhost:3000` to see a simple welcome page. You can edit the con
 
 How about adding the `bento/accordion` to for a bit of extra functionality to the page. First we need to install it.
 
-```sh
+```bash
 npm install @bentoproject/accordion
 ```
 
@@ -45,6 +45,7 @@ import "@bentoproject/accordion/styles.css";
 
 Now we can use the Bento accordion component:
 
+{% raw %}
 ```jsx
 <BentoAccordion expandSingleSection animate style={{ width: "100%" }}>
   <BentoAccordionSection>
@@ -92,6 +93,7 @@ Now we can use the Bento accordion component:
   </BentoAccordionSection>
 </BentoAccordion>
 ```
+{% endraw %}
 
 For more details on how to customize the Bento accordion component with different attributes, checkout the [docs](https://bentojs.dev/en/components/bento-accordion/).
 
@@ -99,7 +101,7 @@ For more details on how to customize the Bento accordion component with differen
 
 Most Bento Components allow developers to control the component's behavior and state through their API. You can access the component API using a [React Ref](https://reactjs.org/docs/refs-and-the-dom.html). Let's move the Accordion into a Sidebar component that we'll make a button to open and close the sidebar using a ref. First we need to install the Bento sidebar component:
 
-```sh
+```bash
 npm install @bentoproject/sidebar
 ```
 
@@ -113,6 +115,7 @@ import "@bentoproject/sidebar/styles.css";
 Unlike the Accordion this one only requires one component to be imported.
 
 
+{% raw %}
 ```jsx
 <BentoSidebar>
   <BentoAccordion expandSingleSection animate style={{ width: "100%" }}>
@@ -120,11 +123,13 @@ Unlike the Accordion this one only requires one component to be imported.
   </BentoAccordion>
 </BentoSidebar>
 ```
+{% endraw %}
 
 #### Using Bento APIs via refs
 
 You'll need to pass a ref to the sidebar using the `ref` prop. From there you'll have access to the API to `open`, `close`, or `toggle` the sidebar.
 
+{% raw %}
 ```jsx
 import { useRef } from "react";
 ...
@@ -157,6 +162,7 @@ export default function Home() {
   );
 }
 ```
+{% endraw %}
 
 And of course if you need a bit more customizability checkout the [docs for the Sidebar component](https://bentojs.dev/en/components/bento-sidebar/).
 

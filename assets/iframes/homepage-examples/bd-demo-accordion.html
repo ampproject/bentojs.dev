@@ -9,33 +9,61 @@
     type="text/css"
     href="https://cdn.ampproject.org/v0/bento-accordion-1.0.css"
   />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol';
+      background: #ecf1f3;
+    }
+    .my-accordion > section {
+      border-radius: 0.5rem;
+      margin: 1rem;
+      background: white;
+      background-repeat: no-repeat;
+      background-position: right 1rem top 1rem;
+    }
+    .my-accordion h2 {
+      background: white;
+      padding: 2rem;
+      border: none;
+      background: none;
+      color: #002b39;
+    }
+    .my-accordion p {
+      padding: 2rem;
+      padding-top: 0;
+      color: #4c5a63;
+    }
+    .my-accordion section[expanded] {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='%23002b39'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z'/%3E%3C/svg%3E%0A");
+    }
+
+    .my-accordion section:not([expanded]) {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='%23002b39'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z'/%3E%3C/svg%3E%0A");
+    }
+  </style>
 </head>
 <body>
-  <bento-accordion id="my-accordion">
-    <section id="section1">
+  <bento-accordion id="my-accordion" class="my-accordion">
+    <section>
       <h2>Section 1</h2>
       <p>Content in section 1.</p>
     </section>
-    <section expanded>
+    <section>
       <h2>Section 2</h2>
-      <div>Content in section 2.</div>
+      <p>Content in section 2.</p>
     </section>
     <section>
       <h2>Section 3</h2>
-      <div>Content in section 3.</div>
+      <p>Content in section 3.</p>
     </section>
   </bento-accordion>
-  <button id="button1" style="position: absolute; bottom: 50px">
-    Toggle Section 1
-  </button>
   <script>
     (async () => {
       const accordion = document.querySelector('#my-accordion');
       await customElements.whenDefined('bento-accordion');
       const api = await accordion.getApi();
-
-      // set up button actions
-      document.querySelector('#button1').onclick = () => api.toggle('section1');
     })();
   </script>
 </body>

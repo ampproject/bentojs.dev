@@ -38,6 +38,8 @@
         right: -25%;
         transform: rotate(160deg) rotateY(180deg) scale(1.6);
         z-index: -1;
+        user-select: none;
+        pointer-events: none;
 
         @include media('medium') {
           top: 1%;

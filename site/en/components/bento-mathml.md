@@ -15,7 +15,7 @@ Renders a MathML formula in an iframe.
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/mathml
@@ -123,7 +123,7 @@ You may use the `bento-mathml` element selector to style the accordion freely.
 
 ## Preact/React Component
 
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/mathml

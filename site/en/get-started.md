@@ -15,9 +15,9 @@ i18n:
   react:
     headline: React and Preact
     text: |
-      Bento components are fundamentally React functional components, released as Preact or React, and in regular or minified builds. Install each Bento component as needed, via npm, then import it as desired. The shown example uses the React `<BentoAccordion>` in regular build.
+      Bento components are fundamentally React functional components, released as Preact or React, and in regular or minified builds. Install each Bento component as needed, via npm, then import it as desired. The shown example uses the React `<BentoFitText>` in regular build.
 
-      And that’s it! Read more about React vs Preact and minified vs regular builds in our Importing and using Bento components guide.
+      And that’s it! 
     all: All bento components
   web_components:
     headline: Web Components

@@ -17,23 +17,38 @@ import '@ampproject/bento-fit-text';
 
 <div class="bd-web-component-sample__code">
 {% highlight 'html' %}
-<head>
-  <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
-  <script async custom-element="bento-fit-text" src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"></script>
-  <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element.  -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-fit-text-1.0.css" />-->
-  <style>
-    bento-fit-text {
-      display: block;
-      overflow: hidden;
-      position: relative;
-    }
-  </style>
-</head>
-<bento-fit-text id="my-fit-text">
-  Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
-  inermis reprehendunt.
-</bento-fit-text>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      async
+      type="module"
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script
+      async
+      nomodule
+      src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"
+    ></script>
+    <script
+      async
+      type="module"
+      src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.mjs"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-fit-text-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-fit-text style="width: 400px; height: 300px">
+      Lorem ipsum dolor sit amet, has nisl nihil convenire et, vim at aeque
+      inermis reprehendunt.
+    </bento-fit-text>
+  </body>
+</html>
 {% endhighlight %}
 </div>
 </div>

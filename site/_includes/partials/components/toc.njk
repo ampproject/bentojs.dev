@@ -1,10 +1,12 @@
-<bento-sidebar id="bd-toc" side="right">
-  <nav
-    class="bd-sidebar__contents bd-sidebar__contents--toc"
-    toolbar="(min-width: 1024px)"
-    toolbar-target="bd-toc-target">
+{% macro toc() %}
+  <nav class="bd-sidebar__contents bd-sidebar__contents--toc">
     <h3>Table of contents</h3>
     {{ content | toc | safe }}
   </nav>
+{% endmacro %}
+<bento-sidebar class="bd-sidebar" id="bd-toc" side="right">
+  {{ toc() }}
 </bento-sidebar>
-<div class="bd-sidebar__target" id="bd-toc-target"></div>
+<div class="bd-sidebar__target">
+  {{ toc() }}
+</div>

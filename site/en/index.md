@@ -19,6 +19,7 @@ i18n:
     image: Bento features
   demo:
     headline: Bento in action
+    text: Bento components are highly customizable and enable custom interactivity via their APIs. 
     cta: All components
   news:
     headline: Latest news

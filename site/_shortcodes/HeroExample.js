@@ -62,6 +62,7 @@ function heroExampleShortcode(nunjucksEngine) {
           source: exampleBody,
           hero: true,
           iframe: `/assets/iframes/hero-examples/${componentName}/`,
+          title: `Demo preview for ${componentName}`,
         });
       }
 

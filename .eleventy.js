@@ -5,14 +5,15 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
 const imageShortcode = require('./site/_shortcodes/Image.js');
+const iframeShortcode = require('./site/_shortcodes/Iframe.js');
 const noOpShortCode = require('./site/_shortcodes/NoOp.js');
 const {
   exampleShortCode,
   writeExamples,
 } = require('./site/_shortcodes/Example.js');
-const { heroExampleShortcode } = require('./site/_shortcodes/HeroExample.js');
+const {heroExampleShortcode} = require('./site/_shortcodes/HeroExample.js');
 
-const { i18n } = require('./site/_filters/i18n');
+const {i18n} = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
@@ -49,6 +50,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(toc);
 
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+  eleventyConfig.addShortcode('iframe', iframeShortcode);
   eleventyConfig.addJavaScriptFunction('image', imageShortcode);
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);

@@ -70,6 +70,14 @@ img {
   height: auto;
 }
 
+iframe {
+  content-visibility: auto;
+  max-width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
+}
+
 select {
   -webkit-appearance: none;
   background: transparent;

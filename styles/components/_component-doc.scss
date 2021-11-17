@@ -14,7 +14,7 @@
 }
 
 @mixin component-doc {
-  a,
+  a:not([class]),
   p,
   table,
   ul {
@@ -133,7 +133,7 @@
     font-weight: var(--bold);
   }
 
-  a {
+  a:not([class]) {
     text-decoration: none;
     font-weight: var(--bold);
 
@@ -246,5 +246,39 @@
     border: 0;
     border-bottom: solid 2px var(--light-sea-green);
     margin-block: calc(var(--spacing-xxl) * 2);
+  }
+
+  .bd-usage {
+    border-radius: 12px;
+    padding: var(--spacing-s) var(--spacing-m) var(--spacing-m);
+
+    a {
+      width: 100%;
+      &:first-of-type {
+        margin-block-end: var(--spacing-xs);
+      }
+    }
+
+    p {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: var(--semi-bold);
+      line-height: 2;
+      margin-block: 0 var(--spacing-xs);
+    }
+
+    @include media('medium') {
+      a {
+        width: auto;
+        &:first-of-type {
+          margin-block-end: unset;
+          margin-inline-end: var(--spacing-s);
+        }
+      }
+
+      p {
+        font-size: var(--font-size-16);
+      }
+    }
   }
 }

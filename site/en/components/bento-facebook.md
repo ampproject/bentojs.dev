@@ -13,6 +13,14 @@ description: >-
 
 Embeds a [Facebook](https://facebook.com) post, a Facebook video, or a comment on a Facebook post.
 
+## Usage
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use Bento Facebook as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).

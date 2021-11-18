@@ -11,6 +11,15 @@ description: Displays a countdown sequence to a specified date.
 
 Displays a countdown sequence to a specified date. Refer to the [returned time parameters section](#returned-time-parameters) for information on the available time parameters.
 
+## Usage
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use Bento Date Countdown as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
+
 ## Web Component
 
 We don't support the web component version of `bento-date-countdown` since `<template>` support is still being designed. This effort can be tracked in this [issue](https://go.amp.dev/issue/36619).

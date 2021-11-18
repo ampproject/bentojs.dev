@@ -13,6 +13,14 @@ Provides a modal "lightbox" experience for images.
 
 When the user interacts with the element, a modal expands to fill the viewport until it is closed by the user.
 
+## Usage
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use Bento Lightbox Gallery as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. As a web component

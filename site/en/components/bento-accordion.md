@@ -19,6 +19,14 @@ Displays content sections that can be collapsed and expanded. This component pro
 -   A click or tap on a `<section>` heading expands or collapses the section.
 -   A Bento Accordion with a defined `id` preserves the collapsed or expanded state of each section while the user remains on your domain.
 
+## Usage
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use Bento Accordion as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).

@@ -159,7 +159,11 @@
   }
 
   ul {
+    text-align: start;
     list-style-type: disc;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
   }
 
   table {
@@ -194,12 +198,13 @@
         }
 
         & > *:nth-child(2) {
-          width: 50%;
+          padding-inline-start: 3rem;
+          width: auto;
         }
 
         & > *:nth-child(3) {
-          text-align: center;
-          width: 20%;
+          padding-inline-start: 3rem;
+          width: auto;
         }
       }
     }

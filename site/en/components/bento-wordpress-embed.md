@@ -14,10 +14,8 @@ description: >-
 
 An iframe displaying the [excerpt](https://make.wordpress.org/core/2015/10/28/new-embeds-feature-in-wordpress-4-4/) of a WordPress post or page.
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento WordPress Embed as a web component or a React functional component:</p>
+  <p>Use bento-wordpress-embed as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>

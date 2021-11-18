@@ -11,10 +11,8 @@ description: 'Counts up to, or away from, a specified date and time.'
 
 Counts up to, or away from, a specified date and time. It replaces the text node with a timestamp in natural language, such as `in 30 years` or `3 hours ago`.
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento Timeago as a web component or a React functional component:</p>
+  <p>Use bento-timeago as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>

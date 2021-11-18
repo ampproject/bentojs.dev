@@ -11,10 +11,8 @@ description: Displays a cloud-hosted JW Player in an iframe.
 
 Displays a cloud-hosted JW Player in an iframe.
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento Jwplayer as a web component or a React functional component:</p>
+  <p>Use bento-jwplayer as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>

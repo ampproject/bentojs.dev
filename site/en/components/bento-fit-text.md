@@ -15,10 +15,8 @@ Determines the best font size to fit all of a given text content within the avai
 
 The expected content for Bento Fit Text is text or other inline content, but it can also contain non-inline content.
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento Fit Text as a web component or a React functional component:</p>
+  <p>Use bento-fit-text as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>

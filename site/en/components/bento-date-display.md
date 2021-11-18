@@ -11,14 +11,11 @@ description: Displays time data that you can render in your page.
 
 Displays time data that you can render in your page. By providing specific [attributes](#attributes) in the Bento Date Display tag, the Bento Date Display extension returns a list of time parameters, which you can pass to [an amp-mustache template](../../amp-mustache/amp-mustache.md) for rendering. Refer to the [list below for each returned time parameter](#returned-time-parameters).
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento Date Display as a web component or a React functional component:</p>
+  <p>Use bento-date-display as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>
-
 
 ## Web Component
 

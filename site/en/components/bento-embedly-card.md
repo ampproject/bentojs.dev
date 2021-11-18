@@ -17,10 +17,8 @@ Cards are the easiest way to leverage Embedly. For any media, cards provide a re
 
 If you have a paid plan, use the `<bento-embedly-key>` or `<BentoEmbedlyContext.Provider>` component to set your API key. You just need one Bento Embedly key per page to remove Embedly's branding from the cards. Within your page, you can include one or multiple Bento Embedly Card instances.
 
-## Usage
-
 <div class="bd-usage bd-card bd-card--light-sea-green">
-  <p>Use Bento Embedly Card as a web component or a React functional component:</p>
+  <p>Use bento-embedly-card as a web component or a React functional component:</p>
   <a class="bd-button" href="#web-component">↓ Web Component</a>
   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>

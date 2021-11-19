@@ -1,11 +1,11 @@
 ---
 layout: layouts/guide.njk
 tags: guides
-title: Getting Started with Next.js and Bento
-description: How to use Bento components for building a Next.js application.
+title: Using Bento components in a Next.js app
+description: Get started with using Bento components in your Next.js app.
 ---
 
-This guide is to help get developers started with Next.js and Bento.  All Bento components provide a React (and Preact) API. This makes them very easy to use in Next.js apps.  This guide assumes you have some familiarity with modern front end development like ReactJS, NodeJS, Javascript, and JSX.
+This guide is to help get developers started with Next.js and Bento. All Bento components provide a React (and Preact) API. This makes them very easy to use in Next.js apps. This guide assumes you have some familiarity with modern front end development like ReactJS, NodeJS, Javascript, and JSX.
 
 ## Starting up a Next.js app
 
@@ -31,7 +31,7 @@ How about adding the `bento/accordion` to for a bit of extra functionality to th
 npm install @bentoproject/accordion
 ```
 
-The accordion component defines multiple components that make up an accordion.  We'll need to import `BentoAccordion`, `BentoAccordionSection`, `BentoAccordionHeader`, `BentoAccordionContent`, and some CSS.
+The accordion component defines multiple components that make up an accordion. We'll need to import `BentoAccordion`, `BentoAccordionSection`, `BentoAccordionHeader`, `BentoAccordionContent`, and some CSS.
 
 ```jsx
 import {
@@ -39,15 +39,16 @@ import {
   BentoAccordionSection,
   BentoAccordionHeader,
   BentoAccordionContent,
-} from "@bentoproject/accordion/react";
-import "@bentoproject/accordion/styles.css";
+} from '@bentoproject/accordion/react';
+import '@bentoproject/accordion/styles.css';
 ```
 
 Now we can use the Bento accordion component:
 
 {% raw %}
+
 ```jsx
-<BentoAccordion expandSingleSection animate style={{ width: "100%" }}>
+<BentoAccordion expandSingleSection animate style={{width: '100%'}}>
   <BentoAccordionSection>
     <BentoAccordionHeader>
       <h2>Documentation &rarr;</h2>
@@ -93,6 +94,7 @@ Now we can use the Bento accordion component:
   </BentoAccordionSection>
 </BentoAccordion>
 ```
+
 {% endraw %}
 
 For more details on how to customize the Bento accordion component with different attributes, checkout the [docs](https://bentojs.dev/en/components/bento-accordion/).
@@ -108,21 +110,22 @@ npm install @bentoproject/sidebar
 ...and import the component into the file.
 
 ```jsx
-import { BentoSidebar } from "@bentoproject/sidebar/react";
-import "@bentoproject/sidebar/styles.css";
+import {BentoSidebar} from '@bentoproject/sidebar/react';
+import '@bentoproject/sidebar/styles.css';
 ```
 
 Unlike the Accordion this one only requires one component to be imported.
 
-
 {% raw %}
+
 ```jsx
 <BentoSidebar>
-  <BentoAccordion expandSingleSection animate style={{ width: "100%" }}>
+  <BentoAccordion expandSingleSection animate style={{width: '100%'}}>
     ...
   </BentoAccordion>
 </BentoSidebar>
 ```
+
 {% endraw %}
 
 #### Using Bento APIs via refs
@@ -130,6 +133,7 @@ Unlike the Accordion this one only requires one component to be imported.
 You'll need to pass a ref to the sidebar using the `ref` prop. From there you'll have access to the API to `open`, `close`, or `toggle` the sidebar.
 
 {% raw %}
+
 ```jsx
 import { useRef } from "react";
 ...
@@ -162,6 +166,7 @@ export default function Home() {
   );
 }
 ```
+
 {% endraw %}
 
 And of course if you need a bit more customizability checkout the [docs for the Sidebar component](https://bentojs.dev/en/components/bento-sidebar/).

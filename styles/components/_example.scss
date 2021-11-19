@@ -2,9 +2,9 @@
   background: var(--maastricht-blue);
   border-radius: 8px;
 
-  pre[class*=language-] {
-     margin-block: 0!important;
-   }
+  pre[class*='language-'] {
+    margin-block: 0 !important;
+  }
 
   &-toggle {
     position: relative;

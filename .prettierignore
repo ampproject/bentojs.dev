@@ -1,3 +1,4 @@
-node_modules
-amphtml/**/*
+dist/
+node_modules/
+amphtml/
 site/*/components/**

@@ -1,18 +1,18 @@
-import { useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import {useRef} from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
-import { BentoSidebar } from "@bentoproject/sidebar/react";
-import "@bentoproject/sidebar/styles.css";
+import {BentoSidebar} from '@bentoproject/sidebar/react';
+import '@bentoproject/sidebar/styles.css';
 
 import {
   BentoAccordion,
   BentoAccordionSection,
   BentoAccordionHeader,
   BentoAccordionContent,
-} from "@bentoproject/accordion/react";
-import "@bentoproject/accordion/styles.css";
+} from '@bentoproject/accordion/react';
+import '@bentoproject/accordion/styles.css';
 
 export default function Home() {
   const sidebarRef = useRef();
@@ -31,16 +31,16 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
+          Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
           <button onClick={() => sidebarRef.current.open()}>
             Open Doc Sidebar
           </button>
         </p>
 
-        <BentoSidebar ref={sidebarRef} style={{ width: "350px" }}>
+        <BentoSidebar ref={sidebarRef} style={{width: '350px'}}>
           <button onClick={() => sidebarRef.current.close()}>X</button>
-          <BentoAccordion expandSingleSection animate style={{ width: "100%" }}>
+          <BentoAccordion expandSingleSection animate style={{width: '100%'}}>
             <BentoAccordionSection>
               <BentoAccordionHeader>
                 <h2>Documentation &rarr;</h2>
@@ -103,7 +103,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>

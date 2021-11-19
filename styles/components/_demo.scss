@@ -19,7 +19,7 @@
   }
 
   bento-selector [option][selected] {
-    outline: unset;
+    outline: none;
   }
 
   #bd-demo-selector {
@@ -51,7 +51,7 @@
 
     & [option]:not([selected]) {
       cursor: pointer;
-      outline: unset;
+      outline: none;
       background-color: var(--white);
       color: var(--light-sea-green);
       border: solid 2px var(--light-sea-green);

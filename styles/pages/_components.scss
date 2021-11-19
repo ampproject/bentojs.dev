@@ -5,28 +5,18 @@
     margin: var(--spacing-xxl) auto;
     display: flex;
     flex-direction: column;
-    width: 92%;
+    width: 90%;
 
     @include media('large') {
       margin-block: calc(var(--spacing-xxl) * 1.25);
       display: grid;
       grid-template-areas: 'sidebar main toc';
-      grid-template-columns: minmax(max-content, auto) minmax(50%, auto) max-content;
-      column-gap: var(--spacing-xxl);
+      grid-template-columns: minmax(max-content, 1fr) minmax(auto, 750px) max-content;
+      column-gap: var(--spacing-m);
     }
 
     @include media('xlarge') {
-      max-width: 1300px;
-      column-gap: calc(var(--spacing-xxl) * 2);
-    }
-
-    #bd-components-target {
-      grid-area: sidebar;
-    }
-
-    #bd-toc-target {
-      grid-area: toc;
-      z-index: 50;
+      max-width: var(--max-content-width);
     }
 
     &__main {
@@ -36,7 +26,7 @@
       z-index: 50;
 
       @include media('large') {
-        max-width: 650px;
+        min-width: 490px;
       }
 
       .bd-page-components-background {

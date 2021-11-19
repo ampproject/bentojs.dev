@@ -17,8 +17,9 @@ description: The latest news and updates update Bento.
       <h4>{{ post.data.title }}</h4>
       <p class="bd-copy">{{ post.data.date | date }}</p>
       {% image post.data.image, "" %}
-      <p class="bd-excerpt">{{ post.data.excerpt }}</p>
-      <div class="bd-link-wrapper">
+      <div>
+        <p class="bd-excerpt">{{ post.data.excerpt }}
+        </p>
         <a class="bd-link" href="{{ post.url }}">➞ {{ 'i18n.blog.read_more' | i18n(locale) }}</a>
       </div>
     </li>

@@ -88,12 +88,11 @@ app.mount('#demo');
 
 Finally, we include the bento accordion styles to prevent layout shifts on load:
 
-```
+```html
   <head>
     <link rel="stylesheet" type="text/css"
           href="https://cdn.ampproject.org/v0/bento-accordion-1.0.css">
   </head>
-
 ```
 
 To view this page in a browser, run `npx serve` in the directory where this file is located (or any other local webserver). Open up a browser and go to http://localhost:5000/accordion.

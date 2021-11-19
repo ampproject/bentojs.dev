@@ -1,0 +1,15 @@
+<script>
+let key = "https://policies.google.com/technologies/cookies";
+let savedKey = localStorage.getItem("banner--cta-url");
+
+if(savedKey === key) {
+  document.documentElement.classList.add("banner--hide");
+}
+</script>
+<announcement-banner class="bd-cookie-banner">
+  <div class="bd-cookie-banner-label" role="status">
+        We serve cookies on this site to analyze traffic and optimize your experience.
+  </div>
+  <a href="https://policies.google.com/technologies/cookies" class="bd-cookie-banner-more" data-type="clear" target="_blank">More details</a>
+  <button type="button" data-banner-close class="bd-cookie-banner-close bd-button--light --uppercase">OK</button>
+</announcement-banner>

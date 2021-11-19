@@ -38,12 +38,6 @@
   {% block footer %}
     {% include 'partials/footer.njk' %}
   {% endblock %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213424092-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-213424092-1');
-  </script>
+  {% include 'partials/analytics.njk' %}
+  {% include 'partials/cookie-consent.njk' %}
 </body></html>

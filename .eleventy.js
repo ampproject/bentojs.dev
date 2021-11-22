@@ -18,6 +18,7 @@ const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
 const insertStyles = require('./site/_transforms/insertStyles.js');
+const minifyHtml = require('./site/_transforms/minifyHtml.js');
 
 const components = require('./site/_collections/components.js');
 const componentCategories = require('./site/_collections/componentCategories.js');
@@ -61,6 +62,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('md', md);
 
   eleventyConfig.addTransform('insert-styles', insertStyles);
+  eleventyConfig.addTransform('minify-html', minifyHtml);
 
   eleventyConfig.addCollection('components', components);
   eleventyConfig.addCollection('componentCategories', componentCategories);

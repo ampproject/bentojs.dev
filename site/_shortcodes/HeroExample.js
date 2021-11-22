@@ -16,6 +16,7 @@
 
 const fs = require('fs/promises');
 const path = require('path');
+const Prism = require('prismjs');
 
 const EXAMPLES_SRC = path.resolve(
   __dirname,
@@ -42,25 +43,33 @@ function heroExampleShortcode(nunjucksEngine) {
           path.join(EXAMPLES_SRC, componentName, 'index.html')
         );
 
+        const HTML_HEAD_PATTERN = /<head>(.*?)<\/head>/gms;
+        let head = HTML_HEAD_PATTERN.exec(html.all);
+        head = head && head[1] ? head[1] : undefined;
+
         const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
         let body = HTML_BODY_PATTERN.exec(html);
         body = body && body[1] ? body[1] : undefined;
 
-        return '\n```html\n' + body + '\n```\n\n';
+        return {
+          head,
+          body
+        }
       } catch (e) {
-        return null;
+        return {};
       }
     };
 
     this.run = async function (context, componentName, callback) {
-      const exampleBody = await this._loadExample(componentName);
+      const html = await this._loadExample(componentName);
 
       let widget = '';
-      if (exampleBody) {
+      if (html.head && html.body) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
           id: `${componentName}-hero`,
           source: exampleBody,
-          hero: true,
+          head: Prism.highlight(html.head, Prism.languages.html, 'html'),
+          body: Prism.highlight(html.body, Prism.languages.html, 'html'),
           iframe: `/assets/iframes/hero-examples/${componentName}/`,
         });
       }

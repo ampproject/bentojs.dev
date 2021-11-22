@@ -83,7 +83,7 @@ function exampleShortCode(nunjucksEngine) {
           html,
           title: ctx.title,
         });
-        examples.push({id, iframe});
+        examples.push({ id, iframe });
       }
 
       let widget = contents();
@@ -92,6 +92,8 @@ function exampleShortCode(nunjucksEngine) {
           id,
           source: widget,
           hero: false,
+          head: Prism.highlight(html.head, Prism.languages.html, 'html'),
+          body: Prism.highlight(html.body, Prism.languages.html, 'html'),
           iframe: iframe ? `/assets/iframes/${id}.html` : false,
           title: ctx.title,
         });

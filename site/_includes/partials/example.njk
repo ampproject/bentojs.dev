@@ -1,20 +1,31 @@
 {# Caution, this file is exactly idented as it needs to be.
 Do not change formatting this would break rendering. #}
-
 <section class="bd-example">
-<header class="bd-example-toggle">
-{% if iframe -%}
-<button class="bd-example-toggle-option {% if not hero %}--active {% endif %}--code">Code</button>
-<button class="bd-example-toggle-option {% if hero %}--active {% endif %}--preview">Preview</button>
-{% endif -%}
-</header>
-<div class="bd-example-code{% if hero %} --hidden{% endif %}">
-{{ source|safe }}
-</div>
-
-{% if iframe %}
-<div class="bd-example-preview{% if not hero %} --hidden{% endif %}">
-<iframe src="{{ iframe }}"></iframe>
-</div>
-{% endif %}
+  <header class="bd-example-toggle">
+    {% if iframe -%}
+      <button class="bd-example-toggle-option {% if not hero %}--active {% endif %}--code">Code</button>
+      <button class="bd-example-toggle-option {% if hero %}--active {% endif %}--preview">Preview</button>
+    {% endif -%}
+  </header>
+  <div class="bd-example-code{% if hero %} --hidden{% endif %}">
+    <bento-accordion id="{{ id }}-code" class="my-accordion">
+      <section>
+        <h2>head</h2>
+        <div>
+          <pre class="language-html">{{ head|safe }}</pre>
+        </div>
+      </section>
+      <section>
+        <h2>body</h2>
+        <div>
+          <pre class="language-html">{{ body|safe }}</pre>
+        </div>
+      </section>
+    </bento-accordion>
+  </div>
+  {% if iframe %}
+    <div class="bd-example-preview{% if not hero %} --hidden{% endif %}">
+      <iframe src="{{ iframe }}"></iframe>
+    </div>
+  {% endif %}
 </section>

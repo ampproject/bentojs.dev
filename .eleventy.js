@@ -11,9 +11,9 @@ const {
   exampleShortCode,
   writeExamples,
 } = require('./site/_shortcodes/Example.js');
-const {heroExampleShortcode} = require('./site/_shortcodes/HeroExample.js');
+const { heroExampleShortcode } = require('./site/_shortcodes/HeroExample.js');
 
-const {i18n} = require('./site/_filters/i18n');
+const { i18n } = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
@@ -74,7 +74,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setBrowserSyncConfig(notFound);
 
   return {
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'md', '11ty.js'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {

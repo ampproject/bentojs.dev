@@ -7,14 +7,13 @@
     <link rel="preload" href="/assets/fonts/roboto-mono-latin.var.woff2" as="font" crossorigin>
     <script type="module" src="https://cdn.ampproject.org/bento.mjs"></script> 
     <script type="nomodule" src="https://cdn.ampproject.org/bento.js"></script> 
+    <link rel="preconnect" href="https://www.google-analytics.com/">
     {% if helpers.environment === 'prod' %}
       <style>/* bento-dev.css */</style>
   {% else %}
     <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
-  {% endif %}
-  {% if noindex -%}
     <meta name="robots" content="noindex">
-  {%- endif %}
+  {% endif %}
   <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>
 
   <script src="{{ helpers.addHashQueryParam('/assets/js/all.js') }}" async></script>

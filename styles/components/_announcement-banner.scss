@@ -1,0 +1,40 @@
+.banner--hide announcement-banner,
+announcement-banner[hidden] {
+  display: none;
+}
+[data-banner-close] {
+  opacity: 0;
+  pointer-events: none;
+}
+.banner--show-close [data-banner-close] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bd-cookie-banner {
+  z-index: 10000;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  background-color: white;
+  width: 100vw;
+  padding: 1rem;
+  color: var(--independence);
+  border-top: 1px solid var(--independence);
+
+  .bd-cookie-banner-label {
+    margin-right: 1rem;
+  }
+
+  .bd-cookie-banner-close {
+    align-self: end;
+  }
+
+  a {
+    width: 200px;
+  }
+}

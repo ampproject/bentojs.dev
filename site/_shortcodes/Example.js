@@ -64,8 +64,8 @@ function exampleShortCode(nunjucksEngine) {
 
       // Make sure head and body both don't contain any blank lines
       // as they would create empty paragraphs in markdown
-      html.head = html.head.replace(/^\s*\n/gm, '');
-      html.body = html.body.replace(/^\s*\n/gm, '');
+      html.head = html.head.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
+      html.body = html.body.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
 
       return html;
     };

@@ -44,18 +44,24 @@ function heroExampleShortcode(nunjucksEngine) {
         );
 
         const HTML_HEAD_PATTERN = /<head>(.*?)<\/head>/gms;
-        let head = HTML_HEAD_PATTERN.exec(html.all);
-        head = head && head[1] ? head[1] : undefined;
+        let head = HTML_HEAD_PATTERN.exec(html);
+        head = head && head[1] ? head[1] : '';
 
         const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
         let body = HTML_BODY_PATTERN.exec(html);
-        body = body && body[1] ? body[1] : undefined;
+        body = body && body[1] ? body[1] : '';
+
+        // Make sure head and body both don't contain any blank lines
+        // as they would create empty paragraphs in markdown
+        head = head.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
+        body = body.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
 
         return {
           head,
           body
         }
       } catch (e) {
+        console.log(e);
         return {};
       }
     };
@@ -66,8 +72,8 @@ function heroExampleShortcode(nunjucksEngine) {
       let widget = '';
       if (html.head && html.body) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
+          hero: true,
           id: `${componentName}-hero`,
-          source: exampleBody,
           head: Prism.highlight(html.head, Prism.languages.html, 'html'),
           body: Prism.highlight(html.body, Prism.languages.html, 'html'),
           iframe: `/assets/iframes/hero-examples/${componentName}/`,

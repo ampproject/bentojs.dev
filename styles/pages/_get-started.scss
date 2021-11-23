@@ -205,6 +205,23 @@
       font-weight: var(--semi-bold);
     }
 
+    strong > code,
+    p > code {
+      background-color: var(--bright-gray);
+      border-radius: 2px;
+      color: var(--independence);
+      font-family: var(--font-mono);
+      font-size: inherit;
+      font-weight: var(--medium);
+      letter-spacing: 0.2px;
+      line-height: 2;
+      padding: 0 2px;
+
+      @include media('medium') {
+        padding: 2px 8px;
+      }
+    }
+
     .bd-react-sample,
     .bd-web-component-sample {
       margin-block-start: var(--spacing-xl);

@@ -71,6 +71,7 @@ function heroExampleShortcode(nunjucksEngine) {
           head: Prism.highlight(html.head, Prism.languages.html, 'html'),
           body: Prism.highlight(html.body, Prism.languages.html, 'html'),
           iframe: `/assets/iframes/hero-examples/${componentName}/`,
+          title: `Demo preview for ${componentName}`,
         });
       }
 

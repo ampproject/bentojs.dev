@@ -25,7 +25,10 @@ const sass = require('./sass.js');
 const app = require('./app.js');
 const svgstore = require('./svgstore.js');
 
-const importAll = gulp.series(importAmphtml, gulp.parallel(importHeroExamples, importDocs));
+const importAll = gulp.series(
+  importAmphtml,
+  gulp.parallel(importHeroExamples, importDocs)
+);
 const build = gulp.series(sass.build, app.build, svgstore, eleventy.build);
 const develop = gulp.series(
   sass.build,

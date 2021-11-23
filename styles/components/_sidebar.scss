@@ -1,4 +1,16 @@
 .bd-sidebar {
+  @include media('large') {
+    display: none;
+  }
+
+  &__target {
+    display: none;
+
+    @include media('large') {
+      display: block;
+    }
+  }
+
   &__contents {
     padding: var(--spacing-s);
 

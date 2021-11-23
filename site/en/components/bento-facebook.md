@@ -13,6 +13,12 @@ description: >-
 
 Embeds a [Facebook](https://facebook.com) post, a Facebook video, or a comment on a Facebook post.
 
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-facebook as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
@@ -28,7 +34,17 @@ import {defineElement as defineBentoFacebook} from '@bentoproject/facebook';
 defineBentoFacebook();
 ```
 
-### Example: Include via `<script>`
+### Include via `<script>`
+
+```html
+<script type="module" src="https://cdn.ampproject.org/bento.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.ampproject.org/v0/bento-facebook-1.0.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/v0/bento-facebook-1.0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css" crossorigin="anonymous">
+```
+
+### Example
 
 ##### Embed a Facebook Post
 
@@ -44,14 +60,11 @@ defineBentoFacebook();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css"
+    />
     <script
       type="module"
       async
@@ -110,14 +123,11 @@ defineBentoFacebook();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css"
+    />
     <script
       type="module"
       async
@@ -177,14 +187,11 @@ defineBentoFacebook();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css"
+    />
     <script
       type="module"
       async
@@ -244,14 +251,11 @@ defineBentoFacebook();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css"
+    />
     <script
       type="module"
       async
@@ -294,14 +298,11 @@ defineBentoFacebook();
       src="https://cdn.ampproject.org/bento.mjs"
     ></script>
     <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
-    <!-- These styles prevent Cumulative Layout Shift on the unupgraded custom element -->
-    <style>
-      bento-facebook {
-        display: block;
-        overflow: hidden;
-        position: relative;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-facebook-1.0.css"
+    />
     <script
       type="module"
       async

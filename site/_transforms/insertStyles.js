@@ -46,7 +46,7 @@ async function insertStyles(content, outputPath) {
     defaultExtractor: (content) => {
       return content.match(/[A-Za-z0-9\\:_-]+/g) || [];
     },
-    safelist: [/bd\-copy.*/, /\-\-.+/],
+    safelist: [/announcement-banner.*/, /bd\-copy.*/, /\-\-.+/],
   });
 
   const minifiedCss = csso.minify(purged[0].css).css;

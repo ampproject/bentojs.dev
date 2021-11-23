@@ -1,0 +1,18 @@
+{
+  "name": "eleventy-bento-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bento authors",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "eleventy-plugin-head": "^1.1.1",
+    "markdown-it": "^12.2.0"
+  }
+}

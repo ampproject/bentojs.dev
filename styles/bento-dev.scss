@@ -1,6 +1,7 @@
 @import 'config';
 @import 'fonts';
 
+@import 'components/announcement-banner';
 @import 'components/_page';
 @import 'components/_header';
 @import 'components/_footer';
@@ -44,6 +45,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,6 +70,14 @@ img {
   content-visibility: auto;
   max-width: 100%;
   height: auto;
+}
+
+iframe {
+  content-visibility: auto;
+  max-width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
 }
 
 select {

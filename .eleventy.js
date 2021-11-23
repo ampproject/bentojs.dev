@@ -1,10 +1,12 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const toc = require('eleventy-plugin-toc');
 
 const imageShortcode = require('./site/_shortcodes/Image.js');
+const iframeShortcode = require('./site/_shortcodes/Iframe.js');
 const noOpShortCode = require('./site/_shortcodes/NoOp.js');
 const {
   exampleShortCode,
@@ -17,6 +19,7 @@ const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 
 const insertStyles = require('./site/_transforms/insertStyles.js');
+const minifyHtml = require('./site/_transforms/minifyHtml.js');
 
 const components = require('./site/_collections/components.js');
 const componentCategories = require('./site/_collections/componentCategories.js');
@@ -45,10 +48,12 @@ module.exports = (eleventyConfig) => {
       .disable('code')
   );
 
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(toc);
 
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+  eleventyConfig.addShortcode('iframe', iframeShortcode);
   eleventyConfig.addJavaScriptFunction('image', imageShortcode);
   eleventyConfig.addPairedShortcode('tip', noOpShortCode);
   eleventyConfig.addNunjucksTag('examples', exampleShortCode);
@@ -59,6 +64,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('md', md);
 
   eleventyConfig.addTransform('insert-styles', insertStyles);
+  eleventyConfig.addTransform('minify-html', minifyHtml);
 
   eleventyConfig.addCollection('components', components);
   eleventyConfig.addCollection('componentCategories', componentCategories);
@@ -70,7 +76,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setBrowserSyncConfig(notFound);
 
   return {
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'md', '11ty.js'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {

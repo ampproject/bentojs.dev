@@ -25,7 +25,7 @@ Do not change formatting this would break rendering. #}
   </div>
   {% if iframe %}
     <div class="bd-example-preview{% if not hero %} --hidden{% endif %}">
-      <iframe src="{{ iframe }}"></iframe>
+      <iframe title="{{ title }}" src="{{ iframe }}"></iframe>
     </div>
   {% endif %}
 </section>

@@ -5,7 +5,7 @@ const matter = require('gray-matter');
 const chalk = require('chalk');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const { split } = require('sentence-splitter');
+const {split} = require('sentence-splitter');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
@@ -44,7 +44,7 @@ function _rewriteExamples(string) {
     result += line + '\n';
   }
   return result;
-};
+}
 
 function _extractDescription(string) {
   const tokens = md.parse(string, {});
@@ -60,7 +60,7 @@ function _extractDescription(string) {
     }
   }
   return '';
-};
+}
 
 function _rewriteCalloutToTip(contents) {
   const CALLOUT_PATTERN =
@@ -93,10 +93,10 @@ function _escapeVariables(contents) {
   // or we add raw tags to existing raw blocks
   const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source +
-    '|' +
-    SOURCECODE_BLOCK.source +
-    '|' +
-    /`[^`]*`/.source,
+      '|' +
+      SOURCECODE_BLOCK.source +
+      '|' +
+      /`[^`]*`/.source,
     'g'
   );
 
@@ -105,10 +105,10 @@ function _escapeVariables(contents) {
   // TODO: Avoid the need to distinguish between mustache and jinja2
   const MUSTACHE_PATTERN = new RegExp(
     '(' +
-    JINJA2_RAW_BLOCK.source +
-    '|' +
-    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
-    ')',
+      JINJA2_RAW_BLOCK.source +
+      '|' +
+      /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+      ')',
     'g'
   );
 
@@ -129,6 +129,15 @@ function _escapeVariables(contents) {
 
 function _rewriteCodeFenceShToBash(contents) {
   return contents.replace(/```sh(\s.*?\s)```/gm, '```bash$1```');
+}
+
+function _rewriteUsage(contents, componentName) {
+  const usage = `<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use ${componentName} as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>\n\n## Web Component\n\n`;
+  return contents.replace(/(\#\#\s+Web\s+Component$\s*)/gm, usage);
 }
 
 function _parseComponentName(content) {
@@ -176,6 +185,7 @@ async function importComponents() {
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
         document.content = _rewriteCodeFenceShToBash(document.content);
+        document.content = _rewriteUsage(document.content, componentName);
         document.content = _injectHeroExamples(document.content, componentName);
 
         await fs.writeFile(

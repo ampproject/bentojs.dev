@@ -13,6 +13,12 @@ description: >-
 
 Provides a way to display meta content intended for temporary access such as navigation, links, buttons, menus. The sidebar can be revealed by a button tap while the main content remains visually underneath.
 
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-sidebar as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
@@ -28,7 +34,17 @@ import {defineElement as defineBentoSidebar} from '@bentoproject/sidebar';
 defineBentoSidebar();
 ```
 
-### Example: Include via `<script>`
+### Include via `<script>`
+
+```html
+<script type="module" src="https://cdn.ampproject.org/bento.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.ampproject.org/v0/bento-sidebar-1.0.css" crossorigin="anonymous">
+```
+
+### Example
 
 {% example %}
 

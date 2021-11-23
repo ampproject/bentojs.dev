@@ -11,6 +11,12 @@ description: Embeds an Instagram post.
 
 Embeds an Instagram post.
 
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-instagram as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
@@ -26,7 +32,17 @@ import {defineElement as defineBentoInstagram} from '@bentoproject/instagram';
 defineBentoInstagram();
 ```
 
-### Example: Include via `<script>`
+### Include via `<script>`
+
+```html
+<script type="module" src="https://cdn.ampproject.org/bento.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.ampproject.org/v0/bento-instagram-1.0.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/v0/bento-instagram-1.0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.ampproject.org/v0/bento-instagram-1.0.css" crossorigin="anonymous">
+```
+
+### Example
 
 {% example %}
 

@@ -23,8 +23,6 @@ class Example {
       code = code + codeElement.innerText;
     }
 
-    console.log('Ready to copy', code);
-
     new CopyToClipboard(this.$code, code);
   }
 

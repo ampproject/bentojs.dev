@@ -1,8 +1,5 @@
 .bd-header {
   background: #fff;
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-column: 1/-1;
   position: sticky;
   top: 0;
   z-index: 1001;
@@ -14,15 +11,15 @@
     align-items: center;
     flex-wrap: nowrap;
     height: 56px;
-    grid-column: 2/23;
     margin: 0 auto;
-    width: 100%;
+    width: 90%;
 
     @include media('large') {
       height: 64px;
     }
-    @include media('xxlarge') {
-      grid-column: 7/19;
+
+    @include media('xlarge') {
+      max-width: var(--max-content-width);
     }
   }
 
@@ -91,9 +88,18 @@
       }
     }
 
+    .bd-link,
     &-link {
       background: none;
       border: 0;
+      font-size: var(--font-size-21);
+      font-weight: var(--bold);
+      line-height: 1.14;
+
+      @include media('large') {
+        font-size: var(--font-size-16);
+        line-height: 2;
+      }
     }
 
     a:after {

@@ -5,30 +5,28 @@
     margin: var(--spacing-xxl) auto;
     display: flex;
     flex-direction: column;
-    width: 92%;
+    width: 90%;
 
     @include media('large') {
       margin: 80px auto;
       display: grid;
-      grid-template-areas: 'sidebar main';
-      grid-template-columns: max-content auto;
-      column-gap: calc(var(--spacing-xxl) * 2);
-      max-width: 1100px;
+      grid-template-areas: 'sidebar main toc';
+      grid-template-columns: minmax(max-content, 1fr) minmax(auto, 750px) 1fr;
+      column-gap: var(--spacing-m);
     }
 
-    #bd-components-target {
-      grid-area: sidebar;
-    }
-
-    #bd-toc-target {
-      grid-area: toc;
-      z-index: 50;
+    @include media('xlarge') {
+      max-width: var(--max-content-width);
     }
 
     &__main {
       grid-area: main;
       position: relative;
       z-index: 50;
+
+      @include media('large') {
+        min-width: 490px;
+      }
 
       .bd-page-components-overview-background {
         position: absolute;

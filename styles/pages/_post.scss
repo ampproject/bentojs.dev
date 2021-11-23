@@ -27,23 +27,16 @@
       width: 90%;
     }
 
-    @include media('large') {
-      width: 85%;
-    }
-
-    @include media('xxlarge') {
-      width: 1300px;
+    @include media('xlarge') {
+      max-width: var(--max-content-width);
     }
 
     & > *:not(figure:first-of-type) {
-      padding: 0 2rem;
+      margin-inline: auto;
+      width: 90%;
 
-      @include media('large') {
-        padding: 0 5rem;
-      }
-
-      @include media('xxlarge') {
-        padding: 0 13rem;
+      @include media('medium') {
+        max-width: 810px;
       }
     }
 

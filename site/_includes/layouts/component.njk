@@ -3,10 +3,13 @@
   <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
   <script type="module" src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.mjs"></script>
   <script async type="nomodule"  src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
-   <script type="module" src="https://cdn.ampproject.org/v0/bento-accordion-1.0.mjs"></script>
+  <script type="module" src="https://cdn.ampproject.org/v0/bento-accordion-1.0.mjs"></script>
   <script async type="nomodule"  src="https://cdn.ampproject.org/v0/bento-accordion-1.0.js"></script>
+{% endblock %}
+{% block styles %}
   <style>
   bento-sidebar[hidden]{display:none!important}bento-sidebar{color:#000;background-color:#efefef;height:100vh;top:0;max-height:100vh!important;max-width:80vw;min-width:45px!important;outline:none;z-index:2147483647}bento-sidebar::part(c),bento-sidebar::part(sidebar),bento-sidebar::part(wrapper){color:inherit;background-color:inherit;height:inherit;top:inherit;max-height:inherit;max-width:inherit;min-width:inherit;outline:inherit;z-index:inherit;width:inherit;padding:inherit;border:inherit}bento-sidebar{visibility:hidden!important;position:fixed!important}bento-sidebar::part(c){visibility:visible!important}
+  bento-accordion{display:block;contain:layout}bento-accordion,bento-accordion>section,bento-accordion>section>:first-child{margin:0}bento-accordion>section>*{display:block;float:none;overflow:hidden;position:relative}@media (min-width:1px){:where(bento-accordion>section)>:first-child{cursor:pointer;background-color:#efefef;padding-right:20px;border:1px solid #dfdfdf}}.i-amphtml-accordion-header{cursor:pointer;background-color:#efefef;padding-right:20px;border:1px solid #dfdfdf}bento-accordion>section:not([expanded])>:last-child:not(.i-amphtml-animating),bento-accordion>section:not([expanded])>:last-child:not(.i-amphtml-animating) *{display:none!important}
   </style>
 {% endblock %}
 {% block content %}

@@ -8,19 +8,25 @@ Do not change formatting this would break rendering. #}
     {% endif -%}
   </header>
   <div class="bd-example-code{% if hero %} --hidden{% endif %}">
-    <bento-accordion id="{{ id }}-code" class="my-accordion">
-      <section>
-        <h2>head</h2>
+    <bento-accordion id="{{ id }}-code">
+      <section class="bd-example-code-section">
+        <h4 class="bd-example-code-headline">
+          <pre class="language-html"><span class="token tag">&lt;head&gt;</span></pre>
+        </h4>
         <div>
           <pre class="language-html">{{ head|safe }}</pre>
         </div>
       </section>
-      <section>
-        <h2>body</h2>
+      <pre class="language-html"><span class="token tag">&lt;/head&gt;</span></pre>
+      <section class="bd-example-code-section" expanded>
+        <h4 class="bd-example-code-headline">
+          <pre class="language-html"><span class="token tag">&lt;body&gt;</span></pre>
+        </h4>
         <div>
           <pre class="language-html">{{ body|safe }}</pre>
         </div>
       </section>
+      <pre class="language-html"><span class="token tag">&lt;/body&gt;</span></pre>
     </bento-accordion>
   </div>
   {% if iframe %}

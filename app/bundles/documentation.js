@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
     new Example(example);
   }
   for (codeSnippet of document.querySelectorAll(
-    '.bd-page-components-container__main pre'
+    '.bd-page-components-container__main > pre'
   )) {
     new CopyToClipboard(codeSnippet);
   }

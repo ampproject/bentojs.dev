@@ -1,3 +1,5 @@
+import CopyToClipboard from '../components/CopyToClipboard';
+
 class Example {
   constructor($example) {
     this.$example = $example;
@@ -15,6 +17,15 @@ class Example {
     this.$button.preview.addEventListener('click', (e) => {
       this.toggle(e, true);
     });
+
+    let code = '';
+    for (const codeElement of this.$example.querySelectorAll('pre')) {
+      code = code + codeElement.innerText;
+    }
+
+    console.log('Ready to copy', code);
+
+    new CopyToClipboard(this.$code, code);
   }
 
   toggle(e, force) {

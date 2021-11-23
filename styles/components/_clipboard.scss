@@ -1,27 +1,29 @@
-.bd-page-components pre {
+.bd-copy {
+  opacity: 0;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px 4px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background: var(--maastricht-blue);
+
+  svg {
+    height: 24px;
+    width: 24px;
+    max-height: 24px;
+    max-width: 24px;
+    color: white;
+  }
+}
+
+.bd-page-components pre,
+.bd-example-code {
   position: relative;
 
-  .bd-copy {
-    opacity: 0;
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 8px 4px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background: var(--maastricht-blue);
-
-    svg {
-      height: 24px;
-      width: 24px;
-      max-height: 24px;
-      max-width: 24px;
-      color: white;
-    }
-  }
   &:hover .bd-copy {
     opacity: 1;
   }

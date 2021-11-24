@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
     {% for page in collections.all %}
     {% if not page.data.ignore %}
         <url>
-            <loc>{{ site.url }}{{ page.url | url }}</loc>
+            <loc>https://bentojs.dev/{{ site.url }}{{ page.url | url }}</loc>
             <lastmod>{{ page.date.toISOString() }}</lastmod>
         </url>
     {% endif %}

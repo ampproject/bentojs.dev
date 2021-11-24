@@ -1,5 +1,5 @@
 .banner--hide announcement-banner,
-announcement-banner[hidden] {
+announcement-banner.--hidden {
   display: none;
 }
 [data-banner-close] {

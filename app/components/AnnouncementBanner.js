@@ -35,7 +35,7 @@ class Banner extends HTMLElement {
   }
 
   close() {
-    this.setAttribute('hidden', true);
+    this.classList.add('--hidden');
   }
 }
 

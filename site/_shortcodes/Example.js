@@ -53,17 +53,19 @@ function exampleShortCode(nunjucksEngine) {
 
       const HTML_HEAD_PATTERN = /<head>(.*?)<\/head>/gms;
       html.head = HTML_HEAD_PATTERN.exec(html.all);
-      html.head = html.head && html.head[1] ? html.head[1] : undefined;
+      html.head = html.head && html.head[1] ? html.head[1] : '';
       if (!html.head) {
         return {};
       }
 
       const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
       html.body = HTML_BODY_PATTERN.exec(html.all);
-      html.body = html.body && html.body[1] ? html.body[1] : undefined;
+      html.body = html.body && html.body[1] ? html.body[1] : '';
 
-      // If there is no body, take all of the HTML, but discard the head
-      html.body = html.all.replace(HTML_HEAD_PATTERN, '');
+      // Make sure head and body both don't contain any blank lines
+      // as they would create empty paragraphs in markdown
+      html.head = html.head.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
+      html.body = html.body.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
 
       return html;
     };
@@ -83,7 +85,7 @@ function exampleShortCode(nunjucksEngine) {
           html,
           title: ctx.title,
         });
-        examples.push({id, iframe});
+        examples.push({ id, iframe });
       }
 
       let widget = contents();
@@ -92,6 +94,8 @@ function exampleShortCode(nunjucksEngine) {
           id,
           source: widget,
           hero: false,
+          head: Prism.highlight(html.head, Prism.languages.html, 'html'),
+          body: Prism.highlight(html.body, Prism.languages.html, 'html'),
           iframe: iframe ? `/assets/iframes/${id}.html` : false,
           title: ctx.title,
         });

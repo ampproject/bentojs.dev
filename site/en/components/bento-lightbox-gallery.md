@@ -1,6 +1,7 @@
 ---
 id: bento-lightbox-gallery
 title: Bento Lightbox Gallery
+permalink: /components/bento-lightbox-gallery/
 short_title: Lightbox Gallery
 layout: layouts/component.njk
 description: Provides a modal &quot;lightbox&quot; experience for images.

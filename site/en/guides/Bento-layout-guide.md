@@ -3,6 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: The Bento layout guide
 description: How to create responsive layouts for your Bento components using CSS.
+permalink: /documentation/guides/bento-layout-guide
 ---
 
 This guide explains how to effectively layout Bento components.

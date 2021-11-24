@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ locale }}">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="preload" href="/assets/fonts/inter-latin.var.woff2" as="font" crossorigin>
-    <link rel="preload" href="/assets/fonts/roboto-mono-latin.var.woff2" as="font" crossorigin>
-    <script type="module" src="https://cdn.ampproject.org/bento.mjs"></script> 
-    <script type="nomodule" src="https://cdn.ampproject.org/bento.js"></script> 
-    <link rel="preconnect" href="https://www.google-analytics.com/">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preload" href="/assets/fonts/inter-latin.var.woff2" as="font" crossorigin>
+  <link rel="preload" href="/assets/fonts/roboto-mono-latin.var.woff2" as="font" crossorigin>
+  <link rel="canonical" href="{{ page.url }}" />
+  <script type="module" src="https://cdn.ampproject.org/bento.mjs"></script> 
+  <script type="nomodule" src="https://cdn.ampproject.org/bento.js"></script> 
+  <link rel="preconnect" href="https://www.google-analytics.com/">
 
-    {% block styles %}{% endblock %}
-    {% if helpers.environment === 'prod' %}
-      <style>/* bento-dev.css */</style>
+  {% block styles %}{% endblock %}
+  {% if helpers.environment === 'prod' %}
+  <style>/* bento-dev.css */</style>
   {% else %}
-    <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
-    <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
+  {% endif %}
+  {% if helpers.environment !== 'prod' or page.data.ignore %}
+  <meta name="robots" content="noindex">
   {% endif %}
   <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>
 

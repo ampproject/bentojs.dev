@@ -1,6 +1,7 @@
 ---
 id: bento-twitter
 title: Bento Twitter
+permalink: /components/bento-twitter/
 short_title: Twitter
 layout: layouts/component.njk
 description: >-

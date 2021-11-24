@@ -1,6 +1,7 @@
 ---
 id: bento-inline-gallery
 title: Bento Inline Gallery
+permalink: /components/bento-inline-gallery/
 short_title: Inline Gallery
 layout: layouts/component.njk
 description: 'Displays slides, with optional pagination dots and thumbnails.'

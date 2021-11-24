@@ -1,6 +1,7 @@
 ---
 id: bento-date-countdown
 title: Bento Date Countdown
+permalink: /components/bento-date-countdown/
 short_title: Date Countdown
 layout: layouts/component.njk
 description: Displays a countdown sequence to a specified date.

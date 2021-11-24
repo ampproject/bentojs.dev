@@ -177,6 +177,7 @@ async function importComponents() {
 
         document.data.id = componentName;
         document.data.title = name;
+        document.data.permalink = `/components/${fileName}/`;
         document.data.short_title = name.replace('Bento ', '');
         document.data.layout = 'layouts/component.njk';
         document.data.description = _extractDescription(document.content);

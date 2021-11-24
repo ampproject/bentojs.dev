@@ -12,9 +12,9 @@ const {
   exampleShortCode,
   writeExamples,
 } = require('./site/_shortcodes/Example.js');
-const { heroExampleShortcode } = require('./site/_shortcodes/HeroExample.js');
+const {heroExampleShortcode} = require('./site/_shortcodes/HeroExample.js');
 
-const { i18n } = require('./site/_filters/i18n');
+const {i18n} = require('./site/_filters/i18n');
 const md = require('./site/_filters/md');
 const date = require('./site/_filters/date.js');
 

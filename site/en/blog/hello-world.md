@@ -7,6 +7,7 @@ image: ./assets/img/og.jpg
 excerpt: Stay tuned
 layout: layouts/post.njk
 tags: posts
+permalink: blog/hello-world/
 ---
 
 ![Stage image](/assets/img/og.jpg)

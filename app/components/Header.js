@@ -9,11 +9,7 @@ class Header {
   toggle(e, force) {
     e.preventDefault();
     this.$header.classList.toggle('--mainmenuopen', force);
-
-    const scroll = this.$header.classList.contains('--mainmenuopen')
-      ? 'hidden'
-      : 'scroll';
-    document.documentElement.style.overflow = scroll;
+    document.documentElement.classList.toggle('--main-overflow', force);
   }
 }
 

@@ -9,6 +9,7 @@ class Header {
   toggle(e, force) {
     e.preventDefault();
     this.$header.classList.toggle('--mainmenuopen', force);
+    document.documentElement.classList.toggle('--main-overflow', force);
   }
 }
 

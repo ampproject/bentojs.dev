@@ -1,3 +1,7 @@
+.bd-theme--light {
+  z-index: 10;
+}
+
 .bd-page-get-started {
   $spacing-small: calc(var(--spacing-xxl) * 1.5);
   $spacing-big: calc(var(--spacing-xxl) * 3.125);
@@ -10,7 +14,7 @@
 
   &__background {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     opacity: 0.1;
     left: -8%;
     top: 56%;
@@ -203,6 +207,23 @@
       display: block;
       margin-block-start: var(--spacing-xs);
       font-weight: var(--semi-bold);
+    }
+
+    strong > code,
+    p > code {
+      background-color: var(--bright-gray);
+      border-radius: 2px;
+      color: var(--independence);
+      font-family: var(--font-mono);
+      font-size: inherit;
+      font-weight: var(--medium);
+      letter-spacing: 0.2px;
+      line-height: 2;
+      padding: 0 2px;
+
+      @include media('medium') {
+        padding: 2px 8px;
+      }
     }
 
     .bd-react-sample,

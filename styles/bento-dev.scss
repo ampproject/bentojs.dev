@@ -111,3 +111,11 @@ ol {
 .--uppercase {
   text-transform: uppercase;
 }
+
+.--main-overflow {
+  overflow: hidden;
+
+  @include media('large') {
+    overflow: scroll;
+  }
+}

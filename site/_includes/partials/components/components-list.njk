@@ -4,7 +4,7 @@
       <ul>
       {%- for component in category.components -%}
           <li>
-            <h6><a class="bd-link" href="{{ component.url }}">{{ component.data.short_title }}</a></h6>
+            <h4><a class="bd-link" href="{{ component.url }}">{{ component.data.short_title }}</a></h4>
             <p>{{ component.data.description | safe }}</p>
             </a>
           </li>

@@ -1,6 +1,7 @@
 ---
 id: bento-base-carousel
 title: Bento Carousel
+permalink: /components/bento-carousel/
 short_title: Carousel
 layout: layouts/component.njk
 description: >-

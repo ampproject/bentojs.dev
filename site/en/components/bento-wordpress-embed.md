@@ -1,6 +1,7 @@
 ---
 id: bento-wordpress-embed
 title: Bento WordPress Embed
+permalink: /components/bento-wordpress-embed/
 short_title: WordPress Embed
 layout: layouts/component.njk
 description: >-

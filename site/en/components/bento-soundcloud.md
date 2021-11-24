@@ -1,6 +1,7 @@
 ---
 id: bento-soundcloud
 title: Bento Soundcloud
+permalink: /components/bento-soundcloud/
 short_title: Soundcloud
 layout: layouts/component.njk
 description: 'Embeds a <a href="https://soundcloud.com">Soundcloud</a> clip.'

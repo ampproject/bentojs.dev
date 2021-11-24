@@ -1,6 +1,7 @@
 ---
 id: bento-fit-text
 title: Bento Fit Text
+permalink: /components/bento-fit-text/
 short_title: Fit Text
 layout: layouts/component.njk
 description: >-

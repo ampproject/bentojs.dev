@@ -1,6 +1,7 @@
 ---
 id: bento-social-share
 title: Bento Social Share
+permalink: /components/bento-social-share/
 short_title: Social Share
 layout: layouts/component.njk
 description: Displays a sharing button for social platforms or system share.

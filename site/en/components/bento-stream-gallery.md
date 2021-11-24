@@ -1,6 +1,7 @@
 ---
 id: bento-stream-gallery
 title: Bento Stream Gallery
+permalink: /components/bento-stream-gallery/
 short_title: Stream Gallery
 layout: layouts/component.njk
 description: >-

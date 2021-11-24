@@ -1,6 +1,7 @@
 ---
 id: bento-facebook
 title: Bento Facebook
+permalink: /components/bento-facebook/
 short_title: Facebook
 layout: layouts/component.njk
 description: >-

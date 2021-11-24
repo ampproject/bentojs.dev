@@ -1,6 +1,7 @@
 ---
 id: bento-embedly-card
 title: Bento Embedly Card
+permalink: /components/bento-embedly-card/
 short_title: Embedly Card
 layout: layouts/component.njk
 description: >-

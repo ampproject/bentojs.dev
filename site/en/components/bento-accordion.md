@@ -1,6 +1,7 @@
 ---
 id: bento-accordion
 title: Bento Accordion
+permalink: /components/bento-accordion/
 short_title: Accordion
 layout: layouts/component.njk
 description: Displays content sections that can be collapsed and expanded.

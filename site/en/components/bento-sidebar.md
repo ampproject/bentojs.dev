@@ -1,6 +1,7 @@
 ---
 id: bento-sidebar
 title: Bento Sidebar
+permalink: /components/bento-sidebar/
 short_title: Sidebar
 layout: layouts/component.njk
 description: >-

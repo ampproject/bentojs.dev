@@ -16,7 +16,8 @@ class CopyToClipboard {
   }
 
   async onClick() {
-    const textToCopy = this.textToCopy || this.element.querySelector('code').innerText;
+    const textToCopy =
+      this.textToCopy || this.element.querySelector('code').innerText;
     await navigator.clipboard.writeText(textToCopy);
     this.element.classList.add('--success');
     setTimeout(() => {

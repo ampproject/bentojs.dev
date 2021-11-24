@@ -1,6 +1,7 @@
 ---
 id: bento-selector
 title: Bento Selector
+permalink: /components/bento-selector/
 short_title: Selector
 layout: layouts/component.njk
 description: An input that presents any type of content as list of options.

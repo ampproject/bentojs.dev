@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
-    "build:eleventy": "ELEVENTY_ENV=prod eleventy",
+    "build:eleventy": "eleventy",
     "clean": "rimraf dist",
     "develop": "npx gulp develop",
     "import": "npx gulp importAll",
-    "deploy:production": "run-s clean import build publish:production",
-    "deploy:staging": "run-s clean import build publish:staging",
+    "deploy:production": "ELEVENTY_ENV=prod run-s clean import build publish:production",
+    "deploy:staging": "ELEVENTY_ENV=staging run-s clean import build publish:staging",
     "lint": "eslint ./app/**/*.js -c ./.eslintrc.json --ignore-pattern amphtml",
     "lint:fix": "eslint ./app/**/*.js -c ./.eslintrc.json --fix --ignore-pattern amphtml",
     "publish:production": "firebase deploy",
@@ -23,12 +23,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
   },
-  "keywords": [
-    "AMP",
-    "Page",
-    "Experience",
-    "Bento"
-  ],
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {

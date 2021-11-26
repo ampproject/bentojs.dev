@@ -90,15 +90,13 @@
 
     .bd-link,
     &-link {
-      background: none;
-      border: 0;
       font-size: var(--font-size-21);
       font-weight: var(--bold);
       line-height: 1.14;
+      width: fit-content;
 
       @include media('large') {
         font-size: var(--font-size-16);
-        line-height: 2;
       }
     }
 

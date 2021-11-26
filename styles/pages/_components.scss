@@ -11,7 +11,7 @@
       margin-block: calc(var(--spacing-xxl) * 1.25);
       display: grid;
       grid-template-areas: 'sidebar main toc';
-      grid-template-columns: minmax(max-content, 1fr) minmax(auto, 750px) max-content;
+      grid-template-columns: minmax(max-content, auto) minmax(490px, 750px) 210px;
       column-gap: var(--spacing-m);
     }
 
@@ -24,10 +24,6 @@
       grid-area: main;
       position: relative;
       z-index: 50;
-
-      @include media('large') {
-        min-width: 490px;
-      }
 
       .bd-page-components-background {
         position: absolute;

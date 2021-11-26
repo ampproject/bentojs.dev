@@ -11,7 +11,7 @@
       margin: 80px auto;
       display: grid;
       grid-template-areas: 'sidebar main toc';
-      grid-template-columns: minmax(max-content, 1fr) minmax(auto, 750px) 1fr;
+      grid-template-columns: minmax(max-content, auto) minmax(490px, 750px) 210px;
       column-gap: var(--spacing-m);
     }
 
@@ -23,10 +23,6 @@
       grid-area: main;
       position: relative;
       z-index: 50;
-
-      @include media('large') {
-        min-width: 490px;
-      }
 
       .bd-page-components-overview-background {
         position: absolute;
@@ -178,8 +174,18 @@
     margin-block: var(--spacing-xs) var(--spacing-xxs);
   }
 
+  .bd-link,
   p {
     margin-block-end: var(--spacing-xs);
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.2px;
+  }
+
+  a:not([class]) {
+    &:hover {
+      color: var(--burnt-sienna);
+    }
   }
 
   @include media('large') {

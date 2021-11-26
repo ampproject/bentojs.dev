@@ -3,7 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: Using Bento components in a Next.js app
 description: Get started with using Bento components in your Next.js app.
-permalink: /documentation/guides/bento-next.js-guide
+permalink: /documentation/guides/bento-next.js-guide/index.html
 ---
 
 This guide is to help get developers started with Next.js and Bento. All Bento components provide a React (and Preact) API. This makes them very easy to use in Next.js apps. This guide assumes you have some familiarity with modern front end development like ReactJS, NodeJS, Javascript, and JSX.

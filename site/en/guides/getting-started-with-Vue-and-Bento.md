@@ -3,7 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: Using Bento components in a Vue.js app
 description: Learn how to get started with using Bento components in your Vue.js application.
-permalink: /documentation/guides/bento-vue.js-guide
+permalink: /documentation/guides/bento-vue.js-guide/index.html
 ---
 
 This guide is to help you get started with using Bento components in your Vue.js application. All Bento components are provided as web components, which makes them easy to use with Vue.js.

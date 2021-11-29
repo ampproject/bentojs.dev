@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
+    "build:production": "ELEVENTY_ENV=prod gulp build",
     "build:eleventy": "eleventy",
     "clean": "rimraf dist",
     "develop": "npx gulp develop",

@@ -8,6 +8,7 @@ excerpt: Stay tuned
 layout: layouts/post.njk
 tags: posts
 permalink: blog/hello-world/
+ignore: true
 ---
 
 ![Stage image](/assets/img/og.jpg)

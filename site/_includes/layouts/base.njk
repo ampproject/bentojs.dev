@@ -16,7 +16,7 @@
   {% else %}
   <link rel="stylesheet" href="{{ helpers.addHashQueryParam('/assets/css/bento-dev.css') }}">
   {% endif %}
-  {% if helpers.environment !== 'prod' or page.data.ignore %}
+  {% if helpers.environment !== 'prod' or ignore %}
   <meta name="robots" content="noindex">
   {% endif %}
   <title>{{ title }} | {{ 'i18n.misc.page_title' | i18n(locale) }}</title>

@@ -64,7 +64,7 @@ defineBentoLightbox();
     ></script>
   </head>
   <body>
-    <bento-lightbox id="my-lightbox" hidden>
+    <bento-lightbox id="my-lightbox">
       Lightboxed content
       <button id="close-button">Close lightbox</button>
     </bento-lightbox>
@@ -204,7 +204,7 @@ When the `scrollable` attribute is present, the content of the lightbox can scro
     ></script>
   </head>
   <body>
-    <bento-lightbox id="my-lightbox" hidden>
+    <bento-lightbox id="my-lightbox">
       Lightboxed content
       <button id="close-button">Close lightbox</button>
     </bento-lightbox>

@@ -76,7 +76,7 @@ defineBentoSidebar();
     />
   </head>
   <body>
-    <bento-sidebar id="sidebar1" side="right">
+    <bento-sidebar id="sidebar1" side="right" hidden>
       <ul>
         <li>Nav item 1</li>
         <li>Nav item 2</li>

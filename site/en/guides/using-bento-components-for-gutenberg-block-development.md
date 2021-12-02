@@ -3,6 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: How to create WordPress Gutenberg blocks with Bento
 description: Why Bento components are a fantastic fit for creating Gutenberg blocks in WordPress and how it works.
+image: ./assets/img/guides/wordpress.png
 permalink: /documentation/guides/bento-gutenberg-blocks-guide/index.html
 ---
 

@@ -3,6 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: Using Bento components in a Next.js app
 description: Get started with using Bento components in your Next.js app.
+image: ./assets/img/guides/next.png
 permalink: /documentation/guides/bento-next.js-guide/index.html
 ---
 

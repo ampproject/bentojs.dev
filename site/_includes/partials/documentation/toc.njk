@@ -1,4 +1,4 @@
-{% macro toc() %}
+<bento-sidebar class="bd-sidebar" id="bd-toc" side="right" hidden>
   <nav class="bd-sidebar__contents bd-sidebar__contents--toc">
     <h3>Table of contents</h3>
     <ol>
@@ -7,8 +7,4 @@
       <li><a href="#all">{{ i18n.all_components }}</a></li>
     </ol>
   </nav>
-{% endmacro %}
-<bento-sidebar class="bd-sidebar" id="bd-toc" side="right" hidden>
-  {{ toc() }}
 </bento-sidebar>
-<div class="bd-sidebar__target">{{ toc() }}</div>

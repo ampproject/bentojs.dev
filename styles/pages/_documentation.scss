@@ -66,7 +66,7 @@
 }
 
 .bd-cards {
-  margin-block: var(--spacing-xxl);
+  margin: var(--spacing-xxl) 0;
 
   h2 {
     margin-block-end: var(--spacing-m);
@@ -158,11 +158,11 @@
     font-size: var(--font-size-18);
     font-weight: var(--bold);
     line-height: 1.33;
-    margin-block: var(--spacing-xl) var(--spacing-s);
+    margin: var(--spacing-xl) 0 var(--spacing-s);
 
     @include media('xlarge') {
       font-size: var(--font-size-21);
-      margin-block: var(--spacing-xxl) var(--spacing-l);
+      margin: var(--spacing-xxl) 0 var(--spacing-l);
     }
   }
 
@@ -171,7 +171,7 @@
     font-weight: var(--bold);
     letter-spacing: 0.2px;
     line-height: 1.71;
-    margin-block: var(--spacing-xs) var(--spacing-xxs);
+    margin: var(--spacing-xs) 0 var(--spacing-xxs);
   }
 
   .bd-link,
@@ -197,9 +197,8 @@
         width: 60%;
       }
 
-      h6,
       p {
-        margin-block: var(--spacing-xs);
+        margin: var(--spacing-xs) 0;
       }
     }
     #bd-toc {

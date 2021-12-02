@@ -61,7 +61,7 @@
       font-weight: var(--light);
       letter-spacing: 0.2px;
       line-height: 1.71;
-      margin-block: var(--spacing-xxs) var(--spacing-m);
+      margin: var(--spacing-xxs) 0 var(--spacing-m);
 
       @include media('large') {
         font-size: var(--font-size-16);
@@ -86,13 +86,13 @@
       font-weight: var(--light);
       letter-spacing: 0.2px;
       line-height: 1.71;
-      margin-block: var(--spacing-m) var(--spacing-xs);
+      margin: var(--spacing-m) 0 var(--spacing-xs);
 
       @include media('large') {
         font-size: var(--font-size-16);
         font-weight: 350;
         line-height: 2;
-        margin-block: var(--spacing-l) var(--spacing-s);
+        margin: var(--spacing-l) 0 var(--spacing-s);
       }
     }
   }

@@ -53,25 +53,25 @@
   h2,
   h3,
   h4 {
-    margin-block: var(--spacing-xl) var(--spacing-xs);
+    margin: var(--spacing-xl) 0 var(--spacing-xs);
 
     @include media('medium') {
-      margin-block: var(--spacing-xxl) var(--spacing-s);
+      margin: var(--spacing-xxl) 0 var(--spacing-s);
     }
   }
 
   h5,
   h6 {
-    margin-block: var(--spacing-l) var(--spacing-xs);
+    margin: var(--spacing-l) 0 var(--spacing-xs);
 
     @include media('medium') {
-      margin-block: var(--spacing-xl) var(--spacing-s);
+      margin: var(--spacing-xl) 0 var(--spacing-s);
     }
   }
 
   p,
   pre[class*='language-'] {
-    margin-block: var(--spacing-s);
+    margin: var(--spacing-s) 0;
   }
 
   h1 {
@@ -216,10 +216,10 @@
 
     td,
     th {
-      padding-block: var(--spacing-xxs);
+      padding: var(--spacing-xxs) 0;
 
       @include media('medium') {
-        padding-block: var(--spacing-xs);
+        padding: var(--spacing-xs) 0;
       }
     }
 
@@ -250,7 +250,7 @@
   hr {
     border: 0;
     border-bottom: solid 2px var(--light-sea-green);
-    margin-block: calc(var(--spacing-xxl) * 2);
+    margin: calc(var(--spacing-xxl) * 2) 0;
   }
 
   .bd-usage {
@@ -270,7 +270,7 @@
       font-size: 14px;
       font-weight: var(--semi-bold);
       line-height: 2;
-      margin-block: 0 var(--spacing-xs);
+      margin: 0 0 var(--spacing-xs);
     }
 
     @include media('medium') {

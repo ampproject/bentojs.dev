@@ -8,7 +8,7 @@
     width: 90%;
 
     @include media('large') {
-      margin-block: calc(var(--spacing-xxl) * 1.25);
+      margin: calc(var(--spacing-xxl) * 1.25) auto;
       display: grid;
       grid-template-areas: 'sidebar main toc';
       grid-template-columns: minmax(max-content, auto) minmax(490px, 750px) 210px;

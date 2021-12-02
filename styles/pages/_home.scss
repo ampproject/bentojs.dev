@@ -80,12 +80,12 @@
   }
 
   .bd-latest-news {
-    margin-block: $spacing-small;
+    margin: $spacing-small 0;
     position: relative;
     z-index: 50;
 
     @include media('medium') {
-      margin-block: $spacing-big;
+      margin: $spacing-big 0;
 
       .bd-row__column {
         width: 70%;

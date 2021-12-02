@@ -36,10 +36,10 @@
 
       h2 {
         font-weight: 250;
-        margin-block: var(--spacing-xxs) var(--spacing-s);
+        margin: var(--spacing-xxs) 0 var(--spacing-s);
 
         @include media('medium') {
-          margin-block: var(--spacing-xs) var(--spacing-xl);
+          margin: var(--spacing-xs) 0 var(--spacing-xl);
         }
       }
     }

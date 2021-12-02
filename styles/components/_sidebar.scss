@@ -52,8 +52,7 @@
 
       ol {
         margin: 0;
-        padding-inline-start: var(--spacing-s);
-        padding-block: var(--spacing-xs);
+        padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-s);
         &:first-child {
           padding: 0;
         }

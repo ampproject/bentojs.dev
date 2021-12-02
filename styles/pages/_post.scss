@@ -41,14 +41,14 @@
     }
 
     figure {
-      margin-block: var(--spacing-xxl) var(--spacing-xxs);
+      margin: var(--spacing-xxl) 0 var(--spacing-xxs);
       margin-inline: 0;
 
       &:first-of-type {
-        margin-block: var(--spacing-m) var(--spacing-xl);
+        margin: var(--spacing-m) 0 var(--spacing-xl);
 
         @include media('large') {
-          margin-block: var(--spacing-xl) var(--spacing-xxl);
+          margin: var(--spacing-xl) 0 var(--spacing-xxl);
         }
       }
 
@@ -60,7 +60,7 @@
     .bd-link {
       display: block;
       font-size: 14px;
-      margin-block: var(--spacing-xs) var(--spacing-xxl);
+      margin: var(--spacing-xs) 0 var(--spacing-xxl);
 
       @include media('large') {
         display: none;
@@ -97,10 +97,10 @@
       font-size: var(--font-size-34);
       letter-spacing: -0.5px;
       line-height: 1.18;
-      margin-block: var(--spacing-xl) var(--spacing-xs);
+      margin: var(--spacing-xl) 0 var(--spacing-xs);
 
       @include media('large') {
-        margin-block: var(--spacing-xxl) var(--spacing-m);
+        margin: var(--spacing-xxl) 0 var(--spacing-m);
       }
     }
 
@@ -126,10 +126,10 @@
     }
 
     .bd-navigation-container {
-      margin-block: calc(var(--spacing-xxl) * 1.5);
+      margin: calc(var(--spacing-xxl) * 1.5) 0;
 
       @include media('large') {
-        margin-block: calc(var(--spacing-xxl) * 2);
+        margin: calc(var(--spacing-xxl) * 2) 0;
       }
 
       hr {

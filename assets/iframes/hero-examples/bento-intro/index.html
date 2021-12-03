@@ -62,8 +62,9 @@
         background: none;
       }
       .my-accordion > section > div {
-        padding: 2rem;
-        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .my-accordion section[expanded] {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='48px' viewBox='0 0 24 24' width='48px' fill='%23000000'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z'/%3E%3C/svg%3E%0A");
@@ -76,6 +77,15 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+      }
+      bento-base-carousel {
+        height: 100vh;
+        width: 100vw;
+      }
+      bento-base-carousel > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       @media only screen and (max-device-width: 480px) {
         body {
@@ -105,13 +115,25 @@
       <section>
         <h2>bento-carousel</h2>
         <div>
-          <bento-base-carousel
-            id="my-carousel"
-            style="aspect-ration: 4/3; height: 50vh"
-          >
-            <img src="/assets/img/group-19.webp" al="banana" />
-            <img src="/assets/img/group-19-copy.webp" al="bento box" />
-            <img src="/assets/img/group-19-copy-2.webp" alt="avocado" />
+          <bento-base-carousel style="aspect-ration: 4/3">
+            <img
+              height="700"
+              width="1037"
+              src="/assets/img/banana.jpg"
+              alt="Example image: banana "
+            />
+            <img
+              height="700"
+              width="1037"
+              src="/assets/img/bentobox.jpg"
+              alt="Example image: bento box"
+            />
+            <img
+              height="700"
+              width="1037"
+              src="/assets/img/avocado.jpg"
+              alt="Example image: avocado"
+            />
           </bento-base-carousel>
         </div>
       </section>
@@ -128,7 +150,6 @@
       <section>
         <h2>bento-lightbox-gallery</h2>
         <div>
-          <p>Click on an image to open a lightbox gallery:</p>
           <div class="image-grid">
             <bento-lightbox-gallery></bento-lightbox-gallery>
             <img

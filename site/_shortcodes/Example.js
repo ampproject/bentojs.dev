@@ -85,7 +85,7 @@ function exampleShortCode(nunjucksEngine) {
           html,
           title: ctx.title,
         });
-        examples.push({ id, iframe });
+        examples.push({id, iframe});
       }
 
       let widget = contents();

@@ -36,7 +36,6 @@ body {
   padding: 0;
   margin: 0;
   min-width: 240px;
-  color: var(--white);
   background-color: var(--maastricht-blue);
   font-size: var(--font-size-16);
   font-family: var(--font-sans);
@@ -103,8 +102,7 @@ hr {
   padding: 0;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 

@@ -58,8 +58,8 @@ function heroExampleShortcode(nunjucksEngine) {
 
         return {
           head,
-          body
-        }
+          body,
+        };
       } catch (e) {
         console.log(e);
         return {};

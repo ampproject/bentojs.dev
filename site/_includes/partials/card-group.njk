@@ -1,10 +1,10 @@
 {% set colors = cycler('burnt-sienna', 'elephant-green', 'naples-yellow', 'light-sea-green') %}
 <div class="{% if cardGroup.color %}bd-card-group{% else%}bd-card-group-column{% endif %}">
   {%- for card in cardGroup.pages -%}
-    <a class="bd-card {% if cardGroup.color %}bd-card--{{ colors.next() }}{% else %}bd-card--white{% endif %}" href="{{ card.url }}">
+    <a class="bd-card {% if cardGroup.color %}bd-card--{{ colors.next() }}{% else %}bd-card--white bd-card--guide{% endif %}" href="{{ card.url }}">
       {% if not cardGroup.color %}
-        {% if card.data.image %}
-          {% image card.data.image, card.data.title %}
+        {% if card.data.thumbnail %}
+          {% image card.data.thumbnail, card.data.title %}
         {% else %}
           {% image "./assets/img/guides/icon-logo-bento.png", card.data.title %}
         {% endif %}

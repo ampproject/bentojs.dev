@@ -114,6 +114,7 @@
       @include media('medium') {
         gap: var(--spacing-m);
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
         left: unset;
         overflow: visible;
         padding: unset;
@@ -122,6 +123,7 @@
 
       @include media('xlarge') {
         grid-template-columns: repeat(3, minmax(auto, 300px));
+        grid-template-rows: 1fr 1fr;
       }
     }
 
@@ -144,7 +146,7 @@
       color: inherit;
     }
 
-    &--white {
+    &--guide {
       align-items: center;
       grid-column: 1;
       grid-row: auto;

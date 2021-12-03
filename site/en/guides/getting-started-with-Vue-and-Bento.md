@@ -3,7 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: Using Bento components in a Vue.js app
 description: Learn how to get started with using Bento components in your Vue.js application.
-image: ./assets/img/guides/vue.png
+thumbnail: ./assets/img/guides/vue.png
 permalink: /documentation/guides/bento-vue.js-guide/index.html
 ---
 

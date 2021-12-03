@@ -3,7 +3,7 @@ layout: layouts/guide.njk
 tags: guides
 title: Using Bento components in Eleventy
 description: How to use Bento components in your static website built with Eleventy.
-image: ./assets/img/guides/eleventy.png
+thumbnail: ./assets/img/guides/eleventy.png
 permalink: /documentation/guides/bento-eleventy-guide/index.html
 ---
 

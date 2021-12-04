@@ -10,7 +10,84 @@ tags: posts
 permalink: blog/introducing-bento-components/index.html
 ---
 
-{% heroexample 'bento-intro' %}
+<style>
+  .demo-container {
+    background: #ecf1f3;
+  }
+  .demo-container button {
+    margin: auto;
+    display: block;
+    padding: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .demo-accordion {
+    margin: 1rem 0;
+    overflow: hidden;
+    max-height: 380px;
+  }
+  .demo-accordion.show-more {
+    max-height: unset;
+  }
+  .demo-accordion.show-more + button {
+    display: none;
+  }
+  .demo-accordion > section {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    background: white;
+    background-repeat: no-repeat;
+    background-position: right 1rem top 1rem;
+  }
+  .demo-accordion h2 {
+    background: white;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-size: var(--font-size-18);
+  }
+  .demo-accordion div {
+    padding: 2rem;
+    padding-top: 0;
+  }
+  .demo-accordion section[expanded] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23000000'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14l-6-6z'/%3E%3C/svg%3E%0A");
+  }
+
+  .demo-accordion section:not([expanded]) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23000000'%3E%3Cpath d='M24 24H0V0h24v24z' fill='none' opacity='.87'/%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z'/%3E%3C/svg%3E%0A");
+  }
+  @media only screen and (max-device-width: 480px) {
+    .demo-accordion div {
+      padding: .5rem;
+      padding-top: 0;
+    }
+     .demo-accordion {
+        margin: 0;
+        overflow: hidden;
+        max-height: 380px;
+      }
+      .demo-accordion > section {
+    margin: .5rem;
+      }
+  }
+</style>
+<div class="demo-container">
+<bento-accordion id="demo-accordion" class="demo-accordion">
+{% for example in heroExamples %}
+  <section>
+    <h2>{{ example.name }} </h2>
+    <div>
+    <div style="position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0;">
+    <iframe src="{{ example.path }}" loading="lazy" title="{{ example.name }}"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    </div>
+    </div>
+  </section>
+{% endfor %}
+</bento-accordion>
+<button onclick="document.querySelector('#demo-accordion').classList.add('show-more')">Show More</button>
+</div>
 
 Hello World! Today we’re excited to fully launch our [Bento components](https://bentojs.dev). What are Bento components you ask? They are performant components with great user experience baked into them! We hope you try them out and give us feedback!
 

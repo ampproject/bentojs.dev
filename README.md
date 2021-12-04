@@ -6,7 +6,7 @@ The official homepage of the Bento.
 
 We welcome contributions to bento.dev.
 
-- **Bug reports and feature requests:** something missing or not working on [bento.dev](https://bento.dev)? Please file an issue [here](https://github.com/ampproject/bento.dev/issues/new).
+- **Bug reports and feature requests:** something missing or not working on [bento.dev](https://bentojs.dev)? Please file an issue [here](https://github.com/ampproject/bento.dev/issues/new).
 
 ## Setup
 

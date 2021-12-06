@@ -101,4 +101,4 @@ To view this page in a browser, run `npx serve` in the directory where this file
 
 ## Summary
 
-In this guide we’ve created a new Vue.js page from scratch using Bento accordion. If you want to learn more about Bento, check out the [full list of our components](/documentation/#all). You can find a working copy of this example on Github: https://github.com/ampproject/bento.dev/tree/main/examples/vue.
+In this guide we’ve created a new Vue.js page from scratch using Bento accordion. If you want to learn more about Bento, check out the [full list of our components](/documentation/#all). You can find a working copy of this example on Github: https://github.com/ampproject/bentojs.dev/tree/main/examples/vue.

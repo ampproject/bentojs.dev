@@ -175,4 +175,4 @@ And of course if you need a bit more customizability checkout the [docs for the 
 
 # Summary
 
-In this guide we’ve created a new Next.js app from scratch using Bento components. If you want to learn more about Bento, check out the full list of our components as [bentojs.dev](https://bentojs.dev). You can find a working copy of this example on [Github](https://github.com/ampproject/bento.dev/tree/main/examples/getting-started-with-NextJS-and-Bento).
+In this guide we’ve created a new Next.js app from scratch using Bento components. If you want to learn more about Bento, check out the full list of our components as [bentojs.dev](https://bentojs.dev). You can find a working copy of this example on [Github](https://github.com/ampproject/bentojs.dev/tree/main/examples/getting-started-with-NextJS-and-Bento).

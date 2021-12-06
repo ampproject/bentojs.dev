@@ -140,4 +140,4 @@ And that's it. A simple way to use Bento components in Eleventy.
 
 ## Summary
 
-Bento components are great way to enrich Eleventy sites with client-side functionality. By creating a Bento specific shortcode, we can ensure that Bento scripts and styles are only imported when needed. You can find a [fully working example on Github](https://github.com/ampproject/bento.dev/tree/main/examples/eleventy).
+Bento components are great way to enrich Eleventy sites with client-side functionality. By creating a Bento specific shortcode, we can ensure that Bento scripts and styles are only imported when needed. You can find a [fully working example on Github](https://github.com/ampproject/bentojs.dev/tree/main/examples/eleventy).

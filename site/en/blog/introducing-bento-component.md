@@ -3,15 +3,22 @@ title: <bento-fit-text>Hello World!</bento-fit-text>
 author: Alan Orozco · Bento Engineering · Google
 date: 2021-12-06
 read_time: 5
-image: ./assets/img/twitter-image-bento-default@2x.png
+image: ./assets/img/posts/bento-announcement.png
 excerpt: Hello World! Today we’re excited to fully launch the Bento components library.
 layout: layouts/post.njk
 tags: posts
 permalink: blog/introducing-the-bento-components-library/index.html
 ---
 
+{% image "./assets/img/posts/bento-announcement.png" , "Unboxing the Bento components library" %}
+
+Hello World! Today we’re excited to launch our [Bento components](https://bentojs.dev). What are Bento components, you ask? They are performant components with great user experience baked into them! We hope you try them out and give us feedback!
+
+Bento components are the result of a project by the AMP team that started [2 years](https://blog.amp.dev/2021/01/28/bento/) ago to address feedback from publishers. They offer similar performance benefits as AMP components, but provide much more flexibility, as they can be combined with any other library or framework. You can read more about Bento and the future of AMP on the official AMP blog.
+
 <style>
   .demo-container {
+    margin-top: 2rem;
     background: #ecf1f3;
   }
   .demo-container button {
@@ -88,11 +95,6 @@ permalink: blog/introducing-the-bento-components-library/index.html
 </bento-accordion>
 <button onclick="document.querySelector('#demo-accordion').classList.add('show-more')">Show More</button>
 </div>
-
-Hello World! Today we’re excited to launch our [Bento components](https://bentojs.dev). What are Bento components, you ask? They are performant components with great user experience baked into them! We hope you try them out and give us feedback!
-
-Bento components are the result of a project by the AMP team that started [2 years](https://blog.amp.dev/2021/01/28/bento/) ago to address feedback from publishers. They offer similar performance benefits as AMP components, but provide much more flexibility, as they can be combined with any other library or framework. You can read more about Bento and the future of AMP on the official AMP blog.
-
 
 ## Why Bento Components?
 

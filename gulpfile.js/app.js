@@ -5,6 +5,7 @@ const ENTRY_POINTS = [
   'app/bundles/all.js',
   'app/bundles/documentation.js',
   'app/bundles/home.js',
+  'app/bundles/get-started.js',
 ];
 
 const OUT_DIR = 'assets/js';

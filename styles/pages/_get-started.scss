@@ -252,6 +252,10 @@
       .spacer-xxl {
         margin-block-start: var(--spacing-xxl);
       }
+
+      pre[class*='language-'] {
+        position: relative;
+      }
     }
 
     @include media('large') {

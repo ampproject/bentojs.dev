@@ -14,7 +14,7 @@ permalink: blog/introducing-the-bento-components-library/index.html
 
 Hello World! Today we’re excited to launch our [Bento components](https://bentojs.dev). What are Bento components, you ask? They are performant components with great user experience baked into them! We hope you try them out and give us feedback!
 
-Bento components are the result of a project by the AMP team that started [2 years](https://blog.amp.dev/2021/01/28/bento/) ago to address feedback from publishers. They offer similar performance benefits as AMP components, but provide much more flexibility, as they can be combined with any other library or framework. You can read more about Bento and the future of AMP on the official AMP blog.
+Bento components are the result of a project by the AMP team that started [2 years](https://blog.amp.dev/2021/01/28/bento/) ago to address feedback from publishers. They offer similar performance benefits as AMP components, but provide much more flexibility, as they can be combined with any other library or framework. You can read more about Bento and the future of AMP on the [official AMP blog](https://blog.amp.dev/2021/12/07/introducing-bento/).
 
 <style>
   .demo-container {

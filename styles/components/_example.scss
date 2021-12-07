@@ -4,8 +4,11 @@
 
   pre[class*='language-'] {
     margin-block: 0 !important;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-right: 0 !important; 
+    border-radius: 0 !important;
+    padding: 1em;
   }
 
   &-toggle {
@@ -39,8 +42,8 @@
     &-headline {
       margin: 0 !important;
       background-color: transparent;
-      border: none;
-      padding: 0;
+      border: none !important;
+      padding: 0 !important;
 
       pre {
         &:after {

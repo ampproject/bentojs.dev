@@ -1,4 +1,13 @@
 {% extends "layouts/base.njk" %}
+{% block head %}
+  <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
+  <script type="module" src="https://cdn.ampproject.org/v0/bento-accordion-1.0.mjs"></script>
+  <script async nomodule  src="https://cdn.ampproject.org/v0/bento-accordion-1.0.js"></script>
+  <style>
+  bento-accordion{display:block;contain:layout}bento-accordion,bento-accordion>section,bento-accordion>section>:first-child{margin:0}bento-accordion>section>*{display:block;float:none;overflow:hidden;position:relative}@media (min-width:1px){:where(bento-accordion>section)>:first-child{cursor:pointer;background-color:#efefef;padding-right:20px;border:1px solid #dfdfdf}}.i-amphtml-accordion-header{cursor:pointer;background-color:#efefef;padding-right:20px;border:1px solid #dfdfdf}bento-accordion>section:not([expanded])>:last-child:not(.i-amphtml-animating),bento-accordion>section:not([expanded])>:last-child:not(.i-amphtml-animating) *{display:none!important}
+/*# sourceURL=/extensions/amp-base-carousel/1.0/amp-base-carousel.css*/
+  </style>
+{% endblock %}
 {% block content %}
 
 <main class="bd-page-blog-post bd-theme--light">
@@ -12,9 +21,11 @@
     <div class="bd-link-wrapper">
       <a class="bd-link" href="/blog">← {{ 'i18n.blog.overview' | i18n(locale) }}</a>
     </div>
-    <h1>{{ title }}</h1>
-    <h6>{{ author }}</h6>
-    <h6>{{ date | date }} · <strong>{{read_time}}min read</strong></h6>
+    <div class="blog-title">
+      <h1>{{ title }}</h1>
+      <h6 class="blog-author">{{ author }}</h6>
+      <h6 class="blog-publish-date">{{ date | date }} · <strong>{{read_time}}min read</strong></h6>
+    </div>
     {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe }}
     <h5 class="bd-posted-by"><strong>Posted by</strong> {{ author }}</h5>
     {%- include 'partials/blog/navigation-footer.njk' -%}

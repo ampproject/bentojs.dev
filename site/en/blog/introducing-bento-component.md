@@ -1,7 +1,7 @@
 ---
 title: <bento-fit-text>Hello World!</bento-fit-text>
 author: Alan Orozco · Bento Engineering · Google
-date: 2021-12-06
+date: 2021-12-07
 read_time: 5
 image: ./assets/img/posts/bento-announcement.png
 excerpt: Hello World! Today we’re excited to fully launch the Bento components library.

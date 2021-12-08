@@ -175,7 +175,7 @@ This makes Bento is a great fit for any framework that can interact with vanilla
 Here is another example, a Bento component used in a React application: 
 
 
-```html
+```jsx
 import React, {useRef, forwardRef} from "react";
 import {BentoLightbox} from '@bentoproject/lightbox/react';
 import '@bentoproject/lightbox/styles.css';
@@ -218,7 +218,7 @@ Finally, component isolation, an often-overlooked topic. Bento encapsulates ever
 
 When using web components, the contents of a component are rendered inside a [Shadow Root](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). This encapsulates styling, so that your own defined styles are not clobbered by the component's implementation and vice-versa.
 
-Third-party embeds, such as for embedding a Tweer or an Instagram post, typically require including a script from a vendor's URL. These scripts may act unexpectedly. They may push elements around the page, load additional resources too early, or negatively affect the host document's performance in other ways. In cases when they're required, untrusted scripts from a third-party URL **never **run on the document that holds the embed. They run inside a "proxy frame" which prevents them from interacting with the layout and data on your page. Scripts load lazily since they respect the component's <code>[loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)</code> property.
+Third-party embeds, such as for embedding a Tweet or an Instagram post, typically require including a script from a vendor's URL. These scripts may act unexpectedly. They may push elements around the page, load additional resources too early, or negatively affect the host document's performance in other ways. In cases when they're required, untrusted scripts from a third-party URL **never** run on the document that holds the embed. They run inside a "proxy frame" which prevents them from interacting with the layout and data on your page. Scripts load lazily since they respect the component's <code>[loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)</code> property.
 
 
 ## What’s in the box?
@@ -242,8 +242,6 @@ Third party embeds are often very heavy and can negatively affect the performanc
 **Utilities**
 
 It’s often the simple things that take time. Bento components provide many small helpers that can be surprisingly tricky to implement, but are extremely useful. A few examples are:
-
-
 
 *   [bento-fit-text](https://bentojs.dev/en/components/bento-fit-text): automatically resize text to fit the available space.
 *   [bento-timeago](https://bentojs.dev/en/components/bento-timeago): count up to, or away from, a specified date and time with a fuzzy timestamp, such as in 30 years or 3 hours ago.

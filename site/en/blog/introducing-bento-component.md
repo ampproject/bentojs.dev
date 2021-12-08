@@ -254,4 +254,4 @@ But these are just a few examples, you can find the full list of components in t
 
 ## Try Bento now!
 
-Read the [getting started guide](https://bentojs.dev/get-started/) to try out Bento components or check out [all the available components](https://bentojs.dev/documentation/)! The team encourages and welcomes developer feedback through [GitHub](https://github.com/ampproject/bento.dev/discussions).
+Read the [getting started guide](https://bentojs.dev/get-started/) to try out Bento components or check out [all the available components](https://bentojs.dev/documentation/)! The team encourages and welcomes developer feedback through [GitHub](https://github.com/ampproject/bento/discussions).

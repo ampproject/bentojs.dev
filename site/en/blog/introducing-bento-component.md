@@ -96,7 +96,7 @@ Bento components are the result of a project by the AMP team that started [2 yea
 <button onclick="document.querySelector('#demo-accordion').classList.add('show-more')">Show More</button>
 </div>
 
-## Why Bento Components?
+## Why Bento components?
 
 Building accessible, performant web pages is hard. And this goes beyond building your own features. It’s also often a challenge to integrate third-party embeds without hurting the performance of your page. 
 
@@ -212,7 +212,7 @@ function App() {
 A good thing about using Bento components in React is the React version is not just a simple wrapper around the web component. Bento components are actually implemented using React. They behave like any other React component, making them very easy to integrate into your React application. 
 
 
-### Component Isolation
+### Component isolation
 
 Finally, component isolation, an often-overlooked topic. Bento encapsulates everything at the component level, rather than at the document level. 
 
@@ -225,7 +225,7 @@ Third-party embeds, such as for embedding a Tweer or an Instagram post, typicall
 
 The goal of Bento components is to provide out-of-the-box solutions for common website features. We can split Bento components into three categories:
 
-**User Experience**
+**User experience**
 
 Implementing a carousel isn't hard, but implementing [a carousel that avoids content shifts](https://bentojs.dev/components/bento-carousel/), is accessible, and supports many different kinds of content, such as images, videos, iframes, can be tricky to get right. Here are few more examples for Bento’s UI components:
 
@@ -235,7 +235,7 @@ Implementing a carousel isn't hard, but implementing [a carousel that avoids con
 *   [Bento-sidebar](https://bentojs.dev/en/components/bento-sidebar/): a flexible hamburger menu.
 *   [bento-inline-gallery:](https://bentojs.dev/en/components/bento-lightbox-gallery/) an image carousel with optional pagination dots and thumbnails.
 
-**3rd Party Embeds**
+**3rd party embeds**
 
 Third party embeds are often very heavy and can negatively affect the performance of your page. Bento components provide wrappers for common third party embeds that are properly sandboxed and implement performance best practices such as lazy loading. Checkout [bento-twitter](https://bentojs.dev/en/components/bento-twitter) or [bento-instagram](https://bentojs.dev/en/components/bento-instagram) to get an idea. 
 

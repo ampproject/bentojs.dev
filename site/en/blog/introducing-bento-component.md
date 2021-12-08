@@ -128,7 +128,7 @@ Another benefit of Bento components is that resources are loaded lazily by defau
 
 The next one is: **framework independence with great framework support**. Bento components can be used with any framework or CMS. 
 
-Bento components are packaged as **Web Components **and **React**/**Preact components**.** **This way, Bento components offer seamless integration with React and Preact, but can also be used anywhere else by using the Web Component version.
+Bento components are packaged as **Web Components** and **React/Preact components**. This way, Bento components offer seamless integration with React and Preact, but can also be used anywhere else by using the Web Component version.
 
 Here is a web components example:
 
@@ -155,9 +155,7 @@ Here is a web components example:
 </html>
 ```
 
-
-` \
-`Note that we did not write or bundle any JavaScript in the previous example. We can paste this code into an `.html` file and call it a day! This makes Bento components a great fit for CMSs, such as WordPress, Drupal or Eleventy, which heavily rely on server-side rendering.
+Note that we did not write or bundle any JavaScript in the previous example. We can paste this code into an `.html` file and call it a day! This makes Bento components a great fit for CMSs, such as WordPress, Drupal or Eleventy, which heavily rely on server-side rendering.
 
 Bento components respond the same way as you’d expect from any HTML element. If you modify an element's attributes or its subtree, the changes are reflected in its rendered state.
 

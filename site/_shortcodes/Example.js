@@ -223,15 +223,6 @@ function exampleShortCode(nunjucksEngine) {
   })();
 }
 
-// (async () => {
-//   const example = new Example({
-//     title: 'Bento Example',
-//     page: {
-//       fileSlug: 'bento-example'
-//     }
-//   }, ``````)
-// })();
-
 async function writeExamples() {
   console.log('[Examples] Writing examples ...');
   await Promise.all(

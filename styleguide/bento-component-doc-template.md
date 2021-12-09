@@ -44,7 +44,7 @@ npm install @bentoproject/bento-component
 ```
 
 ```javascript
-import '@ampproject/bento-component';
+import '@bentoproject/bento-component';
 ```
 
 {% endexample %}

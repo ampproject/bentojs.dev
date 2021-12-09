@@ -1,5 +1,5 @@
 {
-  "name": "bento-dev",
+  "name": "bentojs-dev",
   "version": "1.0.0",
   "description": "The home for AMP's standalone components: Bento",
   "main": "index.js",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ampproject/bento.dev.git"
+    "url": "git+ssh://git@github.com/ampproject/bentojs.dev.git"
   },
   "keywords": [
     "AMP",
@@ -33,9 +33,9 @@
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ampproject/bento.dev/issues"
+    "url": "https://github.com/ampproject/bentojs.dev/issues"
   },
-  "homepage": "https://github.com/ampproject/bento.dev#readme",
+  "homepage": "https://github.com/ampproject/bentojs.dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "0.12.1",
     "@11ty/eleventy-img": "1.0.0",

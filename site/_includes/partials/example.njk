@@ -1,20 +1,19 @@
 {# Caution, this file is exactly idented as it needs to be.
 Do not change formatting this would break rendering. #}
+:::raw
 <section class="bd-example">
   <header class="bd-example-toggle">
-    {% if iframe -%}
-      <button class="bd-example-toggle-option {% if not hero %}--active {% endif %}--code">Code</button>
-      <button class="bd-example-toggle-option {% if hero %}--active {% endif %}--preview">Preview</button>
-    {% endif -%}
+    <button class="bd-example-toggle-option {% if not hero %}--active {% endif %}--code">Code</button>
+    <button class="bd-example-toggle-option {% if hero %}--active {% endif %}--preview">Preview</button>
   </header>
-  <div class="bd-example-code{% if hero %} --hidden{% endif %}">
+  <div class="bd-example-code{% if hero %} --hidden{% endif %}">{% if html.head and html.body %}
     <bento-accordion id="{{ id }}-code">
       <section class="bd-example-code-section">
         <h4 class="bd-example-code-headline">
           <pre class="language-html"><span class="token tag">&lt;head&gt;</span></pre>
         </h4>
         <div>
-          <pre class="language-html">{{ head|safe }}</pre>
+          <pre class="language-html">{{ html.head|safe }}</pre>
         </div>
       </section>
       <pre class="language-html"><span class="token tag">&lt;/head&gt;</span></pre>
@@ -23,11 +22,14 @@ Do not change formatting this would break rendering. #}
           <pre class="language-html"><span class="token tag">&lt;body&gt;</span></pre>
         </h4>
         <div>
-          <pre class="language-html">{{ body|safe }}</pre>
+          <pre class="language-html">{{ html.body|safe }}</pre>
         </div>
       </section>
       <pre class="language-html"><span class="token tag">&lt;/body&gt;</span></pre>
-    </bento-accordion>
+    </bento-accordion>{% elif js %}
+    <div id="{{ id }}-code">
+      <pre class="language-js">{{ js|safe }}</pre>
+    </div>{% endif %}
   </div>
   {% if iframe %}
     <div class="bd-example-preview{% if not hero %} --hidden{% endif %}">
@@ -35,3 +37,4 @@ Do not change formatting this would break rendering. #}
     </div>
   {% endif %}
 </section>
+:::

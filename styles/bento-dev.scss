@@ -40,7 +40,6 @@ body {
   font-size: var(--font-size-16);
   font-family: var(--font-sans);
   font-weight: var(--normal);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
@@ -49,6 +48,7 @@ body {
 
 body {
   display: grid;
+  overflow-x: hidden;
 }
 
 a {

@@ -46,7 +46,7 @@ class Example {
 
   _extract(regExp, string) {
     const match = regExp.exec(string);
-    return match && match[1] ? match[1] : null;
+    return match && match[1] ? match[1] : '';
   }
 
   _parseCode(language, string) {
@@ -63,13 +63,8 @@ class Example {
       return null;
     }
 
-    html.head = this._extract(/<head>(.*?)<\/head>/gms, html.all);
-    html.body = this._extract(/<body>(.*?)<\/body>/gms, html.all);
-
-    // Make sure head and body both don't contain any blank lines
-    // as they would create empty paragraphs in markdown
-    html.head = html.head.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
-    html.body = html.body.replace(/^\s*\n/gm, '').replace(/\s*$/, '');
+    html.head = this._extract(/<head>(.*?)<\/head>/gms, html.all).trim();
+    html.body = this._extract(/<body>(.*?)<\/body>/gms, html.all).trim();
 
     return html;
   }
@@ -150,7 +145,7 @@ class Example {
         body: Prism.highlight(this.parsed.webComponents.body, Prism.languages.html, 'html'),
       }
 
-      iframe = `/assets/iframes/${this.id}.html`;
+      iframe = `/assets/iframes/webcomponents/${this.id}.html`;
     }
 
     let js;
@@ -176,7 +171,7 @@ class Example {
     if (this.previews.webComponents) {
       fsOps.push(fs.writeFile(
         path.join(
-          `${global.__basedir}/dist/assets/iframes`,
+          `${global.__basedir}/dist/assets/iframes/webcomponents`,
           `${this.id}.html`
         ),
         this.previews.webComponents
@@ -227,10 +222,9 @@ async function writeExamples() {
   console.log('[Examples] Writing examples ...');
   await Promise.all(
     examples.map((example) => example.writePreviews())
-  ).then(() => {
-    counter = {};
-    console.log('[Examples] Wrote examples!');
-  });
+  );
+  counter = {};
+  console.log('[Examples] Wrote examples!');
 
   console.log('[Examples] Building react examples ...');
   await execa.command('npx next build examples/react');

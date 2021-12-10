@@ -61,7 +61,7 @@ function heroExampleShortcode(nunjucksEngine) {
           body,
         };
       } catch (e) {
-        console.log(e);
+        console.log(`[Hero examples] Could not load hero example for ${componentName}`);
         return {};
       }
     };

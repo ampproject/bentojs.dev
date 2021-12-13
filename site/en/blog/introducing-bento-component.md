@@ -98,13 +98,11 @@ Bento components are the result of a project by the AMP team that started [2 yea
 
 ## Why Bento components?
 
-Building accessible, performant web pages is hard. And this goes beyond building your own features. It’s also often a challenge to integrate third-party embeds without hurting the performance of your page. 
+Building accessible, performant web pages is hard. And this goes beyond building your own features. It’s also often a challenge to integrate third-party embeds without hurting the performance of your page.
 
 The good news is that there is a rich ecosystem of web components solving these problems, as many web pages need similar features. But this leads to a new problem: now you have to decide which of the many available components is best. You need to check whether the component works in all browsers or whether there are unwanted side effects of mixing different components on the same page. They should also not negatively impact your [Core Web Vitals](https://web.dev/vitals/) score.
 
 Bento components are here to help. They are designed with three goals in mind:
-
-
 
 1. Great Page Experience
 2. Framework independence (but with great framework support)
@@ -112,10 +110,9 @@ Bento components are here to help. They are designed with three goals in mind:
 
 Let’s take a closer look at what this means.
 
-
 ### Page Experience
 
-The first one is straightforward: **Page Experience**. In August 2021, [Google Search introduced a new set of signals](https://developers.google.com/search/docs/advanced/experience/page-experience) that measure how users perceive the experience of interacting with a web page beyond its pure information value.  An important part of the page experience ranking signals are [Core Web Vitals](https://web.dev/vitals/). Bento components can help you achieve good core web vitals scores.
+The first one is straightforward: **Page Experience**. In August 2021, [Google Search introduced a new set of signals](https://developers.google.com/search/docs/advanced/experience/page-experience) that measure how users perceive the experience of interacting with a web page beyond its pure information value. An important part of the page experience ranking signals are [Core Web Vitals](https://web.dev/vitals/). Bento components can help you achieve good core web vitals scores.
 
 Bento components feature a small bundle size and you only have to load the ones that you need. You don't need an entire framework just to add a carousel to your site - you can just use the bento-carousel-component!
 
@@ -123,42 +120,39 @@ Bento components may help with [Core Web Vitals](https://web.dev/vitals/) as wel
 
 Another benefit of Bento components is that resources are loaded lazily by default. Requests to external URLs occur only as the embed approaches the user's position on the page. This is particularly useful for third-party embeds, such as Facebook or Twitter.
 
-
 ### Framework independence
 
-The next one is: **framework independence with great framework support**. Bento components can be used with any framework or CMS. 
+The next one is: **framework independence with great framework support**. Bento components can be used with any framework or CMS.
 
 Bento components are packaged as **Web Components** and **React/Preact components**. This way, Bento components offer seamless integration with React and Preact, but can also be used anywhere else by using the Web Component version.
 
 Here is a web components example:
 
-
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <script async src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"
-  ></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.ampproject.org/v0/bento-fit-text-1.0.css"
-  />
-</head>
-<body>
-  <bento-fit-text style="max-width: 200px; height: 60px">
-    Hello world!
-  </bento-fit-text>
-</body>
+  <head>
+    <script async src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      async
+      src="https://cdn.ampproject.org/v0/bento-fit-text-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.ampproject.org/v0/bento-fit-text-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-fit-text style="max-width: 200px; height: 60px">
+      Hello world!
+    </bento-fit-text>
+  </body>
 </html>
 ```
 
 Note that we did not write or bundle any JavaScript in the previous example. We can paste this code into an `.html` file and call it a day! This makes Bento components a great fit for CMSs, such as WordPress, Drupal or Eleventy, which heavily rely on server-side rendering.
 
 Bento components respond the same way as you’d expect from any HTML element. If you modify an element's attributes or its subtree, the changes are reflected in its rendered state.
-
 
 ```html
 <script>
@@ -169,14 +163,12 @@ Bento components respond the same way as you’d expect from any HTML element. I
 </script>
 ```
 
-
 This makes Bento is a great fit for any framework that can interact with vanilla DOM elements.
 
-Here is another example, a Bento component used in a React application: 
-
+Here is another example, a Bento component used in a React application:
 
 ```jsx
-import React, {useRef, forwardRef} from "react";
+import React, {useRef, forwardRef} from 'react';
 import {BentoLightbox} from '@bentoproject/lightbox/react';
 import '@bentoproject/lightbox/styles.css';
 
@@ -196,30 +188,28 @@ const MyLightbox = forwardRef((_, ref) => {
 });
 
 function App() {
-  const lightboxRef = useRef();
-  return (
-    <>
-      <MyLightbox ref={lightboxRef} />
-      <button onClick={() => lightboxRef.current.open()}>
-        Open
-      </button>
-    </>
-  );
+  const lightboxRef = useRef();
+  return (
+    <>
+            <MyLightbox ref={lightboxRef} />      <button
+        onClick={() => lightboxRef.current.open()}
+      >
+                Open      {' '}
+      </button>   {' '}
+    </>
+  );
 }
 ```
 
-
-A good thing about using Bento components in React is the React version is not just a simple wrapper around the web component. Bento components are actually implemented using React. They behave like any other React component, making them very easy to integrate into your React application. 
-
+A good thing about using Bento components in React is the React version is not just a simple wrapper around the web component. Bento components are actually implemented using React. They behave like any other React component, making them very easy to integrate into your React application.
 
 ### Component isolation
 
-Finally, component isolation, an often-overlooked topic. Bento encapsulates everything at the component level, rather than at the document level. 
+Finally, component isolation, an often-overlooked topic. Bento encapsulates everything at the component level, rather than at the document level.
 
 When using web components, the contents of a component are rendered inside a [Shadow Root](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). This encapsulates styling, so that your own defined styles are not clobbered by the component's implementation and vice-versa.
 
 Third-party embeds, such as for embedding a Tweet or an Instagram post, typically require including a script from a vendor's URL. These scripts may act unexpectedly. They may push elements around the page, load additional resources too early, or negatively affect the host document's performance in other ways. In cases when they're required, untrusted scripts from a third-party URL **never** run on the document that holds the embed. They run inside a "proxy frame" which prevents them from interacting with the layout and data on your page. Scripts load lazily since they respect the component's <code>[loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)</code> property.
-
 
 ## What’s in the box?
 
@@ -229,26 +219,23 @@ The goal of Bento components is to provide out-of-the-box solutions for common w
 
 Implementing a carousel isn't hard, but implementing [a carousel that avoids content shifts](https://bentojs.dev/components/bento-carousel/), is accessible, and supports many different kinds of content, such as images, videos, iframes, can be tricky to get right. Here are few more examples for Bento’s UI components:
 
-
-
-*   [bento-lightbox-gallery](https://bentojs.dev/en/components/bento-lightbox-gallery/): add the `lightbox` attribute to any image on your page to add it to a great looking lightbox gallery.
-*   [Bento-sidebar](https://bentojs.dev/en/components/bento-sidebar/): a flexible hamburger menu.
-*   [bento-inline-gallery:](https://bentojs.dev/en/components/bento-lightbox-gallery/) an image carousel with optional pagination dots and thumbnails.
+- [bento-lightbox-gallery](https://bentojs.dev/en/components/bento-lightbox-gallery/): add the `lightbox` attribute to any image on your page to add it to a great looking lightbox gallery.
+- [Bento-sidebar](https://bentojs.dev/en/components/bento-sidebar/): a flexible hamburger menu.
+- [bento-inline-gallery:](https://bentojs.dev/en/components/bento-lightbox-gallery/) an image carousel with optional pagination dots and thumbnails.
 
 **3rd party embeds**
 
-Third party embeds are often very heavy and can negatively affect the performance of your page. Bento components provide wrappers for common third party embeds that are properly sandboxed and implement performance best practices such as lazy loading. Checkout [bento-twitter](https://bentojs.dev/en/components/bento-twitter) or [bento-instagram](https://bentojs.dev/en/components/bento-instagram) to get an idea. 
+Third party embeds are often very heavy and can negatively affect the performance of your page. Bento components provide wrappers for common third party embeds that are properly sandboxed and implement performance best practices such as lazy loading. Checkout [bento-twitter](https://bentojs.dev/en/components/bento-twitter) or [bento-instagram](https://bentojs.dev/en/components/bento-instagram) to get an idea.
 
 **Utilities**
 
 It’s often the simple things that take time. Bento components provide many small helpers that can be surprisingly tricky to implement, but are extremely useful. A few examples are:
 
-*   [bento-fit-text](https://bentojs.dev/en/components/bento-fit-text): automatically resize text to fit the available space.
-*   [bento-timeago](https://bentojs.dev/en/components/bento-timeago): count up to, or away from, a specified date and time with a fuzzy timestamp, such as in 30 years or 3 hours ago.
-*   [bento-selector](https://bentojs.dev/en/components/bento-youtube): radio buttons on steroids. 
+- [bento-fit-text](https://bentojs.dev/en/components/bento-fit-text): automatically resize text to fit the available space.
+- [bento-timeago](https://bentojs.dev/en/components/bento-timeago): count up to, or away from, a specified date and time with a fuzzy timestamp, such as in 30 years or 3 hours ago.
+- [bento-selector](https://bentojs.dev/en/components/bento-youtube): radio buttons on steroids.
 
 But these are just a few examples, you can find the full list of components in the [Bento developer documentation](https://bentojs.dev/documentation/).
-
 
 ## Try Bento now!
 

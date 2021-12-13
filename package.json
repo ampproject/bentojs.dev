@@ -24,12 +24,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/ampproject/bentojs.dev.git"
   },
-  "keywords": [
-    "AMP",
-    "Page",
-    "Experience",
-    "Bento"
-  ],
+  "keywords": ["AMP", "Page", "Experience", "Bento"],
   "author": "The AMP HTML Authors",
   "license": "Apache-2.0",
   "bugs": {

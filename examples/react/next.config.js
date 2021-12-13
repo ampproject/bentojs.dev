@@ -1,4 +1,4 @@
 module.exports = {
   reactStrictMode: true,
-  basePath: '/assets/iframes/react'
+  basePath: '/assets/iframes/react',
 };

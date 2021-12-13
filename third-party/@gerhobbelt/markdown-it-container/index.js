@@ -5,10 +5,9 @@ as it supports a custom render function for the content
  */
 
 module.exports = function container_plugin(md, name, options) {
-
   // Second param may be useful if you decide
   // to increase minimal allowed marker length
-  function validateDefault(params/*, markup*/) {
+  function validateDefault(params /*, markup*/) {
     return params.trim().split(' ', 2)[0] === name;
   }
 
@@ -35,17 +34,25 @@ module.exports = function container_plugin(md, name, options) {
     customContent = !!options.content;
 
   function container(state, startLine, endLine, silent) {
-    let pos, nextLine, marker_count, markup, params, token,
-      old_parent, old_line_max,
+    let pos,
+      nextLine,
+      marker_count,
+      markup,
+      params,
+      token,
+      old_parent,
+      old_line_max,
       blockStart,
       auto_closed = false,
-      start = blockStart = state.bMarks[startLine] + state.tShift[startLine],
+      start = (blockStart = state.bMarks[startLine] + state.tShift[startLine]),
       max = state.eMarks[startLine];
 
     // Check out the first character quickly,
     // this should filter out most of non-containers
     //
-    if (marker_char !== state.src.charCodeAt(start)) { return false; }
+    if (marker_char !== state.src.charCodeAt(start)) {
+      return false;
+    }
 
     // Check out the rest of the marker string
     //
@@ -56,16 +63,22 @@ module.exports = function container_plugin(md, name, options) {
     }
 
     marker_count = Math.floor((pos - start) / marker_len);
-    if (marker_count < min_markers) { return false; }
+    if (marker_count < min_markers) {
+      return false;
+    }
     pos -= (pos - start) % marker_len;
 
     markup = state.src.slice(start, pos);
     params = state.src.slice(pos, max);
-    if (!validate(params, markup)) { return false; }
+    if (!validate(params, markup)) {
+      return false;
+    }
 
     // Since start is found, we can report success here in validation mode
     //
-    if (silent) { return true; }
+    if (silent) {
+      return true;
+    }
 
     const contentStart = max;
 
@@ -73,7 +86,7 @@ module.exports = function container_plugin(md, name, options) {
     //
     nextLine = startLine;
 
-    for (; ;) {
+    for (;;) {
       nextLine++;
       if (nextLine >= endLine) {
         // unclosed block should be autoclosed by end of document.
@@ -91,7 +104,9 @@ module.exports = function container_plugin(md, name, options) {
         break;
       }
 
-      if (marker_char !== state.src.charCodeAt(start)) { continue; }
+      if (marker_char !== state.src.charCodeAt(start)) {
+        continue;
+      }
 
       if (state.sCount[nextLine] - state.blkIndent >= 4) {
         // closing fence should be indented less than 4 spaces
@@ -105,13 +120,17 @@ module.exports = function container_plugin(md, name, options) {
       }
 
       // closing code fence must be at least as long as the opening one
-      if (Math.floor((pos - start) / end_marker_len) < marker_count) { continue; }
+      if (Math.floor((pos - start) / end_marker_len) < marker_count) {
+        continue;
+      }
 
       // make sure tail has spaces only
       pos -= (pos - start) % end_marker_len;
       pos = state.skipSpaces(pos);
 
-      if (pos < max) { continue; }
+      if (pos < max) {
+        continue;
+      }
 
       // found!
       auto_closed = true;
@@ -157,11 +176,11 @@ module.exports = function container_plugin(md, name, options) {
   }
 
   md.block.ruler.before('fence', 'container_' + name, container, {
-    alt: ['paragraph', 'reference', 'blockquote', 'list']
+    alt: ['paragraph', 'reference', 'blockquote', 'list'],
   });
   md.renderer.rules['container_' + name + '_open'] = render;
   if (customContent) {
     md.renderer.rules['container_' + name + '_content'] = options.content;
   }
   md.renderer.rules['container_' + name + '_close'] = render;
-}
+};

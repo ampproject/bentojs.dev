@@ -53,7 +53,7 @@ module.exports = (eleventyConfig) => {
         },
         content: (tokens, idx) => {
           return tokens[idx].markup;
-        }
+        },
       })
       .disable('code')
   );

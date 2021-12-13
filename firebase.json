@@ -35,10 +35,12 @@
         ]
       }
     ],
-    "redirects": [ {
-      "source": "/components/bento-base-carousel/",
-      "destination": "/components/bento-carousel/",
-      "type": 301
-    } ]
+    "redirects": [
+      {
+        "source": "/components/bento-base-carousel/",
+        "destination": "/components/bento-carousel/",
+        "type": 301
+      }
+    ]
   }
 }

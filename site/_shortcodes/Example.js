@@ -38,7 +38,7 @@ class Example {
     this.parsed = {
       webComponents: this._parseHtml(),
       react: this._parseJavaScript(),
-    }
+    };
 
     this.previews = this._renderPreviews();
     this.widget = this._renderWidget();
@@ -51,7 +51,10 @@ class Example {
 
   _parseCode(language, string) {
     const code = {
-      all: this._extract(new RegExp('```' + language + '\n(.*?)\n```', 'gms'), string),
+      all: this._extract(
+        new RegExp('```' + language + '\n(.*?)\n```', 'gms'),
+        string
+      ),
     };
 
     return code;
@@ -70,7 +73,7 @@ class Example {
   }
 
   _parseJavaScript() {
-    const js = this._parseCode('javascript', this.raw);
+    const js = this._parseCode('jsx', this.raw);
     if (!js.all) {
       return null;
     }
@@ -82,25 +85,30 @@ class Example {
         sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
-        }
+        },
       });
     } catch (e) {
-      console.error(`[Examples] Could not retrieve AST for ${this.fileSlug}`);
+      console.error(
+        `[Examples] Could not retrieve AST for ${this.slug}`,
+        e.mes
+      );
       return null;
     }
 
-    js.imports = ast.body.filter((node) => {
-      return node.type === 'ImportDeclaration'
-    }).map((node) => {
-      return js.all.substring(node.start, node.end);
-    });
+    js.imports = ast.body
+      .filter((node) => {
+        return node.type === 'ImportDeclaration';
+      })
+      .map((node) => {
+        return js.all.substring(node.start, node.end);
+      });
 
     js.app = ast.body.find((node) => {
-      return node.type === 'FunctionDeclaration'
+      return node.type === 'FunctionDeclaration';
     });
 
     if (!js.app) {
-      console.warn(`[Examples] No function in ${this.fileSlug}`);
+      console.warn(`[Examples] No function in ${this.slug}`);
       return null;
     }
 
@@ -113,20 +121,26 @@ class Example {
   _renderPreviews() {
     const previews = {};
     if (this.parsed.webComponents) {
-      previews.webComponents = this.renderer.render('site/_includes/layouts/example.njk', {
-        id: this.id,
-        html: this.parsed.webComponents,
-        title: this.title,
-      });
+      previews.webComponents = this.renderer.render(
+        'site/_includes/layouts/example.njk',
+        {
+          id: this.id,
+          html: this.parsed.webComponents,
+          title: this.title,
+        }
+      );
     }
 
     if (this.parsed.react) {
-      previews.react = this.renderer.render('site/_includes/files/componentExample.js.njk', {
-        imports: this.parsed.react.imports,
-        app: this.parsed.react.app,
-        appName: this.parsed.react.appName,
-        title: this.title,
-      });
+      previews.react = this.renderer.render(
+        'site/_includes/files/componentExample.js.njk',
+        {
+          imports: this.parsed.react.imports,
+          app: this.parsed.react.app,
+          appName: this.parsed.react.appName,
+          title: this.title,
+        }
+      );
     }
 
     return previews;
@@ -141,9 +155,17 @@ class Example {
     let iframe = null;
     if (this.parsed.webComponents) {
       html = {
-        head: Prism.highlight(this.parsed.webComponents.head, Prism.languages.html, 'html'),
-        body: Prism.highlight(this.parsed.webComponents.body, Prism.languages.html, 'html'),
-      }
+        head: Prism.highlight(
+          this.parsed.webComponents.head,
+          Prism.languages.html,
+          'html'
+        ),
+        body: Prism.highlight(
+          this.parsed.webComponents.body,
+          Prism.languages.html,
+          'html'
+        ),
+      };
 
       iframe = `/assets/iframes/webcomponents/${this.id}.html`;
     }
@@ -169,23 +191,27 @@ class Example {
   writePreviews() {
     const fsOps = [];
     if (this.previews.webComponents) {
-      fsOps.push(fs.writeFile(
-        path.join(
-          `${global.__basedir}/dist/assets/iframes/webcomponents`,
-          `${this.id}.html`
-        ),
-        this.previews.webComponents
-      ));
+      fsOps.push(
+        fs.writeFile(
+          path.join(
+            `${global.__basedir}/dist/assets/iframes/webcomponents`,
+            `${this.id}.html`
+          ),
+          this.previews.webComponents
+        )
+      );
     }
 
     if (this.previews.react) {
-      fsOps.push(fs.writeFile(
-        path.join(
-          `${global.__basedir}/examples/react/pages`,
-          `${this.id}.js`
-        ),
-        this.previews.react
-      ));
+      fsOps.push(
+        fs.writeFile(
+          path.join(
+            `${global.__basedir}/examples/react/pages`,
+            `${this.id}.js`
+          ),
+          this.previews.react
+        )
+      );
     }
 
     return Promise.all(fsOps);
@@ -208,7 +234,6 @@ function exampleShortCode(nunjucksEngine) {
       return new nodes.CallExtensionAsync(this, 'run', args, [body]);
     };
 
-
     this.run = function (context, contents, callback) {
       const example = new Example(nunjucksEngine, context.ctx, contents());
       examples.push(example);
@@ -220,16 +245,16 @@ function exampleShortCode(nunjucksEngine) {
 
 async function writeExamples() {
   console.log('[Examples] Writing examples ...');
-  await Promise.all(
-    examples.map((example) => example.writePreviews())
-  );
+  await Promise.all(examples.map((example) => example.writePreviews()));
   counter = {};
   console.log('[Examples] Wrote examples!');
 
   console.log('[Examples] Building react examples ...');
   await execa.command('npx next build examples/react');
   console.log('[Examples] Exporting react examples to dist ...');
-  await execa.command('npx next export -o dist/assets/iframes/react examples/react');
+  await execa.command(
+    'npx next export -o dist/assets/iframes/react examples/react'
+  );
   console.log('[Examples] Finished building and exporting react examples!');
 }
 

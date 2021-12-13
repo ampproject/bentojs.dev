@@ -496,15 +496,9 @@ Keep the following points in mind when you style an amp-accordion:
 npm install @bentoproject/accordion
 ```
 
-{% example %}
 ```javascript
 import React from 'react';
-import {
-  BentoAccordion, 
-  BentoAccordionSection, 
-  BentoAccordionHeader, 
-  BentoAccordionContent
-} from '@bentoproject/accordion/react';
+import {BentoAccordion} from '@bentoproject/accordion/react';
 import '@bentoproject/accordion/styles.css';
 
 function App() {
@@ -534,7 +528,6 @@ function App() {
   );
 }
 ```
-{% endexample %}
 
 ### Interactivity and API usage
 

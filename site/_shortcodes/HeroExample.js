@@ -61,7 +61,7 @@ function heroExampleShortcode(nunjucksEngine) {
           body,
         };
       } catch (e) {
-        console.log(e);
+        console.log(`[Hero examples] Could not load hero example for ${componentName}`);
         return {};
       }
     };
@@ -74,8 +74,10 @@ function heroExampleShortcode(nunjucksEngine) {
         widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
           hero: true,
           id: `${componentName}-hero`,
-          head: Prism.highlight(html.head, Prism.languages.html, 'html'),
-          body: Prism.highlight(html.body, Prism.languages.html, 'html'),
+          html: {
+            head: Prism.highlight(html.head, Prism.languages.html, 'html'),
+            body: Prism.highlight(html.body, Prism.languages.html, 'html'),
+          },
           iframe: `/assets/iframes/hero-examples/${componentName}/`,
           title: `Demo preview for ${componentName}`,
         });

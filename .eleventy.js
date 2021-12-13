@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItContainer = require('./third-party/@gerhobbelt/markdown-it-container');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -43,8 +44,17 @@ module.exports = (eleventyConfig) => {
     'md',
     markdownIt({
       html: true,
+      breaks: true,
     })
       .use(markdownItAnchor)
+      .use(markdownItContainer, 'raw', {
+        render: (tokens, idx) => {
+          return '\n';
+        },
+        content: (tokens, idx) => {
+          return tokens[idx].markup;
+        }
+      })
       .disable('code')
   );
 

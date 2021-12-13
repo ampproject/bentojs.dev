@@ -6,3 +6,12 @@ temp
 /assets/js/
 .DS_Store
 .vscode
+
+/examples/next.js/.next
+/examples/next.js/out
+
+/examples/react/.next
+/examples/react/out
+/examples/react/pages/**/*
+!/examples/react/pages/_app.js
+

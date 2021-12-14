@@ -55,7 +55,7 @@
     "lodash.get": "4.4.2",
     "markdown-it-anchor": "8.4.1",
     "npm-run-all": "4.1.5",
-    "prettier": "2.4.1",
+    "prettier": "2.5.1",
     "purgecss": "4.0.3",
     "rimraf": "3.0.2",
     "sass": "1.43.4",

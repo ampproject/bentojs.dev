@@ -612,7 +612,7 @@ The Bento Accordion API allows you to respond to the following events:
 
 This event is triggered on a section when an accordion section is expanded or collpased and is dispatched from the expanded section.
 
-See [example](#events-example) below for example.
+See [example](#events-example-1) below for example.
 
 ##### onCollapse
 
@@ -620,7 +620,7 @@ This event is triggered on a section when an accordion section is collapsed and 
 
 In the example below, `section 1` listens for the `expand` event and expands `section 2` when it is expanded. `section 2` listens for the `collapse` event and collapses `section 1` when it is collapsed.
 
-See [example](#events-example) below for example.
+See [example](#events-example-1) below for example.
 
 ##### Events Example
 

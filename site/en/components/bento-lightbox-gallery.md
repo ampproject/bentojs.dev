@@ -90,7 +90,8 @@ defineBentoLightboxGallery();
     </figure>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 To use `bento-liightbox-gallery`, ensure the required script is included in your `<head>` section, then add the `lightbox` attribute on an `<img>` or `<bento-carousel>` element.
 

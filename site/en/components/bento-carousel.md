@@ -98,7 +98,8 @@ defineBentoBaseCarousel();
     </bento-base-carousel>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -177,7 +178,8 @@ Bento components are highly interactive through their API. The `bento-base-carou
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ```javascript
 await customElements.whenDefined('bento-base-carousel');

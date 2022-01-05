@@ -84,7 +84,8 @@ defineBentoSelector();
     </bento-selector>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Usage notes
 

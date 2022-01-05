@@ -92,7 +92,8 @@ defineBentoLightbox();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -232,7 +233,8 @@ When the `scrollable` attribute is present, the content of the lightbox can scro
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ---
 

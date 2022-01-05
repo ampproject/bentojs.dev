@@ -92,7 +92,8 @@ defineBentoMathml();
     </p>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 

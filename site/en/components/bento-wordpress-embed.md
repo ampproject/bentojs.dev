@@ -84,7 +84,8 @@ defineBentoWordpressEmbed();
     ></bento-wordpress-embed>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -180,7 +181,8 @@ The URL of the post to embed. Programmatically changing the attribute value will
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ---
 

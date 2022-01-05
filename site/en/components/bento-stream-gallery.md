@@ -89,7 +89,8 @@ defineBentoStreamGallery();
     </bento-stream-gallery>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -223,7 +224,8 @@ This example demonstrates how to programmatically switch to the next/previous sl
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Attributes
 

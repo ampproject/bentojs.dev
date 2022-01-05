@@ -103,7 +103,8 @@ defineBentoSidebar();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 

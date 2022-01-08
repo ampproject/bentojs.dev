@@ -16,7 +16,7 @@ Exibe um botão de compartilhamento para plataformas sociais ou compartilhamento
 Atualmente, nenhum dos botões gerados pelo Bento Social Share (incluindo os dos provedores pré-configurados) tem um rótulo ou nome acessível que é exposto a tecnologias assistivas (como leitores de tela). Certifique-se de incluir um `aria-label` com um rótulo descritivo, caso contrário, esses controles serão apenas anunciados como elementos de "botão" sem rótulo.
 
 <div class="bd-usage bd-card bd-card--light-sea-green">
-<p>Use bento-social-share como um componente da web ou um componente funcional React:</p> <a class="bd-button" href="#web-component">↓ Componente web</a> <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+<p>Use bento-social-share como um componente da web ou um componente funcional React:</p> <a class="bd-button" href="#web-component">↓ Web Component</a> <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>
 
 ## Componente web
@@ -99,11 +99,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### Layout e estilo
+
+Cada componente Bento possui uma pequena biblioteca CSS que você precisa incluir para garantir o carregamento adequado sem [alterações na posição do conteúdo](https://web.dev/cls/). Devido ao funcionamento que depende da ordem de carregamento, você deve garantir manualmente que as folhas de estilo sejam incluídas antes de qualquer estilo personalizado.
 
 ```html
 <link
@@ -242,7 +244,7 @@ O componente `bento-social-share` [fornece alguns provedores pré-configurados](
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +256,7 @@ O componente `bento-social-share` [fornece alguns provedores pré-configurados](
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +408,15 @@ Alterar programaticamente qualquer um dos valores de atributo atualizará automa
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Componente Preact/React
 
-### Import via npm
+### Importar via npm
 
 ```bash
 npm install @bentoproject/social-share
@@ -550,7 +554,7 @@ O componente `BentoSocialShare` [fornece alguns provedores pré-configurados](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -562,7 +566,7 @@ O componente `BentoSocialShare` [fornece alguns provedores pré-configurados](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

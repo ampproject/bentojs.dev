@@ -15,8 +15,7 @@ description: ソーシャルプラットフォーム用またはシステム共�
 
 現在のところ、Bento Social Share が生成するすべてのボタン（事前構成済みプロバイダー用のボタンを含む）には、支援技術（スクリーンリーダーなど）に公開されたラベルやアクセシブル名はありません。`aria-label` には説明的なラベルを含めるようにしてください。含めない場合、これらのコントロールはラベル無しの「ボタン」要素としてみなされます。
 
-<div class="bd-usage bd-card bd-card--light-sea-green">
-<p>bento-social-share をウェブコンポーネントまたは React 関数コンポーネントとして使用します。</p> <a class="bd-button" href="#web-component">↓ ウェブコンポーネント</a> <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+<div class="bd-usage bd-card bd-card--light-sea-green">   <p>Use bento-social-share as a web component or a React functional component:</p>   <a class="bd-button" href="#web-component">↓ ウェブコンポーネント</a>   <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
 </div>
 
 ## ウェブコンポーネント
@@ -99,11 +98,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### レイアウトとスタイル
+
+各 Bento コンポーネントには、[コンテンツシフト](https://web.dev/cls/)を発生させずに適切に読み込まれることを保証するために含める必要のある小さな CSS ライブラリがあります。読み取り順が重要であるため、カスタムスタイルの前にスタイルシートがインクルードされていることを手動で確認する必要があります。
 
 ```html
 <link
@@ -242,7 +243,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +255,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +407,15 @@ bento-social-share.custom-focus:focus {
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Preact/React コンポーネント
 
-### Import via npm
+### npm によるインポート
 
 ```bash
 npm install @bentoproject/social-share
@@ -550,7 +553,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -562,7 +565,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

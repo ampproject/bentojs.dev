@@ -99,11 +99,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### Yerleşim ve stil
+
+[Her Bento bileşeni, içerik kaymaları](https://web.dev/cls/) olmadan düzgün yüklemeyi garanti etmek için eklemeniz gereken küçük bir CSS kitaplığına sahiptir. Düzene dayalı özgüllük nedeniyle, herhangi bir özel stilden önce stil sayfalarının dahil edilmesini manuel olarak sağlamalısınız.
 
 ```html
 <link
@@ -242,7 +244,7 @@ Yeterli kontrast olmadan içeriğin algılanması zor olabilir ve bu nedenle tan
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +256,7 @@ Yeterli kontrast olmadan içeriğin algılanması zor olabilir ve bu nedenle tan
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +408,15 @@ Erişilebilirlik düğmesinin açıklaması. Önerilen bir etiket "&lt;type&gt; 
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Preact/React Bileşeni
 
-### Import via npm
+### npm ile içe aktarma
 
 ```bash
 npm install @bentoproject/social-share
@@ -550,7 +554,7 @@ Yeterli kontrast olmadan içeriğin algılanması zor olabilir ve bu nedenle tan
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -562,7 +566,7 @@ Yeterli kontrast olmadan içeriğin algılanması zor olabilir ve bu nedenle tan
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

@@ -98,11 +98,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### 布局和样式
+
+每个 Bento 组件都有一个小型 CSS 库，必须包含该库以确保正确加载而不会发生[内容偏移](https://web.dev/cls/)。由于基于顺序的特性，您必须手动确保在使用任何自定义样式之前包含样式表。
 
 ```html
 <link
@@ -242,7 +244,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +256,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +408,15 @@ bento-social-share.custom-focus:focus {
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Preact/React 组件
 
-### Import via npm
+### 通过 npm 导入
 
 ```bash
 npm install @bentoproject/social-share
@@ -551,7 +555,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -563,7 +567,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

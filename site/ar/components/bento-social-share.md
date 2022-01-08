@@ -15,7 +15,7 @@ description: يعرض زر مشاركة للمنصات الاجتماعية أو
 
 في الوقت الحالي، لا يوجد أي من الأزرار التي تم إنشاؤها بواسطة Bento Social Share (بما في ذلك الأزرار الخاصة بالمزودين مسبقة التكوين) تحمل تسمية أو اسم يمكن الوصول إليه يتم تعريضه للتقنيات المساعدة (مثل قارئات الشاشة). تأكد من تضمين `aria-label` مع تسمية وصفية، وإلا سيتم الإعلان عن عناصر التحكم هذه كعناصر "زر" بدون تسمية.
 
-<div class="bd-usage bd-card bd-card--light-sea-green">   <p style=";text-align:right;direction:rtl">استخدم bento-social-share كمكون ويب أو مكون React وظيفي:</p>   <a class="bd-button" href="#web-component">↓ مكون ويب</a>   <a class="bd-button" href="#preact%2Freact-component">↓ مكون React / Preact</a>
+<div class="bd-usage bd-card bd-card--light-sea-green">   <p>استخدم bento-social-share كمكون ويب أو مكون React وظيفي:</p>   <a class="bd-button" href="#web-component">↓ مكون ويب</a>   <a class="bd-button" href="#preact%2Freact-component">↓ مكون React / Preact</a>
 </div>
 
 ## مكون الويب
@@ -98,11 +98,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### المخطط والنمط
+
+يحتوي كل مكون Bento على مكتبة CSS صغيرة يجب عليك تضمينها لضمان التحميل الصحيح بدون [تغييرات المحتوى](https://web.dev/cls/). ونظرًا للخصوصية المستندة على الأمر، يجب عليك التأكد يدويًا من تضمين صفحات الأنماط قبل أي أنماط مخصصة.
 
 ```html
 <link
@@ -241,7 +243,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -253,7 +255,7 @@ bento-social-share.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -405,13 +407,15 @@ bento-social-share.custom-focus:focus {
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## مكون Preact/React
 
-### Import via npm
+### مثال: استيراد عبر npm
 
 ```bash
 npm install @bentoproject/social-share
@@ -549,7 +553,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -561,7 +565,7 @@ BentoSocialShare.custom-focus:focus {
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

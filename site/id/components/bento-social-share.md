@@ -99,11 +99,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### Tata letak dan gaya
+
+Setiap komponen Bento memiliki perpustakaan CSS kecil yang harus Anda sertakan untuk menjamin pemuatan yang tepat tanpa [pergeseran konten](https://web.dev/cls/). Karena kekhususan berbasis urutan, Anda harus secara manual memastikan bahwa lembar gaya (stylesheet) disertakan sebelum gaya kustom apa pun.
 
 ```html
 <link
@@ -242,7 +244,7 @@ Komponen `bento-social-share` menyediakan [beberapa penyedia pra-konfigurasi](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +256,7 @@ Komponen `bento-social-share` menyediakan [beberapa penyedia pra-konfigurasi](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +408,15 @@ Mengubah nilai atribut yang mana pun secara terprogram akan secara otomatis memp
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Komponen Preact/React
 
-### Import via npm
+### Impor melalui npm
 
 ```bash
 npm install @bentoproject/social-share
@@ -550,7 +554,7 @@ Komponen `BentoSocialShare` menyediakan [beberapa penyedia pra-konfigurasi](./so
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -562,7 +566,7 @@ Komponen `BentoSocialShare` menyediakan [beberapa penyedia pra-konfigurasi](./so
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

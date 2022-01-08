@@ -99,11 +99,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### Mise en page et style
+
+Chaque composant Bento possède une petite bibliothèque CSS que vous devez inclure pour garantir un chargement correct sans [écart de contenu](https://web.dev/cls/). En raison de la spécificité basée sur l'ordre, vous devez vous assurer manuellement que les feuilles de style sont incluses avant tout style personnalisé.
 
 ```html
 <link
@@ -242,7 +244,7 @@ Le composant `bento-social-share` offre quelques [fournisseurs préconfigurés](
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -254,7 +256,7 @@ Le composant `bento-social-share` offre quelques [fournisseurs préconfigurés](
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -406,13 +408,15 @@ La modification programmatique d'une des valeurs d'attribut mettra automatiqueme
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Composant Preact/React
 
-### Import via npm
+### Importation via npm
 
 ```bash
 npm install @bentoproject/social-share
@@ -550,7 +554,7 @@ Le composant `BentoSocialShare` offre quelques [fournisseurs préconfigurés](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -562,7 +566,7 @@ Le composant `BentoSocialShare` offre quelques [fournisseurs préconfigurés](./
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

@@ -98,11 +98,13 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
 
-### Layout and style
+{% endexample %}
 
-Each Bento component has a small CSS library you must include to guarantee proper loading without [content shifts](https://web.dev/cls/). Because of order-based specificity, you must manually ensure that stylesheets are included before any custom styles.
+### Bố cục và phong cách
+
+Mỗi thành phần Bento đều có một thư viện CSS nhỏ mà bạn phải bao gồm để đảm bảo việc tải đúng cách mà không bị [chuyển dịch nội dung](https://web.dev/cls/). Bởi yêu cầu cụ thể về thứ tự, bạn phải đảm bảo các stylesheet được bao gồm một cách thủ công trước mọi phong cách tùy chỉnh có thể có nào.
 
 ```html
 <link
@@ -241,7 +243,7 @@ Thành phần `bento-social-share` có [một số nhà cung cấp được cấ
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -253,7 +255,7 @@ Thành phần `bento-social-share` có [một số nhà cung cấp được cấ
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>
@@ -405,13 +407,15 @@ Việc thay đổi bất kỳ giá trị thuộc tính nào bằng lập trình 
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+
+{% endexample %}
 
 ---
 
-## Preact/React Component
+## Thành phần Preact/React
 
-### Import via npm
+### Nhập qua npm
 
 ```bash
 npm install @bentoproject/social-share
@@ -549,7 +553,7 @@ Thành phần `BentoSocialShare` có [một số nhà cung cấp được cấu 
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Pinterest</td>
     <td><code>pinterest</code></td>
@@ -561,7 +565,7 @@ Thành phần `BentoSocialShare` có [một số nhà cung cấp được cấu 
       </ul>
     </td>
   </tr>
-  
+
   <tr>
     <td>Tumblr</td>
     <td><code>tumblr</code></td>

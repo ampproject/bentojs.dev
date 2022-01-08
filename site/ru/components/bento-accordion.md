@@ -355,7 +355,7 @@ API компонента `bento-accordion` позволяет регистрир
 />
 ```
 
-Alternatively, you may also make the light-weight pre-upgrade styles available inline:
+Как вариант, вы также можете использовать встраиваемые облегченные стили от предыдущей версии компонента:
 
 ```html
 <style>

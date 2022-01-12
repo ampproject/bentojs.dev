@@ -82,7 +82,8 @@ defineBentoJwplayer();
     ></bento-jwplayer>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -146,7 +147,8 @@ You can use the API to trigger the available actions (`play`, `pause`, `mute`, `
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 

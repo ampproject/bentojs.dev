@@ -85,7 +85,8 @@ defineBentoInstagram();
     </bento-instagram>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -189,7 +190,8 @@ By programmatically changing the `data-shortcode` attribute value, you can dynam
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Styling
 

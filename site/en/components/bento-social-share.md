@@ -100,7 +100,8 @@ defineBentoSocialShare();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -406,7 +407,8 @@ Programmatically changing any of the attribute values will automatically update 
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ---
 

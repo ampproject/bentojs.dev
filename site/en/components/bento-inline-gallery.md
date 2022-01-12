@@ -115,7 +115,8 @@ defineBentoInlineGallery();
     </bento-inline-gallery>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 

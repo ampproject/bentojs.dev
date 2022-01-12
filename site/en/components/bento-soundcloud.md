@@ -87,7 +87,8 @@ defineBentoSoundcloud();
     ></bento-soundcloud>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -187,7 +188,8 @@ Programmatically changing one of the attributes will result in the player being 
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ##### data-track
 

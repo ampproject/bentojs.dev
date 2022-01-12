@@ -120,7 +120,8 @@ defineBentoTimeago();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -270,7 +271,8 @@ By programmatically changing attribute values, you can dynamically change the te
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ---
 

@@ -108,7 +108,8 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ##### Embed a Facebook Video
 
@@ -172,7 +173,8 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ##### Embed a Facebook Page
 
@@ -236,7 +238,8 @@ defineBentoFacebook();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ##### Embed a Facebook Like Button
 
@@ -283,7 +286,8 @@ defineBentoFacebook();
     </bento-facebook>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ##### Embed a Facebook Comment Section
 
@@ -330,7 +334,8 @@ defineBentoFacebook();
     </bento-facebook>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and Style
 

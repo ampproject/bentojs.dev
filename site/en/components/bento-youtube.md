@@ -83,7 +83,8 @@ defineBentoYoutube();
     <bento-youtube data-videoid="dQw4w9WgXcQ"></bento-youtube>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -253,7 +254,8 @@ const api = await video.getApi();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 #### Actions
 

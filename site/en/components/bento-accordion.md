@@ -99,7 +99,8 @@ defineBentoAccordion();
     </bento-accordion>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -170,7 +171,8 @@ const api = await accordion.getApi();
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 #### Actions
 
@@ -535,7 +537,8 @@ function App() {
     </BentoAccordion>
   );
 }
-```{% endexample %}
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
@@ -681,7 +684,8 @@ function App() {
     </BentoAccordion>
   )
 }
-```{% endexample %}
+```
+{% endexample %}
 
 ### Layout and style
 

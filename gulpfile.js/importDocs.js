@@ -37,7 +37,7 @@ function _rewriteExamples(string) {
         startExample = false;
         endExample = true;
       } else if (endExample) {
-        line += '{% endexample %}';
+        line += '\n{% endexample %}';
         endExample = false;
       }
     }

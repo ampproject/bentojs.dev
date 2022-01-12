@@ -84,7 +84,8 @@ defineBentoFitText();
     </bento-fit-text>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ### Overflowing content
 
@@ -211,7 +212,8 @@ Programmatically changing an attribute value will automatically update the eleme
     </script>
   </body>
 </html>
-```{% endexample %}
+```
+{% endexample %}
 
 ---
 

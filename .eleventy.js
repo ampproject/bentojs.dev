@@ -47,6 +47,27 @@ module.exports = (eleventyConfig) => {
       breaks: true,
     })
       .use(markdownItAnchor)
+
+  
+      // Let folks customize markdown output with attributes (id, class, data-*)
+      .use(require('markdown-it-attrs'), {
+        leftDelimiter: '{:',
+        rightDelimiter: '}',
+        allowedAttributes: ['id', 'class', /^data-.*$/],
+      })
+
+      // Automatically add anchors to headings
+      /*
+      .use(require('markdown-it-anchor'), {
+        level: 2,
+        permalink: true,
+        permalinkClass: 'w-headline-link',
+        permalinkSymbol: '#',
+        // @ts-ignore
+        slugify: (s) => slugify(s, {lower: true}),
+      })
+      */
+
       .use(markdownItContainer, 'raw', {
         render: (tokens, idx) => {
           return '\n';

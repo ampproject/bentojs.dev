@@ -501,12 +501,13 @@ npm install @bentoproject/accordion
 ### Example
 
 {% example %}
+
 ```jsx
 import React from 'react';
 import {
-  BentoAccordion, 
-  BentoAccordionSection, 
-  BentoAccordionHeader, 
+  BentoAccordion,
+  BentoAccordionSection,
+  BentoAccordionHeader,
   BentoAccordionContent
 } from '@bentoproject/accordion/react';
 import '@bentoproject/accordion/styles.css';
@@ -628,12 +629,13 @@ See [example](#events-example) below for example.
 ##### Events Example
 
 {% example %}
+
 ```jsx
 import React, {createRef} from 'react';
 import {
-  BentoAccordion, 
-  BentoAccordionSection, 
-  BentoAccordionHeader, 
+  BentoAccordion,
+  BentoAccordionSection,
+  BentoAccordionHeader,
   BentoAccordionContent
 } from '@bentoproject/accordion/react';
 import '@bentoproject/accordion/styles.css';

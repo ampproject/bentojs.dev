@@ -1,5 +1,5 @@
 ---
-title: <bento-fit-text>Hello World!</bento-fit-text>
+title: Hello World!
 author: Alan Orozco · Bento Engineering · Google
 date: 2021-12-08
 read_time: 5

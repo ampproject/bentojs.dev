@@ -1,5 +1,5 @@
 ---
-title: Hello World!
+title: Introducing the Bento component library
 author: Alan Orozco · Bento Engineering · Google
 date: 2021-12-08
 read_time: 5

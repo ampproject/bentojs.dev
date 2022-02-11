@@ -8,6 +8,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const {split} = require('sentence-splitter');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
+const COMPONENTS_SRC = path.resolve(__dirname, '..', 'amphtml/src/bento/components');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
 const IGNORED_COMPONENTS = new Set(['bento-iframe']);
 const md = markdownIt({
@@ -146,7 +147,10 @@ function _parseComponentName(content) {
 }
 
 async function importComponents() {
-  const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/1.0/README.md'));
+  const filePaths = await fg([
+    path.join(EXTENSIONS_SRC, '**/1.0/README.md'),
+    path.join(COMPONENTS_SRC, '**/1.0/README.md'),
+  ]);
   if (!filePaths.length) {
     console.error(
       chalk.dim('[Import components]'),

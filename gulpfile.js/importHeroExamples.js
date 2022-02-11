@@ -4,15 +4,19 @@ const fg = require('fast-glob');
 const chalk = require('chalk');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
+const COMPONENTS_SRC = path.resolve(__dirname, '..', 'amphtml/src/bento/components');
 const EXAMPLES_DEST = path.resolve(
   __dirname,
   '..',
   'assets/iframes/hero-examples'
 );
-const PATH_COMPONENT_NAME_PATTERN = /amphtml\/extensions\/(.*?)\//m;
+const PATH_COMPONENT_NAME_PATTERN = /amphtml\/(?:extensions)|(?:src\/bento\/components)\/(.*?)\//m;
 
 async function importHeroExamples() {
-  const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/1.0/example/**/*'));
+  const filePaths = await fg([
+    path.join(EXTENSIONS_SRC, '**/1.0/example/**/*'),
+    path.join(COMPONENTS_SRC, '**/1.0/example/**/*'),
+  ]);
   if (!filePaths.length) {
     console.error(
       chalk.dim('[Import hero examples]'),

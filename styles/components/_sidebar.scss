@@ -1,3 +1,12 @@
+@mixin sticky {
+  height: 80vh;
+  overflow: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 17%;
+  @include scrollbar;
+}
+
 .bd-sidebar {
   @include media('large') {
     display: none;
@@ -8,7 +17,18 @@
 
     @include media('large') {
       display: block;
+      @include sticky;
     }
+  }
+
+  &-components {
+    @include media('xlarge') {
+      width: 80%;
+    }
+  }
+
+  &-toc {
+    direction: rtl;
   }
 
   &__contents {

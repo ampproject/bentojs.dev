@@ -37,7 +37,7 @@
     "@11ty/eleventy-plugin-rss": "1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
     "@ampproject/toolbox-validator-rules": "2.8.0",
-    "csso": "5.0.2",
+    "csso": "5.0.3",
     "eleventy-plugin-toc": "1.1.5",
     "esbuild": "0.14.17",
     "eslint": "8.8.0",

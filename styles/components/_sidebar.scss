@@ -1,4 +1,16 @@
 .bd-sidebar {
+  @include media('large') {
+    display: none;
+  }
+
+  &__target {
+    display: none;
+
+    @include media('large') {
+      display: block;
+    }
+  }
+
   &__contents {
     padding: var(--spacing-s);
 
@@ -40,7 +52,7 @@
 
       ol {
         margin: 0;
-        padding-inline-start: var(--spacing-s);
+        padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-s);
         &:first-child {
           padding: 0;
         }
@@ -50,6 +62,11 @@
           font-size: 14px;
           color: var(--independence);
         }
+      }
+
+      // Hides references to H4
+      ol li > ol li > ol {
+        display: none;
       }
     }
   }

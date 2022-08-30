@@ -36,14 +36,14 @@
     font-weight: 250;
     letter-spacing: -0.5px;
     line-height: 1.18;
-    margin-block: calc(var(--spacing-l) * 7.25) var(--spacing-s);
+    margin: calc(var(--spacing-l) * 7.25) 0 var(--spacing-s);
 
     @include media('medium') {
       font-size: var(--font-size-56);
       font-weight: var(--thin);
       letter-spacing: -1px;
       line-height: 1.14;
-      margin-block: calc(var(--spacing-l) * 4.25) var(--spacing-xxl);
+      margin: calc(var(--spacing-l) * 4.25) 0 var(--spacing-xxl);
     }
 
     @include media('large') {

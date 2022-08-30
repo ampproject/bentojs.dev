@@ -1,0 +1,29 @@
+{% extends "layouts/base.njk" %}
+{% block head %}
+  <script src="{{ helpers.addHashQueryParam('/assets/js/documentation.js') }}" async></script>
+  <script type="module" src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.mjs"></script>
+  <script async nomodule  src="https://cdn.ampproject.org/v0/bento-sidebar-1.0.js"></script>
+  <style>
+  bento-sidebar[hidden]{display:none!important}bento-sidebar{color:#000;background-color:#efefef;height:100vh;top:0;max-height:100vh!important;max-width:80vw;min-width:45px!important;outline:none;z-index:2147483647}bento-sidebar::part(c),bento-sidebar::part(sidebar),bento-sidebar::part(wrapper){color:inherit;background-color:inherit;height:inherit;top:inherit;max-height:inherit;max-width:inherit;min-width:inherit;outline:inherit;z-index:inherit;width:inherit;padding:inherit;border:inherit}bento-sidebar{visibility:hidden!important;position:fixed!important}bento-sidebar::part(c){visibility:visible!important}
+  </style>
+{% endblock %}
+{% block content %}
+  <main class="bd-page-components bd-theme--light">
+    <div class="bd-page-components-container">
+      {%- include 'partials/components/list.njk' -%}
+      <div class="bd-page-components-container__main bd-copy-pasteable">
+        <svg class="bd-page-components-background">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/assets.svg#icon-logo-bento"></use>
+        </svg>
+        <h1>{{ title }}</h1>
+
+        {{ content | safe }}
+      </div>
+      {%- include 'partials/components/toc.njk' -%}
+    </div>
+  </main>
+{% endblock %}
+{% block footer %}
+  {%- include 'partials/components/sidebar-controls.njk' -%}
+  {% include 'partials/footer.njk' %}
+{% endblock %}

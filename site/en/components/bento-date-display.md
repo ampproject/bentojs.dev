@@ -1,18 +1,28 @@
 ---
 id: bento-date-display
 title: Bento Date Display
+permalink: /components/bento-date-display/
+short_title: Date Display
 layout: layouts/component.njk
 description: Displays time data that you can render in your page.
 ---
 # Bento Date Display
 
+{% heroexample 'bento-date-display' %}
+
 Displays time data that you can render in your page. By providing specific [attributes](#attributes) in the Bento Date Display tag, the Bento Date Display extension returns a list of time parameters, which you can pass to [an amp-mustache template](../../amp-mustache/amp-mustache.md) for rendering. Refer to the [list below for each returned time parameter](#returned-time-parameters).
 
-<!--
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-date-display as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
-TODO(https://go.amp.dev/issue/36619): Restore this section. We don't include it because we don't support <template> in Bento Web Components yet.
+We don't support the web component version of `bento-date-display` since `<template>` support is still being designed. This effort can be tracked in this [issue](https://go.amp.dev/issue/36619).
 
+<!--
 An older version of this file contains the removed section, though it's incorrect:
 
 https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c10e8/extensions/amp-date-display/1.0/README.md
@@ -22,9 +32,7 @@ https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c1
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoDateDisplay>` as a functional component usable with the Preact or React libraries.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/date-display
@@ -61,8 +69,7 @@ The Bento Date Display Preact/React component allows consumers to render their o
 
 #### `datetime`
 
-Required prop. Denotes the date and time as a Date, String, or Nuumber. If String, must be a
-standard ISO 8601 date string (e.g. 2017-08-02T15:05:05.000Z) or the string `now`. If set to `now`, it will use the time the page loaded to render its template. If Number, must be a POSIX epoch value in milliseconds.
+Required prop. Denotes the date and time as a Date, String, or Nuumber. If String, must be a standard ISO 8601 date string (e.g. 2017-08-02T15:05:05.000Z) or the string `now`. If set to `now`, it will use the time the page loaded to render its template. If Number, must be a POSIX epoch value in milliseconds.
 
 #### `displayIn`
 
@@ -81,8 +88,8 @@ Note that if the `displayIn` prop is set to `utc`, the value of `localeOptions.t
 #### `render`
 
 Optional callback that should render a template. The callback will be provided an object with properties/values related to the date expressed in `datetime`.
-By default, the Bento Date Display component will display the [`localeString` form of the Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for the given locale and localeOption.
-See the [Returned Time Parameters section](#returned-time-parameters) for more details on how each property will be displayed.
+
+By default, the Bento Date Display component will display the [`localeString` form of the Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for the given locale and localeOption. See the [Returned Time Parameters section](#returned-time-parameters) for more details on how each property will be displayed.
 
 ```typescript
 (dateParams: DateParams) => JSXInternal.Element
@@ -142,3 +149,4 @@ This table lists the format you can specify in your Mustache template:
 | timeZoneNameShort | Internationalized timezone, abbreviated, like `PST`           |
 | year              | 0, 1, 2, ..., 1999, 2000, 2001, etc.                          |
 | yearTwoDigit      | 00, 01, 02, ..., 17, 18, 19, ..., 98, 99                      |
+

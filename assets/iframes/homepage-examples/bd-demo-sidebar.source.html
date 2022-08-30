@@ -1,0 +1,22 @@
+<bento-sidebar id="sidebar1" side="right" hidden>
+  <h2>Navigation Sidebar</h2>
+  <ul>
+    <li>Nav item A</li>
+    <li>Nav item B</li>
+    <li>Nav item C</li>
+    <li>Nav item D</li>
+  </ul>
+</bento-sidebar>
+
+<div class="buttons">
+  <button id="open-sidebar">Open sidebar</button>
+</div>
+
+<script>
+  (async () => {
+    await customElements.whenDefined('bento-sidebar');
+    const api = await sidebar.getApi();
+    const sidebar = document.querySelector('#sidebar1');
+    document.querySelector('#open-sidebar').onclick = () => api.open();
+  })();
+</script>

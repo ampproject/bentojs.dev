@@ -1,0 +1,20 @@
+{# This template generates a JavaScript file and is not meant
+to be used with or by 11ty directly. It is consumed by 
+/www-bento-dev/site/_shortcodes/Example.js #}
+
+import ComponentExample from '../components/componentExample';
+
+{% for import in imports %}
+{{ import|safe }}
+{% endfor %}
+
+{{ app|safe }}
+
+export default () => {
+
+  return (
+    <ComponentExample title="{{ title }}">
+      {% raw %}{{% endraw %}{{ appName }}(){% raw %}}{% endraw %}
+    </ComponentExample>
+  )
+}

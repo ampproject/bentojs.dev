@@ -1,20 +1,28 @@
 ---
 id: bento-timeago
 title: Bento Timeago
+permalink: /components/bento-timeago/
+short_title: Timeago
 layout: layouts/component.njk
 description: 'Counts up to, or away from, a specified date and time.'
 ---
 # Bento Timeago
 
+{% heroexample 'bento-timeago' %}
+
 Counts up to, or away from, a specified date and time. It replaces the text node with a timestamp in natural language, such as `in 30 years` or `3 hours ago`.
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-timeago as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
 
 ## Web Component
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
-The examples below demonstrate use of the `<bento-timeago>` web component.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/timeago
@@ -25,51 +33,95 @@ import {defineElement as defineBentoTimeago} from '@bentoproject/timeago';
 defineBentoTimeago();
 ```
 
-### Example: Import via `<script>`
+### Include via `<script>`
 
 ```html
-<head>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-timeago-1.0.js"
-  ></script>
-  <style>
-    bento-timeago {
-      display: block;
-      overflow: hidden;
-      position: relative;
-    }
-  </style>
-</head>
-<bento-timeago
-  id="my-timeago"
-  datetime="2017-04-11T00:37:33.809Z"
-  locale="en"
-  style="height: 30px">
-    Saturday 11 April 2017 00.37
-</bento-timeago>
-<div class="buttons" style="margin-top: 8px">
-  <button id="ar-button">Change locale to Arabic</button>
-  <button id="en-button">Change locale to English</button>
-  <button id="now-button">Change time to now</button>
-</div>
-
-<script>
-  (async () => {
-    const timeago = document.querySelector('#my-timeago');
-    await customElements.whenDefined('bento-timeago');
-
-    // set up button actions
-    document.querySelector('#ar-button').onclick = () =>
-      timeago.setAttribute('locale', 'ar');
-    document.querySelector('#en-button').onclick = () =>
-      timeago.setAttribute('locale', 'en');
-    document.querySelector('#now-button').onclick = () =>
-      timeago.setAttribute('datetime', 'now');
-  })();
-</script>
+<script
+  type="module"
+  async
+  src="https://cdn.ampproject.org/bento.mjs"
+></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+<script
+  type="module"
+  async
+  src="https://cdn.ampproject.org/v0/bento-timeago-1.0.mjs"
+></script>
+<script
+  nomodule
+  async
+  src="https://cdn.ampproject.org/v0/bento-timeago-1.0.js"
+></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.ampproject.org/v0/bento-timeago-1.0.css"
+/>
 ```
+
+### Example
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-timeago-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-timeago-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-timeago-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-timeago
+      id="my-timeago"
+      datetime="2017-04-11T00:37:33.809Z"
+      locale="en"
+      style="height: 30px"
+    >
+      Saturday 11 April 2017 00.37
+    </bento-timeago>
+    <div class="buttons" style="margin-top: 8px">
+      <button id="ar-button">Change locale to Arabic</button>
+      <button id="en-button">Change locale to English</button>
+      <button id="now-button">Change time to now</button>
+    </div>
+
+    <script>
+      (async () => {
+        const timeago = document.querySelector('#my-timeago');
+        await customElements.whenDefined('bento-timeago');
+
+        // set up button actions
+        document.querySelector('#ar-button').onclick = () =>
+          timeago.setAttribute('locale', 'ar');
+        document.querySelector('#en-button').onclick = () =>
+          timeago.setAttribute('locale', 'en');
+        document.querySelector('#now-button').onclick = () =>
+          timeago.setAttribute('datetime', 'now');
+      })();
+    </script>
+  </body>
+</html>
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -157,13 +209,76 @@ Add the `locale` attribute to specify one of the following values to change the 
 
 Add the `cutoff` attribute to display the date specified in the `datatime` attribute after passing the specified date in seconds.
 
+#### API Example
+
+By programmatically changing attribute values, you can dynamically change the text or locale:
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-timeago-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-timeago-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-timeago-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-timeago
+      id="my-timeago"
+      datetime="2017-04-11T00:37:33.809Z"
+      locale="en"
+      style="height: 30px"
+    >
+      Saturday 11 April 2017 00.37
+    </bento-timeago>
+    <div class="buttons" style="margin-top: 8px">
+      <button id="ar-button">Change locale to Arabic</button>
+      <button id="en-button">Change locale to English</button>
+      <button id="now-button">Change time to now</button>
+    </div>
+
+    <script>
+      (async () => {
+        const timeago = document.querySelector('#my-timeago');
+
+        // set up button actions
+        document.querySelector('#ar-button').onclick = () =>
+          timeago.setAttribute('locale', 'ar');
+        document.querySelector('#en-button').onclick = () =>
+          timeago.setAttribute('locale', 'en');
+        document.querySelector('#now-button').onclick = () =>
+          timeago.setAttribute('datetime', 'now');
+      })();
+    </script>
+  </body>
+</html>
+```
+{% endexample %}
+
 ---
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoTimeago>` as a functional component usable with the Preact or React libraries.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/timeago
@@ -255,3 +370,4 @@ Add the `cutoff` prop to display the date specified in the `datetime` prop after
 #### `placeholder`
 
 Add the `placeholder` props to display the fallback text. The calculated timestamp will replace the placeholder text once ready.
+

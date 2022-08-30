@@ -4,7 +4,7 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
-        "source": "**/*.@(woff2|*.svg)",
+        "source": "**/*.@(woff2|svg|png|avif|webp)",
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
@@ -13,17 +13,33 @@
           {
             "key": "Cache-Control",
             "value": "max-age=31536000"
-          },
-          {
-            "source": "**/*.css|*.js)",
-            "headers": [
-              {
-                "key": "Cache-Control",
-                "value": "max-age=31536000"
-              }
-            ]
           }
         ]
+      },
+      {
+        "source": "**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/*.html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/components/bento-base-carousel/",
+        "destination": "/components/bento-carousel/",
+        "type": 301
       }
     ]
   }

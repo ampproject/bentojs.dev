@@ -1,4 +1,4 @@
-# bento.dev
+# bentojs.dev
 
 The official homepage of the Bento.
 
@@ -6,7 +6,7 @@ The official homepage of the Bento.
 
 We welcome contributions to bento.dev.
 
-- **Bug reports and feature requests:** something missing or not working on [bento.dev](https://bento.dev)? Please file an issue [here](https://github.com/ampproject/bento.dev/issues/new).
+- **Bug reports and feature requests:** something missing or not working on [bentojs.dev](https://bentojs.dev)? Please file an issue [here](https://github.com/ampproject/bento.dev/issues/new).
 
 ## Setup
 
@@ -20,15 +20,15 @@ We welcome contributions to bento.dev.
 
 ### Fork & clone the repository
 
-To get started with contributing to bento.dev, you first need to [fork the repository](https://help.github.com/en/articles/fork-a-repo). Once you've done that you can clone the repository:
+To get started with contributing to bentojs.dev, you first need to [fork the repository](https://help.github.com/en/articles/fork-a-repo). Once you've done that you can clone the repository:
 
 ```sh
-$ git clone --recurse-submodules git@github.com:YOUR-USERNAME/bento.dev.git
+$ git clone --recurse-submodules git@github.com:YOUR-USERNAME/bentojs.dev.git
 ```
 
 ... and then install the dependencies via NPM:
 
 ```sh
-$ cd bento.dev
+$ cd bentojs.dev
 $ npm install
 ```

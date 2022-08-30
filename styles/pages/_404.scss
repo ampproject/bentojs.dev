@@ -1,0 +1,55 @@
+.bd-page-not-found {
+  height: 100vh;
+
+  @include media('xxlarge') {
+    height: 70vh;
+  }
+
+  .bd-not-found {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: auto;
+
+    @include media('medium') {
+      flex-direction: row;
+      gap: var(--spacing-m);
+    }
+
+    &__section {
+      z-index: 10;
+      margin-block-start: var(--spacing-xxl);
+
+      @include media('medium') {
+        margin-block-start: auto;
+      }
+
+      h1,
+      h2 {
+        font-size: var(--font-size-34);
+        letter-spacing: -0.5px;
+        line-height: 1.18;
+      }
+
+      h1 {
+        font-weight: var(--semi-bold);
+      }
+
+      h2 {
+        font-weight: 250;
+        margin: var(--spacing-xxs) 0 var(--spacing-s);
+
+        @include media('medium') {
+          margin: var(--spacing-xs) 0 var(--spacing-xl);
+        }
+      }
+    }
+
+    &__bg-image {
+      transform: scale(2.5);
+
+      @include media('medium') {
+        transform: scale(3);
+      }
+    }
+  }
+}

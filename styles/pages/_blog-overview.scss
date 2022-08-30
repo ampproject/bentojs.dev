@@ -30,23 +30,16 @@
       row-gap: calc(var(--spacing-xxl) * 2);
     }
 
-    @include media('large') {
-      width: 85%;
-    }
-
-    @include media('xxlarge') {
-      width: 1300px;
+    @include media('xlarge') {
+      max-width: var(--max-content-width);
     }
 
     li > *:not(picture) {
-      padding: 0 2rem;
+      margin-inline: auto;
+      width: 90%;
 
-      @include media('large') {
-        padding: 0 5rem;
-      }
-
-      @include media('xxlarge') {
-        padding: 0 13rem;
+      @include media('medium') {
+        max-width: 690px;
       }
     }
 
@@ -68,19 +61,24 @@
       font-weight: var(--light);
       letter-spacing: 0.2px;
       line-height: 1.71;
-      margin-block: var(--spacing-xxs) var(--spacing-m);
+      margin: var(--spacing-xxs) 0 var(--spacing-m);
 
       @include media('large') {
         font-size: var(--font-size-16);
         font-weight: 350;
-        letter-spacing: normal;
         line-height: 2;
         margin-block-end: var(--spacing-l);
       }
     }
 
-    img {
-      width: 100%;
+    picture {
+      display: flex;
+
+      img {
+        width: 100%;
+        margin: auto;
+        max-width: 810px;
+      }
     }
 
     .bd-excerpt {
@@ -88,13 +86,13 @@
       font-weight: var(--light);
       letter-spacing: 0.2px;
       line-height: 1.71;
-      margin-block: var(--spacing-m) var(--spacing-xs);
+      margin: var(--spacing-m) 0 var(--spacing-xs);
 
       @include media('large') {
         font-size: var(--font-size-16);
         font-weight: 350;
         line-height: 2;
-        margin-block: var(--spacing-l) var(--spacing-s);
+        margin: var(--spacing-l) 0 var(--spacing-s);
       }
     }
   }

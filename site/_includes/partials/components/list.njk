@@ -1,15 +1,20 @@
-<bento-sidebar id="bd-components" side="left">
-  <nav toolbar="(min-width: 1024px)" toolbar-target="bd-components-target">
+{% macro components() %}
+  <nav>
     <div class="bd-sidebar__contents bd-sidebar__contents--components">
       <ul>
         {%- for component in collections.components -%}
           <li>
-            <a class="bd-link" href="{{ component.url }}">{{ component.data.title }}
+            <a class="bd-link" href="{{ component.url }}">{{ component.data.short_title }}
             </a>
           </li>
         {%- endfor -%}
       </ul>
     </div>
   </nav>
+{% endmacro %}
+<bento-sidebar class="bd-sidebar" id="bd-components" side="left" hidden>
+  {{ components() }}
 </bento-sidebar>
-<div class="bd-sidebar__target" id="bd-components-target"></div>
+<div class="bd-sidebar__target">
+  {{ components() }}
+</div>

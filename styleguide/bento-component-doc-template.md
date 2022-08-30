@@ -40,11 +40,11 @@ Example text: You must include each Bento component's required CSS library to gu
 {% example %}
 
 ```bash
-npm install @ampproject/bento-component
+npm install @bentoproject/bento-component
 ```
 
 ```javascript
-import '@ampproject/bento-component';
+import '@bentoproject/bento-component';
 ```
 
 {% endexample %}
@@ -201,7 +201,7 @@ The examples below demonstrates use of the `<BentoAccordion>` as a functional co
 
 ```bash
 Example
-npm install @ampproject/bento-accordion
+npm install @bentoproject/bento-accordion
 ```
 
 ```html

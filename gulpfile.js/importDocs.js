@@ -1,19 +1,3 @@
-/**
- * Copyright 2021 The AMP HTML Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS-IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 const fs = require('fs/promises');
 const path = require('path');
 const fg = require('fast-glob');
@@ -24,6 +8,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const {split} = require('sentence-splitter');
 
 const EXTENSIONS_SRC = path.resolve(__dirname, '..', 'amphtml/extensions');
+const COMPONENTS_SRC = path.resolve(__dirname, '..', 'amphtml/src/bento/components');
 const COMPONENTS_DEST = path.resolve(__dirname, '..', 'site/en/components');
 const IGNORED_COMPONENTS = new Set(['bento-iframe']);
 const md = markdownIt({
@@ -32,7 +17,37 @@ const md = markdownIt({
   .use(markdownItAnchor)
   .disable('code');
 
-const extractDescription = (string) => {
+function _injectHeroExamples(content, componentName) {
+  return content.replace(/# Bento .+/, (match) => {
+    return `${match}\n\n{% heroexample '${componentName}' %}`;
+  });
+}
+
+function _rewriteExamples(string) {
+  const lines = string.split('\n');
+  let result = '';
+  let startExample = false;
+  let endExample = false;
+  for (let line of lines) {
+    if (line.match(/<!--%\s+example\s+%--/)) {
+      line = '{% example %}';
+      startExample = true;
+      endExample = false;
+    } else if (line.trim().startsWith('```')) {
+      if (startExample) {
+        startExample = false;
+        endExample = true;
+      } else if (endExample) {
+        line += '\n{% endexample %}';
+        endExample = false;
+      }
+    }
+    result += line + '\n';
+  }
+  return result;
+}
+
+function _extractDescription(string) {
   const tokens = md.parse(string, {});
   let inParagraph = false;
   for (const token of tokens) {
@@ -46,7 +61,7 @@ const extractDescription = (string) => {
     }
   }
   return '';
-};
+}
 
 function _rewriteCalloutToTip(contents) {
   const CALLOUT_PATTERN =
@@ -60,16 +75,6 @@ function _rewriteCalloutToTip(contents) {
 
   contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
     return `{% tip '${AVAILABLE_CALLOUT_TYPES[type]}' %}${text}{% endtip %}`;
-  });
-
-  return contents;
-}
-
-function _rewriteExamples(contents) {
-  const EXAMPLE_PATTERN = /\[example (.*?)\](.*?)\[\/example\]/gs;
-
-  contents = contents.replace(EXAMPLE_PATTERN, (match, args, example) => {
-    return `{% example %}${example}{% endexample %}`;
   });
 
   return contents;
@@ -127,13 +132,25 @@ function _rewriteCodeFenceShToBash(contents) {
   return contents.replace(/```sh(\s.*?\s)```/gm, '```bash$1```');
 }
 
+function _rewriteUsage(contents, componentName) {
+  const usage = `<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use ${componentName} as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>\n\n## Web Component\n\n`;
+  return contents.replace(/(\#\#\s+Web\s+Component$\s*)/gm, usage);
+}
+
 function _parseComponentName(content) {
   const matches = /# (Bento .+)/gm.exec(content);
   return matches[1];
 }
 
 async function importComponents() {
-  const filePaths = await fg(path.join(EXTENSIONS_SRC, '**/1.0/README.md'));
+  const filePaths = await fg([
+    path.join(EXTENSIONS_SRC, '**/1.0/README.md'),
+    path.join(COMPONENTS_SRC, '**/1.0/README.md'),
+  ]);
   if (!filePaths.length) {
     console.error(
       chalk.dim('[Import components]'),
@@ -164,13 +181,17 @@ async function importComponents() {
 
         document.data.id = componentName;
         document.data.title = name;
+        document.data.permalink = `/components/${fileName}/`;
+        document.data.short_title = name.replace('Bento ', '');
         document.data.layout = 'layouts/component.njk';
-        document.data.description = extractDescription(document.content);
+        document.data.description = _extractDescription(document.content);
 
         document.content = _rewriteCalloutToTip(document.content);
         document.content = _escapeVariables(document.content);
         document.content = _rewriteExamples(document.content);
         document.content = _rewriteCodeFenceShToBash(document.content);
+        document.content = _rewriteUsage(document.content, componentName);
+        document.content = _injectHeroExamples(document.content, componentName);
 
         await fs.writeFile(
           path.join(COMPONENTS_DEST, `${fileName}.md`),

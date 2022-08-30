@@ -1,0 +1,12 @@
+---
+permalink: '/robots.txt'
+eleventyExcludeFromCollections: true
+---
+{% if helpers.environment === 'prod' %}
+Sitemap: https://bentojs.dev/sitemap.xml
+User-agent: *
+Disallow:
+{% else %}
+User-agent: *
+Disallow: /
+{% endif %}

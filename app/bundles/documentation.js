@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
     document.getElementById('bd-button-toc')
   );
 
-  for ($example of document.querySelectorAll('.bd-example')) {
-    new Example($example);
+  for (example of document.querySelectorAll('.bd-example')) {
+    new Example(example);
   }
 });

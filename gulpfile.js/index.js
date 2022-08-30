@@ -16,13 +16,19 @@
 
 const gulp = require('gulp');
 
+const importAmphtml = require('./importAmphtml.js');
 const importDocs = require('./importDocs.js');
+const importHeroExamples = require('./importHeroExamples.js');
 const eleventy = require('./eleventy.js');
 const lint = require('./lint.js');
 const sass = require('./sass.js');
 const app = require('./app.js');
 const svgstore = require('./svgstore.js');
 
+const importAll = gulp.series(
+  importAmphtml,
+  gulp.parallel(importHeroExamples, importDocs)
+);
 const build = gulp.series(sass.build, app.build, svgstore, eleventy.build);
 const develop = gulp.series(
   sass.build,
@@ -32,7 +38,9 @@ const develop = gulp.series(
 );
 
 module.exports = {
+  importAll,
   importDocs,
+  importHeroExamples,
   lint,
   svgstore,
   default: build,

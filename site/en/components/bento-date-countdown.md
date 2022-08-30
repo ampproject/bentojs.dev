@@ -1,18 +1,28 @@
 ---
 id: bento-date-countdown
 title: Bento Date Countdown
+permalink: /components/bento-date-countdown/
+short_title: Date Countdown
 layout: layouts/component.njk
 description: Displays a countdown sequence to a specified date.
 ---
 # Bento Date Countdown
 
+{% heroexample 'bento-date-countdown' %}
+
 Displays a countdown sequence to a specified date. Refer to the [returned time parameters section](#returned-time-parameters) for information on the available time parameters.
 
-<!--
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-date-countdown as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
+
 ## Web Component
 
-TODO(https://go.amp.dev/issue/36619): Restore this section. We don't include it because we don't support <template> in Bento Web Components yet.
+We don't support the web component version of `bento-date-countdown` since `<template>` support is still being designed. This effort can be tracked in this [issue](https://go.amp.dev/issue/36619).
 
+<!--
 An older version of this file contains the removed section, though it's incorrect:
 
 https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c10e8/extensions/amp-date-countdown/1.0/README.md
@@ -22,9 +32,7 @@ https://github.com/ampproject/amphtml/blob/422d171e87571c4d125a2bf956e78e92444c1
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoDateCountdown>` as a functional component usable with the Preact or React libraries.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/date-countdown
@@ -68,8 +76,7 @@ The Bento Date Countdown Preact/React component allows consumers to render their
 
 #### `datetime`
 
-Required prop. Denotes the date and time as a Date, String, or Nuumber. If String, must be a
-standard ISO 8601 date string (e.g. 2017-08-02T15:05:05.000Z) or the string `now`. If set to `now`, it will use the time the page loaded to render its template. If Number, must be a POSIX epoch value in milliseconds.
+Required prop. Denotes the date and time as a Date, String, or Nuumber. If String, must be a standard ISO 8601 date string (e.g. 2017-08-02T15:05:05.000Z) or the string `now`. If set to `now`, it will use the time the page loaded to render its template. If Number, must be a POSIX epoch value in milliseconds.
 
 #### `locale`
 
@@ -81,9 +88,7 @@ Specifies whether to stop the timer when it reaches 0 seconds. The value can be 
 
 #### `biggestUnit`
 
-Allows the `bento-date-countdown` component to calculate the time difference based
-on the specified `biggest-unit` value. For example, assume there are `50 days 10 hours` left, if the `biggest-unit` is set to `hours`, the result displays
-`1210 hours` left.
+Allows the `bento-date-countdown` component to calculate the time difference based on the specified `biggest-unit` value. For example, assume there are `50 days 10 hours` left, if the `biggest-unit` is set to `hours`, the result displays `1210 hours` left.
 
 -   Supported values: `days`, `hours`, `minutes`, `seconds`
 -   Default: `days`
@@ -95,11 +100,12 @@ Include this prop to reverse the direction of the countdown to count up instead.
 #### `render`
 
 Optional callback that should render a template. The callback will be provided an object with properties/values related to the date expressed in `datetime`.
-By default, the Bento Date Countdown component will display the [`localeString` form of the Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for the given locale and localeOption.
-See the [Returned Time Parameters section](#returned-time-parameters) for more details on how each property will be displayed.
+
+By default, the Bento Date Countdown component will display the [`localeString` form of the Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) for the given locale and localeOption. See the [Returned Time Parameters section](#returned-time-parameters) for more details on how each property will be displayed.
 
 ```typescript
-(dateParams: DateParams) => JSXInternal.Element
+function render(dateParams: DateParams): JSXInternal.Element;
+
 interface DateParams {
   day: number;
   dayName: string;
@@ -127,7 +133,7 @@ interface DateParams {
 }
 ```
 
-### Returned Time Parameters
+## Returned Time Parameters
 
 This table lists the format you can specify in your Mustache template:
 
@@ -146,7 +152,7 @@ This table lists the format you can specify in your Mustache template:
 | minutes | internationalization string for minute or minutes |
 | seconds | internationalization string for second or seconds |
 
-#### Samples of formatted values
+### Samples of formatted values
 
 This table provides examples of formatted values specified in a Mustache template, and a sample of what the output:
 
@@ -159,3 +165,4 @@ This table provides examples of formatted values specified in a Mustache templat
 | {d} {days} {h} {hours} {m} {minutes}            | 20 days 5 hours 10 minutes           | -                      |
 | {h} {hours} {m} {minutes}                       | 240 hours 10 minutes                 | `biggest-unit='hours'` |
 | {d} {days} {h} {hours} {m} {minutes}            | 50 天 5 小时 10 分钟                 | `locale='zh-cn'`       |
+

@@ -1,11 +1,13 @@
 @import 'config';
 @import 'fonts';
 
+@import 'components/announcement-banner';
 @import 'components/_page';
 @import 'components/_header';
 @import 'components/_footer';
 @import 'components/_stage';
 @import 'components/_button';
+@import 'components/_clipboard';
 @import 'components/_link';
 @import 'components/_language-selector';
 @import 'components/_row';
@@ -27,13 +29,13 @@
 @import 'pages/_documentation';
 @import 'pages/_blog-overview';
 @import 'pages/_post';
+@import 'pages/_404';
 
 html,
 body {
   padding: 0;
   margin: 0;
   min-width: 240px;
-  color: var(--white);
   background-color: var(--maastricht-blue);
   font-size: var(--font-size-16);
   font-family: var(--font-sans);
@@ -42,6 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -68,6 +71,14 @@ img {
   height: auto;
 }
 
+iframe {
+  content-visibility: auto;
+  max-width: 100%;
+  height: auto;
+  border: none;
+  outline: none;
+}
+
 select {
   -webkit-appearance: none;
   background: transparent;
@@ -91,11 +102,18 @@ hr {
   padding: 0;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
 }
 
 .--uppercase {
   text-transform: uppercase;
+}
+
+.--main-overflow {
+  overflow: hidden;
+
+  @include media('large') {
+    overflow: scroll;
+  }
 }

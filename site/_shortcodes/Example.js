@@ -17,106 +17,245 @@
 const fs = require('fs/promises');
 const path = require('path');
 const Prism = require('prismjs');
-const md = require('markdown-it')();
+const espree = require('espree');
+const execa = require('execa');
 
 const examples = [];
 let counter = {};
+
+class Example {
+  constructor(nunjucksEngine, context, raw) {
+    this.renderer = nunjucksEngine;
+
+    this.context = context;
+    this.raw = raw;
+
+    this.title = context.title;
+    this.slug = context.page.fileSlug;
+    counter[this.slug] = counter[this.slug] + 1 || 0;
+    this.id = `${this.slug}-${counter[this.slug]}`;
+
+    this.parsed = {
+      webComponents: this._parseHtml(),
+      react: this._parseJavaScript(),
+    };
+
+    this.previews = this._renderPreviews();
+    this.widget = this._renderWidget();
+  }
+
+  _extract(regExp, string) {
+    const match = regExp.exec(string);
+    return match && match[1] ? match[1] : '';
+  }
+
+  _parseCode(language, string) {
+    const code = {
+      all: this._extract(
+        new RegExp('```' + language + '\n(.*?)\n```', 'gms'),
+        string
+      ),
+    };
+
+    return code;
+  }
+
+  _parseHtml() {
+    const html = this._parseCode('html', this.raw);
+    if (!html.all) {
+      return null;
+    }
+
+    html.head = this._extract(/<head>(.*?)<\/head>/gms, html.all).trim();
+    html.body = this._extract(/<body>(.*?)<\/body>/gms, html.all).trim();
+
+    return html;
+  }
+
+  _parseJavaScript() {
+    const js = this._parseCode('jsx', this.raw);
+    if (!js.all) {
+      return null;
+    }
+
+    let ast = {};
+    try {
+      ast = espree.parse(js.all, {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      });
+    } catch (e) {
+      console.error(
+        `[Examples] Could not retrieve AST for ${this.slug}`,
+        e.mes
+      );
+      return null;
+    }
+
+    js.imports = ast.body
+      .filter((node) => {
+        return node.type === 'ImportDeclaration';
+      })
+      .map((node) => {
+        return js.all.substring(node.start, node.end);
+      });
+
+    js.app = ast.body.find((node) => {
+      return node.type === 'FunctionDeclaration';
+    });
+
+    if (!js.app) {
+      console.warn(`[Examples] No function in ${this.slug}`);
+      return null;
+    }
+
+    js.appName = js.app.id.name;
+    js.app = js.all.substring(js.app.start, js.app.end);
+
+    return js;
+  }
+
+  _renderPreviews() {
+    const previews = {};
+    if (this.parsed.webComponents) {
+      previews.webComponents = this.renderer.render(
+        'site/_includes/layouts/example.njk',
+        {
+          id: this.id,
+          html: this.parsed.webComponents,
+          title: this.title,
+        }
+      );
+    }
+
+    if (this.parsed.react) {
+      previews.react = this.renderer.render(
+        'site/_includes/files/componentExample.js.njk',
+        {
+          imports: this.parsed.react.imports,
+          app: this.parsed.react.app,
+          appName: this.parsed.react.appName,
+          title: this.title,
+        }
+      );
+    }
+
+    return previews;
+  }
+
+  _renderWidget() {
+    if (!this.parsed.webComponents && !this.parsed.react) {
+      return this.raw;
+    }
+
+    let html = {};
+    let iframe = null;
+    if (this.parsed.webComponents) {
+      html = {
+        head: Prism.highlight(
+          this.parsed.webComponents.head,
+          Prism.languages.html,
+          'html'
+        ),
+        body: Prism.highlight(
+          this.parsed.webComponents.body,
+          Prism.languages.html,
+          'html'
+        ),
+      };
+
+      iframe = `/assets/iframes/webcomponents/${this.id}.html`;
+    }
+
+    let js;
+    if (this.parsed.react) {
+      js = Prism.highlight(this.parsed.react.all, Prism.languages.js, 'js');
+
+      iframe = `/assets/iframes/react/${this.id}.html`;
+    }
+
+    return this.renderer.render('site/_includes/partials/example.njk', {
+      hero: false,
+      id: this.id,
+      source: this.raw,
+      html: html,
+      js: js,
+      iframe,
+      title: this.title,
+    });
+  }
+
+  writePreviews() {
+    const fsOps = [];
+    if (this.previews.webComponents) {
+      fsOps.push(
+        fs.writeFile(
+          path.join(
+            `${global.__basedir}/dist/assets/iframes/webcomponents`,
+            `${this.id}.html`
+          ),
+          this.previews.webComponents
+        )
+      );
+    }
+
+    if (this.previews.react) {
+      fsOps.push(
+        fs.writeFile(
+          path.join(
+            `${global.__basedir}/examples/react/pages`,
+            `${this.id}.js`
+          ),
+          this.previews.react
+        )
+      );
+    }
+
+    return Promise.all(fsOps);
+  }
+}
 
 function exampleShortCode(nunjucksEngine) {
   return new (function () {
     this.tags = ['example'];
 
     this.parse = function (parser, nodes, lexer) {
-      let tok = parser.nextToken();
+      const tok = parser.nextToken();
 
-      let args = parser.parseSignature(null, true);
+      const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
 
-      let body = parser.parseUntilBlocks('endexample');
+      const body = parser.parseUntilBlocks('endexample');
       parser.advanceAfterBlockEnd();
 
       return new nodes.CallExtensionAsync(this, 'run', args, [body]);
     };
 
-    this._parseContents = function (contents) {
-      const HTML_CODE_PATTERN = /```html\n(.*?)\n```/gms;
-      const html = {
-        all: HTML_CODE_PATTERN.exec(contents),
-      };
-      html.all = html.all && html.all[1] ? html.all[1] : undefined;
-
-      if (!html.all) {
-        // We only support HTML examples. If the example doesn't
-        // contain HTML, simply return
-        return {};
-      }
-
-      const HTML_HEAD_PATTERN = /<head>(.*?)<\/head>/gms;
-      html.head = HTML_HEAD_PATTERN.exec(html.all);
-      html.head = html.head && html.head[1] ? html.head[1] : undefined;
-      if (!html.head) {
-        return {};
-      }
-
-      const HTML_BODY_PATTERN = /<body>(.*?)<\/body>/gms;
-      html.body = HTML_BODY_PATTERN.exec(html.all);
-      html.body = html.body && html.body[1] ? html.body[1] : undefined;
-
-      // If there is no body, take all of the HTML, but discard the head
-      html.body = html.all.replace(HTML_HEAD_PATTERN, '');
-
-      return html;
-    };
-
     this.run = function (context, contents, callback) {
-      // Build a reusable ID for file names and radio buttons
-      const ctx = context.ctx;
-      counter[ctx.page.fileSlug] = counter[ctx.page.fileSlug] + 1 || 0;
-      const id = `${ctx.page.fileSlug}-${counter[ctx.page.fileSlug]}`;
+      const example = new Example(nunjucksEngine, context.ctx, contents());
+      examples.push(example);
 
-      const html = this._parseContents(contents());
-
-      let iframe;
-      if (html.head && html.body) {
-        iframe = nunjucksEngine.render('site/_includes/layouts/example.njk', {
-          id,
-          html,
-          title: ctx.title,
-        });
-        examples.push({id, iframe});
-      }
-
-      let widget = contents();
-      if (html.head && html.body) {
-        widget = nunjucksEngine.render('site/_includes/partials/example.njk', {
-          id,
-          source: contents(),
-          iframe: !!iframe,
-          title: ctx.title,
-        });
-      }
-
-      callback(null, nunjucksEngine.runtime.markSafe(widget));
+      callback(null, nunjucksEngine.runtime.markSafe(example.widget));
     };
   })();
 }
 
 async function writeExamples() {
-  console.log('Writing examples ...');
-  await Promise.all(
-    examples.map((example) => {
-      return fs.writeFile(
-        path.join(
-          `${global.__basedir}/dist/assets/iframes`,
-          `${example.id}.html`
-        ),
-        example.iframe
-      );
-    })
-  ).then(() => {
-    counter = {};
-    console.log('Wrote examples!');
-  });
+  console.log('[Examples] Writing examples ...');
+  await Promise.all(examples.map((example) => example.writePreviews()));
+  counter = {};
+  console.log('[Examples] Wrote examples!');
+
+  console.log('[Examples] Building react examples ...');
+  await execa.command('npx next build examples/react');
+  console.log('[Examples] Exporting react examples to dist ...');
+  await execa.command(
+    'npx next export -o dist/assets/iframes/react examples/react'
+  );
+  console.log('[Examples] Finished building and exporting react examples!');
 }
 
 module.exports = {

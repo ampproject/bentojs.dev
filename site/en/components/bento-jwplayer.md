@@ -1,20 +1,28 @@
 ---
 id: bento-jwplayer
 title: Bento Jwplayer
+permalink: /components/bento-jwplayer/
+short_title: Jwplayer
 layout: layouts/component.njk
 description: Displays a cloud-hosted JW Player in an iframe.
 ---
 # Bento Jwplayer
 
+{% heroexample 'bento-jwplayer' %}
+
 Displays a cloud-hosted JW Player in an iframe.
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-jwplayer as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
 
 ## Web Component
 
 You must include each Bento component's required CSS library to guarantee proper loading and before adding custom styles. Or use the light-weight pre-upgrade styles available inline. See [Layout and style](#layout-and-style).
 
-The examples below demonstrate use of the `<bento-jwplayer>` web component.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/jwplayer
@@ -25,56 +33,122 @@ import {defineElement as defineBentoJwplayer} from '@bentoproject/jwplayer';
 defineBentoJwplayer();
 ```
 
-### Example: Include via `<script>`
-
-The example below contains an `bento-jwplayer` with three sections. The
-`expanded` attribute on the third section expands it on page load.
+### Include via `<script>`
 
 ```html
-<head>
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.js"
-  ></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.css"
-  />
-</head>
-<body>
-  <bento-jwplayer
-    id="jwplayer"
-    data-player-id="BjcwyK37"
-    data-media-id="CtaIzmFs"
-    style="width: 480px; height: 270px"
-  ></bento-jwplayer>
-
-  <script>
-    (async () => {
-      const twitter = document.querySelector('#jwplayer');
-      await customElements.whenDefined('bento-twitter');
-
-      const api = player.getApi();
-      api.play();
-      api.pause();
-      api.mute();
-      api.unmute();
-      api.requestFullscreen();
-    })();
-  </script>
-</body>
+<script type="module" src="https://cdn.ampproject.org/bento.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.mjs" crossorigin="anonymous"></script>
+<script nomodule src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.css" crossorigin="anonymous">
 ```
+
+### Example
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-jwplayer
+      id="jwplayer"
+      data-player-id="BjcwyK37"
+      data-media-id="CtaIzmFs"
+      style="width: 480px; height: 270px"
+    ></bento-jwplayer>
+  </body>
+</html>
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
-Bento enabled components in standalone use are highly interactive through their API. The `bento-jwplayer` component API is accessible by including the following script tag in your document:
+Bento components are highly interactive through their API. The `bento-jwplayer` component API is accessible by including the following script tag in your document:
 
 ```javascript
-await customElements.whenDefined('bento-accordion');
-const api = await document.querySelector('bento-accordion').getApi();
+await customElements.whenDefined('bento-jwplayer');
+const jwplayerApi = await document.querySelector('bento-jwplayer').getApi();
 ```
+
+You can use the API to trigger the available actions (`play`, `pause`, `mute`, `unmute`, `requestFullscreen`):
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-jwplayer-1.0.css"
+    />
+  </head>
+  <body>
+    <bento-jwplayer
+      id="jwplayer"
+      data-player-id="BjcwyK37"
+      data-media-id="CtaIzmFs"
+      style="width: 480px; height: 270px"
+    ></bento-jwplayer>
+
+    <script>
+      (async () => {
+        const player = document.querySelector('#jwplayer');
+        await customElements.whenDefined('bento-jwplayer');
+
+        const api = player.getApi();
+        api.play();
+        api.pause();
+        api.mute();
+        api.unmute();
+        api.requestFullscreen();
+      })();
+    </script>
+  </body>
+</html>
+```
+{% endexample %}
 
 ### Layout and style
 
@@ -219,9 +293,7 @@ You may use the `bento-jwplayer` element selector to style the accordion freely.
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoMathml>` as a functional component usable with the Preact or React libraries.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/jwplayer
@@ -359,3 +431,4 @@ Or via `className`:
     For more details, see <a href="https://amp.dev/documentation/components/amp-video-docking">documentation on the docking extension itself.</a></td>
   </tr>
 </table>
+

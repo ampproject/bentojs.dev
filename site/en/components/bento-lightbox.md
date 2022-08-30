@@ -1,20 +1,28 @@
 ---
 id: bento-lightbox
 title: Bento Lightbox
+permalink: /components/bento-lightbox/
+short_title: Lightbox
 layout: layouts/component.njk
 description: Displays any content in a full-viewport &quot;lightbox&quot; modal.
 ---
 # Bento Lightbox
 
+{% heroexample 'bento-lightbox' %}
+
 Displays any content in a full-viewport "lightbox" modal.
+
+<div class="bd-usage bd-card bd-card--light-sea-green">
+  <p>Use bento-lightbox as a web component or a React functional component:</p>
+  <a class="bd-button" href="#web-component">↓ Web Component</a>
+  <a class="bd-button" href="#preact%2Freact-component">↓ React / Preact</a>
+</div>
 
 ## Web Component
 
 You must include each Bento component's required CSS library before adding custom styles in order to guarantee proper loading. Or use the lightweight pre-uprgrade styles available inline. See [Layout and Style](#layout-and-style).
 
-The examples below demonstrate use of the `<bento-lightbox>` web component.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/lightbox
@@ -25,44 +33,71 @@ import {defineElement as defineBentoLightbox} from '@bentoproject/lightbox';
 defineBentoLightbox();
 ```
 
-### Example: Import via `<script>`
+### Import via `<script>`
 
 ```html
-<head>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.ampproject.org/v0/bento-lightbox-1.0.css"
-  />
-  <script src="https://cdn.ampproject.org/bento.js"></script>
-  <script
-    async
-    src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.js"
-  ></script>
-</head>
-<bento-lightbox id="my-lightbox">
-  Lightboxed content
-  <button id="close-button">Close lightbox</button>
-</bento-lightbox>
-<button id="open-button">Open lightbox</button>
-<script>
-  (async () => {
-    const lightbox = document.querySelector('#my-lightbox');
-    await customElements.whenDefined('bento-lightbox');
-    const api = await lightbox.getApi();
-
-    // set up button actions
-    document.querySelector('#open-button').onclick = () => api.open();
-    document.querySelector('#close-button').onclick = () => api.close();
-  })();
-</script>
+<script type="module" async src="https://cdn.ampproject.org/bento.mjs"></script>
+<script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+<script type="module" async src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.mjs"></script>
+<script nomodule async src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.ampproject.org/v0/bento-lightbox-1.0.css">
 ```
+
+### Example
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-lightbox-1.0.css"
+    />
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.js"
+    ></script>
+  </head>
+  <body>
+    <bento-lightbox id="my-lightbox" hidden>
+      Lightboxed content
+      <button id="close-button">Close lightbox</button>
+    </bento-lightbox>
+    <button id="open-button">Open lightbox</button>
+    <script>
+      (async () => {
+        const lightbox = document.querySelector('#my-lightbox');
+        await customElements.whenDefined('bento-lightbox');
+        const api = await lightbox.getApi();
+
+        // set up button actions
+        document.querySelector('#open-button').onclick = () => api.open();
+        document.querySelector('#close-button').onclick = () => api.close();
+      })();
+    </script>
+  </body>
+</html>
+```
+{% endexample %}
 
 ### Interactivity and API usage
 
-Bento enabled components in standalone use are highly interactive through their API.
-
-The `bento-lightbox` component API is accessible by including the following script tag in your document:
+Bento components are highly interactive through their API. The `bento-lightbox` component API is accessible by including the following script tag in your document:
 
 ```js
 await customElements.whenDefined('bento-lightbox');
@@ -143,22 +178,69 @@ Must be present when the lightbox is closed and the contents should not be displ
 
 #### `animation`
 
-Defines the style of animation for opening the lightbox. By default, this will
-be set to `fade-in`. Valid values are `fade-in`, `fly-in-bottom`, and
-`fly-in-top`.
+Defines the style of animation for opening the lightbox. By default, this will be set to `fade-in`. Valid values are `fade-in`, `fly-in-bottom`, and `fly-in-top`.
 
 #### `scrollable`
 
-When the `scrollable` attribute is present, the content of the lightbox can
-scroll when overflowing the height of the lightbox.
+When the `scrollable` attribute is present, the content of the lightbox can scroll when overflowing the height of the lightbox.
+
+#### API Example
+
+{% example %}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.ampproject.org/v0/bento-lightbox-1.0.css"
+    />
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/bento.mjs"
+    ></script>
+    <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+    <script
+      type="module"
+      async
+      src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.mjs"
+    ></script>
+    <script
+      nomodule
+      async
+      src="https://cdn.ampproject.org/v0/bento-lightbox-1.0.js"
+    ></script>
+  </head>
+  <body>
+    <bento-lightbox id="my-lightbox" hidden>
+      Lightboxed content
+      <button id="close-button">Close lightbox</button>
+    </bento-lightbox>
+    <button id="open-button">Open lightbox</button>
+    <script>
+      (async () => {
+        const lightbox = document.querySelector('#my-lightbox');
+        await customElements.whenDefined('bento-lightbox');
+        const api = await lightbox.getApi();
+
+        // set up button actions
+        document.querySelector('#open-button').onclick = () => api.open();
+        document.querySelector('#close-button').onclick = () => api.close();
+      })();
+    </script>
+  </body>
+</html>
+```
+{% endexample %}
 
 ---
 
 ## Preact/React Component
 
-The examples below demonstrates use of the `<BentoLightbox>` as a functional component usable with the Preact or React libraries.
-
-### Example: Import via npm
+### Import via npm
 
 ```bash
 npm install @bentoproject/lightbox
@@ -232,3 +314,4 @@ A prop which takes a function which is executed after the lightbox is opened.
 #### onAfterClose
 
 A prop which takes a function which is executed after the lightbox is closed.
+

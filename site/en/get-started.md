@@ -15,9 +15,9 @@ i18n:
   react:
     headline: React and Preact
     text: |
-      Bento components are fundamentally React functional components, released as Preact or React, and in regular or minified builds. Install each Bento component as needed, via npm, then import it as desired. The shown example uses the React `<BentoAccordion>` in regular build.
+      Bento components are fundamentally React functional components, released as Preact or React, and in regular or minified builds. Install each Bento component as needed, via npm, then import it as desired. The shown example uses the React `<BentoFitText>` in regular build.
 
-      And that’s it! Read more about React vs Preact and minified vs regular builds in our Importing and using Bento components guide.
+      And that’s it!
     all: All bento components
   web_components:
     headline: Web Components
@@ -33,8 +33,6 @@ i18n:
     headline: Browser Support
     text: |
       Bento components support the latest two versions of most major browsers like Chrome, Firefox, Edge, Safari, Opera and UC Browser. We support desktop, phone, tablet and the web view version of these respective browsers.
-
-      **Important&#58;** If you’re targeting browser versions <2017, please make sure to include the custom element polyfill&#58;
   contribute:
     headline: Contribute to Bento
     text: Need a component but don’t see it listed? Come across a bug you know how to fix? Great news! Bento is open source under the AMP Project, and we couldn’t do it without our amazing community. Join us and start contributing today!

@@ -6,27 +6,15 @@
   &__container {
     display: flex;
     flex-direction: column;
-    padding-inline: calc(var(--spacing-xs) * 1.25);
-
-    @include media('medium') {
-      padding-inline: var(--spacing-l);
-    }
-
-    @include media('large') {
-      padding-inline: calc(var(--spacing-xl) * 1.1);
-    }
+    margin-inline: auto;
+    width: 90%;
 
     @include media('xlarge') {
-      padding-inline: calc(var(--spacing-xxl) * 1.18);
-    }
-
-    @include media('xxlarge') {
-      padding-inline: 25vw;
+      max-width: var(--max-content-width);
     }
   }
 
   &__divider {
-    margin-block-start: calc(var(--spacing-xxl) * 1.5);
     border: 0;
 
     &:before {

@@ -1,126 +1,124 @@
 ---
 title: Get started
 layout: 'layouts/content.njk'
+description: A get started guide for using Bento components.
 ---
 
-<div class="bd-page-get-started bd-page__container bd-theme--light">
-  <section class="bd-stage">
-    <svg class="bd-stage__bg-image">
+<div class="bd-theme--light">
+  <div class="bd-page-get-started bd-page__container">
+    <section class="bd-stage">
+      <svg class="bd-stage__bg-image">
+        <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="/assets/assets.svg#icon-logo-bento"
+        ></use>
+      </svg>
+      <h1>{{ i18n.stage.headline }}</h1>
+      <p>{{ i18n.stage.text }}</p>
+    </section>
+
+    <section class="bd-steps">
+      <h2>{{ i18n.steps.headline }}</h2>
+      <div class="bd-steps__grid">
+        <div class="bd-step bd-step-1">
+          {% image "./assets/img/step-1.png", "" %}
+          <h3 class="bd-step__number">1.</h3>
+          <p class="bd-step__description">
+            {{ i18n.steps.items[0] }}
+          </p>
+        </div>
+        <div class="bd-step bd-step-2">
+          {% image "./assets/img/step-2.png", "" %}
+          <h3 class="bd-step__number">2.</h3>
+          <p class="bd-step__description">
+            {{ i18n.steps.items[1] }}
+          </p>
+        </div>
+        <div class="bd-step bd-step-3">
+          {% image "./assets/img/step-3.png", "" %}
+          <h3 class="bd-step__number">3.</h3>
+          <p class="bd-step__description">
+            {{ i18n.steps.items[2] }}
+          </p>
+        </div>
+        <div class="bd-step bd-step-4">
+          {% image "./assets/img/step-4.png", "" %}
+          <h3 class="bd-step__number">4.</h3>
+          <p class="bd-step__description">
+            {{ i18n.steps.items[3] }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bd-section bd-row bd-row__col-1-2">
+      <div class="bd-row__column">
+        <h2 class="bd-section__title">{{ i18n.react.headline }}</h2>
+        <div class="bd-section__body">
+          {{ i18n.react.text|md|safe }}
+        </div>
+        <a href="/documentation" class="bd-button--burnt-sienna">{{ i18n.react.all }}</a>
+      </div>
+
+      <div class="bd-row__column">
+        {%- include 'partials/getting-started/react.njk' -%}
+      </div>
+    </section>
+
+    <svg class="bd-page-get-started__background">
       <use
         xmlns:xlink="http://www.w3.org/1999/xlink"
         xlink:href="/assets/assets.svg#icon-logo-bento"
       ></use>
     </svg>
-    <h1>{{ i18n.stage.headline }}</h1>
-    <p>{{ i18n.stage.text }}</p>
-  </section>
 
-  <section class="bd-steps">
-    <h2>{{ i18n.steps.headline }}</h2>
-    <div class="bd-steps__grid">
-      <div class="bd-step bd-step-1">
-        {% image "./assets/img/step-1.png", "" %}
-        <h3 class="bd-step__number">1.</h3>
-        <p class="bd-step__description">
-          {{ i18n.steps.items[0] }}
-        </p>
+    <section class="bd-section bd-row bd-row__col-1-2">
+      <div class="bd-row__column">
+        <h2 class="bd-section__title">{{ i18n.web_components.headline }}</h2>
+        <div class="bd-section__body">
+          <p>{{ i18n.web_components.text_1 }}</p>
+
+          <strong>{{ i18n.web_components.strong_1|md|safe }}</strong>
+          <strong>{{ i18n.web_components.strong_2|md|safe }}</strong>
+
+          <p>{{ i18n.web_components.text_2 }}</p>
+        </div>
+        <a href="/documentation" class="bd-button--burnt-sienna">{{ i18n.web_components.all }}</a>
       </div>
-      <div class="bd-step bd-step-2">
-        {% image "./assets/img/step-2.png", "" %}
-        <h3 class="bd-step__number">2.</h3>
-        <p class="bd-step__description">
-          {{ i18n.steps.items[1] }}
-        </p>
+
+      <div class="bd-row__column">
+        {%- include 'partials/getting-started/web-component.njk' -%}
       </div>
-      <div class="bd-step bd-step-3">
-        {% image "./assets/img/step-3.png", "" %}
-        <h3 class="bd-step__number">3.</h3>
-        <p class="bd-step__description">
-          {{ i18n.steps.items[2] }}
-        </p>
+    </section>
+
+    <section class="bd-section bd-row bd-row__col-2 bd-browser-support">
+      <div class="bd-row__column">
+        <h2 class="bd-section__title">{{ i18n.browser_support.headline }}</h2>
+        <div class="bd-section__body">
+          {{ i18n.browser_support.text|md|safe }}
+        </div>
       </div>
-      <div class="bd-step bd-step-4">
-        {% image "./assets/img/step-4.png", "" %}
-        <h3 class="bd-step__number">4.</h3>
-        <p class="bd-step__description">
-          {{ i18n.steps.items[3] }}
-        </p>
+
+      <div class="bd-row__column">
+        {% image "./assets/img/image-browsersupport.png", "Browser Support" %}
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="bd-section bd-row bd-row__col-1-2">
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.react.headline }}</h2>
-      <div class="bd-section__body">
-        {{ i18n.react.text|md|safe }}
+    <section class="bd-section bd-row bd-row__col-2 bd-contribute">
+      <div class="bd-row__column">
+        {% image "./assets/img/image-open-js.png", "OpenJS" %}
       </div>
-      <a href="/documentation" class="bd-button--burnt-sienna">{{ i18n.react.all }}</a>
-    </div>
-
-    <div class="bd-row__column">
-      {%- include 'partials/getting-started/react.njk' -%}
-    </div>
-  </section>
-
-  <svg class="bd-page-get-started__background">
-    <use
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      xlink:href="/assets/assets.svg#icon-logo-bento"
-    ></use>
-  </svg>
-
-  <section class="bd-section bd-row bd-row__col-1-2">
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.web_components.headline }}</h2>
-      <div class="bd-section__body">
-        <p>{{ i18n.web_components.text_1 }}</p>
-
-        <strong>{{ i18n.web_components.strong_1|md|safe }}</strong>
-        <strong>{{ i18n.web_components.strong_2|md|safe }}</strong>
-
-        <p>{{ i18n.web_components.text_2 }}</p>
+      <div class="bd-row__column">
+        <h2 class="bd-section__title">{{ i18n.contribute.headline }}</h2>
+        <div class="bd-section__body">
+          {{ i18n.contribute.text}}
+        </div>
+        <div>
+        <a href="https://github.com/ampproject/bentojs.dev" target="_blank" class="bd-button--burnt-sienna" rel="noreferrer">{{ i18n.contribute.cta }}</a>
+        </div>
       </div>
-      <a href="/documentation" class="bd-button--burnt-sienna">{{ i18n.web_components.all }}</a>
-    </div>
-
-    <div class="bd-row__column">
-      {%- include 'partials/getting-started/web-component.njk' -%}
-    </div>
-  </section>
-
-  <section class="bd-section bd-row bd-row__col-2 bd-browser-support">
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.browser_support.headline }}</h2>
-      <div class="bd-section__body">
-        {{ i18n.browser_support.text|md|safe }}
-      </div>
-      <div>
-      {% highlight 'bash' %}
-      <script src="https://cdn.ampproject.org/custom-elements-polyfill.js"></script>
-      {% endhighlight %}
-      </div>
-    </div>
-
-    <div class="bd-row__column">
-      {% image "./assets/img/image-browsersupport.png", "Browser Support" %}
-    </div>
-  </section>
-
-  <section class="bd-section bd-row bd-row__col-2 spacer bd-contribute">
-    <div class="bd-row__column">
-      {% image "./assets/img/image-open-js.png", "OpenJS" %}
-    </div>
-    <div class="bd-row__column">
-      <h2 class="bd-section__title">{{ i18n.contribute.headline }}</h2>
-      <div class="bd-section__body">
-        {{ i18n.contribute.text}}
-      </div>
-      <div>
-      <a href="https://github.com/ampproject/bento.dev" target="_blank" class="bd-button--burnt-sienna">{{ i18n.contribute.cta }}</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <section class="bd-discover-more">
     <div class="bd-discover-more__container">

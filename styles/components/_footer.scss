@@ -29,7 +29,7 @@
       }
 
       .bd-link-wrapper {
-        display: block;
+        display: flex;
       }
     }
   }
@@ -55,6 +55,10 @@
     @include media('large') {
       grid-column: span 4;
       justify-content: flex-end;
+    }
+
+    a {
+      height: fit-content;
     }
   }
 

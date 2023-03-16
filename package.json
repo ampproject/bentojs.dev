@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/ampproject/bentojs.dev#readme",
   "devDependencies": {
-    "@11ty/eleventy": "1.0.0",
+    "@11ty/eleventy": "2.0.0",
     "@11ty/eleventy-img": "1.0.0",
     "@11ty/eleventy-plugin-rss": "1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",

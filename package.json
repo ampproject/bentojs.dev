@@ -67,6 +67,6 @@
   },
   "dependencies": {
     "@bentoproject/accordion": "1.2201141909.4",
-    "@bentoproject/sidebar": "1.2201141909.4"
+    "@bentoproject/sidebar": "1.2305051745.1"
   }
 }

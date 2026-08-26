@@ -34,7 +34,7 @@
   "devDependencies": {
     "@11ty/eleventy": "1.0.0",
     "@11ty/eleventy-img": "1.0.0",
-    "@11ty/eleventy-plugin-rss": "1.1.2",
+    "@11ty/eleventy-plugin-rss": "1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "4.0.0",
     "@ampproject/toolbox-validator-rules": "2.8.0",
     "csso": "5.0.2",
